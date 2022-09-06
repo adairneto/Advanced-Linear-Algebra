@@ -1,0 +1,33 @@
+\documentclass[12pt,a4paper]{report}
+\input{../../LaTeX_Template/preamble.tex}
+
+% Title
+\author{\sffamily \href{https://github.com/adairneto}{Adair Antonio da Silva Neto}}
+\title{\sffamily \uppercase{Advanced Linear Algebra}}
+\date{\sffamily \today}
+
+% Setup
+\hypersetup{
+    colorlinks=false,
+    pdftitle={Advanced Linear Algebra},
+    pdfpagemode=FitV,
+}
+
+\begin{document}
+
+% Make title and TOC, start counting pages
+\maketitle
+\tableofcontents
+\thispagestyle{empty}
+\setcounter{page}{1}
+
+% Chapters
+\include{Chapters/01}
+
+% Bibliography
+\nocite{*}
+\bibliographystyle{alpha}
+\bibliography{Main.bib}
+\addcontentsline{toc}{chapter}{References}
+
+\end{document}
