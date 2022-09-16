@@ -1,4 +1,4 @@
-\chapter{Vector Spaces}
+\chapter{Vector Spaces and Linear Transformations}
 
 In this chapter, we'll proceed with an overview of elementary linear algebra, covering the definition of vector spaces, bases and coordinates, linear transformations and matrices, rank, nullity, inner product, normal and self-adjoint operators, and diagonalization. The proofs in this chapter will be skipped.
 
@@ -9,7 +9,7 @@ In this chapter, we'll proceed with an overview of elementary linear algebra, co
 \end{quote}
 
 \begin{definition}[Vector Space]
-	A \textbf{vector space} (or \textbf{linear space}) $V$ over a field $\mathbb{F}$ is a set with a binary operation `$+$' on $V$ (called \textbf{addition}) and an action `$\cdot$' of $\mathbb{F}$ on $V$ (called \textbf{scalar multiplication}) such that, for any $x,y \in V$ and $a, b \in \mathbb{F}$, $x+y \in V$ (closed under addition) and $a\cdot x \in V$ (invariant under scalar multiplication) satisfying:
+	A \textbf{vector space} (or \textbf{linear space}) $V$ over a field $\textbf{F}$ is a set with a binary operation `$+$' on $V$ (called \textbf{addition}) and an action `$\cdot$' of $\textbf{F}$ on $V$ (called \textbf{scalar multiplication}) such that, for any $x,y \in V$ and $a, b \in \textbf{F}$, $x+y \in V$ (closed under addition) and $a\cdot x \in V$ (invariant under scalar multiplication) satisfying:
 	\begin{enumerate}
 		\item $x+y = y+x$.
 		\item $(x+y)+z = x + (y+z)$.
@@ -21,29 +21,29 @@ In this chapter, we'll proceed with an overview of elementary linear algebra, co
 		\item $(a+b)\cdot x = a \cdot x + b \cdot x$.
 	\end{enumerate}
 	
-	We'll refer to the elements of $V$ as \textbf{vectors} and to the elements of $\mathbb{F}$ as \textbf{scalars}.
+	We'll refer to the elements of $V$ as \textbf{vectors} and to the elements of $\textbf{F}$ as \textbf{scalars}.
 \end{definition}
 
-In the following pages, we'll use $V$ to denote a vector space and $\mathbb{F}$ to denote a field. And `iff.' means `if and only if'.
+In the following pages, we'll use $V$ to denote a vector space and $\textbf{F}$ to denote a field. And `iff.' means `if and only if'.
 
 \begin{example}[Some Vector Spaces]\hfill
 	\begin{enumerate}
-		\item The \textbf{zero-dimensional space}. The set $V = \{ 0 \}$ under some field $\mathbb{F}$.
-		\item The \textbf{field $\mathbb{F}$ as a one-dimensional coordinate space}. A field (e.g. $\mathbb{C}$) can be interpreted as a vector space of a subfield of it (e.g. $\mathbb{R}$).
-		\item The \textbf{$n$-tuple space $\mathbb{F}^n$}.
-		\item The \textbf{space of $m \times n$ matrices $\mathbb{F}^{m \times n}$}.
-		\item \textbf{Function spaces $F(S)$}. Which maps $S$ into the field $\mathbb{F}$.
-		\item The \textbf{space of polynomial functions over a field $\mathbb{F}$}.
+		\item The \textbf{zero-dimensional space}. The set $V = \{ 0 \}$ under some field $\textbf{F}$.
+		\item The \textbf{field $\textbf{F}$ as a one-dimensional coordinate space}. A field (e.g. $\textbf{C}$) can be interpreted as a vector space of a subfield of it (e.g. $\textbf{R}$).
+		\item The \textbf{$n$-tuple space $\textbf{F}^n$}.
+		\item The \textbf{space of $m \times n$ matrices $\textbf{F}^{m \times n}$}.
+		\item \textbf{Function spaces $F(S)$}. Which maps $S$ into the field $\textbf{F}$.
+		\item The \textbf{space of polynomial functions over a field $\textbf{F}$}.
 	\end{enumerate}
 \end{example}
 
 Some immediate conclusions follow from this definition.
 
 \begin{lemma}[Basic Properties]
-	For all $x \in V$ and $a \in \mathbb{F}$, the following properties hold:
+	For all $x \in V$ and $a \in \textbf{F}$, the following properties hold:
 	\begin{enumerate}
-		\item $\underset{\in \mathbb{F}}{0} \cdot x = \underset{\in V}{0}$
-		\item $\underset{\in \mathbb{F}}{(-a)} \cdot x = - \underset{\in V}{(a \cdot x)} = a \cdot \underset{\in V}{(-x)}$
+		\item $\underset{\in \textbf{F}}{0} \cdot x = \underset{\in V}{0}$
+		\item $\underset{\in \textbf{F}}{(-a)} \cdot x = - \underset{\in V}{(a \cdot x)} = a \cdot \underset{\in V}{(-x)}$
 		\item $a \cdot \underset{\in V}{0} = \underset{\in V}{0}$
 	\end{enumerate}
 \end{lemma}
@@ -57,13 +57,13 @@ The basic motivation of Linear Algebra is to solve systems of linear equations. 
 	\[
 		v = a_1 u_1 + a_2 u_2 + \ldots + a_n u_n = \sum_{i=1}^n a_i u_i
 	\]
-	for some vectors $u_1, \ldots, u_n \in S$ and scalars $a_1, \ldots, a_n \in \mathbb{F}$.
+	for some vectors $u_1, \ldots, u_n \in S$ and scalars $a_1, \ldots, a_n \in \textbf{F}$.
 \end{definition}
 
 \subsection{Subspaces}
 
 \begin{definition}[Subspace]
-	Let $V$ be a vector space over a field $\mathbb{F}$. A subset $W \subseteq V$ is a \textbf{subspace} of $V$ if $W$ is itself a vector space with respect to the addition and scalar multiplication on $V$.	
+	Let $V$ be a vector space over a field $\textbf{F}$. A subset $W \subseteq V$ is a \textbf{subspace} of $V$ if $W$ is itself a vector space with respect to the addition and scalar multiplication on $V$.	
 \end{definition}
 
 \begin{theorem}[Criteria for Subspaces]
@@ -71,14 +71,14 @@ The basic motivation of Linear Algebra is to solve systems of linear equations. 
 	\begin{enumerate}
 		\item $0 \in W$.
 		\item $x+y \in W$ for all $x,y \in W$ (closed under addition).
-		\item $c \cdot x \in W$ for all $c \in \mathbb{F}$ and $x \in W$ (closed under scalar multiplication).
+		\item $c \cdot x \in W$ for all $c \in \textbf{F}$ and $x \in W$ (closed under scalar multiplication).
 	\end{enumerate}
 \end{theorem}
 
 However, we can simplify this check a little more.
 
 \begin{theorem}[New Criteria for Subspaces]
-	Let $W \subseteq V$. Then $W$ is a subspace of $V$ iff. for any $x, y \in W$ and $c \in \mathbb{F}$, we have that $cx+y \in W$.
+	Let $W \subseteq V$. Then $W$ is a subspace of $V$ iff. for any $x, y \in W$ and $c \in \textbf{F}$, we have that $cx+y \in W$.
 \end{theorem}
 
 The conditions that an arbitrary vector in $V$ must satisfy in order to belong to $W$ are called \textbf{linear conditions}. A combination of linear conditions is also a linear condition. In other words, we have the next theorem.
@@ -98,7 +98,7 @@ The following theorem gives an equivalent definition.
 \begin{theorem}[Equivalent Definition for Span]
 	The \textbf{span} of $S$ is the subset of $V$ consisting of all linear combinations of $S$.
 	\[
-		\text{Span}(S) = \{ a_1 u_1 + \ldots + a_n u_n : n \in \mathbb{N}, a_i \in \mathbb{F}, u_i \in S \}
+		\text{Span}(S) = \{ a_1 u_1 + \ldots + a_n u_n : n \in \mathbb{N}, a_i \in \textbf{F}, u_i \in S \}
 	\]
 \end{theorem}
 
@@ -117,7 +117,7 @@ The following theorem gives an equivalent definition.
 \subsection{Bases and Dimension}
 
 \begin{definition}[Linear Dependence]
-	A subset $S$ of $V$ is \textbf{linearly dependent} if there exists a finite number of distinct vectors $u_1, \ldots, u_n \in S$ and scalars $a_1, \ldots, a_n \in \mathbb{F}$, with at least one $a_i \neq 0$, such that 
+	A subset $S$ of $V$ is \textbf{linearly dependent} if there exists a finite number of distinct vectors $u_1, \ldots, u_n \in S$ and scalars $a_1, \ldots, a_n \in \textbf{F}$, with at least one $a_i \neq 0$, such that 
 	\[
 		a_1 u_1 + \ldots + a_n u_n = 0
 	\]
@@ -139,7 +139,7 @@ The following theorem gives an equivalent definition.
 \end{definition}
 
 \begin{example}
-	Let $S$ be the subset of $\mathbb{F}^n$ containing
+	Let $S$ be the subset of $\textbf{F}^n$ containing
 	\begin{equation*}
 		\begin{aligned}
 			e_1 &= (1, 0, 0, \ldots, 0) \\
@@ -149,7 +149,7 @@ The following theorem gives an equivalent definition.
 		\end{aligned}
 	\end{equation*}
 	
-	Clearly, these vectors span $\mathbb{F}^n$ and are linearly independent. Then this set is a basis for $\mathbb{F}^n$ and is called the \textbf{standard basis} of $\mathbb{F}^n$.
+	Clearly, these vectors span $\textbf{F}^n$ and are linearly independent. Then this set is a basis for $\textbf{F}^n$ and is called the \textbf{standard basis} of $\textbf{F}^n$.
 \end{example}
 
 An alternative characterization of vector spaces is given by the following theorem.
@@ -159,7 +159,7 @@ An alternative characterization of vector spaces is given by the following theor
 	\[
 		v = a_1 u_1 + \ldots + a_n u_n 
 	\]
-	for some $a_i \in \mathbb{F}$.
+	for some $a_i \in \textbf{F}$.
 \end{theorem}
 
 %\begin{theorem}[Existence of basis]
@@ -208,6 +208,10 @@ A corollary of this theorem is that proper subspaces have smaller dimension.
 	If $W = \{ w_1, \ldots, w_m \}$ is a linearly independent set of vectors in a finite-dimensional vector space $V$, then there exists a basis of $V$ that contains $W$.
 \end{corollary}
 
+\begin{corollary}
+	Let $A \in \textbf{M}_n(\textbf{F})$ and suppose that the row vectors of $A$ form a linearly independent set of vectors in $\textbf{F}^n$. Then $A$ is invertible.
+\end{corollary}
+
 \begin{theorem}
 	If $W_1$ and $W_2$ are both finite-dimensional subspaces of $V$, then $W_1 + W_2$ is finite-dimensional and 
 	\[
@@ -215,7 +219,7 @@ A corollary of this theorem is that proper subspaces have smaller dimension.
 	\]
 \end{theorem}
 
-\begin{definition}[Maximal]
+\begin{definition}[Maximal]\label{def:maximal}
 	Let $E = \{ v_1, \ldots, v_n \}$ be a set of vectors in $V$ and let $F = \{ v_{i_1}, \ldots, v_{i_m} \}$ be a linearly independent subset of $E$. If every element in $E$ can be expressed as a linear combination of the elements of $F$, then $F$ is said to be \textbf{maximal}.
 \end{definition}
 
@@ -243,7 +247,7 @@ The next theorem is an example of application of Zorn's lemma.
 
 \subsection{Coordinates}
 
-The coordinates of a vector relative to a basis will be the coefficients that are used to represent the vector as a linear combination of the vectors in the basis. For example, if $(v_1, \ldots v_n)$ is an arbitrary vector in $\mathbb{R}^n$ and $e_1, \ldots, e_n$ is the standard basis for $\mathbb{R}^n$, then we express
+The coordinates of a vector relative to a basis will be the coefficients that are used to represent the vector as a linear combination of the vectors in the basis. For example, if $(v_1, \ldots v_n)$ is an arbitrary vector in $\textbf{R}^n$ and $e_1, \ldots, e_n$ is the standard basis for $\textbf{R}^n$, then we express
 \[
 	v = (v_1, \ldots, v_n) = \sum_{i=1}^n v_i e_i
 \]
@@ -261,7 +265,7 @@ With this definition, we say that $v_i$ is the $i$th \textbf{coordinate of $v$ r
 	\[
 		x = a_1 v_1 + \ldots + a_n v_n
 	\]
-	for $a_1, \ldots, a_n \in \mathbb{F}$. 
+	for $a_1, \ldots, a_n \in \textbf{F}$. 
 
 	We define the \textbf{coordinate vector} as 
 	\[
@@ -270,7 +274,7 @@ With this definition, we say that $v_i$ is the $i$th \textbf{coordinate of $v$ r
 			a_2 \\
 			\vdots \\
 			a_n
-			\end{matrix}\right] \in \mathbb{F}^n
+			\end{matrix}\right] \in \textbf{F}^n
 	\]
 \end{definition}
 
@@ -320,7 +324,7 @@ Note that each column is formed by the coordinates of $\gamma_1, \ldots, \gamma_
 \end{theorem}
 
 \begin{example}[Change of basis]
-Consider $\beta$ the standard basis of $\mathbb{R}^3$ and \[ \gamma = \{(1,0,1),(1,1,1),(1,1,2)\}\] Find the transition matrix $P_{\gamma \to \beta}$.
+Consider $\beta$ the standard basis of $\textbf{R}^3$ and \[ \gamma = \{(1,0,1),(1,1,1),(1,1,2)\}\] Find the transition matrix $P_{\gamma \to \beta}$.
 
 \textbf{Solution:} The first step is to write each vector of $\beta$ as a linear combination of the vectors of $\gamma$. I.e.,
 	\begin{equation*}
@@ -359,19 +363,21 @@ P_{\gamma \to \beta} =
 	\]
 \end{example}
 
+Another way of solving the above example is using the previous theorem. First, form a matrix $P$ whose $i$th column is the $i$th element of the basis $\gamma$. Second, find the inverse $P^{-1}$. Finally, the $i$th column of $P^{-1}$ gives the coordinate of the $i$th vector of the standard basis in the basis $\gamma$.
+
 \subsection{The Row and Column Spaces of a Matrix}
 
 Before heading to next section, we introduce some useful nomenclature and results.
 
 \begin{definition}[Row Space]
-	Let $A$ be an $m \times n$ matrix over the field $\mathbb{F}$. We define the \textbf{row space} as the subspace of $\mathbb{F}^n$ generated by the rows of $A$. The dimension of the row space is called \textbf{row rank}.
+	Let $A$ be an $m \times n$ matrix over the field $\textbf{F}$. We define the \textbf{row space} as the subspace of $\textbf{F}^n$ generated by the rows of $A$. The dimension of the row space is called \textbf{row rank}.
 \end{definition}
 
 \begin{theorem} \hfill
 	\begin{enumerate}
 		\item Row-equivalent matrices have the same row space.
 		\item The non-zero lines of a row-reduced echelon matrix form a basis for its row space.
-		\item If $W$ is a subspace of $\mathbb{F}^n$ such that $\dim W \leq m$, then there exists a unique row-reduced echelon matrix $m \times n$ over $\mathbb{F}$ whose row space is $W$.
+		\item If $W$ is a subspace of $\textbf{F}^n$ such that $\dim W \leq m$, then there exists a unique row-reduced echelon matrix $m \times n$ over $\textbf{F}$ whose row space is $W$.
 		\item Every matrix is row-equivalent to one, and only one, row reduced echelon matrix.
 		\item Two matrices are row-equivalent iff. they have the same row space.
 	\end{enumerate}
@@ -384,10 +390,10 @@ In plain words, a linear transformation (or linear mapping) is a function from a
 \subsection{Basic Definitions}
 
 \begin{definition}[Linear Transformation]
-	Let $V$ and $W$ be two vector spaces over the same field $\mathbb{F}$. A \textbf{linear transformation} $T : V \longrightarrow W$ is a function satisfying:
+	Let $V$ and $W$ be two vector spaces over the same field $\textbf{F}$. A \textbf{linear transformation} $T : V \longrightarrow W$ is a function satisfying:
 	\begin{enumerate}
 		\item $T(x+y) = T(x) + T(y)$, for all $x,y \in V$.
-		\item $T(c x) = c T(x)$, for all $x \in V$, $c \in \mathbb{F}$.
+		\item $T(c x) = c T(x)$, for all $x \in V$, $c \in \textbf{F}$.
 	\end{enumerate}
 \end{definition}
 
@@ -396,13 +402,13 @@ Put it another way, a linear mapping is a \textbf{homomorphism} of additive grou
 \begin{theorem}[Properties] \hfill
 	\begin{enumerate}
 		\item If $T$ is a linear transformation, then $T(0) = 0$.
-		\item $T\left( \sum_{i=1}^n a_i x_i \right) = \sum_{i=1}^n  a_i T(x_i)$ for all $x_i \in V$, $a_i \in \mathbb{F}$.
-		\item A function $T : V \longrightarrow W$ is a linear transformation iff. $T(cx+y) = cT(x) + T(y)$ for all $x, y \in V$, $c \in \mathbb{F}$.
+		\item $T\left( \sum_{i=1}^n a_i x_i \right) = \sum_{i=1}^n  a_i T(x_i)$ for all $x_i \in V$, $a_i \in \textbf{F}$.
+		\item A function $T : V \longrightarrow W$ is a linear transformation iff. $T(cx+y) = cT(x) + T(y)$ for all $x, y \in V$, $c \in \textbf{F}$.
 	\end{enumerate}
 \end{theorem}
 
 \begin{example}
-	Let $\mathbb{F}$ be a field and $V$ be the space of polynomial functions $f : \mathbb{F} \longrightarrow \mathbb{F}$ given by
+	Let $\textbf{F}$ be a field and $V$ be the space of polynomial functions $f : \textbf{F} \longrightarrow \textbf{F}$ given by
 	\[
 		f(x) = c_0 + c_1 x + \ldots + c_k x^k
 	\]
@@ -416,7 +422,7 @@ Put it another way, a linear mapping is a \textbf{homomorphism} of additive grou
 \end{example}
 
 \begin{example}
-	Given the field of real numbers $\mathbb{R}$ and $V = \mathcal{C}(\mathbb{R})$, we define
+	Given the field of real numbers $\textbf{R}$ and $V = \mathcal{C}(\textbf{R})$, we define
 	\[
 		T(f(x)) = \int_0^x f(t) ~\mathrm{d}t
 	\]
@@ -480,7 +486,7 @@ How can we define linear transformations? The easiest way is to define its value
 \subsection{The Algebra of Linear Transformations}
 
 \begin{theorem}
-	Let $T, U : V \longrightarrow W$ be linear transformations. We define, for all $x \in V$ and $a \in \mathbb{F}$,
+	Let $T, U : V \longrightarrow W$ be linear transformations. We define, for all $x \in V$ and $a \in \textbf{F}$,
 	\begin{enumerate}
 		\item $(T+U)(x) = T(x) + U(x)$;
 		\item $(aT)(x) = aT(x)$.
@@ -490,13 +496,13 @@ How can we define linear transformations? The easiest way is to define its value
 \end{theorem}
 
 \begin{theorem}[Space of Linear Transformations]
-	Let $\mathcal{L}(V,W)$ be the set of all linear transformations from $V$ to $W$. Then $\mathcal{L}(V,W)$ is a vector space over the same field $\mathbb{F}$ with respect to the operations defined above.
+	Let $\hom_{\textbf{F}}(V,W)$ be the set of all linear transformations from $V$ to $W$. Then $\hom_{\textbf{F}}(V,W)$ is a vector space over the same field $\textbf{F}$ with respect to the operations defined above.
 
-	An alternative notation is $\mathcal{L}(V,W) = \hom_{\mathbb{F}}(V,W)$. When $V = W$, we write $\mathcal{L}(V)$.
+	An alternative notation is $\mathcal{L}(V,W) = \hom_{\textbf{F}}(V,W)$. When $V = W$, we write $\mathcal{L}(V)$ or $\text{end}_{\textbf{F}}(V)$.
 \end{theorem}
 
 \begin{theorem}
-	If $V$ is an $n$-dimensional vector space and $W$ is an $m$-dimensional vector space, both over $\mathbb{F}$, then the space $\mathcal{L}(V,W)$ has dimension $mn$.
+	If $V$ is an $n$-dimensional vector space and $W$ is an $m$-dimensional vector space, both over $\textbf{F}$, then the space $\mathcal{L}(V,W)$ has dimension $mn$.
 \end{theorem}
 
 % \begin{theorem}
@@ -512,13 +518,13 @@ How can we define linear transformations? The easiest way is to define its value
 \end{theorem}
 
 \begin{definition}[Linear Operator]
-	A \textbf{linear operator} is a linear transformation from a vector space to itself. It is also called an \textbf{endomorphism}. The set of linear operators on a vector space $V$ is denoted by $\mathcal{L}(V)$ or $\text{End}_{\mathbb{F}} (V)$.
+	A \textbf{linear operator} is a linear transformation from a vector space to itself. It is also called an \textbf{endomorphism}. The set of linear operators on a vector space $V$ is denoted by $\mathcal{L}(V)$ or $\text{End}_{\textbf{F}} (V)$.
 \end{definition}
 
 Remark that if $U$ and $T$ are linear operators on $V$, then the composition $U \circ T$ is also a a linear operator on $V$. The space $\mathcal{L}(V)$ has a `multiplication' defined on it by composition. The operator $T \circ U$ is also defined, but in general $UT \neq TU$, i.e., the \textbf{Lie bracket} $[U, T] = UT - TU \neq 0$.
 
 \begin{lemma}
-	Let $U, T_1$ and $T_2$ be linear operators on the vector space $V$ and $c \in \mathbb{F}$. The following affirmations hold.
+	Let $U, T_1$ and $T_2$ be linear operators on the vector space $V$ and $c \in \textbf{F}$. The following affirmations hold.
 	\begin{enumerate}
 		\item $IU = UI = U$;
 		\item $U(T_1 + T_2) = UT_1 + UT_2$ and $(T_1 + T_2)U = T_1 U + T_2 U$;
@@ -609,7 +615,7 @@ The set of invertible linear operators on a given space, with the operation of c
 Remark that isomophism is an equivalence relation in the family of vector spaces.
 
 \begin{theorem}
-	Every $n$-dimensional vector space over a field $\mathbb{F}$ is isomorphic to $\mathbb{F}^n$.
+	Every $n$-dimensional vector space over a field $\textbf{F}$ is isomorphic to $\textbf{F}^n$.
 \end{theorem}
 
 To convince yourself that this claim is true, it is enough to map every vector to its coordinates in a given basis.
@@ -629,7 +635,7 @@ Finally, note that the isomorphisms from a space to itself form a group with res
 \begin{definition}[Matrix Representation]
 	Let $V, W$ be vector spaces with ordered basis $\beta = \{ v_1, \ldots, v_n \}$ and $\gamma = \{ w_1, \ldots, w_m \}$, respectively.
 
-	Let $T : V \longrightarrow W$ be a linear transformation. Then the \textbf{matrix representation} of T with respect to $\beta$ and $\gamma$ is defined as the matrix $[T]_{\beta, \gamma} \in \mathbb{M}_{m \times n}(\mathbb{F})$ given by 
+	Let $T : V \longrightarrow W$ be a linear transformation. Then the \textbf{matrix representation} of T with respect to $\beta$ and $\gamma$ is defined as the matrix $[T]_{\beta, \gamma} \in \textbf{M}_{m \times n}(\textbf{F})$ given by 
 	\[
 		[T]_{\beta, \gamma} = \left(\begin{matrix}
 			\big| && \big| && && \big| \\
@@ -647,7 +653,7 @@ Finally, note that the isomorphisms from a space to itself form a group with res
 	\begin{enumerate}
 		\item $U = T$ iff. $[U]_{\beta,\gamma} = [T]_{\beta,\gamma}$;
 		\item $[T+U]_{\beta,\gamma} = [T]_{\beta,\gamma} + [U]_{\beta,\gamma}$;
-		\item $[aT]_{\beta,\gamma} = a[T]_{\beta,\gamma}$, for all $a \in \mathbb{F}$.
+		\item $[aT]_{\beta,\gamma} = a[T]_{\beta,\gamma}$, for all $a \in \textbf{F}$.
 	\end{enumerate}
 \end{theorem}
 
@@ -670,7 +676,7 @@ Finally, note that the isomorphisms from a space to itself form a group with res
 \end{theorem}
 
 \begin{definition}[Invertibility for a Matrix]
-	A matrix $A \in \mathbb{M}_{m \times n}(\mathbb{F})$ is \textbf{invertible} if there exists $B \in \mathbb{M}_{m \times n}(\mathbb{F})$ such that $AB = BA = I$.
+	A matrix $A \in \textbf{M}_{m \times n}(\textbf{F})$ is \textbf{invertible} if there exists $B \in \textbf{M}_{m \times n}(\textbf{F})$ such that $AB = BA = I$.
 \end{definition}
 
 \begin{theorem}
@@ -702,232 +708,3 @@ Finally, note that the isomorphisms from a space to itself form a group with res
 		B = P^{-1} A P
 	\]
 \end{definition}
-
-\subsection{Product and Quotient Spaces}
-
-\subsection{Dual Space}
-
-A concept that will help us in the study of subspaces, linear equations, and coordinates is the following.
-
-\begin{definition}[Linear Functional and Dual Space]
-	A linear transformation from the vector space $V$ to its scalar field $\mathbb{F}$ is called a \textbf{linear functional}.
-	
-	The set of linear functionals is denoted by $V^\ast$ and is called \textbf{dual space} of $V$. In other words, $V^\ast = \mathcal{L}(V, \mathbb{F})$.
-\end{definition}
-
-\begin{example}
-	Let $(c_1, \ldots, c_n) \in \mathbb{F}^n$ and define $f : \mathbb{F}^n \longrightarrow \mathbb{F}$ by 
-	\[
-		f(x_1, \ldots, x_n) = c_1 x_1 + \ldots + c_n x_n
-	\]
-	Then $f$ is a linear functional on $\mathbb{F}^n$.
-\end{example}
-
-\begin{example}[Trace]
-	If $A$ is an $n \times n$ matrix, the \textbf{trace} of $A$ is the scalar
-	\[
-		\text{tr } A = A_{11} + A_{22} + \ldots + A_{nn}
-	\]
-	
-	Remark that the trace function is a linear functional on the matrix space $\mathbb{M}_n$.
-\end{example}
-
-\begin{remark}
-	Suppose $V$ is finite-dimensional. Then the dimension of the dual space is equal to the dimension of the space.
-	\[
-		\dim V^\ast = \dim V
-	\]
-\end{remark}
-
-\begin{definition}[Dual basis]
-	If $\beta = \{ v_1, \ldots, v_n \}$ is a basis of $V$ then the \textbf{dual basis} of $\beta$ is the set $\beta^\ast = \{ f_1, \ldots, f_n \}$, where each $f_i$ is the linear functional on $V$ such that 
-	\[
-		f_i(v_j) = \delta_{ij}
-	\]
-\end{definition}
-
-\begin{theorem}
-	Let $V$ be a finite-dimensional vector space. Then the dual basis of a basis of $V$ is a basis of $V^\ast$.
-\end{theorem}
-
-\begin{proof}
-	Let $\beta = \{ v_1, \ldots, v_n \}$ be a basis for $V$. Then there exists a unique linear functional $f_i$ on $V$ such that
-	\[
-		f_i(v_j) = \delta_{ij}
-	\]
-	for each $i$.
-
-	With this process, we obtain $n$ distinct linear functionals $f_1, \ldots, f_n$ on $V$.
-
-	To show that $f_1, \ldots, f_n$ are linearly independent, suppose that $c_1, \ldots, c_n \in \mathbb{F}$ are such that
-	\[
-		c_1 f_1 + \ldots + c_n f_n = 0
-	\]
-	Since $(c_1 f_1 + \ldots + c_n f_n)(v_j) = c_j$ for each $j = 1, \ldots, n$, we know that $c_1 = \ldots = c_n = 0$. Hence, $f_1, \ldots, f_n$ is linearly independent.
-	
-	And given that $\dim V^\ast = n$, the set $\beta^\ast = \{ f_1, \ldots, f_n \}$ is a basis for $V^\ast$.
-\end{proof}
-
-\begin{theorem}
-	Let $\beta = \{ v_1, \ldots, v_n \}$ be a basis for a vector space $V$. Then there is a unique dual basis $\beta^\ast = \{ f_1, \ldots, f_n \}$ for $V^\ast$ such that $f_i (v_j) = \delta_{ij}$.
-	
-	For each linear functional $f$ on $V$ we have
-	\[
-		f = \sum_{i=1}^n f(v_i) f_i
-	\]
-	and for each vector $v \in V$ we have
-	\[
-		v = \sum_{i=1}^n f_i(v) v_i
-	\]
-\end{theorem}
-
-\begin{proof}
-	The last proof established that there is a unique basis which is `dual' to $\beta$. Let $f$ be a linear functional on $V$. Then $f$ is a linear combination of the $f_i$, so the scalars $c_j = f(v_j)$. Now, if
-	\[
-		v = \sum_{i=1}^n x_i v_i
-	\]
-	is a vector in $V$, then
-	\[
-		f_j(v) = \sum_{i=1}^n x_i f_j(v_i) = \sum_{i=1}^n x_i \delta_{ij} = x_j
-	\]
-	so $v$ has a unique expression as a linear combination of $v_i$ given by
-	\[
-		v = \sum_{i=1}^n f_i(v) v_i
-	\]
-\end{proof}
-
-Note that $f_i$ are coordinate functions for $\beta$, given that $f_i$ assigns to each vector $v \in V$ the $i$th coordinate of $v$ relative to the ordered basis $\beta$.
-
-How are linear functionals and subspaces related? If $f$ is a non-zero linear functional, then the rank of $f$ is one. And if $V$ is finite-dimensional, then by the \hyperref[thm:rank-null]{Rank–Nullity theorem}, the null space $N_f$ has dimension
-\[
-	\dim N_f = dim V - 1
-\]
-
-In a vector space of dimension $n$, a subspace of of dimension $n-1$ is called a \textbf{hyperspace}, which is sometimes called \textbf{hyperplanes} or \textbf{subspaces of codimension one}. The hyperspace is always the null space of a linear functional.
-
-In the infinite-dimensional case, let $W$ be a proper subspace of $V$. If there isn't a subspace $U$ such that $W \subsetneq U \subsetneq V$, then $W$ is a hyperplane.
-
-\begin{definition}[Annihilator]
-	Let $V$ be a vector space over $\mathbb{F}$ and $S$ a subset of $V$. Then the \textbf{annihilator} of S is the set $S^0$ of linear functionals $f$ on $V$ such that $f(v) = 0$ for every $v \in S$.
-	\[
-		S^0 = \{ f \in V^\ast : f(v) = 0, \, \forall v \in V \}
-	\]
-\end{definition}
-
-$S^0$ is a subspace of $V^\ast$. If $S = \{ 0 \}$, then $S^0 = V^\ast$. If $S = V$, then $S^0$ is the zero subspace of $V^\ast$.
-
-The next example shows an important procedure in the following proofs.
-
-\begin{example}
-	Let $\{ e_1, e_2, e_3, e_4, e_5 \}$ be the standard basis of $\mathbb{R}^5$ and $\{ f_1, f_2, f_3, f_4, f_5 \}$ be the dual basis of $\mathbb{R}^5$. Suppose
-	\[
-		W = \text{span}(e_1, e_2) = \{ (x_1, x_2, 0, 0, 0)  \in \mathbb{R}^5 : x_1, x_2 \in \mathbb{R} \}
-	\]
-	We show that $W^0 = \text{span}(f_3, f_4, f_5)$.
-
-	Recall that $f_j$ is the linear functional that selects the $j$th coordinate, i.e. $f_j(x_1, x_2, x_3, x_4, x_5) = x_j$.
-
-	First suppose $f \in \text{span}(f_3, f_4, f_5)$. Then there exist $c_3, c_4, c_5 \in \mathbb{R}$ such that $f = c_3 f_3 + c_4 f_4 + c_5 f_5$. If $(x_1, x_2, 0, 0, 0) \in W$, then 
-	\[
-		f(x_1, x_2, 0, 0, 0) = (c_3 f_3 + c_4 f_4 + c_5 f_5)(x_1, x_2, 0, 0, 0) = 0
-	\]
-	Hence $f \in W^0$. I.e., $\text{span}(f_3, f_4, f_5) \subset W^0$.
-
-	Now suppose $f \in W^0$. Since the dual basis is a basis of $(\mathbb{R}^5)^\ast$, there exist $c_1, \ldots, c_5 \in \mathbb{R}$ such that $f = c_1 f_1 + c_2 f_2 + c_3 f_3 + c_4 f_4 + c_5 f_5$. Because $e_1 \in W$ and $f \in W^0$, we have
-	\[
-		0 = f(e_1) = (c_1 f_1 + c_2 f_2 + c_3 f_3 + c_4 f_4 + c_5 f_5)(e_1) = c_1
-	\]
-
-	Similarly, $e_2 \in W$ and thus $c_2 = 0$. Since $e_3, e_4, e_5 \notin W$, $f = c_3 f_3 + c_4 f_4 + c_5 f_5$. Thus $f \in \text{span}(f_3, f_4, f_5)$, i.e., $W^0 \subset \text{span}(f_3, f_4, f_5)$.
-\end{example}
-
-The next theorem states that each $d$-dimensional subspace of an $n$-dimensional space is the intersection of the null spaces of $(n-d)$ linear functionals.
-
-\begin{theorem}
-	Let $V$ be a finite-dimensional vector space and let $W$ be a subspace of $V$. Then
-	\[
-		\dim W + \dim W^0 = \dim V
-	\]
-\end{theorem}
-
-\begin{proof}
-	Let $\{ v_1, \ldots, v_k \}$ be a basis for $W$ and choose vectors $\{ v_{k+1}, \ldots, v_n \in V$ to extend to a basis $\{ v_1, \ldots, v_n \}$ of $V$. And let $ \{ f_1, \ldots, f_n \}$ be the basis for $V^\ast$ which is dual to this basis for $V$. We show that $\{ f_{k+1}, \ldots, f_n \}$ is a basis for $W^0$.
-
-	For $i \geq k+1$, since $f_i(v_j) = \delta_{ij}$ and $\delta_{ij} = 0$ if $i \geq k+1$ and $j \leq k$, we know that $f_i$ belongs to $W^0$. Hence, for $i \geq k+1$,  $f_i(v) = 0$ whenever $v$ is a linear combination of $v_1, \ldots, v_k$.
-
-	Given that the functionals $f_{k+1}, \ldots, f_n$ are linearly independent, all we need to show is that they span $W^\ast$. Suppose $f \in V^\ast$. Now 
-	\[
-		f = \sum_{i=1}^n f(v_i)f_i
-	\]
-	implies that if $f \in W^0$, we have $f(v_i) = 0$ for $i \leq k$ and
-	\[
-		f = \sum_{i = k+1}^n f(v_i) f_i
-	\]
-
-	Therefore, $W^0$ has dimension $n-k$, as desired.
-\end{proof}
-
-The next corollary shows that if we select some select ordered basis for the space, each $k$-dimensional subspace can be described by specifying $(n-k)$ homogeneous linear conditions on the coordinates relative to that basis.
-
-\begin{corollary}
-	If $W$ is a $k$-dimensional subspace of an $n$-dimensional vector space $V$, then $W$ is the intersection of $(n-k)$ hyperspaces in $V$.
-\end{corollary}
-
-\begin{corollary}
-	If $W_1$ and $W_2$ are subspaces of a finite-dimensional vector space, then $W_1 = W_2$ iff. $W_1^0 = W_2^0$.
-\end{corollary}
-
-This theory provides a `dual' point of view on the system of equations, showing how annihilators are related to systems of homogeneous linear equations.
-
-\begin{example}
-	Let $W$ be the subspace of $\mathbb{R}^5$ spanned by the vectors $v_1 = (2, -2, 3, 4, -1)$, $v_2 = (-1, 1, 2, 5, 2)$, $v_3 = (0, 0, -1, -2, 3)$, and $v_4 = (1, -1, 2, 3, 0)$.
-
-	To find the annihilator $W^0$ of $W$, we first form a matrix $A$ with row vectors $v_1, v_2, v_3, v_4$ and find the row-reduced echelon matrix $R$ which is row-equivalent to $A$.
-	\[
-		A = \begin{bmatrix}
-			2 && -2 && 3 && 4 && -1 \\
-			-1 && 1 && 2 && 5 && 2 \\
-			0 && 0 && -1 && -2 && 3 \\
-			1 && -1 && 2 && 3 && 0
-		\end{bmatrix}
-		\longrightarrow
-		R = \begin{bmatrix}
-			1 && -1 && 0 && -1 && 0 \\
-			0 && 0 && 1 && 2 && 0 \\
-			0 && 0 && 0 && 0 && 1 \\
-			0 && 0 && 0 && 0 && 0
-		\end{bmatrix}
-	\]
-
-	Now, if $f$ is a linear functional on $\mathbb{R}^5$, 
-	\[
-		f(x_1, \ldots, x_5) = \sum_{j=1}^5 c_j x_j
-	\]
-	and $f$ is in $W^0$ iff. $f(v_i) = 0$, for $i = 1,2,3,4$.
-	
-	This is equivalent to $Ac = 0$, where $c = (c_1, c_2, c_3, c_4, c_5)^t$. Which is, in turn, equivalent to $Rc = 0$. Or simply
-	\begin{equation*}
-		\begin{aligned}
-			c_1 - c_2 - c_4 = 0 \\
-			c_3 + 2 c_4 = 0 \\
-			c_5 = 0
-		\end{aligned}
-	\end{equation*}
-
-	By setting $c_2 = a$ and $c_4 = b$, we have $c_1 = a+b$, $c_3 = -2b$, $c_5 = 0$. So $W^0$ consists of all linear functionals of the form
-	\[
-		f(x_1, x_2, x_3, x_4, x_5) = (a+b)x_1 + ax_2 - 2bx_3 + bx_4
-	\]
-
-	The dimension of $W^0$ is two and a basis $\{ f_1, f_2 \}$ for it can be found by setting $a = 1, b = 0$, and then $a = 0, b = 1$:
-	\begin{equation*}
-		\begin{aligned}
-			f_1(x_1, \ldots, x_5) &= x_1 + x_2 \\
-			f_2(x_1, \ldots, x_5) &= x_1 - 2x_3 + x_4
-	\end{aligned}
-\end{equation*}
-	And the general form of $f \in W^0$ is $f = a f_1 + bf_2$.
-\end{example}
-
-\subsection{Double dual}
-

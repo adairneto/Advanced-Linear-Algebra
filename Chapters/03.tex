@@ -1,0 +1,67 @@
+\chapter{Polynomials}
+
+\section{Algebras}
+
+\begin{definition}[Linear algebra over a field]
+	Let $\textbf{F}$ be a field. A \textbf{linear algebra over the field $\textbf{F}$} is a vector space $V$ over $\textbf{F}$ with an additional operation called \textbf{multiplication of vectors}, which associates with each pair of vectors $u, v \in V$ a vector $uv \in V$ in such a way that 
+	\begin{enumerate}
+		\item Multiplication is associative, $u(vw) = (uv)w$;
+		\item Is distributive with respect to addition, $u(v+w) = uv + uw$ and $(u+v)w = uw + vw$;
+		\item For each $a \in \textbf{F}$, $a(uv) = (au)v = a(uv)$.
+	\end{enumerate}
+	
+	If there is an element $1 \in V$ such that $1v = v1 = v$ for all $v \in V$, then $V$ is a \textbf{linear algebra with identity over $\textbf{F}$}. The algebra $V$ is called \textbf{commutative} if $uv = vu$ for all $u,v \in V$.
+\end{definition}
+
+\begin{example}[Algebra of formal power series]
+	$\textbf{F}^\infty$
+	\[
+		f = \sum_{n=0}^\infty f_n x^n
+	\]
+	where $f = (f_0, f_1, f_2, \ldots)$ is a sequence. $x = (0,1,0,\ldots,0,\ldots)$, and $x^n$ is equal to one at the $n$th position (recall that the index starts at zero) and zero elsewhere. 
+\end{example}
+
+\section{The Algebra of Polynomials}
+
+\begin{definition}[Polynomial]
+	Let $\textbf{F}[x]$ be the subspace of $\textbf{F}^\infty$ spanned by the vectors $1, x, x^2, \ldots$. An element of $\textbf{F}[x]$ is called a \textbf{polynomial} over $\textbf{F}$.
+	
+	The \textbf{degree} of a polynomial, denoted by $\deg F$, is the largest integer $n$ such that $f_n \neq 0$ and such that $f_k = 0$ for all integers $k > n$. If $f$ is a non-zero polynomial of degree $n$, then it can be written as
+	\[
+		f = f_0 x^0 + x_1 x + f_2 x^2 + \ldots + f_n x^n
+	\]
+\end{definition}
+
+\begin{theorem}
+	Let $f$ and $g$ be non-zero polynomials over $\textbf{F}$. Then,
+	\begin{enumerate}
+		\item $fg$ is a non-zero polynomial;
+		\item $\deg ~(fg) = \deg ~f + \deg ~g$;
+		\item $fg$ is a monic polynomial if both $f$ and $g$ are monic polynomials;
+		\item $fg$ is a scalar polynomial if and only if both $f$ and $g$ are scalar polynomials;
+		\item If $f + g \neq 0$, then $\deg ~(f+g) \leq \max (\deg ~f, \deg ~g)$.
+	\end{enumerate}
+\end{theorem}
+
+\begin{corollary}
+	The set of all polynomials over a given field is a commutative linear algebra with identity.
+\end{corollary}
+
+\begin{corollary}
+	Suppose $f, g$, and $h$ are polynomials such that $f \neq 0$ and $fg = fh$. Then $g=h$.
+\end{corollary}
+
+\begin{definition}
+	We shall denote the identity of a linear algebra $A$ by $1$ and make the convention that $v^0 = 1$ for all $v \in A$. Then to each polynomial $f = \sum_{i=0}^n f_i x^i$ and $v \in A$, we associate an element $f(v) \in A$ by the rule
+	\[
+		f(v) = \sum_{i=0}^n f_i v^i
+	\]
+\end{definition}
+
+\begin{theorem}
+	Let $A$ be a linear algebra with identity. Suppose $f$ and $g$ are polynomials, $v \in A$ and $a$ is a scalar. Then
+	\begin{enumerate}
+		\item $(cf+g)(v) = cf(v) + g(v)$;
+		\item $(fg)(v) = f(v)g(v)$.
+	\end{enumerate}
+\end{theorem}
