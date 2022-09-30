@@ -1,0 +1,23 @@
+\begin{thebibliography}{Rom05}
+
+\bibitem[HK71]{hoffman1971linear}
+Kenneth Hoffman and Ray Kunze.
+\newblock {\em Linear Algebra}.
+\newblock 1971.
+
+\bibitem[Mir20]{miranda2020avancada}
+Daniel Miranda.
+\newblock {\em Álgebra Linear Avançada}.
+\newblock Notas de Aula, 2020.
+
+\bibitem[Rom05]{roman2005advanced}
+Steven Roman.
+\newblock {\em Advanced Linear Algebra}.
+\newblock Springer, 2005.
+
+\bibitem[YIK89]{kostrikin1989linear}
+Manin Yu~I and Alexei~I Kostrikin.
+\newblock {\em Linear Algebra and Geometry}.
+\newblock CRC Press, 1989.
+
+\end{thebibliography}

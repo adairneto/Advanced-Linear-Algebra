@@ -1,0 +1,40 @@
+\titlecontents{chapter}[0pc]
+{\addvspace{30pt}}%
+{\begin{tikzpicture}[remember picture, overlay]%
+\draw[fill=BlueViolet!80,draw=BlueViolet!80] (-4,-.2) rectangle (-0.5,.5);%
+\pgftext[left,x=-3.6cm,y=0.2cm]{\color{white}\Large\sc\bfseries chapter\                                             
+\thecontentslabel};%
+\end{tikzpicture}\color{BlueViolet!90}\large\sc\bfseries}
+{\color{BlueViolet!90}\large\sc\bfseries}
+{\color{BlueViolet!90}\;\titlerule\;\large\sc\bfseries Page \thecontentspage
+\begin{tikzpicture}[remember picture, overlay]
+\draw[fill=BlueViolet!70,draw=BlueViolet!70] (2pt,0) rectangle (6,0.1pt);
+\end{tikzpicture}}%
+
+\titlecontents{section}[2.4pc]
+{\addvspace{1pt}}
+{\contentslabel[\thecontentslabel]{2.4pc}}
+{}
+{\dotfill\small \thecontentspage}
+[]
+\titlecontents{subsection}[5pc]
+{\addvspace{1pt}}
+{\contentslabel[\thecontentslabel]{2.4pc}}
+{}
+{\dotfill\small \thecontentspage}
+[]
+\makeatletter
+
+\renewcommand{\tableofcontents}{%
+\chapter*{%
+\vspace*{-20\p@}%
+\begin{tikzpicture}[remember picture, overlay]%
+\pgftext[right,x=14.84cm,y=0.2cm]{\color{BlueViolet!80}\Huge\sc\bfseries    
+\contentsname};%
+\draw[fill=BlueViolet!80,draw=BlueViolet!80] (13,-.75) rectangle (20,1);%
+\clip (13,-.75) rectangle (20,1);
+\pgftext[right,x=14.84cm,y=0.2cm]{\color{white}\Huge\sc\bfseries 
+\contentsname};%
+\end{tikzpicture}}%
+\@starttoc{toc}}
+\makeatother

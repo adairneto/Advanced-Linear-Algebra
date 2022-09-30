@@ -1,0 +1,52 @@
+This is BibTeX, Version 0.99d (TeX Live 2022/Arch Linux)
+Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
+The top-level auxiliary file: Main.aux
+A level-1 auxiliary file: Chapters/01.aux
+A level-1 auxiliary file: Chapters/02.aux
+A level-1 auxiliary file: Chapters/04.aux
+A level-1 auxiliary file: Chapters/05.aux
+The style file: alpha.bst
+Database file #1: Main.bib
+Warning--empty publisher in hoffman1971linear
+You've used 4 entries,
+            2543 wiz_defined-function locations,
+            582 strings with 4821 characters,
+and the built_in function-call counts, 1217 in all, are:
+= -- 103
+> -- 54
+< -- 2
++ -- 16
+- -- 16
+* -- 68
+:= -- 217
+add.period$ -- 12
+call.type$ -- 4
+change.case$ -- 18
+chr.to.int$ -- 4
+cite$ -- 5
+duplicate$ -- 62
+empty$ -- 101
+format.name$ -- 22
+if$ -- 243
+int.to.chr$ -- 1
+int.to.str$ -- 0
+missing$ -- 8
+newline$ -- 23
+num.names$ -- 12
+pop$ -- 37
+preamble$ -- 1
+purify$ -- 26
+quote$ -- 0
+skip$ -- 44
+stack$ -- 0
+substring$ -- 28
+swap$ -- 4
+text.length$ -- 2
+text.prefix$ -- 2
+top$ -- 0
+type$ -- 16
+warning$ -- 1
+while$ -- 10
+width$ -- 6
+write$ -- 49
+(There was 1 warning)
