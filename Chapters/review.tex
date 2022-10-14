@@ -1,0 +1,906 @@
+\chapter{Review}
+
+In this chapter, we'll proceed with an overview of elementary linear algebra, covering the definition of vector spaces, bases and coordinates, linear transformations and matrices, rank, nullity, inner product, normal and self-adjoint operators, and diagonalization. The proofs in this chapter will be skipped.
+
+\section{Vector Spaces}
+
+\begin{quote}
+	Loosely speaking, linear algebra is that branch of mathematics which treats the common properties of algebraic systems which consist of a set, together with a reasonable notion of a `linear combination' of elements in the set.
+\end{quote}
+
+\begin{definition}[Vector Space]
+	A \textbf{vector space} (or \textbf{linear space}) $V$ over a field $\mathbb{F}$ is a set with a binary operation `$+$' on $V$ (called \textbf{addition}) and an action `$\cdot$' of $\mathbb{F}$ on $V$ (called \textbf{scalar multiplication}) such that, for any $x,y \in V$ and $a, b \in \mathbb{F}$, $x+y \in V$ (closed under addition) and $a\cdot x \in V$ (invariant under scalar multiplication) satisfying:
+	\begin{enumerate}
+		\item $x+y = y+x$.
+		\item $(x+y)+z = x + (y+z)$.
+		\item There exists $0 \in V$ such that $x+ 0 = x$ for all $x \in V$.
+		\item For all $x \in V$, there exists $y \in V$ such that $x+y = 0$.
+		\item There exists $1 \in \mathbb{F}$ such that $1 \cdot x = x$ for all $x \in V$. 
+		\item $a \cdot (b \cdot x) = (a \cdot b) \cdot x$. 
+		\item $a \cdot (x + y) = a \cdot x + a \cdot y$.
+		\item $(a+b)\cdot x = a \cdot x + b \cdot x$.
+	\end{enumerate}
+	
+	We'll refer to the elements of $V$ as \textbf{vectors} and to the elements of $\mathbb{F}$ as \textbf{scalars}.
+\end{definition}
+
+In the following pages, we'll use $V$ to denote a vector space and $\mathbb{F}$ to denote a field. And `iff.' means `if and only if'.
+
+\begin{example}[Some Vector Spaces]\hfill
+	\begin{enumerate}
+		\item The \textbf{zero-dimensional space}. The set $V = \{ 0 \}$ under some field $\mathbb{F}$.
+		\item The \textbf{field $\mathbb{F}$ as a one-dimensional coordinate space}. A field (e.g. $\mathbb{C}$) can be interpreted as a vector space of a subfield of it (e.g. $\mathbb{R}$).
+		\item The \textbf{$n$-tuple space $\mathbb{F}^n$}.
+		\item The \textbf{space of $m \times n$ matrices $\mathbb{F}^{m \times n}$}.
+		\item \textbf{Function spaces $F(S)$}. Which maps $S$ into the field $\mathbb{F}$.
+		\item The \textbf{space of polynomial functions over a field $\mathbb{F}$}.
+	\end{enumerate}
+\end{example}
+
+Some immediate conclusions follow from this definition.
+
+\begin{lemma}[Basic Properties]
+	For all $x \in V$ and $a \in \mathbb{F}$, the following properties hold:
+	\begin{enumerate}
+		\item $\underset{\in \mathbb{F}}{0} \cdot x = \underset{\in V}{0}$
+		\item $\underset{\in \mathbb{F}}{(-a)} \cdot x = - \underset{\in V}{(a \cdot x)} = a \cdot \underset{\in V}{(-x)}$
+		\item $a \cdot \underset{\in V}{0} = \underset{\in V}{0}$
+	\end{enumerate}
+\end{lemma}
+
+The basic motivation of Linear Algebra is to solve systems of linear equations. The concept of linear combination is of essential character in solving these systems and inspires the definition of matrix multiplication and linear transformations.
+
+\begin{definition}[Linear combinations]
+	Let $S \subseteq V$, $S \neq \varnothing$.
+	
+	A vector $v \in V$ is a \textbf{linear combination} of $S$ if it can be written as
+	\[
+		v = a_1 u_1 + a_2 u_2 + \ldots + a_n u_n = \sum_{i=1}^n a_i u_i
+	\]
+	for some vectors $u_1, \ldots, u_n \in S$ and scalars $a_1, \ldots, a_n \in \mathbb{F}$.
+\end{definition}
+
+\subsection{Subspaces}
+
+\begin{definition}[Subspace]
+	Let $V$ be a vector space over a field $\mathbb{F}$. A subset $W \subseteq V$ is a \textbf{subspace} of $V$ if $W$ is itself a vector space with respect to the addition and scalar multiplication on $V$.	
+\end{definition}
+
+\begin{theorem}[Criteria for Subspaces]
+	Let $W \subseteq V$. Then $W$ is a subspace of $V$ iff.
+	\begin{enumerate}
+		\item $0 \in W$.
+		\item $x+y \in W$ for all $x,y \in W$ (closed under addition).
+		\item $c \cdot x \in W$ for all $c \in \mathbb{F}$ and $x \in W$ (closed under scalar multiplication).
+	\end{enumerate}
+\end{theorem}
+
+However, we can simplify this check a little more.
+
+\begin{theorem}[New Criteria for Subspaces]
+	Let $W \subseteq V$. Then $W$ is a subspace of $V$ iff. for any $x, y \in W$ and $c \in \mathbb{F}$, we have that $cx+y \in W$.
+\end{theorem}
+
+The conditions that an arbitrary vector in $V$ must satisfy in order to belong to $W$ are called \textbf{linear conditions}. A combination of linear conditions is also a linear condition. In other words, we have the next theorem.
+
+\begin{theorem}[Intersection of subspaces is a subspace]
+	If $W_1, \ldots, W_n$ are subspaces of $V$, then $W = \bigcap_{i=1}^n W_i$ is also a subspace of $V$. 
+\end{theorem}
+
+\begin{definition}[Span]
+	Let $S \subseteq V$. The \textbf{subspace spanned} by $S$ (or \textbf{span} of $S$), denoted by $\text{Span}(S)$, is the intersection of all subspaces of $V$ which contain $S$.
+	
+	We define the $\text{Span}(\varnothing) = \{ 0 \}$.
+\end{definition}
+
+The following theorem gives an equivalent definition.
+
+\begin{theorem}[Equivalent Definition for Span]
+	The \textbf{span} of $S$ is the subset of $V$ consisting of all linear combinations of $S$.
+	\[
+		\text{Span}(S) = \{ a_1 u_1 + \ldots + a_n u_n : n \in \mathbb{N}, a_i \in \mathbb{F}, u_i \in S \}
+	\]
+\end{theorem}
+
+\begin{theorem}[Properties of the Span]
+	Let $S$ be any subset of $V$, not necessarily a subspace. Then,
+	\begin{enumerate}
+		\item $\text{Span}(S)$ is a subspace of $V$.
+		\item Any subspace of $V$ containing $S$ also must contain $\text{Span}(S)$.
+	\end{enumerate}
+\end{theorem}
+
+\begin{definition}[Generation of Spaces]
+	Let $S \subseteq V$. We say that $S$ \textbf{generates} (or \textbf{spans}) $V$ if $\text{Span}(S) = V$.
+\end{definition}
+
+\subsection{Bases and Dimension}
+
+\begin{definition}[Linear Dependence]
+	A subset $S$ of $V$ is \textbf{linearly dependent} if there exists a finite number of distinct vectors $u_1, \ldots, u_n \in S$ and scalars $a_1, \ldots, a_n \in \mathbb{F}$, with at least one $a_i \neq 0$, such that 
+	\[
+		a_1 u_1 + \ldots + a_n u_n = 0
+	\]
+
+	And $S \subseteq V$ is \textbf{linearly independent} if it is not linearly dependent, i.e., no non-trivial linear combination of $u_1, \ldots, u_n$ vanishes.
+\end{definition}
+
+\begin{theorem}[Criteria for Linear Dependence]
+	Let $S_1 \subseteq S_2 \subseteq V$. 
+	\begin{enumerate}
+		\item If $S_1$ is linearly dependent, then $S_2$ is also linearly dependent. 
+		\item If $S_2$ is linearly independent, then $S_1$ is also linearly independent. 
+		\item Let $S \subseteq V$ be linearly independent, and $v \in V$ such that $v \not\in S$. Then, $S \cup \{ v \}$ is linearly dependent iff. $v \in \text{Span}(S)$.
+	\end{enumerate}
+\end{theorem}
+
+\begin{definition}[Basis]
+	A \textbf{basis} for $V$ is a subset of $V$ which is both linearly independent and generates $V$.
+\end{definition}
+
+\begin{example}
+	Let $S$ be the subset of $\mathbb{F}^n$ containing
+	\begin{equation*}
+		\begin{aligned}
+			e_1 &= (1, 0, 0, \ldots, 0) \\
+			e_2 &= (0, 1, 0, \ldots, 0) \\
+			\vdots \\
+			e_n &= (0, 0, 0, \ldots, 1) \\
+		\end{aligned}
+	\end{equation*}
+	
+	Clearly, these vectors span $\mathbb{F}^n$ and are linearly independent. Then this set is a basis for $\mathbb{F}^n$ and is called the \textbf{standard basis} of $\mathbb{F}^n$.
+\end{example}
+
+An alternative characterization of vector spaces is given by the following theorem.
+
+\begin{theorem}
+	A subset of vectors $\{ u_1, \ldots, u_n \}$ of $V$ is a basis iff. every $v \in V$ can be uniquely written in the form
+	\[
+		v = a_1 u_1 + \ldots + a_n u_n 
+	\]
+	for some $a_i \in \mathbb{F}$.
+\end{theorem}
+
+%\begin{theorem}[Existence of basis]
+%	If $V$ is generated (or spanned) by a finite subset $S \subseteq V$, then some subset of $S$ is a basis of $V$.
+%\end{theorem}
+
+\begin{theorem}[Replacement Theorem]
+	Let $V$ be a vector space generated by $G \subseteq V$ with $|G| = n$, and $L$ be a linearly independent subset of $V$, $|L| = m$. Then $m \leq n$, and there exists $H \subseteq G$ such that $|H| = n-m$ and $L \cup H$ generates $V$.
+\end{theorem}
+
+In other words, if $V$ is a vector space spanned by a finite set of vectors $u_1, \ldots, u_n$, then any independent set of vectors in $V$ is finite and contains no more than $n$ elements.
+
+The next theorem guarantees that every basis has the same cardinality, i.e., the number of elements in the basis does not depend on the basis.
+
+\begin{theorem}
+	If $V$ is a finitely generated vector space, then every basis of $V$ has the same number of elements in it.
+\end{theorem}
+
+\begin{definition}[Dimension]
+	If $V$ is a finitely generated vector space, we define the \textbf{dimension} of $V$, denoted $\dim(V)$, as the cardinality of a basis for $V$.
+\end{definition}
+
+\begin{corollary}
+	Let $n = \dim V < \infty$. Then
+	\begin{enumerate}
+		\item Any subset of $V$ which contains more than $n$ vectors is linearly dependent.
+		\item No subset of $V$ which contains fewer than $n$ vectors can span $V$.
+	\end{enumerate}
+\end{corollary}
+
+\begin{lemma}
+	Let $S$ be a linearly independent subset of a vector space $V$. If $v \in V$ is not in the subspace spanned by $S$, then the set obtained by adjoining $v$ to $S$ is linearly independent.
+\end{lemma}
+
+\begin{theorem}
+	If $W$ is a subspace of a finite-dimensional vector space $V$, every linearly independent subset of $W$ is finite and is a part of a finite basis for $W$.
+\end{theorem}
+
+A corollary of this theorem is that proper subspaces have smaller dimension.
+
+\begin{corollary}[Monotonicity of dimension]
+	Let $W$ be a subspace of $V$ with $\dim(V) < \infty$. Then \[ \dim(W) \leq \dim(V) \] If the equality $\dim(W) = \dim(V)$ holds, then $V = W$.
+\end{corollary}
+
+\begin{corollary}[Extension of a basis]
+	If $W = \{ w_1, \ldots, w_m \}$ is a linearly independent set of vectors in a finite-dimensional vector space $V$, then there exists a basis of $V$ that contains $W$.
+\end{corollary}
+
+\begin{corollary}
+	Let $A \in \textbf{M}_n(\mathbb{F})$ and suppose that the row vectors of $A$ form a linearly independent set of vectors in $\mathbb{F}^n$. Then $A$ is invertible.
+\end{corollary}
+
+\begin{theorem}
+	If $W_1$ and $W_2$ are both finite-dimensional subspaces of $V$, then $W_1 + W_2$ is finite-dimensional and 
+	\[
+	    \dim W_1 + \dim W_2 = \dim (W_1 \cap W_2) + \dim (W_1 + W_2)
+	\]
+\end{theorem}
+
+\begin{definition}[Maximal]\label{def:maximal}
+	Let $E = \{ v_1, \ldots, v_n \}$ be a set of vectors in $V$ and let $F = \{ v_{i_1}, \ldots, v_{i_m} \}$ be a linearly independent subset of $E$. If every element in $E$ can be expressed as a linear combination of the elements of $F$, then $F$ is said to be \textbf{maximal}.
+\end{definition}
+
+The number of elements in a maximal subset equals the dimension of the span of $E$ and is called the \textbf{rank}.
+
+\begin{definition}[Flags]
+	A sequence of subspaces $V_0 \subset V_1 \subset \ldots \subset V_n$ of the space $V$ is said to be a \textbf{flag}.
+
+	More generally, a sequence of subsets $S_0 \subset S_1 \subset \ldots \subset S_n$ is called \textbf{increasing filtering}.
+
+	A flag is said to be \textbf{maximal} if $V_0 = \{ 0 \}$, $\bigcup V_i = V$ and there's no subspace between other two, i.e., if $V_i \subset M \subset V_{i+1}$ then either $V_i = M$ or $V_{i+1} = M$. 
+\end{definition}
+
+Notice that given any basis $\{ u_1, \ldots, u_n \}$ of $V$, we can construct a flag by setting $V_0 = \{ 0 \}$ and $V_i = \text{span}(\{ u_1, \ldots, u_i \})$ for $i \geq 1$.
+
+\begin{theorem}
+	The dimension of a vector space $V$ equals the length of any maximal flag of $V$.
+\end{theorem}
+
+The next theorem is an example of application of Zorn's lemma.
+
+\begin{theorem}
+	Every vector space has a basis.
+\end{theorem}
+
+\subsection{Coordinates}
+
+The coordinates of a vector relative to a basis will be the coefficients that are used to represent the vector as a linear combination of the vectors in the basis. For example, if $(v_1, \ldots v_n)$ is an arbitrary vector in $\mathbb{R}^n$ and $e_1, \ldots, e_n$ is the standard basis for $\mathbb{R}^n$, then we express
+\[
+	v = (v_1, \ldots, v_n) = \sum_{i=1}^n v_i e_i
+\]
+
+However, for this expression to be adequately defined, the vectors in the basis must be ordered. To put it another way, we must look at our basis as a sequence instead of a set to distinguish its $i$-th element.
+
+\begin{definition}[Ordered Basis]
+	Let $\dim(V) < \infty$. An \textbf{ordered basis} for $V$ is a basis for $V$ with a fixed order on its vectors. 
+\end{definition}
+
+With this definition, we say that $v_i$ is the $i$th \textbf{coordinate of $v$ relative to the ordered basis}. And we use $[ v ]_\beta$ to denote the coordinates of $v$ concerning the ordered basis $\beta$. More precisely,
+
+\begin{definition}[Coordinates]
+	Let $\beta = \{ v_1, \ldots, v_n \}$ be an ordered basis for $V$. Then any vector $x \in V$ can be written uniquely as
+	\[
+		x = a_1 v_1 + \ldots + a_n v_n
+	\]
+	for $a_1, \ldots, a_n \in \mathbb{F}$. 
+
+	We define the \textbf{coordinate vector} as 
+	\[
+		[x]_\beta = \left[ \begin{matrix}
+			a_1 \\
+			a_2 \\
+			\vdots \\
+			a_n
+			\end{matrix}\right] \in \mathbb{F}^n
+	\]
+\end{definition}
+
+Now, what happens with the coordinates when we change from one basis to another?
+
+Let $\beta = \{ \beta_1, \ldots, \beta_n \}$ and $\gamma = \{ \gamma_1, \ldots, \gamma_n \}$ be two ordered bases for the finite-dimensional space $V$. And notice that we can write every vector of the basis $\gamma$ as a linear combination of the vectors of $\beta$ as follows:
+\[ \gamma_1 = a_{11}\cdot \beta_1 + a_{21}\cdot \beta_2 + \ldots + a_{n1}\cdot \beta_n \]
+\[ \gamma_2 = a_{12}\cdot \beta_1 + a_{22}\cdot \beta_2 + \ldots + a_{n2}\cdot \beta_n \]
+\[ \vdots \]
+\[ \gamma_n = a_{1n}\cdot \beta_1 + a_{2n}\cdot \beta_2 + \ldots + a_{nn}\cdot \beta_n \]
+where each $a_{ij}$ is a scalar.
+
+Thus, for each $i \in \{1, 2, \ldots, n \}$, the coordinates vector of $\gamma_i$ in the basis $\beta$ is given by
+\[
+	[\gamma_i]_\beta =
+	\begin{bmatrix} 
+	a_{1i} \\
+	a_{2i} \\
+	\vdots \\
+	a_{ni} \\
+	\end{bmatrix}
+\]
+
+With this algorithm, we obtain the coordinates of each vector in the basis $\gamma$ concerning the basis $\beta$. And we form the \textbf{transition matrix}, also called \textbf{change-of-basis matrix}, from $\beta$ to $\gamma$:
+\[
+P_{\beta \to \gamma} =
+	\begin{bmatrix} 
+	a_{11} && \ldots && a_{1n} \\
+	a_{21} && \ldots && a_{2n} \\
+	\vdots && \ddots && \vdots \\
+	a_{n1} && \ldots && a_{nn} \\
+	\end{bmatrix}
+\]
+
+Note that each column is formed by the coordinates of $\gamma_1, \ldots, \gamma_n$ with respect to the basis $\beta$.
+
+\begin{theorem}
+	Let $V$ be an $n$-dimensional vector space and let $\beta = \{ u_1, \ldots, u_n \}$ and $\gamma = \{ u_1', \ldots, u_n' \}$ be two ordered bases of $V$. Then there is a unique and invertible $n \times n$ matrix $P$ such that 
+	\begin{enumerate}
+		\item $[u]_\beta = P[u]_\gamma$,
+		\item $[u]_\gamma = P^{-1}[u]_\beta$,
+	\end{enumerate}
+	for every vector $u \in V$. And the columns of $P$ are given by 
+	\[
+		P_j = [u_j']_\beta, \, \, j = 1, \ldots, n
+	\]
+\end{theorem}
+
+\begin{example}[Change of basis]
+Consider $\beta$ the standard basis of $\mathbb{R}^3$ and \[ \gamma = \{(1,0,1),(1,1,1),(1,1,2)\}\] Find the transition matrix $P_{\gamma \to \beta}$.
+
+\textbf{Solution:} The first step is to write each vector of $\beta$ as a linear combination of the vectors of $\gamma$. I.e.,
+	\begin{equation*}
+		\begin{aligned}
+		(1,0,0) &= a_{11} \cdot (1,0,1) + a_{21} \cdot (1,1,1) + a_{31} \cdot (1,1,2) \\
+		&= 1 \cdot (1,0,1) + 1 \cdot (1,1,1) - 1 \cdot (1,1,2)
+		\end{aligned}
+	\end{equation*}
+	\begin{equation*}
+		\begin{aligned}
+		(0,1,0) &= a_{12} \cdot (1,0,1) + a_{22} \cdot (1,1,1) + a_{32} \cdot (1,1,2) \\
+		&= -1 \cdot (1,0,1) + 1 \cdot (1,1,1) + 0 \cdot (1,1,2)
+		\end{aligned}
+	\end{equation*}
+	\begin{equation*}
+		\begin{aligned}
+		(0,0,1) &= a_{13} \cdot  (1,0,1) + a_{23} \cdot  (1,1,1) + a_{33}  \cdot (1,1,2) \\
+		&= 0 \cdot (1,0,1) - 1 \cdot (1,1,1) + 1 (1,1,2)
+		\end{aligned}
+	\end{equation*}
+
+With these values, we form the transition matrix:
+\[
+P_{\gamma \to \beta} =
+	\begin{bmatrix}
+	a_{11} & a_{12} & a_{13} \\
+	a_{21} & a_{22} & a_{23} \\
+	a_{31} & a_{32} & a_{33}
+	\end{bmatrix}
+	=
+	\begin{bmatrix}
+	1 & -1 & 0 \\
+	1 & 1 & -1 \\
+	-1 & 0 & 1
+	\end{bmatrix}
+	\]
+\end{example}
+
+Another way of solving the above example is using the previous theorem. First, form a matrix $P$ whose $i$th column is the $i$th element of the basis $\gamma$. Second, find the inverse $P^{-1}$. Finally, the $i$th column of $P^{-1}$ gives the coordinate of the $i$th vector of the standard basis in the basis $\gamma$.
+
+\subsection{The Row and Column Spaces of a Matrix}
+
+Before heading to next section, we introduce some useful nomenclature and results.
+
+\begin{definition}[Row Space]
+	Let $A$ be an $m \times n$ matrix over the field $\mathbb{F}$. We define the \textbf{row space} as the subspace of $\mathbb{F}^n$ generated by the rows of $A$. The dimension of the row space is called \textbf{row rank}.
+\end{definition}
+
+\begin{theorem} \hfill
+	\begin{enumerate}
+		\item Row-equivalent matrices have the same row space.
+		\item The non-zero lines of a row-reduced echelon matrix form a basis for its row space.
+		\item If $W$ is a subspace of $\mathbb{F}^n$ such that $\dim W \leq m$, then there exists a unique row-reduced echelon matrix $m \times n$ over $\mathbb{F}$ whose row space is $W$.
+		\item Every matrix is row-equivalent to one, and only one, row reduced echelon matrix.
+		\item Two matrices are row-equivalent iff. they have the same row space.
+	\end{enumerate}
+\end{theorem}
+ 
+\section{Linear Transformations}
+
+In plain words, a linear transformation (or linear mapping) is a function from a vector space to another which preserves the structure of a vector space. More precisely,
+
+\subsection{Basic Definitions}
+
+\begin{definition}[Linear Transformation]
+	Let $V$ and $W$ be two vector spaces over the same field $\mathbb{F}$. A \textbf{linear transformation} $T : V \longrightarrow W$ is a function satisfying:
+	\begin{enumerate}
+		\item $T(x+y) = T(x) + T(y)$, for all $x,y \in V$.
+		\item $T(c x) = c T(x)$, for all $x \in V$, $c \in \mathbb{F}$.
+	\end{enumerate}
+\end{definition}
+
+Put it another way, a linear mapping is a \textbf{homomorphism} of additive groups.
+
+\begin{theorem}[Properties] \hfill
+	\begin{enumerate}
+		\item If $T$ is a linear transformation, then $T(0) = 0$.
+		\item $T\left( \sum_{i=1}^n a_i x_i \right) = \sum_{i=1}^n  a_i T(x_i)$ for all $x_i \in V$, $a_i \in \mathbb{F}$.
+		\item A function $T : V \longrightarrow W$ is a linear transformation iff. $T(cx+y) = cT(x) + T(y)$ for all $x, y \in V$, $c \in \mathbb{F}$.
+	\end{enumerate}
+\end{theorem}
+
+\begin{example}
+	Let $\mathbb{F}$ be a field and $V$ be the space of polynomial functions $f : \mathbb{F} \longrightarrow \mathbb{F}$ given by
+	\[
+		f(x) = c_0 + c_1 x + \ldots + c_k x^k
+	\]
+	
+	Define
+	\[
+		(Df)(x) = c_1 + 2 c_2 x + \ldots + k c_k x^{k-1}
+	\]
+
+	Then $D$ is a linear transformation called the differentiation operator.
+\end{example}
+
+\begin{example}
+	Given the field of real numbers $\mathbb{R}$ and $V = \mathcal{C}(\mathbb{R})$, we define
+	\[
+		T(f(x)) = \int_0^x f(t) ~\mathrm{d}t
+	\]
+	which is a linear transformation.
+\end{example}
+
+How can we define linear transformations? The easiest way is to define its values on a basis and then linearly extend it to the whole space. The next theorem says this process returns a well defined linear mapping.
+
+\begin{theorem}
+	Let $\{ v_1, \ldots, v_n \}$ be a basis for $V$. Then for any vectors $w_1, \ldots, w_n \in W$, there exists exactly one linear transformation $T : V \longrightarrow W$ such that \[ T(v_i) = w_i, \text{ for } 1 \leq i \leq n\]
+\end{theorem}
+
+\begin{definition}[Null space and Range]
+	Let $T : V \longrightarrow W$ be a linear transformation. 
+	\begin{enumerate}
+		\item The \textbf{null space} (or \textbf{kernel}) of $T$ is \[\ker(T) = \{ x \in V : T(x) = 0 \}\]
+		\item The \textbf{range} of $T$ is the image $V$ under $T$, i.e., \[\text{Im}(T) = \{ y \in W : y = T(x), x \in V\}\]
+	\end{enumerate}
+
+	The dimension of the range is called the \textbf{rank} of $T$ and the dimension of the kernel is called the \textbf{nullity} of $T$.
+\end{definition}
+
+\begin{theorem}
+	The null space of $T$ $\ker(T) $ is a subspace of $V$ and $\text{Im}(T)$ is a subspace of $W$.
+\end{theorem}
+
+\begin{theorem}[The Dimension Theorem (Rank–Nullity)]\label{thm:rank-null}
+	If $\dim(V) < \infty$, then
+	\[
+		\dim(V) = \dim(\ker(T)) + \dim(\text{Im}(T))
+	\]
+	i.e., $\dim(V) = \text{nullity}(T) + \text{rank}(T)$.
+\end{theorem}
+
+\begin{definition}[Injection and Surjection]
+	Let $T : V \longrightarrow W$ be a linear transformation. 
+	\begin{enumerate}
+		\item $T$ is \textbf{injective} if $T(v) = T(u)$ implies $v = u$, for all $u, v \in V$.
+		\item $T$ is \textbf{surjective} if for every $w \in W$ there exists $v \in V$ such that $T(v) = w$.
+		\item $T$ is \textbf{bijective} if $T$ is injective and surjective.
+	\end{enumerate}
+\end{definition}
+
+\begin{theorem}\hfill
+	\begin{itemize}
+		\item $T$ is injective iff. $\ker(T)  = \{ 0 \}$.	
+		\item $T$ is surjective iff. $\text{Im}(T) = W$.
+	\end{itemize}
+\end{theorem}
+
+\begin{theorem}
+	Assume $\dim(V) = \dim(W)$. Then the following affirmations are equivalent:
+	\begin{enumerate}
+		\item $T$ is injective.
+		\item $T$ is surjective.
+		\item $T$ is bijective.
+		\item $\dim(\text{Im}(T)) = \dim(V)$. 
+	\end{enumerate}
+\end{theorem}
+
+\subsection{The Algebra of Linear Transformations}
+
+\begin{theorem}
+	Let $T, U : V \longrightarrow W$ be linear transformations. We define, for all $x \in V$ and $a \in \mathbb{F}$,
+	\begin{enumerate}
+		\item $(T+U)(x) = T(x) + U(x)$;
+		\item $(aT)(x) = aT(x)$.
+	\end{enumerate}
+
+	Then $T+U$ and $a\cdot U$ are also linear transformations from $V$ to $W$.
+\end{theorem}
+
+\begin{theorem}[Space of Linear Transformations]
+	Let $\hom_{\mathbb{F}}(V,W)$ be the set of all linear transformations from $V$ to $W$. Then $\hom_{\mathbb{F}}(V,W)$ is a vector space over the same field $\mathbb{F}$ with respect to the operations defined above.
+
+	An alternative notation is $\mathcal{L}(V,W) = \hom_{\mathbb{F}}(V,W)$. When $V = W$, we write $\mathcal{L}(V)$ or $\text{end}_{\mathbb{F}}(V)$.
+\end{theorem}
+
+\begin{theorem}
+	If $V$ is an $n$-dimensional vector space and $W$ is an $m$-dimensional vector space, both over $\mathbb{F}$, then the space $\mathcal{L}(V,W)$ has dimension $mn$.
+\end{theorem}
+
+% \begin{theorem}
+% 	Let $T \in \mathcal{L}(V,W)$ and $U \in \mathcal{L}(W, Z)$. Then the composition \[ U \circ T = UT : V \longrightarrow Z \] defined by $(UT)(x) = U(T(x))$, is a linear mapping.
+% \end{theorem}
+
+\begin{definition}[Composition of Linear Transformations]
+	Let $V, W, Z$ be vector spaces. Let $T : V \longrightarrow W$ and $U : W \longrightarrow Z$ be linear transformations. Their \textbf{composition} is the function $UT : V \longrightarrow Z$ defined by $(UT)(x) = U(T(x))$ for all $x \in V$.
+\end{definition}
+
+\begin{theorem}[Composition is also linear]
+	If $T$ and $U$ are both linear transformations, then their composition $UT$ is a linear transformation.
+\end{theorem}
+
+\begin{definition}[Linear Operator]
+	A \textbf{linear operator} is a linear transformation from a vector space to itself. It is also called an \textbf{endomorphism}. The set of linear operators on a vector space $V$ is denoted by $\mathcal{L}(V)$ or $\text{End}_{\mathbb{F}} (V)$.
+\end{definition}
+
+Remark that if $U$ and $T$ are linear operators on $V$, then the composition $U \circ T$ is also a a linear operator on $V$. The space $\mathcal{L}(V)$ has a `multiplication' defined on it by composition. The operator $T \circ U$ is also defined, but in general $UT \neq TU$, i.e., the \textbf{Lie bracket} $[U, T] = UT - TU \neq 0$.
+
+\begin{lemma}
+	Let $U, T_1$ and $T_2$ be linear operators on the vector space $V$ and $c \in \mathbb{F}$. The following affirmations hold.
+	\begin{enumerate}
+		\item $IU = UI = U$;
+		\item $U(T_1 + T_2) = UT_1 + UT_2$ and $(T_1 + T_2)U = T_1 U + T_2 U$;
+		\item $c(UT_1) = (cU)T_1 = U(cT_1)$.
+	\end{enumerate}
+\end{lemma}
+
+As a matter of fact, the vector space $\mathcal{L}(V)$, together with the composition operation, is known as a \textbf{linear algebra with identity}.
+
+\begin{definition}[Invertibility]
+	Let $V, W$ be vector spaces, and $T : V \longrightarrow W$ a linear transformation.
+	\begin{enumerate}
+		\item A linear transformation $U : W \longrightarrow V$ is the \textbf{inverse} of $T$ if $UT = I_V$ and $TU = I_W$, where $I$ denotes the identity matrix.
+		\item $T$ is invertible if it has an inverse.
+	\end{enumerate}
+\end{definition}
+
+\begin{theorem}[Characterization of Inverses]
+	Let $V, W$ be vector spaces, and $T : V \longrightarrow W$ a linear transformation.
+	\begin{enumerate}
+		\item If $T$ is invertible, then its inverse is unique, denoted by $T^{-1}$.
+		\item $T$ is invertible iff. $T$ is a bijection.
+	\end{enumerate}
+\end{theorem}
+
+\begin{lemma}
+	Let $T : V \longrightarrow W$ be an invertible linear transformation, and $\dim(V) < \infty$. Then $\dim(V) = \dim(W)$.
+\end{lemma}
+
+To check whether a transformation $T$ is injective, notice that if $T$ is linear, then $T(u-v) = T(u) - T(v)$. Therefore, $T(u) = T(v)$ iff. $T(u - v) = 0$.
+
+\begin{definition}[Non-singular Transformations]
+	A linear mapping $T$ is \textbf{non-singular} if $T(v) = 0$ implies $v = 0$, i.e., the null space of $T$ is $\{ 0 \}$.
+\end{definition}
+
+Hence, $T$ is injective iff. $T$ is non-singular. more than that, non-singular linear transformations are those which preserve linear independence. 
+
+\begin{theorem}
+	Let $T : V \longrightarrow W$ be a linear mapping. Then $T$ is non-singular if and only if $T$ carries each linearly independent subset of $V$ onto a linearly independent subset of $W$. 
+\end{theorem}
+
+\begin{theorem}
+	Let $V$ and $W$ be finite-dimensional vector spaces such that $\dim V = \dim W$. If $T$ is a linear mapping from $V$ into $W$, the following are equivalent:
+	\begin{enumerate}
+		\item $T$ is invertible;
+		\item $T$ is non-singular;
+		\item $T$ is surjective;
+		\item If $\{ v_1, \ldots, v_n \}$ is a basis for $V$, then $\{ T(v_1), \ldots, T(v_n) \}$ is a basis for $W$;
+		\item There is some basis for $V$ such that $\{ T(v_1), \ldots, T(v_n) \}$ is a basis for $W$.
+	\end{enumerate}
+\end{theorem}
+
+The set of invertible linear operators on a given space, with the operation of composition, provides an example of a group.
+
+\begin{definition}[Group]
+	A \textbf{group} consists of the following:
+	\begin{enumerate}
+		\item A set $G$;
+		\item A rule (or operation) $\odot$ which associates with each pair of elements $x, y \in G$ an element $x \odot y$ in $G$ satisfying
+			\begin{itemize}
+				\item Associativity: $x \odot (y \odot z) = (x \odot y) \odot z$, for all $x, y, z \in G$;
+				\item Identity: There is an element $e$ in $G$ such that $e \odot x = x \odot e = x$, for every $x$ in $G$;
+				\item Inverse: To each element $x \in G$ there corresponds an element $x^{-1}$ in $G$ such that $x \odot x^{-1} = x^{-1} \odot x = e$.
+			\end{itemize}
+	\end{enumerate}
+\end{definition}
+
+\begin{example}
+	\begin{itemize} The following are examples of groups.
+		\item \textbf{General linear group} $GL(n)$, formed by the set of non-singular $n \times n$ matrices with the operation of function composition.
+		\item \textbf{Permutation group} $S_n$, of permutations of sets of $n$ elements.
+		\item \textbf{Special linear group} $SL(n)$, of $n \times n$ matrices with determinant equal to one.
+		\item \textbf{Orthogonal group} $O(n)$, of $n \times n$ matrices such that $A A^t = I$, which is the group of isometries of Euclidean space that preserve a fixed point.
+		\item \textbf{Special Orthogonal group} $SO(n)$, consisting of orthogonal matrices whose determinant is equal to one.
+		\item \textbf{Unitary group} $U(n)$ of all complex $n \times n$ matrices satisfying $A A^\ast = 1$, where $A^\ast = \bar{A}^t$.
+		\item \textbf{Special unitary group} $SU(n)$ of unitary matrices with determinant one.
+	\end{itemize}
+\end{example}
+
+\subsection{Isomorphisms}
+
+\begin{definition}[Isomorsphism]
+	Bijective linear mappings $T \in \mathcal{L}(V,W)$ are said to be \textbf{isomorphisms}, and the spaces $V$ and $W$ are called \textbf{isomorphic} if there exists an isomorphism between them.
+
+	If $T \in \mathcal{L}(V)$ is an isomorphism, then $T$ is said to be an \textbf{automorphism}.
+\end{definition}
+
+Remark that isomophism is an equivalence relation in the family of vector spaces.
+
+\begin{theorem}
+	Every $n$-dimensional vector space over a field $\mathbb{F}$ is isomorphic to $\mathbb{F}^n$.
+\end{theorem}
+
+To convince yourself that this claim is true, it is enough to map every vector to its coordinates in a given basis.
+
+A more general result states that the dimension of a space completely determines the space up to isomorphism. To put it another way, every finite subspace $S \subseteq V$ has the same dimension as the range $T(S)$, i.e., isomorphisms preserve dimension.
+
+\begin{theorem}
+	Two finite-dimensional spaces $V$ and $W$ are isomorphic iff. they have the same dimension.
+\end{theorem}
+
+If the isomorphism does not depend on arbitrary choices, such as the basis, then it is called a \textbf{canonical} or \textbf{natural isomorphism}. This will be made precise when the language of categories is introduced.
+
+Finally, note that the isomorphisms from a space to itself form a group with respect to the operation of function composition, which is exactly the general linear group we saw earlier.
+
+\subsection{Matrix Representation}
+
+\begin{definition}[Matrix Representation]
+	Let $V, W$ be vector spaces with ordered basis $\beta = \{ v_1, \ldots, v_n \}$ and $\gamma = \{ w_1, \ldots, w_m \}$, respectively.
+
+	Let $T : V \longrightarrow W$ be a linear transformation. Then the \textbf{matrix representation} of T with respect to $\beta$ and $\gamma$ is defined as the matrix $[T]_{\beta, \gamma} \in \textbf{M}_{m \times n}(\mathbb{F})$ given by 
+	\[
+		[T]_{\beta, \gamma} = \left(\begin{matrix}
+			\big| && \big| && && \big| \\
+			[T(v_1)]_\gamma &&  [T(v_2)]_\gamma && \ldots && [T(v_n)]_\gamma \\
+			\big| && \big| && && \big|
+			\end{matrix}\right)
+	\]
+	where $[T(v_i)]_\gamma$ are the coordinates of the vector $T(v_i) \in W$ with respect to the ordered basis $\gamma$.
+
+	If $V = W$ and $\beta = \gamma$, we write $[T]_\beta$.
+\end{definition}
+
+\begin{theorem}
+	Assume $V, W$ are finite dimensional vector spaces with ordered basis $\beta$ and $\gamma$. Let $T, U : V \longrightarrow W$ be linear transformations. Then,
+	\begin{enumerate}
+		\item $U = T$ iff. $[U]_{\beta,\gamma} = [T]_{\beta,\gamma}$;
+		\item $[T+U]_{\beta,\gamma} = [T]_{\beta,\gamma} + [U]_{\beta,\gamma}$;
+		\item $[aT]_{\beta,\gamma} = a[T]_{\beta,\gamma}$, for all $a \in \mathbb{F}$.
+	\end{enumerate}
+\end{theorem}
+
+\begin{theorem}
+	Let $V, W, Z$ be vector spaces with ordered basis $\alpha, \beta, \gamma$ respectively. Let $T : V \longrightarrow W$ and $U : W \longrightarrow Z$ be linear transformations. Then
+	\[
+		[UT]_{\alpha, \gamma} = [U]_{\beta, \gamma} [T]_{\alpha, \beta}
+	\]
+\end{theorem}
+
+\begin{corollary}
+	Let $V$ be a finite vector space with ordered basis $\beta$. Let $T, U \in \mathcal{L}(V)$. Then $[UT]_\beta = [U]_\beta [T]_\beta$.
+\end{corollary}
+
+\begin{theorem}
+	Let $V, W$ be finite dimensional vector spaces with ordered basis $\beta$ and $\gamma$. Let $T : V \longrightarrow W$ be a linear transformation. For all $u \in V$, 
+	\[
+		[T(u)]_\gamma = [T]_{\beta,\gamma} [u]_\beta
+	\]
+\end{theorem}
+
+\begin{definition}[Invertibility for a Matrix]
+	A matrix $A \in \textbf{M}_{m \times n}(\mathbb{F})$ is \textbf{invertible} if there exists $B \in \textbf{M}_{m \times n}(\mathbb{F})$ such that $AB = BA = I$.
+\end{definition}
+
+\begin{theorem}
+	Let $V, W$ be finite dimensional vector spaces with ordered bases $\beta$ and $\gamma$ respectively. Let $T : V \longrightarrow W$ be a linear transformation. Then $T$ is invertible iff. $[T]_{\beta,\gamma}$ is invertible. Moreover,
+	\[ 
+		[T^{-1}]_{\gamma, \beta} = ([T]_{\beta,\gamma})^{-1}
+	\]
+\end{theorem}
+
+\begin{theorem}
+	Let $V$ be a finite-dimensional vector space and let
+	\[
+		\beta = \{ v_1, \ldots, v_n \} \text{ and } \gamma = \{ w_1, \ldots, w_n \}
+	\]
+	be ordered basis for $V$. Suppose that $T \in \mathcal{L}(V)$. If $P$ is the matrix with columns $P_j = [w_j]_\beta$ (i.e. the coordinates of the $j$-th vector on the basis $\beta$), then
+	\[
+		[T]_\gamma = P^{-1} [T]_\beta P
+	\]
+
+	Alternatively, if $U$ is the invertible operator defined by $U[v_j] = w_j$, then
+	\[
+		[T]_\gamma = [U]_\beta^{-1} [T]_\beta [U]_\beta
+	\]
+\end{theorem}
+
+\begin{definition}[Similar Matrices]
+	Let $A$ and $B$ be $n \times n$ matrices. We say that $B$ is \textbf{similar} to $A$ if there exists an invertible $n \times n$ matrix $P$ such that 
+	\[
+		B = P^{-1} A P
+	\]
+\end{definition}
+
+\section{Diagonalization}
+
+\subsection{Motivation}
+
+The question that motivates this section is `when the matrix of a linear operator assumes a simple form?'
+
+Consider, for example, the following diagonal matrix.
+\[
+D = \begin{bmatrix}
+c_1 & 0 & 0 & \ldots & 0 \\
+0 & c_2 & 0 & \ldots & 0 \\
+0 & 0 & c_3 & \ldots & 0 \\
+\vdots & \vdots & \vdots & \ddots & \vdots \\
+0 & 0 & 0 & \ldots & c_n
+\end{bmatrix}
+\]
+
+And suppose that $T$ is a linear operator on a finite vector space $V$. If there exists an ordered basis $\beta = \{ v_1, v_2, \ldots, v_n \}$ of $V$ in which $T$ is represented as the diagonal matrix $D$, then it is possible to extract some informations about the linear operator $T$, such as its rank and determinant, in a simple and direct way.
+
+Since 
+\[
+[T]_\beta = D \iff T(v_k) = c_k v_k, ~\quad k = 1, 2, \ldots, n
+\]
+the range of $T$ is simply the subspace spanned by the vectors $v_k$ in which $c_k$ does not vanish. Analogously, the null space  of $T$ is generated by the remaining $v_k$'s. 
+
+Is it always possible to represent a linear operator $T$ as a diagonal matrix? If not, what is the simplest type of matrix by which we can represent $T$?
+
+\subsection{Characteristic Values}
+
+We saw that if $T$ can be represented as a diagonal matrix, then
+\[
+	[T]_\beta = D \iff T(v_k) = c_k v_k, k = 1, 2, \ldots, n
+\]
+
+Motivated by this fact, we'll look for which vectors are mapped by $T$ into scalar multiples of themselves.
+
+\begin{definition}[Eigenvalue and Eigenvector]
+	Given a vector space $V$ over a field $\mathbb{F}$ and $T \in \text{End}(V)$, we define \textbf{eigenvalue} (or \textbf{characteristic value}) if $T$ as the scalar $\lambda \in \mathbb{F}$ such that there exists a non-zero vector $v \in V$ satisfying $(v) = \lambda v$.
+
+	If $\lambda$ is an eigenvalue of $T$, then
+	\begin{itemize}
+		\item Any vector $v$ satisfying $T(v) = \lambda v$ is said to be a  \textbf{eigenvector} (or \textbf{characteristic vector}) of $T$ associated with the eigenvalue $\lambda$.
+		\item The set of all eigenvectors is called the \textbf{eigenspace} (or \text{characteristic space}) associated with $\lambda$.
+	\end{itemize}
+\end{definition}
+
+Notice that the eigenspace associated with $\lambda$ is a subspace of $V$ and it is exactly the null space of the linear transformation $(T - \lambda I)$. We say that $\lambda$ is an eigenvalue of $T$ when the eigenspace is different from the zero subspace, i.e., if $(T - \lambda I)$ is not injective. If $\dim(V) < \infty$, this happens exactly when its determinant is different from zero.
+
+\begin{theorem}
+	Let $T \in \text{End}(V)$  and $\lambda \in \mathbb{F}$. The following are equivalent.
+	\begin{enumerate}
+		\item $\lambda$ is an eigenvalue of $T$.
+		\item The operator $(T- \lambda I)$ is singular (i.e. not invertible).
+		\item $\text{det}(T - \lambda I) = 0$.
+	\end{enumerate}
+\end{theorem}
+
+The determinant criterion tell us how to find the eigenvalues of $T$. Since $det(T - \lambda I)$ is a polynomial of degree $n$ in the variable $\lambda$, we find the eigenvalues as the roots of that polynomial.
+
+% Se $A$ é a representação matricial de $T$ na base ordenada $\beta$ (i.e. $A = [T]_\beta$), então $(T-\lambda I)$ é invertível sse. $(A - \lambda I)$ for invertível. O que podemos resumir na seguinte definição:
+
+\begin{definition}[Eigenvalues for Matrices]
+	If $A$ a matrix $n \times n$ over $\mathbb{F}$, an \textbf{eigenvalue} of $A$ in $\mathbb{F}$ is a scalar $\lambda \in \mathbb{F}$ such that the matrix $(A - \lambda I)$ is singular.
+\end{definition}
+
+Hence, $\lambda$ is an eigenvalue of $A$ iff. $\text{det}(A-\lambda I) = 0$.
+
+\begin{definition}[Characteristic Polynomial]
+	This leads us to define the \textbf{characteristic polynomial} of $A$ as \[ f(x) = \text{det}(A-xI) \]
+\end{definition}
+
+An important result is that similar matrices have the same characteristic polynomial. Thus, they have the same eigenvalues.
+
+\subsection{Diagonalization}
+
+\begin{definition}[Diagonalization]
+	Let $T \in \text{End}(V)$. We say that $T$ is \textbf{diagonalizable} if there exists a basis $\beta = \{ v_1, v_2, \ldots, v_n \}$ for $V$ formed by eigenvectors of $T$.
+\end{definition}
+
+In other words, the linear operator has a diagonal matrix with respect to a $V$. Since $T(v_i) = \lambda_i v_i$, the representation of $T$ in the ordered basis $\beta$ is given by:
+\[
+	[T]_{\beta} = \begin{bmatrix}
+	\lambda_1 & 0 & 0 & \ldots & 0 \\
+	0 & \lambda_2 & 0 & \ldots & 0 \\
+	0 & 0 & \lambda_3 & \ldots & 0 \\
+	\vdots & \vdots & \vdots & \ddots & \vdots \\
+	0 & 0 & 0 & \ldots & \lambda_n
+	\end{bmatrix}
+\]
+
+An alternative definition is that $T$ is diagonalizable when the eigenvectors of $T$ span $V$.
+
+Some important results:
+
+\begin{theorem}
+	Let $\dim(V) < \infty$ and $T \in \text{End}(V)$.
+	\begin{enumerate}
+		\item $T$ is diagonalizable iff. there exists a basis of $V$ formed by eigenvalues of $T$.
+		\item If $f$ is any polynomial and $T(v)=\lambda v$, then $f(T(v)) = f(\lambda)v$.
+		\item If $\lambda_1, \ldots, \lambda_k$ are distinct eigenvalues of $T$ and $v_1, \ldots, v_k$ are the eigenvectors associated with $\lambda_1, \ldots, \lambda_k$ respectively, then $\{ v_1, \ldots, v_k \}$ is linearly independent.
+		\item If $\text{dim}(V)=n$ and $\lambda_1, \ldots, \lambda_n$ are distinct eigenvalues of $T$, then $T$ is diagonalizable. In other words, if all eigenvalues of $T$ are different, then $T$ is diagonalizable.
+		\item If $W_i$ is the eigenspace associated with $\lambda_i$ and $W = W_1 + W_2 + \ldots + W_k$, then \[ \text{dim} (W) = \text{dim} (W_1) + \ldots + \text{dim} (W_k) \] Moreover, if $\beta_i$ is an ordered basis for $W_i$, then $\beta = \{ \beta_1, \ldots, \beta_n \}$ is an ordered basis for $W$. Thus, the sum of eigenspaces is a direct sum.
+	\end{enumerate}
+\end{theorem}
+
+With these conclusions, it is possible to guess that there exist more equivalences between diagonalizable transformations and their eigenvalues and eigenspaces.
+
+\begin{theorem}
+	Suppose that $\dim(V) < \infty$ and let $T \in \text{End}(V)$, $\lambda_1, \ldots, \lambda_k$ distinct eigenvalues of $T$ and $W_i = \text{Ker}(T - \lambda_i I)$. The following are equivalent.
+	\begin{enumerate}
+		\item $T$ is diagonalizable.
+		\item The characteristic polynomial for $T$ is \[ p_T(\lambda) = (\lambda - \lambda_1)^{d_1} (\lambda - \lambda_2)^{d_2} \ldots (\lambda - \lambda_k)^{d_k} \] and $\text{dim}(W_i) = d_i$ for $i = 1, 2, \ldots, k$.
+		\item $\text{dim}(W_1) + \ldots + \text{dim}(W_k) = \text{dim}(V)$.
+	\end{enumerate}
+\end{theorem}
+
+With this result, given a diagonalizable matrix $A$, we can find a diagonal matrix $\Lambda$, similar to $A$, such that
+\[
+A = P \Lambda P^{-1} \text{ e } \Lambda = P^{-1} A P
+\]
+where $\Lambda$ is constructed by the eigenvalues of $A$, and $P$ is constructed from the eigenvectors of $A$.
+
+\subsection{Algebraic and Geometric Multiplicities}
+
+\begin{definition}[Algebraic and Geometric Multiplicities]
+	Consider $T \in \text{End}(V)$ and $\beta$ any basis for $V$. We know that its characteristic polynomial is given by
+	\[ p_T(\lambda) = \text{det}([T]_\beta^{\beta} - \lambda I) \]
+
+	If $\lambda_1, \lambda_2, \ldots, \lambda_k$ are the roots of $p_T(\lambda)$, then by the fundamental theorem of algebra
+	\[
+		p_T(\lambda) = a(\lambda - \lambda_1)^{m_1} (\lambda - \lambda_2)^{m_2} \ldots (\lambda - \lambda_k)^{m_k}
+	\]
+	Choosing an eigenvalue $\lambda_i$, we define:
+	\begin{itemize}
+		\item The \textbf{algebraic multiplicity} of $\lambda_i$ as the power of the term $(\lambda - \lambda_i)$ in $p_T(\lambda)$.
+		\item The \textbf{geometric multiplicity} of $\lambda_i$ as $\text{dim Ker}(T - \lambda_i I)$.
+	\end{itemize}
+\end{definition}
+
+\begin{remark}
+	The geometric multiplicity is always lesser or equal to the algebraic multiplicty.
+\end{remark}
+
+\subsection{Direct Sums}
+
+\begin{definition}[Direct Sum]
+	A space $V$ is a \textbf{direct sum} of its subspaces $V_1, \ldots, V_n$ if every vetor $v \in V$ can be uniquely represented in the form $\sum_{i=1}^n v_i$, where $v_i \in V_i$.
+
+	When these conditions are satisfied, we write
+	\[
+		V = V_1 \oplus \ldots \oplus V_n = \bigoplus_{i=1}^n V_i
+	\]
+\end{definition}
+
+A vector space is a direct sum of its subspaces iff. the intersections of subspaces is the zero vector and the sum of each subspace equals the whole space.
+
+What happens when $V_1, \ldots V_n$ are not imbedded in a general space? 
+
+\begin{definition}[External Direct Sum]
+	Let $V_1, \ldots, V_n$ be vector spaces. The \textbf{external direct sum} $V$ consists of 
+	\begin{enumerate}
+		\item The $n$-uples $(v_1, \ldots, v_n)$, where $v_i \in V_i$;
+		\item Addition and multiplication by a scalar performed coordinate-wise 
+		\begin{equation*}
+			\begin{aligned}
+				(v_1, \ldots, v_n) + (w_1, \ldots, w_n) &= (v_1 + w_1, \ldots, v_n + w_n) \\
+				a (v_1, \ldots, v_n) &= (av_1, \ldots av_n)
+			\end{aligned}
+		\end{equation*}
+	\end{enumerate}
+\end{definition}
+
+Notice that the mapping $f_i : V_i \longrightarrow V$, where $f_i(v) = (0, \ldots, 0, v, 0, \ldots, 0)$ ($v$ is in the $i$th location) is a linear imbedding of $V_i$ into $V$.
+
+It follows immediately from the definiton that
+\[
+	V = \bigoplus_{i=1}^n f_i(V_i)
+\]
+
+Identifying $V_i$ with $f_i(V_i)$, we obtain a vector space which contains $V_i$ and decomposes into the direct sum of $V_i$.
+
+
+\subsection{Invariant Subspaces}
+
+Suppose $T \in \text{End}(V)$. If we decompose $V$ in direct sums
+	\[
+		V = U_1 \oplus \ldots \oplus U_m
+	\]
+where each $U_j$ is a proper subspace of $V$, then to understand the behavior of $T$ it is sufficient to study the behavior of $T$ in each $U_j$. To do that, we consider $T|_{U_j}$, i.e., $T$ restricted to $U_j$.
+
+However, it is not always the case that $T|_{U_j}$ has its image in the same subspace ${U_j}$. That's why we need the following.
+
+\begin{definition}[Invariant Subspace]
+	A subspace $U$ of $V$ is said an $\textbf{invariant subspace}$ under $T$ if for each $u \in U$ we have that $T(u) \in U$. I.e., $U$ is invariant under $T$ if $T|_U$ is a linear operator in $U$.
+\end{definition}

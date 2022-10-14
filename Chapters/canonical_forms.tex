@@ -1,0 +1,220 @@
+\chapter{Canonical Forms}
+
+Our goal in this chapter is to break a vector space into `important' subspaces with respect to a polynomial associated with a given linear operator.
+
+Here we'll use $V$ to denote a vector space over $\mathbb{F}$, $T \in \text{End}(V)$, and $V_p := \{ v \in V : p(T)(v) = 0 \}$, i.e., the nullspace of the operator, where $p \in \mathbb{F}[x]$.
+
+\section{Annihilating Polynomials}
+
+Recalling that $T^0 := \{ p \in \mathbb{F}[x] : p(T) = 0 \}$ is the annihilator of $T$, it follows that the collection of polynomials $p$ which annihilate $T$ is an \hyperref[def:ideal]{ideal} in the polynomial algebra $\mathbb{F}[x]$.
+
+We'll state the following theorem and proceed with a discussion before proving each of its parts.
+
+\begin{theorem}[Existence of the Minimal Polynomial]\label{thm:minimal-polynomial} \hfill
+	\begin{enumerate}
+		\item If $\dim (V)$ is finite, then $T^0 \neq \{ 0 \}$.
+		\item If $T^0 \neq \{ 0 \}$, then there exists a unique monic polynomial $m_T \in \mathbb{F}[x]$ such that $m_T$ divides every element of $T^0$.
+	\end{enumerate}
+\end{theorem}
+
+\begin{definition}[Minimal Polynomial]
+	The polynomial $m_T$ in the previous theorem is called \textbf{minimal polynomial} of $T$.
+	
+	If $T^0 = \{ 0 \}$, we define $m_T = 0$.
+\end{definition}
+
+Since every polynomial ideal consists of all multiples of some fixed monic polynomial (the generator of the ideal), we may define the minimal polynomial for $T$ as the unique monic generator of the ideal of polynomials over $\mathbb{F}$ which annihilate $T$.
+
+Summarizing, the minimal polynomial $p$ for the linear operator $T$ is uniquely determined by these three properties:
+\begin{enumerate}
+	\item $p$ is a monic polynomial over $\mathbb{F}$;
+	\item $p(T) = 0$;
+	\item No polynomial over $\mathbb{F}$ which annihilates $T$ has smaller degree than $p$ has.
+\end{enumerate}
+
+These definitions can be easily extended to a matrix $A$ instead of an operator $T$. Moreover, it follows from previous remarks that similar matrices have the same minimal polynomial.
+
+The next example shows that it is possible to have $T^0 = \{ 0 \}$ when the dimension is infinite.
+
+\begin{example}
+	If $V = \mathbb{F}[x]$ and $T$ is the operator $f(t) \mapsto tf(t)$, then $T^0 = \{ 0 \}$.
+\end{example}
+
+\begin{theorem}[Primary Decomposition Theorem (PDT)]
+	Suppose that $T^0 \neq \{ 0 \}$ and let $p_1, \ldots, p_m$ be the distinct irreducible factors of $m_T$ in $\mathbb{F}[x]$. If $k_j$ is the multiplicity of $p_j$ in $m_T$, then
+	\[
+		V = V_{p_1^{k_1}} \oplus \ldots \oplus V_{p_m^{k_m}}
+	\]
+	
+	The polynomials $p_j^{k_j}$ are called the \textbf{primary factors (pf)} of $T$ and $V_{p_j^{k_j}}$ is said to be a \textbf{$T$-primary subspace} of $V$.
+\end{theorem}
+
+In words, if there is non-zero polynomial in the annihilator, then there exists a minimal polynomial. Considering the prime factors of the minimal polynomial and its multiplicities, we can `break' the vector space as direct sum of certain subspaces, where each subspace is related to one of the factors of the minimal polynomial to its multiplicity.
+
+It follows immediately from the PDT that a linear operator is diagonalizable iff. its primary factors have degree one.
+
+Recall that a subspace $W$ of $V$ is said to be $T$-invariant if $T(W) \subseteq W$. In particular, the restriction of $T$ to $W$ induces a linear operator in $W$ given by $w \mapsto T(w)$ for all $w \in W$.
+
+\begin{lemma}
+	If $S \in \text{End}(V)$ satisfies $S \circ T = T \circ S$, then the nullspace of $S$, $V_S$, is $T$-invariant. In particular, $V_p$ is $T$-invariant for all $p \in \mathbb{F}[x]$.
+\end{lemma}
+
+\begin{proof}
+	Let $v \in V_S$ and notice that $S(T(v)) = T(S(v)) = 0$, which shows that $T(v) \in V_S$.
+\end{proof}
+
+Generalizing the notion of eigenspace. To do that, we want to describe the following set
+\begin{equation}\label{eq:set-goal-describe}
+	\{ p \in \mathbb{F}[x] : V_p \neq \{ 0 \} \}
+\end{equation}
+
+We already know that the minimal polynomial is inside this set.
+
+For any two polynomials $f, p$, then $V_p \subseteq V_{fp}$. In particular, $V_p^k \subseteq V_p^{k+1}$ for all $k \geq 0$. Therefore, the set
+\[
+	V_p^\infty := \bigcup_{k > 0} V_p^k
+\]
+is a $T$-invariant subspace of $V$.
+
+\begin{definition}[Generalized Eigenspace]
+	For $p(t) = t - \lambda$, where $\lambda \in \mathbb{F}$, the space $V_p^\infty$ is called the \textbf{generalized eigenspace} associated with $\lambda$.
+\end{definition}
+
+\begin{example}
+	If $T \in \text{End}(\mathbb{F}^2)$ is given by $T(x,y) = (y,0)$ and $p(t) = t$, then
+	\[
+		V_p = V_T = [e_1] \quad \text{ and } \quad V_p^2 = \mathbb{F}^2 ~\text{ (since $T^2 = 0$)}
+	\]
+	
+	Is there any other polynomial such that $V_p \neq \{ 0 \}$?
+	
+	If $f \in \mathbb{F}[x]$ and $p \nmid f$, then $V_f = \{ 0 \}$. In fact, if $f = pq+r$ is the division of $f$ by $p$, then $r \in \mathbb{F} \setminus \{ 0 \}$ (since $p$ has degree one and $p \nmid f$) and
+	\[
+		f(T)(x,y) = q(T)(T(x,y)) + r(x,y) = q(T)(y,0) + r(x,y) = (q(0)y + rx, ry)
+	\]
+	
+	Therefore, if $r \neq 0$, 
+	\[
+		F(T)(x,y) = (0, 0) \iff 0 = y = x
+	\]
+\end{example}
+
+The following proof, for the second item of the Theorem \ref{thm:minimal-polynomial}, shows the existence of minimal polynomial and how to find it.
+
+\begin{theorem}
+	If $T^0 \neq \{ 0 \}$, then there exists a unique monic polynomial $m_T \in \mathbb{F}[x]$ such that $m_T$ divides every element of $T^0$.
+\end{theorem}
+
+\begin{proof}
+	Let $m = \min \{ k : \exists p \in T^0 \setminus \{ 0 \}, \deg(p) = k \} > 0$, i.e., the smallest degree of a non-zero polynomial in the annihilator.
+	
+	Fix $f, p \in T^0$ with $\deg(p) = m$. By Euclid's Division Algorithm, $f = qp + r$, where $\deg(r) < m$. Notice that $r = f - qp \in T^0$. By the minimality of $m$, $r = 0$ and therefore $p | f$.
+	
+	This shows that any non-constant polynomial with the minimal degree divides every other polynomial in the annihilator. And a polynomial divides another polynomial with the same degree if one is a scalar multiple of the other.
+\end{proof} 
+
+To describe the set \eqref{eq:set-goal-describe}, it is sufficient to consider the following lemma and proposition.
+
+\begin{lemma}
+	If $\gcd(f,g) = 1$, then the restriction of $f(T)$ to $V_g$ is injective.
+\end{lemma}
+
+\begin{proof}
+	Let $p, q \in \mathbb{F}[x]$ such that $pf + qg = 1$. Then, for every $v \in V_g$,
+	\[
+		v = (p(T)f(T) + q(T) g(T))(v) = (p(T)f(T))(v)
+	\]
+	since $g(T)(v) = 0$. It follows that the restriction of $p(T) \circ f(T)$ to $V_g$ is the identity function. Hence, the lemma follows.
+\end{proof}
+
+\begin{proposition}
+	If $T^0 \neq \{ 0 \}$ and $p \in \mathbb{F}[x]$ is irreducible, then $V_p \neq \{ 0 \}$ iff. $p | m_T$.
+\end{proposition}
+
+\begin{proof}
+	Suppose that $p | m_T$ and $V_p = \{ 0 \}$, i.e., $p(T)(u) \neq 0$ for all $u \in V \setminus \{ 0 \}$. Consider $f = m_T / p$ and notice that
+	\[
+		0 = m_T(T)(v) = p(T)(f(T)(v)) \quad \forall~v \in V
+	\]
+	
+	If $f(T)(v) \neq 0$, then $p(T)(f(T)(v)) \neq 0$. Thus, $f \in T^0$, which is a contradiction since $\deg(f) < \deg(m_T)$.
+	
+	Reciprocally, if $p \nmid m_T$, then $\gcd(p, m_T) = 1$, since $p$ is irreducible. If follows from the lemma that the restriction of $m_T(T)$ to $V_p$ is injective. Since $m_T(T) = 0$, we can conclude that $V_p = \{ 0 \}$. 
+\end{proof}
+
+Put another way, a prime polynomial lives in the set iff. it divides the minimal polynomial.
+
+In a finite dimensional vector space, how can we compute the minimal polynomial?
+
+Finally, we prove the first item of the Theorem \ref{thm:minimal-polynomial}.
+
+\begin{theorem}
+	If $\dim(V) = n < \infty$, then $T^0 \neq \{ 0 \}$.
+\end{theorem}
+
+\begin{proof}
+	If $T = 0$, then $T^0 = \{ p \in \mathbb{F}[x] : p(0) = 0 \} \neq \{ 0 \}$. In this case, the minimal polynomial is $p(t) = t$.
+	
+	Suppose that $T \neq 0$ and remember that $\dim(\text{End}(V)) = n^2$. Then we can construct the family $(T^k)_k$, where $k = 0, 1, \ldots, n^2$, which is linearly dependent (since it contains $n^2 + 1$ elements).
+	
+	Since the subfamily given by $T^0 = I_V$ is linearly independent, there exists $1 \leq m \leq n^2$ minimal such that the subfamily $(T^k)_{k=0, \ldots, m}$ is linearly dependent.
+	
+	Let $a_0, \ldots, a_{m-1} \in \mathbb{F}$ such that
+	\[
+		T^m = a_0 I_V + \ldots + a_{m-1} T^{m-1} \text{ and } f(t) = t^m - \sum_{k=0}^{m-1} a_k t^k
+	\]
+	
+	It follows that $f(T) = 0$ and, therefore, $f \in T^0 \setminus \{ 0 \}$.
+\end{proof}
+
+\textbf{Exercise.} Prove that $f = m_T$, where $f$ is as in the preceeding proof.
+
+How can we use this fact and matricial representations of $T$ to compute $m_T$?
+
+\section{Cyclic subspaces}
+
+Given $v \in V$, consider the sequence of vectors
+\[
+	v_0 = v, v_1 = T(v), \ldots, v_k = T^k(v), \ldots
+\]
+which is called a \textbf{$T$-cycle} generated by $v$. We denote it by $\mathfrak{C}_T^\infty (v) = (v_k)_{k \geq 0}$ and $\mathfrak{C}_T^m (v) = v_0, v_1, \ldots, v_{m-1}$.
+
+Define the \textbf{$T$-cyclic subspace generated by $v$} as
+\[
+	C_T(v) = [\mathfrak{C}_T^\infty (v)]
+\]
+
+If $\dim(V)$ is finite, there exists $m \geq 0$ minimal such that $\mathfrak{C}_T^{m+1}(v)$ is linearly dependent. Notice that $m \geq 1$ if $v \neq 0$. In particular, if $\mathfrak{C}_T(v) := \mathfrak{C}_T^{m}(v)$ is a basis for $C_T(v)$ and $v_m$ is a linear combination of the linearly independent vectors $v_0, \ldots, v_{m-1}$. And
+\[
+	v_m = a_0 v_0 + \ldots + a_{m-1} v_{m-1} = \sum_{k=0}^{m-1} a_k T^k(v)
+\]
+
+Defining $m_{T,v}(t) = t^m - a_{m-1}t^{m-1} - \ldots - a_1t - a_0$, called the \textbf{minimal polynomial of $v$ with respect to $T$}, 
+\[
+	m_{T, v}(T)(v) = v_m - \sum_{k=0}^{m-1} a_k T^k(v) = 0
+\]
+which proves that $v \in V_{m_{T,v}}$. Since $V_{m_{T,v}}$ is $T$-invariant, it follows that
+\[
+	C_T(v) \subseteq V_{m_{T,v}}
+\]
+
+Cyclic subspaces are useful to find divisors of $m_T$. Since $T$ is fixed, we'll write $m_v = m_{T,v}$. 
+
+\begin{theorem}
+	For all $v \in V$, $m_v | m_T$.
+\end{theorem}
+
+\begin{proof}
+	Since $V_{m_v}$ is $T$-invariant, consider the induced operator
+	\[
+		S : V_{m_v} \longrightarrow V_{m_v}, \quad v \mapsto T(v)
+	\]
+	
+	Note that $m_v \in S^0$. Thus, $m_S | m_v$. In fact, $m_v = m_S$, since if $\deg(m_S) = m' < m$, then $v_0, \ldots, v^{m'}$ would be linearly dependent, contradicting the minimality of $m$.
+\end{proof}
+
+%\begin{equation*}
+%	\begin{aligned}
+%	
+%	\end{aligned}
+%\end{equation*}

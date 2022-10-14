@@ -1,0 +1,153 @@
+\chapter{Polynomials}
+
+\section{Algebras}
+
+\begin{definition}[Linear algebra over a field]
+	Let $\mathbb{F}$ be a field. A \textbf{linear algebra over the field $\mathbb{F}$} is a vector space $V$ over $\mathbb{F}$ with an additional operation called \textbf{multiplication of vectors}, which associates with each pair of vectors $u, v \in V$ a vector $uv \in V$ in such a way that 
+	\begin{enumerate}
+		\item Multiplication is associative, $u(vw) = (uv)w$;
+		\item Is distributive with respect to addition, $u(v+w) = uv + uw$ and $(u+v)w = uw + vw$;
+		\item For each $a \in \mathbb{F}$, $a(uv) = (au)v = a(uv)$.
+	\end{enumerate}
+	
+	If there is an element $1 \in V$ such that $1v = v1 = v$ for all $v \in V$, then $V$ is a \textbf{linear algebra with identity over $\mathbb{F}$}. The algebra $V$ is called \textbf{commutative} if $uv = vu$ for all $u,v \in V$.
+\end{definition}
+
+\begin{example}[Algebra of formal power series]
+	The algebra $\mathbb{F}^\infty$ is called the \textbf{algebra of formal power series}. The element $f = (f_0, f_1, f_2, \ldots)$ is frequentlyt written as
+	\[
+		f = \sum_{n=0}^\infty f_n x^n
+	\]
+	
+	Notice that $x = (0,1,0,\ldots,0,\ldots)$, and $x^n$ is equal to one at the $n$th position (recall that the index starts at zero) and zero elsewhere. 
+\end{example}
+
+\section{The Algebra of Polynomials}
+
+\begin{definition}[Polynomial]
+	Let $\mathbb{F}[x]$ be the subspace of $\mathbb{F}^\infty$ spanned by the vectors $1, x, x^2, \ldots$. An element of $\mathbb{F}[x]$ is called a \textbf{polynomial} over $\mathbb{F}$.
+	
+	The \textbf{degree} of a polynomial, denoted by $\deg F$, is the largest integer $n$ such that $f_n \neq 0$ and such that $f_k = 0$ for all integers $k > n$. If $f$ is a non-zero polynomial of degree $n$, then it can be written as
+	\[
+		f = f_0 x^0 + x_1 x + f_2 x^2 + \ldots + f_n x^n
+	\]
+\end{definition}
+
+\begin{theorem}
+	Let $f$ and $g$ be non-zero polynomials over $\mathbb{F}$. Then,
+	\begin{enumerate}
+		\item $fg$ is a non-zero polynomial;
+		\item $\deg ~(fg) = \deg ~f + \deg ~g$;
+		\item $fg$ is a monic polynomial if both $f$ and $g$ are monic polynomials;
+		\item $fg$ is a scalar polynomial if and only if both $f$ and $g$ are scalar polynomials;
+		\item If $f + g \neq 0$, then $\deg ~(f+g) \leq \max (\deg ~f, \deg ~g)$.
+	\end{enumerate}
+\end{theorem}
+
+\begin{corollary}
+	The set of all polynomials over a given field is a commutative linear algebra with identity.
+\end{corollary}
+
+\begin{corollary}
+	Suppose $f, g$, and $h$ are polynomials such that $f \neq 0$ and $fg = fh$. Then $g=h$.
+\end{corollary}
+
+\begin{definition}
+	We shall denote the identity of a linear algebra $A$ by $1$ and make the convention that $v^0 = 1$ for all $v \in A$. Then to each polynomial $f = \sum_{i=0}^n f_i x^i$ and $v \in A$, we associate an element $f(v) \in A$ by the rule
+	\[
+		f(v) = \sum_{i=0}^n f_i v^i
+	\]
+\end{definition}
+
+\begin{theorem}
+	Let $A$ be a linear algebra with identity. Suppose $f$ and $g$ are polynomials, $v \in A$ and $a$ is a scalar. Then
+	\begin{enumerate}
+		\item $(cf+g)(v) = cf(v) + g(v)$;
+		\item $(fg)(v) = f(v)g(v)$.
+	\end{enumerate}
+\end{theorem}
+
+\section{Polynomial Ideals}
+
+\begin{definition}[Division and Irreducible Elements]
+	We say that $g \mathbb{F}[x]$ \textbf{divides} $f \mathbb{F}[x]$, and denote this by $g | f$, if there exists $q \mathbb{F}[x]$ such that $f = qg$. 
+	
+	And $g$ is called \textbf{irreducible} (or \textbf{prime}) if $g$ is not scalar and it's only monic divisors are $1$ and $g$.
+\end{definition}
+
+Note that these `irreducible' and `prime' mean the same thing in the polynomial ring, but not in general ring theory.
+
+\begin{remark}
+	Every polynomial of degree one is prime.
+\end{remark}
+
+\begin{example}
+	The polynomial $f = t^2 + 1$ is prime over $\mathbb{R}$ but not over $\mathbb{C}$, since $(t-i) | f$.
+\end{example}
+
+\begin{definition}[Algebraically Closed]
+	A field $\mathbb{F}$ is \textbf{algebraically closed} if every prime of the polynomial ring $\mathbb{F}[x]$ has degree one.
+\end{definition}
+
+\begin{definition}[Polynomial Ideal]\label{def:ideal}
+	An \textbf{ideal} in the polynomial algebra $\mathbb{F}[x]$ is a subspace $M$ of $\mathbb{F}[x]$ such that $fg$ belong to $M$ whenever $f$ is in $\mathbb{F}[x]$ and $g$ is in $M$.
+\end{definition}
+
+More generally,
+
+\begin{definition}[Ideal]
+	Let $A$ be a ring. If \(I \subseteq A\), $I \neq \emptyset$, then \(I\) is called an \textbf{ideal} of \(A\) if the following properties hold
+	\begin{itemize}
+	\item
+	  Closure under addition: \(\forall x, y \in I, \, x+y \in I\).
+	\item
+	  Absorption property: \(\forall x \in I, \forall a \in A, \, ax \in I\).
+	\end{itemize}
+\end{definition}
+	
+This definition is equivalent to saying that, given $I$ non-empty, a linear combination $a_1x_1 + \ldots a_rx_r$ of elements $x_i \in I$ with coefficients $a_i \in A$ is in $I$.
+
+For example, \(n \mathbb{Z} := \{zn \, | \, z \in \mathbb{Z} \}\) is an ideal of the ring of integers (where \(n\) is a non-negative integer).
+
+\begin{definition}[Generated Ideal]
+	The \textbf{ideal generated by} a set of elements $a_1, \ldots, a_n \in A$ is the smallest ideal containing these elements.
+\end{definition}
+
+The ideal \[ M = p \mathbb{F}[x] \] where $p$ is a fixed polynomial, is called the \textbf{principal ideal generated by $p$}.
+
+\section{Prime Factorization}
+
+Can polynomials be factored? If so, how?
+
+Follows from the Euclid's Division Algorithm.
+
+There exists unique $q, r$ such that 
+\[
+	f = qg + r, ~\quad \deg(r) < \deg(g)
+\]
+
+Remark that $g | f$  iff. $r \equiv 0$.
+
+\begin{definition}[Prime Factor and Multiplicity]
+	If $g$ is prime, monic and $g | f$, we say that $g$ is a \textbf{prime factor} of $f$.
+	
+	The \textbf{multiplicity} of $g$, as a prime factor of $f$, is defined as
+	\[
+		\max \{ m \in \textbf{Z}_{\geq 0} : g^m | f \}
+	\]
+\end{definition}
+
+\begin{theorem}
+	If $f \in \mathbb{F}[x] \setminus \{ 0 \}$, then the set of prime factors is finite.
+	
+If $\{ g_1, \ldots, g_k \}$ is the set of prime factors of $f$, there exists a unique $u \in \mathbb{F} \setminus \{ 0 \}$ such that $f = u g_1^{m_1} \ldots g_k^{m_k}$, where $m_j$ is the multiplicity of $g_j$ as a prime factor of $f$.
+\end{theorem}
+
+A monic polynomial $g$ is the \textbf{greatest common divisor (GCD)} if $f_1, \ldots, f_k \in \mathbb{F}[x] \setminus \{ 0 \}$ if
+\[
+	g \in \bigcap_{j=1}^k \text{Div}(f_j) \text{ and } h | g ~\quad \forall h \in \bigcap_{j=1}^k \text{Div}(f_j)
+\]
+
+\begin{theorem}
+	If $g = \text{mdc}(f_1, \ldots, f_k)$, there exist $g_j \in \mathbb{F}[x]$, $1 \leq j \leq k$ such that $g = g_1 f_1 + \ldots + g_k f_k$.
+\end{theorem}

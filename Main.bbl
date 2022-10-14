@@ -1,5 +1,10 @@
 \begin{thebibliography}{Rom05}
 
+\bibitem[Die69]{dieudonne1969linear}
+Jean~Alexandre Dieudonn{\'e}.
+\newblock {\em Linear Algebra and Geometry}.
+\newblock Hermann, 1969.
+
 \bibitem[HK71]{hoffman1971linear}
 Kenneth Hoffman and Ray Kunze.
 \newblock {\em Linear Algebra}.
@@ -9,6 +14,11 @@ Kenneth Hoffman and Ray Kunze.
 Daniel Miranda.
 \newblock {\em Álgebra Linear Avançada}.
 \newblock Notas de Aula, 2020.
+
+\bibitem[Mou22]{mouraGAAL}
+Adriano Adrega~de Moura.
+\newblock {\em Álgebra Linear com Geometria Analítica}.
+\newblock Notas de Aula, 2022.
 
 \bibitem[Rom05]{roman2005advanced}
 Steven Roman.
