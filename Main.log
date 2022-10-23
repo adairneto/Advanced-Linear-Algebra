@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022/Arch Linux) (preloaded format=pdflatex 2022.6.16)  14 OCT 2022 09:43
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022/Arch Linux) (preloaded format=pdflatex 2022.6.16)  23 OCT 2022 18:07
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -161,6 +161,17 @@ Package: amsthm 2020/05/29 v2.20.6
 \dth@everypar=\toks32
 ) (/usr/share/texmf-dist/tex/latex/amsfonts/amssymb.sty
 Package: amssymb 2013/01/14 v3.01 AMS font symbols
+) (/usr/share/texmf-dist/tex/generic/systeme/systeme.sty (/usr/share/texmf-dist/tex/generic/xstring/xstring.sty (/usr/share/texmf-dist/tex/generic/xstring/xstring.tex
+\integerpart=\count279
+\decimalpart=\count280
+)
+Package: xstring 2021/07/21 v1.84 String manipulations (CT)
+) (/usr/share/texmf-dist/tex/generic/systeme/systeme.tex
+\SYS_systemecode=\toks33
+\SYS_systempreamble=\toks34
+\SYSeqnum=\count281
+)
+Package: systeme 2020/05/03 v0.34 Mise en forme de systemes d'equations (CT)
 ) (/usr/share/texmf-dist/tex/latex/geometry/geometry.sty
 Package: geometry 2020/01/02 v5.9 Page Geometry
  (/usr/share/texmf-dist/tex/generic/iftex/ifvtex.sty
@@ -168,9 +179,9 @@ Package: ifvtex 2019/10/25 v1.7 ifvtex legacy package. Use iftex instead.
  (/usr/share/texmf-dist/tex/generic/iftex/iftex.sty
 Package: iftex 2022/02/03 v1.0f TeX engine tests
 ))
-\Gm@cnth=\count279
-\Gm@cntv=\count280
-\c@Gm@tempcnt=\count281
+\Gm@cnth=\count282
+\Gm@cntv=\count283
+\c@Gm@tempcnt=\count284
 \Gm@bindingoffset=\dimen159
 \Gm@wd@mp=\dimen160
 \Gm@odd@mp=\dimen161
@@ -179,7 +190,7 @@ Package: iftex 2022/02/03 v1.0f TeX engine tests
 \Gm@layoutheight=\dimen164
 \Gm@layouthoffset=\dimen165
 \Gm@layoutvoffset=\dimen166
-\Gm@dimlist=\toks33
+\Gm@dimlist=\toks35
 ) (/usr/share/texmf-dist/tex/latex/tools/indentfirst.sty
 Package: indentfirst 1995/11/23 v1.03 Indent first paragraph (DPC)
 ) (/usr/share/texmf-dist/tex/latex/psnfss/helvet.sty
@@ -337,10 +348,10 @@ LaTeX Font Info:    Overwriting math alphabet `\mathcal' in version `normal'
  (/usr/share/texmf-dist/tex/latex/xkeyval/xkeyval.sty
 Package: xkeyval 2020/11/20 v2.8 package option processing (HA)
  (/usr/share/texmf-dist/tex/generic/xkeyval/xkeyval.tex (/usr/share/texmf-dist/tex/generic/xkeyval/xkvutils.tex
-\XKV@toks=\toks34
-\XKV@tempa@toks=\toks35
+\XKV@toks=\toks36
+\XKV@tempa@toks=\toks37
 )
-\XKV@depth=\count282
+\XKV@depth=\count285
 File: xkeyval.tex 2014/12/03 v2.7a key=value parser (HA)
 ))
 LaTeX Font Info:    Trying to load font information for OT1+mdbch on input line 186.
@@ -379,10 +390,10 @@ Package: mathastext 2019/11/16 v1.3w Use the text font in math mode (JFB)
 \mst@exists@muskip=\muskip17
 \mst@forall@muskip=\muskip18
 \mst@prime@muskip=\muskip19
-\mst@do@nonletters=\toks36
-\mst@do@easynonletters=\toks37
-\mst@do@az=\toks38
-\mst@do@AZ=\toks39
+\mst@do@nonletters=\toks38
+\mst@do@easynonletters=\toks39
+\mst@do@az=\toks40
+\mst@do@AZ=\toks41
 \symmtoperatorfont=\mathgroup11
 \symmtletterfont=\mathgroup12
 
@@ -443,7 +454,7 @@ Package: titlesec 2021/07/05 v2.14 Sectioning titles
 \aftertitleunit=\skip61
 \ttl@plus=\dimen167
 \ttl@minus=\dimen168
-\ttl@toksa=\toks40
+\ttl@toksa=\toks42
 \titlewidth=\dimen169
 \titlewidthlast=\dimen170
 \titlewidthfirst=\dimen171
@@ -476,7 +487,7 @@ Package: quiver 2021/01/11 quiver
 (/usr/share/texmf-dist/tex/latex/tikz-cd/tikz-cd.sty
 Package: tikz-cd 2021/05/04 v1.0 Commutative diagrams with TikZ
  (/usr/share/texmf-dist/tex/latex/pgf/frontendlayer/tikz.sty (/usr/share/texmf-dist/tex/latex/pgf/basiclayer/pgf.sty (/usr/share/texmf-dist/tex/latex/pgf/utilities/pgfrcs.sty (/usr/share/texmf-dist/tex/generic/pgf/utilities/pgfutil-common.tex
-\pgfutil@everybye=\toks41
+\pgfutil@everybye=\toks43
 \pgfutil@tempdima=\dimen172
 \pgfutil@tempdimb=\dimen173
  (/usr/share/texmf-dist/tex/generic/pgf/utilities/pgfutil-common-lists.tex)) (/usr/share/texmf-dist/tex/generic/pgf/utilities/pgfutil-latex.def
@@ -501,10 +512,10 @@ Package graphics Info: Driver file: pdftex.def on input line 107.
 ) (/usr/share/texmf-dist/tex/latex/pgf/systemlayer/pgfsys.sty (/usr/share/texmf-dist/tex/generic/pgf/systemlayer/pgfsys.code.tex
 Package: pgfsys 2021/05/15 v3.1.9a (3.1.9a)
  (/usr/share/texmf-dist/tex/generic/pgf/utilities/pgfkeys.code.tex
-\pgfkeys@pathtoks=\toks42
-\pgfkeys@temptoks=\toks43
+\pgfkeys@pathtoks=\toks44
+\pgfkeys@temptoks=\toks45
  (/usr/share/texmf-dist/tex/generic/pgf/utilities/pgfkeysfiltered.code.tex
-\pgfkeys@tmptoks=\toks44
+\pgfkeys@tmptoks=\toks46
 ))
 \pgf@x=\dimen176
 \pgf@y=\dimen177
@@ -518,14 +529,14 @@ Package: pgfsys 2021/05/15 v3.1.9a (3.1.9a)
 \pgf@yd=\dimen185
 \w@pgf@writea=\write3
 \r@pgf@reada=\read3
-\c@pgf@counta=\count283
-\c@pgf@countb=\count284
-\c@pgf@countc=\count285
-\c@pgf@countd=\count286
-\t@pgf@toka=\toks45
-\t@pgf@tokb=\toks46
-\t@pgf@tokc=\toks47
-\pgf@sys@id@count=\count287
+\c@pgf@counta=\count286
+\c@pgf@countb=\count287
+\c@pgf@countc=\count288
+\c@pgf@countd=\count289
+\t@pgf@toka=\toks47
+\t@pgf@tokb=\toks48
+\t@pgf@tokc=\toks49
+\pgf@sys@id@count=\count290
  (/usr/share/texmf-dist/tex/generic/pgf/systemlayer/pgf.cfg
 File: pgf.cfg 2021/05/15 v3.1.9a (3.1.9a)
 )
@@ -536,21 +547,21 @@ File: pgfsys-pdftex.def 2021/05/15 v3.1.9a (3.1.9a)
 File: pgfsys-common-pdf.def 2021/05/15 v3.1.9a (3.1.9a)
 ))) (/usr/share/texmf-dist/tex/generic/pgf/systemlayer/pgfsyssoftpath.code.tex
 File: pgfsyssoftpath.code.tex 2021/05/15 v3.1.9a (3.1.9a)
-\pgfsyssoftpath@smallbuffer@items=\count288
-\pgfsyssoftpath@bigbuffer@items=\count289
+\pgfsyssoftpath@smallbuffer@items=\count291
+\pgfsyssoftpath@bigbuffer@items=\count292
 ) (/usr/share/texmf-dist/tex/generic/pgf/systemlayer/pgfsysprotocol.code.tex
 File: pgfsysprotocol.code.tex 2021/05/15 v3.1.9a (3.1.9a)
 )) (/usr/share/texmf-dist/tex/generic/pgf/basiclayer/pgfcore.code.tex
 Package: pgfcore 2021/05/15 v3.1.9a (3.1.9a)
  (/usr/share/texmf-dist/tex/generic/pgf/math/pgfmath.code.tex (/usr/share/texmf-dist/tex/generic/pgf/math/pgfmathcalc.code.tex (/usr/share/texmf-dist/tex/generic/pgf/math/pgfmathutil.code.tex) (/usr/share/texmf-dist/tex/generic/pgf/math/pgfmathparser.code.tex
 \pgfmath@dimen=\dimen186
-\pgfmath@count=\count290
+\pgfmath@count=\count293
 \pgfmath@box=\box55
-\pgfmath@toks=\toks48
-\pgfmath@stack@operand=\toks49
-\pgfmath@stack@operation=\toks50
+\pgfmath@toks=\toks50
+\pgfmath@stack@operand=\toks51
+\pgfmath@stack@operation=\toks52
 ) (/usr/share/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.code.tex (/usr/share/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.basic.code.tex) (/usr/share/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.trigonometric.code.tex) (/usr/share/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.random.code.tex) (/usr/share/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.comparison.code.tex) (/usr/share/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.base.code.tex) (/usr/share/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.round.code.tex) (/usr/share/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.misc.code.tex) (/usr/share/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.integerarithmetics.code.tex))) (/usr/share/texmf-dist/tex/generic/pgf/math/pgfmathfloat.code.tex
-\c@pgfmathroundto@lastzeros=\count291
+\c@pgfmathroundto@lastzeros=\count294
 )) (/usr/share/texmf-dist/tex/generic/pgf/math/pgfint.code.tex) (/usr/share/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepoints.code.tex
 File: pgfcorepoints.code.tex 2021/05/15 v3.1.9a (3.1.9a)
 \pgf@picminx=\dimen187
@@ -580,7 +591,7 @@ File: pgfcorescopes.code.tex 2021/05/15 v3.1.9a (3.1.9a)
 \pgfpic=\box56
 \pgf@hbox=\box57
 \pgf@layerbox@main=\box58
-\pgf@picture@serial@count=\count292
+\pgf@picture@serial@count=\count295
 ) (/usr/share/texmf-dist/tex/generic/pgf/basiclayer/pgfcoregraphicstate.code.tex
 File: pgfcoregraphicstate.code.tex 2021/05/15 v3.1.9a (3.1.9a)
 \pgflinewidth=\dimen261
@@ -601,8 +612,8 @@ File: pgfcorearrows.code.tex 2021/05/15 v3.1.9a (3.1.9a)
 ) (/usr/share/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreshade.code.tex
 File: pgfcoreshade.code.tex 2021/05/15 v3.1.9a (3.1.9a)
 \pgf@max=\dimen266
-\pgf@sys@shading@range@num=\count293
-\pgf@shadingcount=\count294
+\pgf@sys@shading@range@num=\count296
+\pgf@shadingcount=\count297
 ) (/usr/share/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreimage.code.tex
 File: pgfcoreimage.code.tex 2021/05/15 v3.1.9a (3.1.9a)
  (/usr/share/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreexternal.code.tex
@@ -632,13 +643,13 @@ Package: pgffor 2021/05/15 v3.1.9a (3.1.9a)
  (/usr/share/texmf-dist/tex/generic/pgf/math/pgfmath.code.tex)
 \pgffor@iter=\dimen269
 \pgffor@skip=\dimen270
-\pgffor@stack=\toks51
-\pgffor@toks=\toks52
+\pgffor@stack=\toks53
+\pgffor@toks=\toks54
 )) (/usr/share/texmf-dist/tex/generic/pgf/frontendlayer/tikz/tikz.code.tex
 Package: tikz 2021/05/15 v3.1.9a (3.1.9a)
  (/usr/share/texmf-dist/tex/generic/pgf/libraries/pgflibraryplothandlers.code.tex
 File: pgflibraryplothandlers.code.tex 2021/05/15 v3.1.9a (3.1.9a)
-\pgf@plot@mark@count=\count295
+\pgf@plot@mark@count=\count298
 \pgfplotmarksize=\dimen271
 )
 \tikz@lastx=\dimen272
@@ -653,17 +664,17 @@ File: pgflibraryplothandlers.code.tex 2021/05/15 v3.1.9a (3.1.9a)
 \tikz@figbox@bg=\box62
 \tikz@tempbox=\box63
 \tikz@tempbox@bg=\box64
-\tikztreelevel=\count296
-\tikznumberofchildren=\count297
-\tikznumberofcurrentchild=\count298
-\tikz@fig@count=\count299
+\tikztreelevel=\count299
+\tikznumberofchildren=\count300
+\tikznumberofcurrentchild=\count301
+\tikz@fig@count=\count302
  (/usr/share/texmf-dist/tex/generic/pgf/modules/pgfmodulematrix.code.tex
 File: pgfmodulematrix.code.tex 2021/05/15 v3.1.9a (3.1.9a)
-\pgfmatrixcurrentrow=\count300
-\pgfmatrixcurrentcolumn=\count301
-\pgf@matrix@numberofcolumns=\count302
+\pgfmatrixcurrentrow=\count303
+\pgfmatrixcurrentcolumn=\count304
+\pgf@matrix@numberofcolumns=\count305
 )
-\tikz@expandcount=\count303
+\tikz@expandcount=\count306
  (/usr/share/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrarytopaths.code.tex
 File: tikzlibrarytopaths.code.tex 2021/05/15 v3.1.9a (3.1.9a)
 ))) (/usr/share/texmf-dist/tex/generic/tikz-cd/tikzlibrarycd.code.tex (/usr/share/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrarymatrix.code.tex
@@ -684,7 +695,7 @@ File: tikzlibrarycalc.code.tex 2021/05/15 v3.1.9a (3.1.9a)
 \pgfdecoratedinputsegmentcompleteddistance=\dimen286
 \pgfdecoratedinputsegmentremainingdistance=\dimen287
 \pgf@decorate@distancetomove=\dimen288
-\pgf@decorate@repeatstate=\count304
+\pgf@decorate@repeatstate=\count307
 \pgfdecorationsegmentamplitude=\dimen289
 \pgfdecorationsegmentlength=\dimen290
 )
@@ -712,13 +723,13 @@ Package fancyhdr Warning: \fancyfoot's `E' option without twoside option is usel
 
 (/usr/share/texmf-dist/tex/latex/thmtools/thmtools.sty
 Package: thmtools 2020/08/01 v0.72
-\thmt@toks=\toks53
-\c@thmt@dummyctr=\count305
+\thmt@toks=\toks55
+\c@thmt@dummyctr=\count308
  (/usr/share/texmf-dist/tex/latex/thmtools/thm-patch.sty
 Package: thm-patch 2020/08/01 v0.72
  (/usr/share/texmf-dist/tex/latex/thmtools/parseargs.sty
 Package: parseargs 2020/08/01 v0.72
-\@parsespec=\toks54
+\@parsespec=\toks56
 )) (/usr/share/texmf-dist/tex/latex/thmtools/thm-kv.sty
 Package: thm-kv 2020/08/01 v0.72
 Package thm-kv Info: Theorem names will be uppercased on input line 42.
@@ -736,7 +747,7 @@ Package: thm-listof 2020/08/01 v0.72
 Package: thm-restate 2020/08/01 v0.72
 ) (/usr/share/texmf-dist/tex/latex/thmtools/thm-amsthm.sty
 Package: thm-amsthm 2020/08/01 v0.72
-\thmt@style@headstyle=\toks55
+\thmt@style@headstyle=\toks57
 )) (/usr/share/texmf-dist/tex/latex/mdframed/mdframed.sty
 Package: mdframed 2013/07/01 1.9b: mdframed
  (/usr/share/texmf-dist/tex/latex/kvoptions/kvoptions.sty
@@ -747,13 +758,13 @@ Package: ltxcmds 2020-05-10 v1.25 LaTeX kernel commands for general use (HO)
 Package: expl3 2022-04-10 L3 programming layer (loader) 
  (/usr/share/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def
 File: l3backend-pdftex.def 2022-04-14 L3 backend support: PDF output (pdfTeX)
-\l__color_backend_stack_int=\count306
+\l__color_backend_stack_int=\count309
 \l__pdf_internal_box=\box66
 ))
 Package: xparse 2022-01-12 L3 Experimental document command parser
 ) (/usr/share/texmf-dist/tex/latex/etoolbox/etoolbox.sty
 Package: etoolbox 2020/10/05 v2.5k e-TeX tools for LaTeX (JAW)
-\etb@tempcnta=\count307
+\etb@tempcnta=\count310
 ) (/usr/share/texmf-dist/tex/latex/zref/zref-abspage.sty
 Package: zref-abspage 2022-04-07 v2.34 Module abspage for zref (HO)
  (/usr/share/texmf-dist/tex/latex/zref/zref-base.sty
@@ -779,13 +790,13 @@ Package zref Info: New property: page on input line 769.
 Package: atbegshi-ltx 2021/01/10 v1.0c Emulation of the original atbegshi
 package with kernel methods
 )
-\c@abspage=\count308
+\c@abspage=\count311
 Package zref Info: New property: abspage on input line 65.
 ) (/usr/share/texmf-dist/tex/latex/needspace/needspace.sty
 Package: needspace 2010/09/12 v1.3d reserve vertical space
 )
 \mdf@templength=\skip71
-\c@mdf@globalstyle@cnt=\count309
+\c@mdf@globalstyle@cnt=\count312
 \mdf@skipabove@length=\skip72
 \mdf@skipbelow@length=\skip73
 \mdf@leftmargin@length=\skip74
@@ -860,16 +871,16 @@ File: md-frame-1.mdf 2013/07/01\ 1.9b: md-frame-1
 \mdf@horizontalspaceofbox=\skip135
 \mdfsubtitleheight=\skip136
 \mdfsubsubtitleheight=\skip137
-\c@mdfcountframes=\count310
+\c@mdfcountframes=\count313
 
 ****** mdframed patching \endmdf@trivlist
 
 ****** -- success******
 
-\mdf@envdepth=\count311
-\c@mdf@env@i=\count312
-\c@mdf@env@ii=\count313
-\c@mdf@zref@counter=\count314
+\mdf@envdepth=\count314
+\c@mdf@env@i=\count315
+\c@mdf@env@ii=\count316
+\c@mdf@zref@counter=\count317
 Package zref Info: New property: mdf@pagevalue on input line 895.
 )
 Package thmtools Info: Key `mdframed' (with value ` linewidth=2pt, rightline=false, topline=false, bottomline=false, linecolor=ForestGreen, backgroundcolor=ForestGreen!5, ')
@@ -912,9 +923,9 @@ Package thmtools Info: Automatically pulling in `thmdef-mdframed' on input line 
  (/usr/share/texmf-dist/tex/latex/thmtools/thmdef-mdframed.sty
 Package: thmdef-mdframed 2020/08/01 v0.72
 )
-\c@definition=\count315
-\c@example=\count316
-\c@theorem=\count317
+\c@definition=\count318
+\c@example=\count319
+\c@theorem=\count320
  (/usr/share/texmf-dist/tex/latex/url/url.sty
 \Urlmuskip=\muskip20
 Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
@@ -928,14 +939,14 @@ Package: hycolor 2020-01-27 v1.10 Color options for hyperref/bookmark (HO)
 Package: letltxmacro 2019/12/03 v1.6 Let assignment for LaTeX macros (HO)
 )
 \@linkdim=\dimen291
-\Hy@linkcounter=\count318
-\Hy@pagecounter=\count319
+\Hy@linkcounter=\count321
+\Hy@pagecounter=\count322
  (/usr/share/texmf-dist/tex/latex/hyperref/pd1enc.def
 File: pd1enc.def 2022-02-21 v7.00n Hyperref: PDFDocEncoding definition (HO)
 ) (/usr/share/texmf-dist/tex/generic/intcalc/intcalc.sty
 Package: intcalc 2019/12/15 v1.3 Expandable calculations with integers (HO)
 )
-\Hy@SavedSpaceFactor=\count320
+\Hy@SavedSpaceFactor=\count323
  (/usr/share/texmf-dist/tex/latex/hyperref/puenc.def
 File: puenc.def 2022-02-21 v7.00n Hyperref: PDF Unicode definition (HO)
 )
@@ -961,13 +972,13 @@ Package: bigintcalc 2019/12/15 v1.5 Expandable calculations on big integers (HO)
 ))
 Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 286.
 ))
-\c@Hy@tempcnt=\count321
+\c@Hy@tempcnt=\count324
 LaTeX Info: Redefining \url on input line 4749.
 \XeTeXLinkMargin=\dimen292
  (/usr/share/texmf-dist/tex/generic/bitset/bitset.sty
 Package: bitset 2019/12/09 v1.3 Handle bit-vector datatype (HO)
 )
-\Fld@menulength=\count322
+\Fld@menulength=\count325
 \Field@Width=\dimen293
 \Fld@charsize=\dimen294
 Package hyperref Info: Hyper figures OFF on input line 6027.
@@ -979,16 +990,16 @@ Package hyperref Info: Link coloring with OCG OFF on input line 6052.
 Package hyperref Info: PDF/A mode OFF on input line 6057.
 LaTeX Info: Redefining \ref on input line 6097.
 LaTeX Info: Redefining \pageref on input line 6101.
-\Hy@abspage=\count323
-\c@Item=\count324
-\c@Hfootnote=\count325
+\Hy@abspage=\count326
+\c@Item=\count327
+\c@Hfootnote=\count328
 )
 Package hyperref Info: Driver (autodetected): hpdftex.
  (/usr/share/texmf-dist/tex/latex/hyperref/hpdftex.def
 File: hpdftex.def 2022-02-21 v7.00n Hyperref driver for pdfTeX
-\HyAnn@Count=\count326
-\Fld@listcount=\count327
-\c@bookmark@seq@number=\count328
+\HyAnn@Count=\count329
+\Fld@listcount=\count330
+\c@bookmark@seq@number=\count331
 \Hy@SectionHShift=\skip138
 ))
 Package hyperref Info: Option `colorlinks' set `false' on input line 14.
@@ -1083,17 +1094,17 @@ Package mathdesign/mdbch Warning: Package 'amsfonts' shouldn't be used in conjon
 Package mathastext Info: current meaning of amsmath \resetMathstrut@ saved on input line 16.
 (/usr/share/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count329
+\scratchcounter=\count332
 \scratchdimen=\dimen295
 \scratchbox=\box72
-\nofMPsegments=\count330
-\nofMParguments=\count331
-\everyMPshowfont=\toks56
-\MPscratchCnt=\count332
+\nofMPsegments=\count333
+\nofMParguments=\count334
+\everyMPshowfont=\toks58
+\MPscratchCnt=\count335
 \MPscratchDim=\dimen296
-\MPnumerator=\count333
-\makeMPintoPDFobject=\count334
-\everyMPtoPDFconversion=\toks57
+\MPnumerator=\count336
+\makeMPintoPDFobject=\count337
+\everyMPtoPDFconversion=\toks59
 ) (/usr/share/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
 Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
 Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 485.
@@ -1108,7 +1119,7 @@ Package: refcount 2019/12/15 v3.6 Data extraction from label references (HO)
 ) (/usr/share/texmf-dist/tex/generic/gettitlestring/gettitlestring.sty
 Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
 )
-\c@section@level=\count335
+\c@section@level=\count338
 )
 LaTeX Info: Redefining \ref on input line 16.
 LaTeX Info: Redefining \pageref on input line 16.
@@ -1233,7 +1244,7 @@ LaTeX Font Info:    Font shape `T1/mdbch/m/it' will be
 pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.30 ...{3.4}Prime Factorization}{35}{section.3.4}
+l.30 ...berline {4}Canonical Forms}{38}{chapter.4}
                                                   % [1
 
 ])
@@ -1649,6 +1660,13 @@ Package mdframed Info: mdframed detected package amsthm
 (mdframed)              on input line 779.
 
 
+Package mdframed Warning: You got a bad break
+(mdframed)                because the last box will be empty
+(mdframed)                you have to change it manually
+(mdframed)                by changing the text, the space
+(mdframed)                or something else on input line 783.
+
+
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 14.49998pt, for example:
 (fancyhdr)                \setlength{\headheight}{14.49998pt}.
@@ -1658,13 +1676,13 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 [16]
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 787.
+(mdframed)              on input line 789.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 807.
+(mdframed)              on input line 809.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 820.
+(mdframed)              on input line 822.
 
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -1683,10 +1701,10 @@ Package mdframed Info: mdframed detected package amsthm
 Package hyperref Info: bookmark level for unknown remark defaults to 0 on input line 852.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 857.
-Package mdframed Info: mdframed detected package amsthm 
- changed the theorem header of amsthm
-(mdframed)              on input line 870.
+(mdframed)              on input line 855.
+Package mdframed Info: Box was splittet wrong
+ starting loop to iterate the splitting point
+(mdframed)              on input line 921.
 
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -1698,8 +1716,11 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 [18]
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 904.
-)
+(mdframed)              on input line 923.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 936.
+
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 14.49998pt, for example:
@@ -1708,6 +1729,21 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
 [19]
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 949.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 982.
+)
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[20]
 \openout2 = `Chapters/dual.aux'.
 
  (./Chapters/dual.tex
@@ -1798,7 +1834,7 @@ LaTeX Font Info:    No math alphabet change to frozen version normal on input li
 Package mdframed Info: Box was splittet wrong
  starting loop to iterate the splitting point
 (mdframed)              on input line 23.
-[20
+[21
 
 
 
@@ -1938,7 +1974,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller to compensate:
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[21]
+[22]
 LaTeX Font Info:    No math alphabet change to frozen version normal on input line 74.
 LaTeX Font Info:    No math alphabet change to frozen version normal on input line 75.
 LaTeX Font Info:    No math alphabet change to frozen version normal on input line 75.
@@ -2007,7 +2043,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller to compensate:
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[22]
+[23]
 Package mdframed Info: Not enough space on this page on input line 136.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
@@ -2020,7 +2056,7 @@ LaTeX Font Info:    No math alphabet change to frozen version normal on input li
 LaTeX Font Info:    No math alphabet change to frozen version normal on input line 139.
 LaTeX Font Info:    No math alphabet change to frozen version normal on input line 139.
 LaTeX Font Info:    No math alphabet change to frozen version normal on input line 139.
-<Figures/correspondence_theorem.png, id=608, 354.57469pt x 431.36156pt>
+<Figures/correspondence_theorem.png, id=616, 354.57469pt x 431.36156pt>
 File: Figures/correspondence_theorem.png Graphic file (type png)
 <use Figures/correspondence_theorem.png>
 Package pdftex.def Info: Figures/correspondence_theorem.png  used on input line 144.
@@ -2080,7 +2116,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller to compensate:
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[23 <./Figures/correspondence_theorem.png (PNG copy)>]
+[24 <./Figures/correspondence_theorem.png (PNG copy)>]
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
 (mdframed)              on input line 186.
@@ -2169,7 +2205,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller to compensate:
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[24]
+[25]
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
 (mdframed)              on input line 251.
@@ -2290,7 +2326,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller to compensate:
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[25]
+[26]
 Package mdframed Info: Not enough space on this page on input line 319.
 LaTeX Font Info:    No math alphabet change to frozen version normal on input line 321.
 LaTeX Font Info:    No math alphabet change to frozen version normal on input line 321.
@@ -2346,7 +2382,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller to compensate:
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[26]
+[27]
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
 (mdframed)              on input line 350.
@@ -2508,7 +2544,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller to compensate:
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[27]
+[28]
 LaTeX Font Info:    No math alphabet change to frozen version normal on input line 413.
 LaTeX Font Info:    No math alphabet change to frozen version normal on input line 413.
 LaTeX Font Info:    No math alphabet change to frozen version normal on input line 413.
@@ -2621,7 +2657,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller to compensate:
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[28]
+[29]
 Package mdframed Info: Not enough space on this page on input line 475.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
@@ -2732,7 +2768,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller to compensate:
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[29]
+[30]
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
 (mdframed)              on input line 540.
@@ -2823,7 +2859,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller to compensate:
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[30]
+[31]
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
 (mdframed)              on input line 585.
@@ -2952,7 +2988,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller to compensate:
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[31]
+[32]
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
 (mdframed)              on input line 675.
@@ -3004,7 +3040,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller to compensate:
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[32]
+[33]
 \openout2 = `Chapters/polynomials.aux'.
 
  (./Chapters/polynomials.tex
@@ -3077,7 +3113,7 @@ LaTeX Font Info:    No math alphabet change to frozen version normal on input li
 LaTeX Font Info:    No math alphabet change to frozen version normal on input line 42.
 LaTeX Font Info:    No math alphabet change to frozen version normal on input line 43.
 LaTeX Font Info:    No math alphabet change to frozen version normal on input line 43.
-[33
+[34
 
 
 
@@ -3163,7 +3199,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller to compensate:
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[34]
+[35]
 Package mdframed Info: Not enough space on this page on input line 94.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
@@ -3229,7 +3265,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller to compensate:
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[35]
+[36]
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
 (mdframed)              on input line 152.
@@ -3247,7 +3283,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller to compensate:
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[36]
+[37]
 \openout2 = `Chapters/canonical_forms.aux'.
 
  (./Chapters/canonical_forms.tex
@@ -3258,220 +3294,149 @@ LaTeX Font Info:    No math alphabet change to frozen version normal on input li
 LaTeX Font Info:    No math alphabet change to frozen version normal on input line 5.
 LaTeX Font Info:    No math alphabet change to frozen version normal on input line 5.
 LaTeX Font Info:    No math alphabet change to frozen version normal on input line 5.
-LaTeX Font Info:    No math alphabet change to frozen version normal on input line 9.
-LaTeX Font Info:    No math alphabet change to frozen version normal on input line 9.
-LaTeX Font Info:    No math alphabet change to frozen version normal on input line 9.
-LaTeX Font Info:    No math alphabet change to frozen version normal on input line 9.
-LaTeX Font Info:    No math alphabet change to frozen version normal on input line 9.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 13.
-LaTeX Font Info:    No math alphabet change to frozen version normal on input line 15.
-LaTeX Font Info:    No math alphabet change to frozen version normal on input line 15.
-LaTeX Font Info:    No math alphabet change to frozen version normal on input line 16.
-LaTeX Font Info:    No math alphabet change to frozen version normal on input line 16.
-LaTeX Font Info:    No math alphabet change to frozen version normal on input line 16.
-LaTeX Font Info:    No math alphabet change to frozen version normal on input line 16.
+(mdframed)              on input line 9.
+LaTeX Font Info:    Undo math alphabet allocation in version normal on input line 10.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 10.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 13.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 13.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 13.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 20.
-LaTeX Font Info:    No math alphabet change to frozen version normal on input line 21.
-LaTeX Font Info:    No math alphabet change to frozen version normal on input line 21.
-LaTeX Font Info:    No math alphabet change to frozen version normal on input line 23.
-LaTeX Font Info:    No math alphabet change to frozen version normal on input line 23.
-LaTeX Font Info:    No math alphabet change to frozen version normal on input line 26.
-LaTeX Font Info:    No math alphabet change to frozen version normal on input line 26.
-LaTeX Font Info:    No math alphabet change to frozen version normal on input line 26.
-LaTeX Font Info:    No math alphabet change to frozen version normal on input line 28.
-LaTeX Font Info:    No math alphabet change to frozen version normal on input line 28.
+(mdframed)              on input line 17.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 19.
+LaTeX Font Info:    Undo math alphabet allocation in version normal on input line 19.
+LaTeX Font Info:    Undo math alphabet allocation in version normal on input line 20.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 20.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 20.
+LaTeX Font Info:    Undo math alphabet allocation in version normal on input line 20.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 24.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 25.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 25.
+LaTeX Font Info:    Undo math alphabet allocation in version normal on input line 27.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 27.
 LaTeX Font Info:    No math alphabet change to frozen version normal on input line 30.
 LaTeX Font Info:    No math alphabet change to frozen version normal on input line 30.
-LaTeX Font Info:    No math alphabet change to frozen version normal on input line 31.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 30.
 LaTeX Font Info:    No math alphabet change to frozen version normal on input line 32.
 LaTeX Font Info:    No math alphabet change to frozen version normal on input line 32.
-LaTeX Font Info:    No math alphabet change to frozen version normal on input line 32.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 34.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 34.
 LaTeX Font Info:    No math alphabet change to frozen version normal on input line 35.
-LaTeX Font Info:    No math alphabet change to frozen version normal on input line 35.
-[37
+[38
 
 
 
 
 ]
-LaTeX Font Info:    No math alphabet change to frozen version normal on input line 37.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 36.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 36.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 36.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 39.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 39.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 40.
-LaTeX Font Info:    No math alphabet change to frozen version normal on input line 40.
-LaTeX Font Info:    No math alphabet change to frozen version normal on input line 40.
-LaTeX Font Info:    No math alphabet change to frozen version normal on input line 40.
-LaTeX Font Info:    No math alphabet change to frozen version normal on input line 40.
+(mdframed)              on input line 42.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 43.
-LaTeX Font Info:    No math alphabet change to frozen version normal on input line 44.
-LaTeX Font Info:    No math alphabet change to frozen version normal on input line 44.
-LaTeX Font Info:    No math alphabet change to frozen version normal on input line 44.
-LaTeX Font Info:    No math alphabet change to frozen version normal on input line 44.
-LaTeX Font Info:    No math alphabet change to frozen version normal on input line 44.
-LaTeX Font Info:    No math alphabet change to frozen version normal on input line 44.
-LaTeX Font Info:    No math alphabet change to frozen version normal on input line 44.
-
-Overfull \hbox (7.33302pt too wide) in paragraph at lines 44--45
-[][][]\T1/phv/b/n/12 Theorem 4.1.2 \T1/phv/m/n/12 (Pri-mary De-com-po-si-tion The-o-rem (PDT))\T1/phv/b/n/12 . [][]\T1/mdbch/m/n/12 Sup-pose that $[][] \OMS/mdbch/m/n/12 6\T1/mdbch/m/n/12 = {0}$ and let $\T1/mdbch/m/it/12 p[]\T1/mdbch/m/n/12 , [] , \T1/mdbch/m/it/12 p[]$
- []
-
-LaTeX Font Info:    No math alphabet change to frozen version normal on input line 47.
-LaTeX Font Info:    No math alphabet change to frozen version normal on input line 49.
-LaTeX Font Info:    No math alphabet change to frozen version normal on input line 49.
-LaTeX Font Info:    No math alphabet change to frozen version normal on input line 49.
-LaTeX Font Info:    No math alphabet change to frozen version normal on input line 49.
-LaTeX Font Info:    No math alphabet change to frozen version normal on input line 49.
-LaTeX Font Info:    No math alphabet change to frozen version normal on input line 56.
-LaTeX Font Info:    No math alphabet change to frozen version normal on input line 56.
-LaTeX Font Info:    No math alphabet change to frozen version normal on input line 56.
-LaTeX Font Info:    No math alphabet change to frozen version normal on input line 56.
-LaTeX Font Info:    No math alphabet change to frozen version normal on input line 56.
-LaTeX Font Info:    No math alphabet change to frozen version normal on input line 56.
+(mdframed)              on input line 46.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 46.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 46.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 46.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 46.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 46.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 46.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 46.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 46.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 46.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 48.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 48.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 48.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 48.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 48.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 48.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 50.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 53.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 54.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 54.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 54.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 54.
 LaTeX Font Info:    No math alphabet change to frozen version normal on input line 56.
 LaTeX Font Info:    No math alphabet change to frozen version normal on input line 56.
 LaTeX Font Info:    No math alphabet change to frozen version normal on input line 56.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 59.
-LaTeX Font Info:    No math alphabet change to frozen version normal on input line 59.
-LaTeX Font Info:    No math alphabet change to frozen version normal on input line 59.
-LaTeX Font Info:    No math alphabet change to frozen version normal on input line 59.
-LaTeX Font Info:    No math alphabet change to frozen version normal on input line 59.
-LaTeX Font Info:    No math alphabet change to frozen version normal on input line 59.
-LaTeX Font Info:    No math alphabet change to frozen version normal on input line 59.
-LaTeX Font Info:    No math alphabet change to frozen version normal on input line 59.
-LaTeX Font Info:    No math alphabet change to frozen version normal on input line 59.
-LaTeX Font Info:    No math alphabet change to frozen version normal on input line 59.
+(mdframed)              on input line 62.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 62.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 62.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 63.
-LaTeX Font Info:    No math alphabet change to frozen version normal on input line 63.
-LaTeX Font Info:    No math alphabet change to frozen version normal on input line 63.
-LaTeX Font Info:    No math alphabet change to frozen version normal on input line 63.
-LaTeX Font Info:    No math alphabet change to frozen version normal on input line 67.
-LaTeX Font Info:    No math alphabet change to frozen version normal on input line 67.
-LaTeX Font Info:    No math alphabet change to frozen version normal on input line 67.
-LaTeX Font Info:    No math alphabet change to frozen version normal on input line 67.
+(mdframed)              on input line 66.
 LaTeX Font Info:    No math alphabet change to frozen version normal on input line 69.
-LaTeX Font Info:    No math alphabet change to frozen version normal on input line 69.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 72.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 73.
 LaTeX Font Info:    No math alphabet change to frozen version normal on input line 73.
 LaTeX Font Info:    No math alphabet change to frozen version normal on input line 73.
 LaTeX Font Info:    No math alphabet change to frozen version normal on input line 73.
 LaTeX Font Info:    No math alphabet change to frozen version normal on input line 73.
 LaTeX Font Info:    No math alphabet change to frozen version normal on input line 76.
-LaTeX Font Info:    No math alphabet change to frozen version normal on input line 77.
-LaTeX Font Info:    No math alphabet change to frozen version normal on input line 77.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 78.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 79.
-LaTeX Font Info:    No math alphabet change to frozen version normal on input line 80.
-LaTeX Font Info:    No math alphabet change to frozen version normal on input line 80.
-LaTeX Font Info:    No math alphabet change to frozen version normal on input line 80.
-LaTeX Font Info:    No math alphabet change to frozen version normal on input line 80.
-Package mdframed Info: mdframed detected package amsthm 
- changed the theorem header of amsthm
-(mdframed)              on input line 84.
+(mdframed)              on input line 82.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 83.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 83.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 83.
 LaTeX Font Info:    No math alphabet change to frozen version normal on input line 84.
 LaTeX Font Info:    No math alphabet change to frozen version normal on input line 84.
-LaTeX Font Info:    No math alphabet change to frozen version normal on input line 84.
-LaTeX Font Info:    No math alphabet change to frozen version normal on input line 84.
-LaTeX Font Info:    No math alphabet change to frozen version normal on input line 86.
-LaTeX Font Info:    No math alphabet change to frozen version normal on input line 86.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 85.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 85.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 85.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 85.
 LaTeX Font Info:    No math alphabet change to frozen version normal on input line 86.
 LaTeX Font Info:    No math alphabet change to frozen version normal on input line 87.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 87.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 88.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 88.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 88.
 LaTeX Font Info:    No math alphabet change to frozen version normal on input line 89.
-LaTeX Font Info:    No math alphabet change to frozen version normal on input line 91.
-LaTeX Font Info:    No math alphabet change to frozen version normal on input line 91.
-LaTeX Font Info:    No math alphabet change to frozen version normal on input line 91.
-LaTeX Font Info:    No math alphabet change to frozen version normal on input line 91.
-LaTeX Font Info:    No math alphabet change to frozen version normal on input line 91.
-LaTeX Font Info:    No math alphabet change to frozen version normal on input line 91.
-LaTeX Font Info:    No math alphabet change to frozen version normal on input line 91.
-LaTeX Font Info:    No math alphabet change to frozen version normal on input line 91.
-LaTeX Font Info:    No math alphabet change to frozen version normal on input line 91.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 93.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 93.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 93.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 93.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 93.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 93.
 LaTeX Font Info:    No math alphabet change to frozen version normal on input line 94.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 94.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 94.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 94.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 94.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 94.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 95.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 95.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 95.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 95.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 95.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 95.
 LaTeX Font Info:    No math alphabet change to frozen version normal on input line 96.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 96.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 96.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 96.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 96.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 96.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 97.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 97.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 97.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 98.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 98.
 LaTeX Font Info:    No math alphabet change to frozen version normal on input line 99.
-Package mdframed Info: Box was splittet wrong
- starting loop to iterate the splitting point
-(mdframed)              on input line 100.
-
-Package fancyhdr Warning: \headheight is too small (12.0pt): 
-(fancyhdr)                Make it at least 14.49998pt, for example:
-(fancyhdr)                \setlength{\headheight}{14.49998pt}.
-(fancyhdr)                You might also make \topmargin smaller to compensate:
-(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
-
-[38]
-Package mdframed Info: mdframed detected package amsthm 
- changed the theorem header of amsthm
-(mdframed)              on input line 105.
-LaTeX Font Info:    No math alphabet change to frozen version normal on input line 105.
-LaTeX Font Info:    No math alphabet change to frozen version normal on input line 105.
-LaTeX Font Info:    No math alphabet change to frozen version normal on input line 105.
-LaTeX Font Info:    No math alphabet change to frozen version normal on input line 105.
-Package mdframed Info: mdframed detected package amsthm 
- changed the theorem header of amsthm
-(mdframed)              on input line 109.
-LaTeX Font Info:    No math alphabet change to frozen version normal on input line 109.
-LaTeX Font Info:    No math alphabet change to frozen version normal on input line 111.
-LaTeX Font Info:    No math alphabet change to frozen version normal on input line 111.
-LaTeX Font Info:    No math alphabet change to frozen version normal on input line 111.
-LaTeX Font Info:    No math alphabet change to frozen version normal on input line 111.
-LaTeX Font Info:    No math alphabet change to frozen version normal on input line 111.
-LaTeX Font Info:    No math alphabet change to frozen version normal on input line 111.
-LaTeX Font Info:    No math alphabet change to frozen version normal on input line 111.
-LaTeX Font Info:    No math alphabet change to frozen version normal on input line 111.
-Package mdframed Info: mdframed detected package amsthm 
- changed the theorem header of amsthm
-(mdframed)              on input line 119.
-LaTeX Font Info:    No math alphabet change to frozen version normal on input line 119.
-LaTeX Font Info:    No math alphabet change to frozen version normal on input line 119.
-LaTeX Font Info:    No math alphabet change to frozen version normal on input line 119.
-Package mdframed Info: mdframed detected package amsthm 
- changed the theorem header of amsthm
-(mdframed)              on input line 123.
-LaTeX Font Info:    No math alphabet change to frozen version normal on input line 123.
-LaTeX Font Info:    No math alphabet change to frozen version normal on input line 123.
-LaTeX Font Info:    No math alphabet change to frozen version normal on input line 123.
-LaTeX Font Info:    No math alphabet change to frozen version normal on input line 126.
-LaTeX Font Info:    No math alphabet change to frozen version normal on input line 127.
-LaTeX Font Info:    No math alphabet change to frozen version normal on input line 127.
-LaTeX Font Info:    No math alphabet change to frozen version normal on input line 127.
-Package mdframed Info: mdframed detected package amsthm 
- changed the theorem header of amsthm
-(mdframed)              on input line 131.
-Package hyperref Info: bookmark level for unknown proposition defaults to 0 on input line 131.
-LaTeX Font Info:    No math alphabet change to frozen version normal on input line 131.
-LaTeX Font Info:    No math alphabet change to frozen version normal on input line 131.
-LaTeX Font Info:    No math alphabet change to frozen version normal on input line 131.
-LaTeX Font Info:    No math alphabet change to frozen version normal on input line 131.
-Package mdframed Info: mdframed detected package amsthm 
- changed the theorem header of amsthm
-(mdframed)              on input line 135.
-LaTeX Font Info:    No math alphabet change to frozen version normal on input line 135.
-LaTeX Font Info:    No math alphabet change to frozen version normal on input line 135.
-LaTeX Font Info:    No math alphabet change to frozen version normal on input line 135.
-LaTeX Font Info:    No math alphabet change to frozen version normal on input line 135.
-LaTeX Font Info:    No math alphabet change to frozen version normal on input line 135.
-LaTeX Font Info:    No math alphabet change to frozen version normal on input line 138.
-LaTeX Font Info:    No math alphabet change to frozen version normal on input line 140.
-LaTeX Font Info:    No math alphabet change to frozen version normal on input line 140.
-LaTeX Font Info:    No math alphabet change to frozen version normal on input line 140.
-LaTeX Font Info:    No math alphabet change to frozen version normal on input line 140.
-LaTeX Font Info:    No math alphabet change to frozen version normal on input line 142.
-LaTeX Font Info:    No math alphabet change to frozen version normal on input line 142.
-LaTeX Font Info:    No math alphabet change to frozen version normal on input line 142.
-LaTeX Font Info:    No math alphabet change to frozen version normal on input line 142.
-LaTeX Font Info:    No math alphabet change to frozen version normal on input line 142.
-LaTeX Font Info:    No math alphabet change to frozen version normal on input line 142.
-LaTeX Font Info:    No math alphabet change to frozen version normal on input line 142.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 100.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 100.
 
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -3481,66 +3446,72 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
 [39]
+LaTeX Font Info:    Undo math alphabet allocation in version normal on input line 104.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 152.
-LaTeX Font Info:    No math alphabet change to frozen version normal on input line 152.
-LaTeX Font Info:    No math alphabet change to frozen version normal on input line 152.
+(mdframed)              on input line 107.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 107.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 107.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 107.
+LaTeX Font Info:    Undo math alphabet allocation in version normal on input line 107.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 156.
-LaTeX Font Info:    No math alphabet change to frozen version normal on input line 156.
-LaTeX Font Info:    No math alphabet change to frozen version normal on input line 156.
-LaTeX Font Info:    No math alphabet change to frozen version normal on input line 156.
-LaTeX Font Info:    No math alphabet change to frozen version normal on input line 158.
-LaTeX Font Info:    No math alphabet change to frozen version normal on input line 158.
-LaTeX Font Info:    No math alphabet change to frozen version normal on input line 158.
-LaTeX Font Info:    No math alphabet change to frozen version normal on input line 158.
-LaTeX Font Info:    No math alphabet change to frozen version normal on input line 158.
-LaTeX Font Info:    No math alphabet change to frozen version normal on input line 158.
-LaTeX Font Info:    No math alphabet change to frozen version normal on input line 160.
-LaTeX Font Info:    No math alphabet change to frozen version normal on input line 160.
-LaTeX Font Info:    No math alphabet change to frozen version normal on input line 160.
-LaTeX Font Info:    No math alphabet change to frozen version normal on input line 162.
-LaTeX Font Info:    No math alphabet change to frozen version normal on input line 164.
-LaTeX Font Info:    No math alphabet change to frozen version normal on input line 165.
-LaTeX Font Info:    No math alphabet change to frozen version normal on input line 167.
-LaTeX Font Info:    No math alphabet change to frozen version normal on input line 167.
-LaTeX Font Info:    No math alphabet change to frozen version normal on input line 170.
-LaTeX Font Info:    No math alphabet change to frozen version normal on input line 170.
-LaTeX Font Info:    No math alphabet change to frozen version normal on input line 172.
-LaTeX Font Info:    No math alphabet change to frozen version normal on input line 172.
-LaTeX Font Info:    No math alphabet change to frozen version normal on input line 176.
-LaTeX Font Info:    No math alphabet change to frozen version normal on input line 179.
-LaTeX Font Info:    No math alphabet change to frozen version normal on input line 180.
-LaTeX Font Info:    No math alphabet change to frozen version normal on input line 180.
-LaTeX Font Info:    Undo math alphabet allocation in version normal on input line 180.
-LaTeX Font Info:    Undo math alphabet allocation in version normal on input line 180.
-LaTeX Font Info:    No math alphabet change to frozen version normal on input line 182.
-LaTeX Font Info:    No math alphabet change to frozen version normal on input line 182.
-LaTeX Font Info:    Undo math alphabet allocation in version normal on input line 185.
-LaTeX Font Info:    No math alphabet change to frozen version normal on input line 187.
-LaTeX Font Info:    No math alphabet change to frozen version normal on input line 187.
-LaTeX Font Info:    Undo math alphabet allocation in version normal on input line 187.
-LaTeX Font Info:    No math alphabet change to frozen version normal on input line 187.
-LaTeX Font Info:    No math alphabet change to frozen version normal on input line 187.
-LaTeX Font Info:    Undo math alphabet allocation in version normal on input line 187.
-LaTeX Font Info:    No math alphabet change to frozen version normal on input line 187.
-LaTeX Font Info:    No math alphabet change to frozen version normal on input line 187.
-LaTeX Font Info:    No math alphabet change to frozen version normal on input line 187.
-LaTeX Font Info:    No math alphabet change to frozen version normal on input line 190.
-LaTeX Font Info:    No math alphabet change to frozen version normal on input line 192.
-LaTeX Font Info:    No math alphabet change to frozen version normal on input line 192.
-LaTeX Font Info:    No math alphabet change to frozen version normal on input line 192.
-LaTeX Font Info:    No math alphabet change to frozen version normal on input line 195.
-LaTeX Font Info:    No math alphabet change to frozen version normal on input line 196.
-LaTeX Font Info:    No math alphabet change to frozen version normal on input line 196.
-LaTeX Font Info:    No math alphabet change to frozen version normal on input line 196.
-LaTeX Font Info:    No math alphabet change to frozen version normal on input line 199.
-LaTeX Font Info:    No math alphabet change to frozen version normal on input line 201.
-LaTeX Font Info:    No math alphabet change to frozen version normal on input line 201.
-LaTeX Font Info:    No math alphabet change to frozen version normal on input line 201.
+(mdframed)              on input line 110.
+LaTeX Font Info:    Undo math alphabet allocation in version normal on input line 111.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 111.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 111.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 111.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 111.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 111.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 111.
 
+Overfull \hbox (9.17616pt too wide) in paragraph at lines 111--112
+[][][]\T1/phv/b/n/12 Theorem 4.1.5 \T1/phv/m/n/12 (Pri-mary De-com-po-si-tion The-o-rem (PDT))\T1/phv/b/n/12 . [][]\T1/mdbch/m/n/12 Sup-pose that $\U/xmdeuf/m/n/12 A[] \OMS/mdbch/m/n/12 6\T1/mdbch/m/n/12 = {0}$ and let $\T1/mdbch/m/it/12 p[]\T1/mdbch/m/n/12 , [] , \T1/mdbch/m/it/12 p[]$
+ []
+
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 114.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 116.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 116.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 116.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 116.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 116.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 123.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 123.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 123.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 123.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 123.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 123.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 123.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 123.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 123.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 126.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 126.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 126.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 126.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 126.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 126.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 126.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 126.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 126.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 126.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 130.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 130.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 130.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 130.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 134.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 134.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 134.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 134.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 136.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 136.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 140.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 140.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 140.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 140.
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 14.49998pt, for example:
@@ -3549,28 +3520,104 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
 [40]
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 143.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 144.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 144.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 204.
-LaTeX Font Info:    No math alphabet change to frozen version normal on input line 204.
-LaTeX Font Info:    No math alphabet change to frozen version normal on input line 204.
+(mdframed)              on input line 146.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 147.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 147.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 147.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 147.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 208.
-LaTeX Font Info:    No math alphabet change to frozen version normal on input line 208.
-LaTeX Font Info:    No math alphabet change to frozen version normal on input line 208.
-LaTeX Font Info:    No math alphabet change to frozen version normal on input line 210.
-LaTeX Font Info:    No math alphabet change to frozen version normal on input line 210.
-LaTeX Font Info:    No math alphabet change to frozen version normal on input line 210.
-LaTeX Font Info:    No math alphabet change to frozen version normal on input line 210.
-LaTeX Font Info:    No math alphabet change to frozen version normal on input line 211.
-LaTeX Font Info:    No math alphabet change to frozen version normal on input line 213.
-LaTeX Font Info:    No math alphabet change to frozen version normal on input line 213.
-LaTeX Font Info:    No math alphabet change to frozen version normal on input line 213.
-LaTeX Font Info:    No math alphabet change to frozen version normal on input line 213.
-LaTeX Font Info:    No math alphabet change to frozen version normal on input line 213.
-LaTeX Font Info:    No math alphabet change to frozen version normal on input line 213.
-)
+(mdframed)              on input line 151.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 151.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 151.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 151.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 151.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 153.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 153.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 153.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 154.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 156.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 158.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 158.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 158.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 158.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 158.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 158.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 158.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 158.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 158.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 161.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 163.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 166.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 172.
+LaTeX Font Info:    Undo math alphabet allocation in version normal on input line 172.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 172.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 172.
+LaTeX Font Info:    Undo math alphabet allocation in version normal on input line 172.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 176.
+LaTeX Font Info:    Undo math alphabet allocation in version normal on input line 176.
+LaTeX Font Info:    Undo math alphabet allocation in version normal on input line 178.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 178.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 178.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 178.
+LaTeX Font Info:    Undo math alphabet allocation in version normal on input line 178.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 178.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 178.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 178.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 185.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 186.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 186.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 186.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 190.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 190.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 190.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 190.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 193.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 194.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 194.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 194.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 198.
+Package hyperref Info: bookmark level for unknown proposition defaults to 0 on input line 198.
+LaTeX Font Info:    Undo math alphabet allocation in version normal on input line 198.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 198.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 198.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 198.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 202.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 202.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 202.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 202.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 202.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 202.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 205.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 207.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 207.
+LaTeX Font Info:    Undo math alphabet allocation in version normal on input line 207.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 207.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 209.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 209.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 209.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 209.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 209.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 209.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 209.
+
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 14.49998pt, for example:
@@ -3579,6 +3626,590 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
 [41]
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 217.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 217.
+LaTeX Font Info:    Undo math alphabet allocation in version normal on input line 217.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 221.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 221.
+LaTeX Font Info:    Undo math alphabet allocation in version normal on input line 221.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 221.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 223.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 223.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 223.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 223.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 223.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 223.
+LaTeX Font Info:    Undo math alphabet allocation in version normal on input line 225.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 225.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 225.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 227.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 229.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 230.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 232.
+LaTeX Font Info:    Undo math alphabet allocation in version normal on input line 232.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 235.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 235.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 237.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 237.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 241.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 241.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 242.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 245.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 246.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 246.
+LaTeX Font Info:    Undo math alphabet allocation in version normal on input line 246.
+LaTeX Font Info:    Undo math alphabet allocation in version normal on input line 246.
+
+Overfull \hbox (17.3435pt too wide) in paragraph at lines 245--247
+\T1/mdbch/m/n/12 is called a $[]$\T1/mdbch/b/n/12 -cycle \T1/mdbch/m/n/12 gen-er-ated by $\T1/mdbch/m/it/12 v$\T1/mdbch/m/n/12 . We de-note it by $\U/xmdeuf/m/n/12 C[]\T1/mdbch/m/n/12 (\T1/mdbch/m/it/12 v\T1/mdbch/m/n/12 ) = (\T1/mdbch/m/it/12 v[]\T1/mdbch/m/n/12 )[]$ and $\U/xmdeuf/m/n/12 C[]\T1/mdbch/m/n/12 (\T1/mdbch/m/it/12 v\T1/mdbch/m/n/12 ) = \T1/mdbch/m/it/12 v[]\T1/mdbch/m/n/12 , \T1/mdbch/m/it/12 v[]\T1/mdbch/m/n/12 , [] , \T1/mdbch/m/it/12 v[]$\T1/mdbch/m/n/12 . 
+ []
+
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 248.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 248.
+LaTeX Font Info:    Undo math alphabet allocation in version normal on input line 251.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 254.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 254.
+LaTeX Font Info:    Undo math alphabet allocation in version normal on input line 254.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 254.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 254.
+LaTeX Font Info:    Undo math alphabet allocation in version normal on input line 254.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 254.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 254.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 254.
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[42]
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 257.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 259.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 259.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 259.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 262.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 263.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 263.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 263.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 266.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 268.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 268.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 268.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 273.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 273.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 273.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 277.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 277.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 277.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 279.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 279.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 279.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 279.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 280.
+LaTeX Font Info:    Undo math alphabet allocation in version normal on input line 282.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 282.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 282.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 282.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 282.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 282.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 287.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 288.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 288.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 292.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 292.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 292.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 292.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 292.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 292.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 294.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 294.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 294.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 296.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 296.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 296.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 299.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 304.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 306.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 306.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 306.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 306.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 306.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 306.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 306.
+Package mdframed Info: Box was splittet wrong
+ starting loop to iterate the splitting point
+(mdframed)              on input line 307.
+
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[43]
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 309.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 312.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 312.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 312.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 312.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 316.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 316.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 316.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 318.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 320.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 320.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 320.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 320.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 320.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 320.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 320.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 320.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 320.
+LaTeX Font Info:    Undo math alphabet allocation in version normal on input line 322.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 322.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 325.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 327.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 327.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 327.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 327.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 327.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 327.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 327.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 327.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 330.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 330.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 338.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 338.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 340.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 341.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 341.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 341.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 343.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 344.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 349.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 352.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 353.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 357.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 360.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 360.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 360.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 360.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 363.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 363.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 363.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 363.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 363.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 363.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 367.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 367.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 367.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 368.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 368.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 368.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 368.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 370.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 370.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 371.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 373.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 373.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 375.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 375.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 375.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 377.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 377.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 377.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 380.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 381.
+
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[44]
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 385.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 385.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 385.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 385.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 388.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 389.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 389.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 393.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 393.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 393.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 393.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 393.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 393.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 393.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 393.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 395.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 395.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 395.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 395.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 397.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 397.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 397.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 397.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 397.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 397.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 399.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 400.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 402.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 404.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 404.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 404.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 404.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 404.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 404.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 404.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 404.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 404.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 404.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 406.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 407.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 409.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 409.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 409.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 409.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 411.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 412.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 414.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 414.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 414.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 414.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 414.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 414.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 414.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 414.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 416.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 417.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 419.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 419.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 419.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 419.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 419.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 419.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 419.
+Package mdframed Info: Box was splittet wrong
+ starting loop to iterate the splitting point
+(mdframed)              on input line 420.
+
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[45]
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 424.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 424.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 424.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 424.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 427.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 431.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 436.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 440.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 442.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 442.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 442.
+LaTeX Font Info:    Undo math alphabet allocation in version normal on input line 442.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 444.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 444.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 444.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 447.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 449.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 449.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 452.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 453.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 453.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 453.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 455.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 455.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 455.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 458.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 460.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 463.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 463.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 463.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 463.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 463.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 464.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 464.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 464.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 464.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 464.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 464.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 464.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 464.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 464.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 464.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 464.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 468.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 468.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 468.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 468.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 468.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 468.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 471.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 473.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 476.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 476.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 476.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 476.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 476.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 476.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 476.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 476.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 477.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 477.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 477.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 477.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 477.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 477.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 477.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 477.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 478.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 478.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 478.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 478.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 478.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 478.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 478.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 478.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 479.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 479.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 479.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 479.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 479.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 479.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 480.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 481.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 482.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 484.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 484.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 484.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 487.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 492.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 492.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 492.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 492.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 492.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 492.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 492.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 492.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 493.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 493.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 493.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 493.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 493.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 493.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 493.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 493.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 494.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 494.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 494.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 494.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 494.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 494.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 494.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 494.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 495.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 495.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 495.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 495.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 495.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 495.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 496.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 497.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 498.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 498.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 501.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 506.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 506.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 506.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 506.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 506.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 506.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 506.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 506.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 507.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 507.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 507.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 507.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 507.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 507.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 507.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 507.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 508.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 508.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 508.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 508.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 508.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 508.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 508.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 508.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 509.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 509.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 509.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 509.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 509.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 509.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 510.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 512.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 512.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 512.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 512.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 512.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 512.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 512.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 512.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 513.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 513.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 513.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 513.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 513.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 513.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 513.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 513.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 514.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 514.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 514.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 514.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 514.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 514.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 514.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 514.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 515.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 515.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 515.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 515.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 515.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 515.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 516.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 517.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 518.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 523.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 523.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 523.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 523.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 523.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 523.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 523.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 523.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 524.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 524.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 524.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 524.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 524.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 524.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 524.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 524.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 525.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 525.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 525.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 525.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 525.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 525.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 525.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 525.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 526.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 526.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 526.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 526.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 526.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 526.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 527.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 529.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 529.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 529.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 529.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 529.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 529.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 529.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 529.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 530.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 530.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 530.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 530.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 530.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 530.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 530.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 530.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 531.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 531.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 531.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 531.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 531.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 531.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 531.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 531.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 532.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 532.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 532.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 532.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 532.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 532.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 533.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 534.
+LaTeX Font Info:    No math alphabet change to frozen version normal on input line 535.
+
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[46])
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[47]
 \openout2 = `Chapters/determinants.aux'.
 
  (./Chapters/determinants.tex
@@ -3609,7 +4240,7 @@ LaTeX Font Info:    No math alphabet change to frozen version normal on input li
 LaTeX Font Info:    No math alphabet change to frozen version normal on input line 26.
 LaTeX Font Info:    No math alphabet change to frozen version normal on input line 26.
 LaTeX Font Info:    No math alphabet change to frozen version normal on input line 26.
-<Figures/geometria_determinante.png, id=868, 596.2275pt x 238.64156pt>
+<Figures/geometria_determinante.png, id=950, 596.2275pt x 238.64156pt>
 File: Figures/geometria_determinante.png Graphic file (type png)
 <use Figures/geometria_determinante.png>
 Package pdftex.def Info: Figures/geometria_determinante.png  used on input line 32.
@@ -3625,7 +4256,7 @@ LaTeX Font Info:    No math alphabet change to frozen version normal on input li
 LaTeX Font Info:    No math alphabet change to frozen version normal on input line 69.
 LaTeX Font Info:    No math alphabet change to frozen version normal on input line 69.
 LaTeX Font Info:    No math alphabet change to frozen version normal on input line 69.
-[42
+[48
 
 
 
@@ -3731,7 +4362,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller to compensate:
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[43 <./Figures/geometria_determinante.png (PNG copy)>]
+[49 <./Figures/geometria_determinante.png (PNG copy)>]
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
 (mdframed)              on input line 127.
@@ -3800,7 +4431,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller to compensate:
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[44]
+[50]
 LaTeX Font Info:    No math alphabet change to frozen version normal on input line 179.
 LaTeX Font Info:    No math alphabet change to frozen version normal on input line 182.
 LaTeX Font Info:    No math alphabet change to frozen version normal on input line 186.
@@ -3916,7 +4547,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller to compensate:
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[45]
+[51]
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
 (mdframed)              on input line 262.
@@ -3991,7 +4622,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller to compensate:
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[46]
+[52]
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
 (mdframed)              on input line 309.
@@ -4044,7 +4675,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller to compensate:
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[47]
+[53]
 LaTeX Font Info:    No math alphabet change to frozen version normal on input line 361.
 LaTeX Font Info:    No math alphabet change to frozen version normal on input line 361.
 LaTeX Font Info:    No math alphabet change to frozen version normal on input line 361.
@@ -4128,7 +4759,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller to compensate:
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[48]
+[54]
 Package mdframed Info: Not enough space on this page on input line 429.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
@@ -4194,7 +4825,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller to compensate:
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[49]
+[55]
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
 (mdframed)              on input line 491.
@@ -4278,7 +4909,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller to compensate:
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[50]
+[56]
 LaTeX Font Info:    No math alphabet change to frozen version normal on input line 554.
 LaTeX Font Info:    No math alphabet change to frozen version normal on input line 554.
 LaTeX Font Info:    No math alphabet change to frozen version normal on input line 554.
@@ -4354,7 +4985,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller to compensate:
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[51]
+[57]
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
 (mdframed)              on input line 626.
@@ -4445,7 +5076,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller to compensate:
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[52]
+[58]
 Package mdframed Info: Not enough space on this page on input line 689.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
@@ -4525,7 +5156,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller to compensate:
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[53]
+[59]
 LaTeX Font Info:    No math alphabet change to frozen version normal on input line 738.
 LaTeX Font Info:    No math alphabet change to frozen version normal on input line 738.
 LaTeX Font Info:    No math alphabet change to frozen version normal on input line 738.
@@ -4640,7 +5271,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller to compensate:
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[54]
+[60]
 LaTeX Font Info:    No math alphabet change to frozen version normal on input line 796.
 LaTeX Font Info:    No math alphabet change to frozen version normal on input line 801.
 LaTeX Font Info:    No math alphabet change to frozen version normal on input line 801.
@@ -4756,7 +5387,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller to compensate:
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[55]
+[61]
 Package mdframed Info: Not enough space on this page on input line 871.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
@@ -4822,7 +5453,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller to compensate:
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[56]
+[62]
 Package mdframed Info: Not enough space on this page on input line 908.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
@@ -4857,35 +5488,35 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller to compensate:
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[57] (./Main.bbl (./Main.brf)
+[63] (./Main.bbl (./Main.brf)
 \tf@brf=\write6
 \openout6 = `Main.brf'.
 
  (/usr/share/texmf-dist/tex/latex/ucs/data/uni-0.def
 File: uni-0.def 2013/05/13 UCS: Unicode data U+0000..U+00FF
-)) [58
+)) [64
 
 
 
 ] (./Main.aux (./Chapters/review.aux) (./Chapters/dual.aux) (./Chapters/polynomials.aux) (./Chapters/canonical_forms.aux) (./Chapters/determinants.aux))
 Package rerunfilecheck Info: File `Main.out' has not changed.
-(rerunfilecheck)             Checksum: 521946710936D15D70A9285E0E75E8FE;6206.
+(rerunfilecheck)             Checksum: F399890A79A7FBB04CE22126B052EDA1;5945.
 Package rerunfilecheck Info: File `Main.brf' has not changed.
-(rerunfilecheck)             Checksum: 0D28092028D894EA9ABE361D4EA8F09D;160.
+(rerunfilecheck)             Checksum: B4D87297A54D5C6E0BE8E0438E309DC2;160.
  ) 
 Here is how much of TeX's memory you used:
- 31302 strings out of 478238
- 590776 string characters out of 5850456
- 871686 words of memory out of 5000000
- 48212 multiletter control sequences out of 15000+600000
+ 31907 strings out of 478238
+ 600728 string characters out of 5850456
+ 892173 words of memory out of 5000000
+ 48747 multiletter control sequences out of 15000+600000
  567222 words of font info for 152 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  134i,16n,135p,704b,1568s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texmf-dist/fonts/enc/dvips/ly1/texnansi.enc}{/usr/share/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/share/texmf-dist/fonts/type1/bitstrea/charter/bchb8a.pfb></usr/share/texmf-dist/fonts/type1/bitstrea/charter/bchr8a.pfb></usr/share/texmf-dist/fonts/type1/bitstrea/charter/bchri8a.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/euler/eufm10.pfb></usr/share/texmf-dist/fonts/type1/public/mathdesign/mdbch/md-chr7m.pfb></usr/share/texmf-dist/fonts/type1/public/mathdesign/mdbch/md-chr7t.pfb></usr/share/texmf-dist/fonts/type1/public/mathdesign/mdbch/md-chr7v.pfb></usr/share/texmf-dist/fonts/type1/public/mathdesign/mdbch/md-chr7y.pfb></usr/share/texmf-dist/fonts/type1/public/mathdesign/mdbch/md-chr8t.pfb></usr/share/texmf-dist/fonts/type1/public/mathdesign/mdbch/md-chri7m.pfb></usr/share/texmf-dist/fonts/type1/public/mathdesign/mdbch/md-chrma.pfb></usr/share/texmf-dist/fonts/type1/public/mathdesign/mdbch/md-chrmb.pfb></usr/share/texmf-dist/fonts/type1/urw/helvetic/uhvb8a.pfb></usr/share/texmf-dist/fonts/type1/urw/helvetic/uhvr8a.pfb>
-Output written on Main.pdf (60 pages, 342878 bytes).
+Output written on Main.pdf (66 pages, 371068 bytes).
 PDF statistics:
- 1272 PDF objects out of 1440 (max. 8388607)
- 1168 compressed objects within 12 object streams
- 665 named destinations out of 1000 (max. 500000)
- 351 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 1366 PDF objects out of 1440 (max. 8388607)
+ 1255 compressed objects within 13 object streams
+ 724 named destinations out of 1000 (max. 500000)
+ 343 words of extra memory for PDF output out of 10000 (max. 10000000)
 

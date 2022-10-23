@@ -6,21 +6,25 @@ Here we'll use $V$ to denote a vector space over $\mathbb{F}$, $T \in \text{End}
 
 \section{Annihilating Polynomials}
 
-Recalling that $T^0 := \{ p \in \mathbb{F}[x] : p(T) = 0 \}$ is the annihilator of $T$, it follows that the collection of polynomials $p$ which annihilate $T$ is an \hyperref[def:ideal]{ideal} in the polynomial algebra $\mathbb{F}[x]$.
+\begin{definition}[Annihilator Set]
+	We define $\mathfrak{A}_T := \{ p \in \mathbb{F}[x] : p(T) = 0 \}$ as the \textbf{annihilator set} of $T$.
+\end{definition}
+
+It follows that the collection of polynomials $p$ which annihilate $T$ is an \hyperref[def:ideal]{ideal} in the polynomial algebra $\mathbb{F}[x]$.
 
 We'll state the following theorem and proceed with a discussion before proving each of its parts.
 
 \begin{theorem}[Existence of the Minimal Polynomial]\label{thm:minimal-polynomial} \hfill
 	\begin{enumerate}
-		\item If $\dim (V)$ is finite, then $T^0 \neq \{ 0 \}$.
-		\item If $T^0 \neq \{ 0 \}$, then there exists a unique monic polynomial $m_T \in \mathbb{F}[x]$ such that $m_T$ divides every element of $T^0$.
+		\item If $\dim (V)$ is finite, then $\mathfrak{A}_T \neq \{ 0 \}$.
+		\item If $\mathfrak{A}_T \neq \{ 0 \}$, then there exists a unique monic polynomial $m_T \in \mathbb{F}[x]$ such that $m_T$ divides every element of $\mathfrak{A}_T$.
 	\end{enumerate}
 \end{theorem}
 
 \begin{definition}[Minimal Polynomial]
 	The polynomial $m_T$ in the previous theorem is called \textbf{minimal polynomial} of $T$.
 	
-	If $T^0 = \{ 0 \}$, we define $m_T = 0$.
+	If $\mathfrak{A}_T = \{ 0 \}$, we define $m_T = 0$.
 \end{definition}
 
 Since every polynomial ideal consists of all multiples of some fixed monic polynomial (the generator of the ideal), we may define the minimal polynomial for $T$ as the unique monic generator of the ideal of polynomials over $\mathbb{F}$ which annihilate $T$.
@@ -34,14 +38,77 @@ Summarizing, the minimal polynomial $p$ for the linear operator $T$ is uniquely 
 
 These definitions can be easily extended to a matrix $A$ instead of an operator $T$. Moreover, it follows from previous remarks that similar matrices have the same minimal polynomial.
 
-The next example shows that it is possible to have $T^0 = \{ 0 \}$ when the dimension is infinite.
+\begin{theorem}
+	The characteristic and minimal polynomials have the same roots, except for multiplicities.
+\end{theorem}
+
+\begin{proof}
+	Let $T \in \text{End}(V)$, where $\dim V = n$, $m_T$ the minimal polynomial for $T$ and $\lambda$ a scalar. We'll show that $m_T(\lambda) = 0$ iff. $\lambda$ is a characteristic value of $T$.
+
+	Suppose that $m_T(\lambda) = 0$. Then write $m_T = (x-\lambda)q(x)$. By the minimality of $m_T$, it follows that $q(T) \neq 0$ and, therefore, there exists $u \in V$ such that $q(T)(u) \neq 0$.
+	
+	If $v := q(T)(u)$,
+	\[
+		0 = m_T(T)(u) = (T - \lambda I)(q(T)(u)) = (T - \lambda I)(v)
+	\]
+	and hence $v$ is an eigenvector of $T$ associated with $\lambda$. Thus, $c_T(\lambda) = 0$.
+
+	Suppose that $\lambda$ is an eigenvalue. Then we can write $m_T(T)v = m_T(\lambda)v$, which implies that $m_T(\lambda) = 0$.
+\end{proof}
+
+The \hyperref[thm:cayley-hamilton]{Cayley-Hamilton Theorem} will narrow the search for the minimal polynomial of various operators. Before proving it, we need the next lemma.
+
+\begin{lemma}
+	If $T$ is a diagonalizable linear operator, then the minimal polynomial for $T$ is a product of distinct linear factors.
+\end{lemma}
+
+\begin{proof}
+	Follows from 
+	\[
+		m_T = (\lambda - \lambda_1) \cdots (\lambda - \lambda_k)
+	\]
+\end{proof}
+
+\begin{theorem}[Cayley-Hamilton]\label{thm:cayley-hamilton}
+	Let $T \in \text{End}(V)$, where $V$ is finite-dimensional. If $c_T$ is a characteristic polynomial for $T$, then
+	\[
+		c_T(T) = 0
+	\]
+
+	Put another way, the minimal polynomial divides the characteristic polynomial for $T$.
+\end{theorem}
+
+\begin{proof}
+	\begin{enumerate}
+		\item Take a basis $\beta$ of $V$ and write $A = [T]_\beta$.
+		\item Consider $A' = xI - A$ and notice that $c_T(x) = \det A'$.
+		\item Let $B$ be the adjoint matrix of $A'$. Note that its elements are polynomials of $x$ of degree at most $n-1$.
+		\item Write $b_{ij} = b_{ij}^{(0)} + b_{ij}^{(1)}x + \ldots + b_{ij}^{(n-1)}x^{n-1}$.
+		\item Let $B^{(k)}$ be the matrix whose entries are given by $b_{ij}^{(k)}$.
+		\item Write $c_T(x) = a_0 + a_1 x + \ldots + x^n$ and use that \[ B A' = \text{adj}(A') A' = (\det A') I = c_T(x) I \]
+		\item It follows that $(B^{(0)} + B^{(1)} x + \ldots + B^{(n-1)} x^{n-1})(xI - A) = (a_0 + a_1 x + \ldots + x^n) I$.
+		\item Comparing each coeficient, we have that
+		\[
+			\begin{cases}
+				a_0 I &= -B^{(0)}A \\
+				a_1 I &= B^{(0)} - B^{(1)}A \\
+				&~\vdots \\
+				a_{n-1} I &= B^{(n-2)} - B^{(n-1)}A \\
+				I &= B^{(n-1)}
+			\end{cases}
+		\]
+		\item Multiplying these equations by $I, A, A^2, \ldots, A^n$ respectively, and adding all of them, we have \[ c_T(T) = a_0 I + a_1 A + \ldots + A^n = 0 \]
+	\end{enumerate}
+\end{proof}
+
+The next example shows that it is possible to have $\mathfrak{A}_T = \{ 0 \}$ when the dimension is infinite.
 
 \begin{example}
-	If $V = \mathbb{F}[x]$ and $T$ is the operator $f(t) \mapsto tf(t)$, then $T^0 = \{ 0 \}$.
+	If $V = \mathbb{F}[x]$ and $T$ is the operator $f(t) \mapsto tf(t)$, then $\mathfrak{A}_T = \{ 0 \}$.
 \end{example}
 
-\begin{theorem}[Primary Decomposition Theorem (PDT)]
-	Suppose that $T^0 \neq \{ 0 \}$ and let $p_1, \ldots, p_m$ be the distinct irreducible factors of $m_T$ in $\mathbb{F}[x]$. If $k_j$ is the multiplicity of $p_j$ in $m_T$, then
+\begin{theorem}[Primary Decomposition Theorem (PDT)]\label{thm:pdt}
+	Suppose that $\mathfrak{A}_T \neq \{ 0 \}$ and let $p_1, \ldots, p_m$ be the distinct irreducible factors of $m_T$ in $\mathbb{F}[x]$. If $k_j$ is the multiplicity of $p_j$ in $m_T$, then
 	\[
 		V = V_{p_1^{k_1}} \oplus \ldots \oplus V_{p_m^{k_m}}
 	\]
@@ -102,20 +169,20 @@ is a $T$-invariant subspace of $V$.
 The following proof, for the second item of the Theorem \ref{thm:minimal-polynomial}, shows the existence of minimal polynomial and how to find it.
 
 \begin{theorem}
-	If $T^0 \neq \{ 0 \}$, then there exists a unique monic polynomial $m_T \in \mathbb{F}[x]$ such that $m_T$ divides every element of $T^0$.
+	If $\mathfrak{A}_T \neq \{ 0 \}$, then there exists a unique monic polynomial $m_T \in \mathbb{F}[x]$ such that $m_T$ divides every element of $\mathfrak{A}_T$.
 \end{theorem}
 
 \begin{proof}
-	Let $m = \min \{ k : \exists p \in T^0 \setminus \{ 0 \}, \deg(p) = k \} > 0$, i.e., the smallest degree of a non-zero polynomial in the annihilator.
+	Let $m = \min \{ k : \exists p \in \mathfrak{A}_T \setminus \{ 0 \}, \deg(p) = k \} > 0$, i.e., the smallest degree of a non-zero polynomial in the annihilator.
 	
-	Fix $f, p \in T^0$ with $\deg(p) = m$. By Euclid's Division Algorithm, $f = qp + r$, where $\deg(r) < m$. Notice that $r = f - qp \in T^0$. By the minimality of $m$, $r = 0$ and therefore $p | f$.
+	Fix $f, p \in \mathfrak{A}_T$ with $\deg(p) = m$. By Euclid's Division Algorithm, $f = qp + r$, where $\deg(r) < m$. Notice that $r = f - qp \in \mathfrak{A}_T$. By the minimality of $m$, $r = 0$ and therefore $p | f$.
 	
 	This shows that any non-constant polynomial with the minimal degree divides every other polynomial in the annihilator. And a polynomial divides another polynomial with the same degree if one is a scalar multiple of the other.
 \end{proof} 
 
 To describe the set \eqref{eq:set-goal-describe}, it is sufficient to consider the following lemma and proposition.
 
-\begin{lemma}
+\begin{lemma}\label{lemma:gcd-restriction}
 	If $\gcd(f,g) = 1$, then the restriction of $f(T)$ to $V_g$ is injective.
 \end{lemma}
 
@@ -128,7 +195,7 @@ To describe the set \eqref{eq:set-goal-describe}, it is sufficient to consider t
 \end{proof}
 
 \begin{proposition}
-	If $T^0 \neq \{ 0 \}$ and $p \in \mathbb{F}[x]$ is irreducible, then $V_p \neq \{ 0 \}$ iff. $p | m_T$.
+	If $\mathfrak{A}_T \neq \{ 0 \}$ and $p \in \mathbb{F}[x]$ is irreducible, then $V_p \neq \{ 0 \}$ iff. $p | m_T$.
 \end{proposition}
 
 \begin{proof}
@@ -137,34 +204,32 @@ To describe the set \eqref{eq:set-goal-describe}, it is sufficient to consider t
 		0 = m_T(T)(v) = p(T)(f(T)(v)) \quad \forall~v \in V
 	\]
 	
-	If $f(T)(v) \neq 0$, then $p(T)(f(T)(v)) \neq 0$. Thus, $f \in T^0$, which is a contradiction since $\deg(f) < \deg(m_T)$.
+	If $f(T)(v) \neq 0$, then $p(T)(f(T)(v)) \neq 0$. Thus, $f \in \mathfrak{A}_T$, which is a contradiction since $\deg(f) < \deg(m_T)$.
 	
 	Reciprocally, if $p \nmid m_T$, then $\gcd(p, m_T) = 1$, since $p$ is irreducible. If follows from the lemma that the restriction of $m_T(T)$ to $V_p$ is injective. Since $m_T(T) = 0$, we can conclude that $V_p = \{ 0 \}$. 
 \end{proof}
 
 Put another way, a prime polynomial lives in the set iff. it divides the minimal polynomial.
 
-In a finite dimensional vector space, how can we compute the minimal polynomial?
-
-Finally, we prove the first item of the Theorem \ref{thm:minimal-polynomial}.
+In a finite dimensional vector space, how can we compute the minimal polynomial? Proving the first item of the Theorem \ref{thm:minimal-polynomial}, we show an algorithm of how to do it.
 
 \begin{theorem}
-	If $\dim(V) = n < \infty$, then $T^0 \neq \{ 0 \}$.
+	If $\dim(V) = n < \infty$, then $\mathfrak{A}_T \neq \{ 0 \}$.
 \end{theorem}
 
 \begin{proof}
-	If $T = 0$, then $T^0 = \{ p \in \mathbb{F}[x] : p(0) = 0 \} \neq \{ 0 \}$. In this case, the minimal polynomial is $p(t) = t$.
+	If $T = 0$, then $\mathfrak{A}_T = \{ p \in \mathbb{F}[x] : p(0) = 0 \} \neq \{ 0 \}$. In this case, the minimal polynomial is $p(t) = t$.
 	
 	Suppose that $T \neq 0$ and remember that $\dim(\text{End}(V)) = n^2$. Then we can construct the family $(T^k)_k$, where $k = 0, 1, \ldots, n^2$, which is linearly dependent (since it contains $n^2 + 1$ elements).
 	
-	Since the subfamily given by $T^0 = I_V$ is linearly independent, there exists $1 \leq m \leq n^2$ minimal such that the subfamily $(T^k)_{k=0, \ldots, m}$ is linearly dependent.
+	Since the subfamily given by $\mathfrak{A}_T = I_V$ is linearly independent, there exists $1 \leq m \leq n^2$ minimal such that the subfamily $(T^k)_{k=0, \ldots, m}$ is linearly dependent.
 	
 	Let $a_0, \ldots, a_{m-1} \in \mathbb{F}$ such that
 	\[
 		T^m = a_0 I_V + \ldots + a_{m-1} T^{m-1} \text{ and } f(t) = t^m - \sum_{k=0}^{m-1} a_k t^k
 	\]
 	
-	It follows that $f(T) = 0$ and, therefore, $f \in T^0 \setminus \{ 0 \}$.
+	It follows that $f(T) = 0$ and, therefore, $f \in \mathfrak{A}_T \setminus \{ 0 \}$.
 \end{proof}
 
 \textbf{Exercise.} Prove that $f = m_T$, where $f$ is as in the preceeding proof.
@@ -173,16 +238,18 @@ How can we use this fact and matricial representations of $T$ to compute $m_T$?
 
 \section{Cyclic subspaces}
 
-Given $v \in V$, consider the sequence of vectors
-\[
-	v_0 = v, v_1 = T(v), \ldots, v_k = T^k(v), \ldots
-\]
-which is called a \textbf{$T$-cycle} generated by $v$. We denote it by $\mathfrak{C}_T^\infty (v) = (v_k)_{k \geq 0}$ and $\mathfrak{C}_T^m (v) = v_0, v_1, \ldots, v_{m-1}$.
+\begin{definition}[$T$-cycle]
+	Given $v \in V$, the sequence of vectors
+	\[
+		v_0 = v, v_1 = T(v), \ldots, v_k = T^k(v), \ldots
+	\]
+	is called a \textbf{$T$-cycle} generated by $v$. We denote it by $\mathfrak{C}_T^\infty (v) = (v_k)_{k \geq 0}$ and $\mathfrak{C}_T^m (v) = v_0, v_1, \ldots, v_{m-1}$.
 
-Define the \textbf{$T$-cyclic subspace generated by $v$} as
-\[
-	C_T(v) = [\mathfrak{C}_T^\infty (v)]
-\]
+	We define the \textbf{$T$-cyclic subspace generated by $v$} as
+	\[
+		C_T(v) = [\mathfrak{C}_T^\infty (v)]
+	\]
+\end{definition}
 
 If $\dim(V)$ is finite, there exists $m \geq 0$ minimal such that $\mathfrak{C}_T^{m+1}(v)$ is linearly dependent. Notice that $m \geq 1$ if $v \neq 0$. In particular, if $\mathfrak{C}_T(v) := \mathfrak{C}_T^{m}(v)$ is a basis for $C_T(v)$ and $v_m$ is a linear combination of the linearly independent vectors $v_0, \ldots, v_{m-1}$. And
 \[
@@ -200,6 +267,8 @@ which proves that $v \in V_{m_{T,v}}$. Since $V_{m_{T,v}}$ is $T$-invariant, it 
 
 Cyclic subspaces are useful to find divisors of $m_T$. Since $T$ is fixed, we'll write $m_v = m_{T,v}$. 
 
+The next result shows that it is possible to approximate the minimal polynomial of a linear operator by a minimal polynomial of a vector.
+
 \begin{theorem}
 	For all $v \in V$, $m_v | m_T$.
 \end{theorem}
@@ -210,11 +279,266 @@ Cyclic subspaces are useful to find divisors of $m_T$. Since $T$ is fixed, we'll
 		S : V_{m_v} \longrightarrow V_{m_v}, \quad v \mapsto T(v)
 	\]
 	
-	Note that $m_v \in S^0$. Thus, $m_S | m_v$. In fact, $m_v = m_S$, since if $\deg(m_S) = m' < m$, then $v_0, \ldots, v^{m'}$ would be linearly dependent, contradicting the minimality of $m$.
+	Note that $m_v \in \mathfrak{A}_S$. Thus, $m_S | m_v$. In fact, $m_v = m_S$, since if $\deg(m_S) = m' < m$, then $v_0, \ldots, v^{m'}$ would be linearly dependent, contradicting the minimality of $m$.
 \end{proof}
+
+We proceed to show that coprimality implies direct sum.
+
+\begin{theorem}[Coprimality implies direct sum]
+	If each pair $p_1, \ldots, p_m \in \mathbb{F}[x]$ is relatively prime, then the sum $V_{p_1}^\infty + \ldots + V_{p_m}^\infty$ is direct.
+\end{theorem}
+
+\begin{proof}
+	Let $v_j \in V_{p_j}^\infty \setminus \{ 0 \}$, for $1 \leq j \leq m$. Our goal is to show that $v_1, \ldots, v_m$ is linearly independent (which is equivalent to show that the sum in the theorem is direct). We proceed by induction on $m$, which is immediate when $m = 1$. 
+
+	Suppose that $a_1, \ldots, a_m \in \mathbb{F}$ satisfies $a_1 v_1 + \ldots + a_m v_m = 0$. By the induction hypothesis, $v_1, \ldots, v_{m-1}$ is linearly independent. 
+
+	For each $1 \leq j \leq m$, choose $k_j$ such that $p_j^{k_j}(T)(v_j) = 0$ and consider 
+	\[
+		p = \prod_{j=1}^{m-1} p_j^{k_j}
+	\]
+
+	Notice that 
+	\[
+		0 = p(T)(a_1 v_1 + \ldots + a_m v_m) = a_m p(T)(v_m)
+	\]
+
+	By the Lemma \ref{lemma:gcd-restriction}, the restriction $p_j^{k_j}(T)$ to $V_{p_m^{k_m}}$ is injective for $j \neq m$, it follows that $p(T)(v_m) \neq 0$ and, therefore, $a_m = 0$. The induction hypothesis implies that $a_j = 0$ for all $j$.
+\end{proof}
+
+Finally, we can decompose $V$ into direct sums.
+
+\begin{theorem}
+	Let $f_1, \ldots, f_m \in \mathbb{F}[x]$, where each pair is relatively prime and $f = f_1 \ldots f_m$. Then, $V_f = V_{f_1} \oplus \ldots \oplus V_{f_m}$.
+\end{theorem}
+
+\begin{proof}
+	We'll prove for $m = 2$. The general case follows from induction on $m$.
+
+	Then $V_{f_1} + V_{f_2} \subseteq V_f$ and we just proved that this sum is direct.
+
+	Let $g_1, g_2 \in \mathbb{F}[x]$ such that $g_1 f_1 + g_2 f_2 = 1$, and define $h_j := g_j f_j$ and $P_j := h_j(S)$, where $S$ is the induced linear operator by $T$ on $V_f$ (i.e. the restriction of $T$ to $V_f$). 
+
+	By construction, $f \in \mathfrak{A}_S$ and $P_1 + P_2 = I_{V_f}$. Notice that
+	\[
+		P_1 P_2 = g_1(S)f_1(S)g_2(S)f_2(S) = g_1(S)g_2(S)f_1(S)f_2(S) = 0 = P_2 P_1
+	\]
+
+	In particular, $P_j^2 = P_j - P_i P_j = P_j$ if $\{ i, j \} = \{ 1, 2 \}$ and $\text{Im}(P_j) \subseteq V_{f_i}$. It follows that $V_f = \text{Im}(P_2) \oplus \text{Im}(P_1) \subseteq V_{f_1} \oplus V_{f_2} \subseteq V_f$. Hence, $V_{f_1} + V_{f_2} = V_f$.
+\end{proof}
+
+Taking $f_j = p_j^{k_j}$, we prove the \hyperref[thm:pdt]{Primary Decomposition Theorem}, since $V = V_{m_T}$.
+
+However, the PDT breaks the vector space in direct sums that are still quite complicated. Our goal now is to break the vector space into the sum of cyclic subspaces. 
+
+The next theorem states that we can find a finite collection of vectors such that it is possible to break the space into a direct sum of cyclic subspaces. Therefore, we can find a basis formed by the union of cycles, which are easy to operate.
+
+Our main result here, the Cyclic Decomposition Theorem, is a generalization of this result.
+
+Recall that if $v$ is an eigenvector, then $T(v) = \lambda v$. Hence, a basis formed by eigenvectors is a basis formed by union of cycles, where all cycles have size one. 
+
+\begin{lemma}\label{lemma:202210200909}
+	If $p \in \mathbb{F}[x]$ is irreducible and $u, v \in V$ satisfying $m_u = m_v = p$. Then one and only one of the following is true:
+	\begin{enumerate}
+		\item $C_T(u) = C_T(v)$;
+		\item $C_T(u) \cap C_T(v) = \{ 0 \}$.
+	\end{enumerate}
+\end{lemma}
+
+\begin{proof}
+	\textbf{Exercise.}
+\end{proof}
+
+\begin{lemma}\label{lemma:202210200910}
+	$C_T(v) = \{ p(T)(v) : p \in \mathbb{F}[x] \}$.
+\end{lemma}
+
+\begin{proof}
+	\textbf{Exercise.}
+\end{proof}
+
+A subspace $W$ is said to be \textbf{$T$-cyclic} if $W = C_T(v)$ for some $v \in V$.
+
+\begin{theorem}
+	If $p \in \mathbb{F}[x]$ is irreducible and $\dim (V_p)$ is finite, there exist $l \geq 0$ and $v_1, \ldots, v_l \in V_p$ such that $V_p = C_T(v_1) \oplus \ldots \oplus C_T(v_l)$.
+\end{theorem}
+
+\begin{proof}
+	Suppose that we found vectors $v_1, \ldots, v_k \in V_p$ such that $C_T(v_1) + \ldots + C_T(v_k)$ is a direct sum. We will show that 
+	\begin{equation}\label{eq:202210200905}
+		C_T(v) \cap (C_T(v_1) + \ldots + C_T(v_k)) = \{ 0 \}
+	\end{equation}
+	for all $v \in V_P \setminus C_T(v_1) + \ldots + C_T(v_k)$. 
+
+	If this is true, since $\dim (V_p) < \infty$, it is immediate how to choose a sequence of vectors starting with $v_1 \in V_p$ arbitrary. 
+
+	To show \eqref{eq:202210200905}, suppose that $w \in C_T(v) \cap (C_T(v_1) + \ldots + C_T(v_k))$ is non-zero. Therefore, there exists $w_j \in C_T(v_j)$ such that $w = w_1 + \ldots + w_k$.
+
+	By the lemma \ref{lemma:202210200909}, $C_T(w) = C_T(v)$ and, by the lemma \ref{lemma:202210200910}, there exists $f \in \mathbb{F}[x]$ such that $v = f(T)(w)$. Hence,
+	\[
+		v = f(T)(w_1) + \ldots + f(T)(w_k) \in C_T(v_1) + \ldots + C_T(v_k)
+	\]
+	contradicting our hypothesis about $v$.
+\end{proof}
+
+\begin{theorem}
+	Let $p \in \mathbb{F}[x]$ be irreducible and $\dim (V_p^\infty) < \infty$. Then $\deg(p) | \dim (V_p^\infty)$. Moreover,
+	\[
+		\frac{\dim (V_p^\infty)}{\deg(p)} \geq \min \{ k : V_p^\infty = V_{p^k} \}
+	\]
+	where the equality holds iff. $V_p^\infty$ is $T$-cyclic.
+\end{theorem}
+
+\begin{proof}
+	Define $m = \min \{ k : V_p^\infty = V_{p^k} \}$. Suppose that $V_p^\infty$ is $T$-cyclic. Let $S$ be the operator $T$ restricted to $V_p^\infty = V_{p^m}$ and notice that $m_S = p^m$.
+	
+	Moreover, if $v$ satisfies $V_p^\infty = C_T(v)$, then $m_v = m_S = p^m$. Since $\dim(C_T(v)) = \deg (m_v) = m \cdot \deg(p)$, the result follows.
+
+	We proceed by induction on $n = \dim (V_p^\infty)$. For $n = 1$, it is immediate. Suppose that $n > 1$. Our induction hypothesis is: if $S$ is an endomorphism on $W$ such that $\dim (W_{p(S)}^\infty) < n$, then
+	\[
+		\deg(p) | \dim (W_{p(S)}^\infty) \quad \text{ and } \quad \frac{\dim (W_{p(S)}^\infty)}{\deg(p)} \geq \min \{ k : W_{p(S)}^\infty = W_{p^k} \}
+	\]
+
+	For $m = 1$, the cyclic case with the previous theorem complete the proof.
+	
+	If $m > 1$, consider $W = V_{p^{m-1}}$, which is a $T$-invariant, proper and non-trivial subspace of $V_p^\infty$. Let $S$ be the induced operator by $T$ on $W$ and notice that $W_{p^k(S)} = V_{p^k(T)}$ if $k < m$. Hence, $W = W_{p(S)}^\infty = V_{p^{m-1}}$. By induction hypothesis,
+	\[
+		\deg(p) | \dim(W) \quad \text{ and } \quad \frac{\dim(W)}{\deg(p)} \geq m-1
+	\]
+	
+	Consider $R$ the operator on $V_p^\infty$ induced by $p^{m-1}(T) = p(T)^{m-1}$. Notice that $W = \ker(R)$. Hence, by the Rank-Nullity Theorem,
+	\[
+		\dim(V_p^\infty) = \dim(W) + \dim(\text{Im}(R))
+	\]
+	
+	Thus, what remains to be shown is that $\deg(p) | \dim(\text{Im}(R))$. Note that $\text{Im}(R)$ is $T$-invariant: if $w = R(v)$, where $v \in V_p^\infty$, since $R \circ T = T \circ R$, it follows that 
+	\[
+		T(w) = T(R(v)) = R(T(v)) \in \text{Im}(R)
+	\]
+	
+	More than that, $\text{Im}(R) \subseteq V_p$: if $v \in V_p^\infty$, $p(T)(R(v)) = p^m(T)(v) = 0$. By the induction hypothesis on $\text{Im}(R)$ instead of $W$, the result follows.
+\end{proof}
+
+How is all of this related to the idea of characteristic polynomial?
+
+If $\dim(V) = n < \infty$ and $p_j^{k_j}$, where $1 \leq j \leq m$, are the primary factors of $T$. It follows that.
+\[
+	\deg (m_T) = \sum_{j=1}^m k_j \deg (p_j) \leq \sum_{j=1}^m \dim(V_{{p_j}^{k_j}}) = n
+\]
+since 
+\[
+	k_j = \min \{ k : V_{{p_j}^k} = V_{{p_j}^{k+1}} \}
+\]
+
+Define 
+\[
+	n_j := \frac{\dim (V_{{p_j}^{k_j}})}{\deg(p_j)} \geq k_j
+\]
+and
+\[
+	c_T := \prod_{j=1}^m p_j^{n_j}
+\]
+
+This polynomial $c_T$ is the \textbf{characteristic polynomial} of $T$. By definition, $\deg(c_T) = n$ and $c_T \in \mathfrak{A}_T$ (\hyperref[thm:cayley-hamilton]{Cayley-Hamilton Theorem}).
+
+If $T_j$ is the restriction of $T$ on $V_{{p_j}^{k_j}}$,
+\[
+	c_T = \prod_{j=1}^m c_{T_j}
+\]
+
+With these tools at hand, we can define determinants and the trace. Let $c_k \in \mathbb{F}$, $1 \leq k \leq n$, such that
+\[
+	c_T(t) = t^n + \sum_{k=1}^n (-1)^k c_k t^{n-k}
+\]
+and define $\det(T) = c_n$ and $\text{tr}(T) = c_1$.
+
+We will show that $\det(T) = \det([T]_\alpha^\alpha)$ for every basis $\alpha$ of $V$ and
+\[
+	c_T(\lambda) = \det([T]_\alpha^\alpha - \lambda I)
+\]
+
+This gives us a new method to obtain a the minimal polynomial $m_T$.
+
+\begin{enumerate}
+	\item Compute $c_T$ and find its irreducible factors (hint: start by row reducing the matrix), say $p_1, \ldots, p_m$. Let $n_j$ be the multiplicity of $p_j$ in the factorization of $c_T$;
+	\item Let $A = [T]_\alpha^\alpha$ and, given $k = (k_1, \ldots, k_m) \in (\mathbb{Z}_{>0})^m$ with $k_j \leq n_j$, let $p_k = \sum_{j=1}^m p_j^{k_j}$. From all polynomials of the form $p_k$ such that $p_k(A) = 0$, the one with the minimal $k_j$ for all $j$ is $m_T$. To find each minimum $k_j$, we can compute the sequence of kernels $V_{p_j} \subseteq \ldots \subseteq V_{p_j^{n_j}} = V_{p_j^{n_j + 1}}$.
+\end{enumerate}
+
+\begin{example}
+	Suppose that $\text{char}(\mathbb{F})$, $V = \mathbb{F}^4$ and $T \in \text{End}(V)$ given by 
+	\[
+		T(x_1, x_2, x_3, x_4) = (3x_3 + x_4, 2x_1+2x_2 - 4x_3 + 2 x_4, x_3 + x_4, 3x_4 - x_3)
+	\]
+	
+	If $\alpha$ is the standard basis,
+	\[
+		[T]_\alpha^\alpha = \begin{bmatrix}
+		0 && 0 && 3 && 1 \\
+		2 && 2 && -4 && 2 \\
+		0 && 0 && 1 && 1 \\
+		0 && 0 && -1 && 3
+		\end{bmatrix}
+		\quad \text{ and } \quad c_T(\lambda) = t(t-2)^3
+	\]
+	
+	Therefore, the options for $m_T$ are $t(t-2)^k$ with $1 \leq k \leq 3$. In fact,
+	\[
+		k = 4 - \dim(V_{t_2})
+	\]
+	
+	Since
+	\[
+		[T]_\alpha^\alpha - 2I = \begin{bmatrix}
+		-2 && 0 && 3 && 1 \\
+		2 && 0 && -4 && 2 \\
+		0 && 0 && -1 && 1 \\
+		0 && 0 && -1 && 1
+		\end{bmatrix}
+	\]
+	the homogeneous linear system associated with this matrix has solution $\{ (0, x, 0, 0) : x \in \mathbb{F} \}$, it follows that $k = 3$ and 
+	\[
+		[e_2] = V_{t-2} \not\subseteq V_{(t-2)^2} \not\subseteq V_{(t-2)^3} = V_{t-2}^\infty
+	\]
+	
+	Squaring the matrix,
+	\[
+		\begin{bmatrix}
+		-2 && 0 && 3 && 1 \\
+		2 && 0 && -4 && 2 \\
+		0 && 0 && -1 && 1 \\
+		0 && 0 && -1 && 1
+		\end{bmatrix}^2
+		= \begin{bmatrix}
+		4 && 0 && -10 && 2 \\
+		-4 && 0 && 8 && 0 \\
+		0 && 0 && 0 && 0 \\
+		0 && 0 && 0 && 0
+		\end{bmatrix}
+	\]
+	with solution $V_{(t-2)^2} = \{ (2x, y, x, x) : x, y \in \mathbb{F} \}$.
+	
+	Taking the cube,
+	\[
+		\begin{bmatrix}
+		-2 && 0 && 3 && 1 \\
+		2 && 0 && -4 && 2 \\
+		0 && 0 && -1 && 1 \\
+		0 && 0 && -1 && 1
+		\end{bmatrix}^3
+		= \begin{bmatrix}
+		-8 && 0 && 20 && -4 \\
+		8 && 0 && -20 && 4 \\
+		0 && 0 && 0 && 0 \\
+		0 && 0 && 0 && 0
+		\end{bmatrix}
+	\]
+	with solution $V_{(t-2)^3} = \{ (z, y, x, 5x-2z) : x, y, z \in \mathbb{F} \}$.
+\end{example}
 
 %\begin{equation*}
 %	\begin{aligned}
 %	
 %	\end{aligned}
 %\end{equation*}
+
+% Moura 39min

@@ -778,6 +778,8 @@ Hence, $\lambda$ is an eigenvalue of $A$ iff. $\text{det}(A-\lambda I) = 0$.
 
 \begin{definition}[Characteristic Polynomial]
 	This leads us to define the \textbf{characteristic polynomial} of $A$ as \[ f(x) = \text{det}(A-xI) \]
+
+	The set of all roots of the characteristic polynomial is called the \textbf{spectrum} of $A$.
 \end{definition}
 
 An important result is that similar matrices have the same characteristic polynomial. Thus, they have the same eigenvalues.
@@ -831,8 +833,6 @@ A = P \Lambda P^{-1} \text{ e } \Lambda = P^{-1} A P
 \]
 where $\Lambda$ is constructed by the eigenvalues of $A$, and $P$ is constructed from the eigenvectors of $A$.
 
-\subsection{Algebraic and Geometric Multiplicities}
-
 \begin{definition}[Algebraic and Geometric Multiplicities]
 	Consider $T \in \text{End}(V)$ and $\beta$ any basis for $V$. We know that its characteristic polynomial is given by
 	\[ p_T(\lambda) = \text{det}([T]_\beta^{\beta} - \lambda I) \]
@@ -851,6 +851,85 @@ where $\Lambda$ is constructed by the eigenvalues of $A$, and $P$ is constructed
 \begin{remark}
 	The geometric multiplicity is always lesser or equal to the algebraic multiplicty.
 \end{remark}
+
+\begin{example}[Diagonalization of a Linear Operator]
+
+	Let $T \in \mathcal{L}(\mathbb{R}^3)$ defined by \[T(x,y,z) = (-9x+4y+4z, -8x+3y+4z, -16x+8y+7z)\] Show that $T$ is diagonalizable and find the eigenvectors that form a basis for $\mathbb{R}^3$.
+
+	\textbf{Solution:} Notice that the matrix representation of $T$ in the standard basis $\beta$ is:
+	\[
+		[T]_{\beta} = 
+		\begin{bmatrix}
+		-9 & 4 & 4 \\
+		-8 & 3 & 4 \\
+		-16 & 8 & 7
+		\end{bmatrix}
+	\]
+
+	The first step is to find the eigenvalues of $[T]_{\beta}$. Computing $\text{det}([T]_{\beta} - \lambda I)$:
+	\[
+		\begin{vmatrix}
+		-9-\lambda & 4 & 4 \\
+		-8 & 3-\lambda & 4 \\
+		-16 & 8 & 7-\lambda
+		\end{vmatrix}
+		= -\lambda^3+\lambda^2+5\lambda+3 = 0 \iff (\lambda+1)^2(\lambda-3) = 0
+	\]
+
+	Thus, we have two eigenvalues $\lambda_1 = -1$, with algebraic multiplicity equal to two, and $\lambda_2 = 3$. 
+
+	Computing the eigenvalue associated with $\lambda_1 = -1$:
+	\[
+		\begin{bmatrix}
+		-9 & 4 & 4 \\
+		-8 & 3 & 4 \\
+		-16 & 8 & 7
+		\end{bmatrix}
+		\begin{bmatrix}
+		x_1 \\
+		x_2 \\
+		x_3 \\
+		\end{bmatrix}
+		= -1 \begin{bmatrix}
+		x_1 \\
+		x_2 \\
+		x_3 \\
+		\end{bmatrix}
+		\iff
+		\systeme{-8x_1 + 4 x_2 + 4x_3 = 0, -8x_1+4x_2+4x_3 = 0, -16x_1+8x_2+8x_3 = 0}
+	\]
+
+	Notice that we have only one linearly independent row. I.e., the nullspace of the coefficient matrix have rank equal to two. That means that we can extract two linearly independent eigenvectors.
+
+	In fact, we can take $x_1 = 1, x_2 = 2, x_3 = 0$ and $x_1 = 1, x_2 = 0, x_3 = 2$, obtaining the eigenvectors $(1,2,0)$ and $(1,0,2)$.
+
+	For $\lambda_2 = 3$, we have the system:
+	\[
+		\systeme{-12x_1 + 4 x_2 + 4x_3 = 0, -8x_1+0x_2+4x_3 = 0, -16x_1+8x_2+4x_3 = 0} \iff \systeme{x_1 = \frac{1}{2} x_3, x_2 = \frac{1}{2} x_3, x_3 = x_3}
+	\]
+
+	Hence, we can choose the vector $(1,1,2)$.
+
+	Since we obtained three linearly independent eigenvectors, we have that $T$ is a diagonalizable linear operator. Moreover, we obtained the following basis for $\mathbb{R}^3$:
+	\[
+		\begin{bmatrix}
+		1 & 2 & 0 \\
+		1 & 0 & 2 \\
+		1 & 1 & 2
+		\end{bmatrix}
+	\]
+\end{example}
+
+\begin{theorem}[Spectral Theorem]
+	Suppose that $T$ is a linear operator in a finite-dimensional vector space $V$. If $V$ is defined over $\mathbb{C}$, consider $T$ normal. If $V$ is defined over $\mathbb{R}$, consider $T$ self-adjoint.
+
+	Let $\lambda_1, \ldots, \lambda_k$ be distinct eigenvalues of $T$, $W_j$ the eigenspace associated with $\lambda_j$ and $E_j$ the orthogonal projection of $V$ in $W_j$. The following are equivalent:
+	\begin{enumerate}
+	\item $W_j$ is orthogonal to $W_i$ when $i \neq j$.
+	\item $V$ is a direct sum of $W_1, \ldots, W_k$.
+	\item $T$ can be decomposed as \[T = \lambda_1 E_1 + \ldots + \lambda_k E_k\] denominated \textbf{spectral resolution}.
+	\end{enumerate}
+\end{theorem}
 
 \subsection{Direct Sums}
 
@@ -889,7 +968,6 @@ It follows immediately from the definiton that
 \]
 
 Identifying $V_i$ with $f_i(V_i)$, we obtain a vector space which contains $V_i$ and decomposes into the direct sum of $V_i$.
-
 
 \subsection{Invariant Subspaces}
 
