@@ -88,7 +88,7 @@ The conditions that an arbitrary vector in $V$ must satisfy in order to belong t
 \end{theorem}
 
 \begin{definition}[Span]
-	Let $S \subseteq V$. The \textbf{subspace spanned} by $S$ (or \textbf{span} of $S$), denoted by $\text{Span}(S)$, is the intersection of all subspaces of $V$ which contain $S$.
+	Let $S \subseteq V$. The \textbf{subspace spanned} by $S$ (or \textbf{span} of $S$), denoted by $\text{Span}(S)$ or $[s_1, \ldots, s_k]$ (where $s_i$ is each vector of $S$), is the intersection of all subspaces of $V$ which contain $S$.
 	
 	We define the $\text{Span}(\varnothing) = \{ 0 \}$.
 \end{definition}
@@ -878,7 +878,7 @@ where $\Lambda$ is constructed by the eigenvalues of $A$, and $P$ is constructed
 
 	Thus, we have two eigenvalues $\lambda_1 = -1$, with algebraic multiplicity equal to two, and $\lambda_2 = 3$. 
 
-	Computing the eigenvalue associated with $\lambda_1 = -1$:
+	Computing the eigenvector associated with $\lambda_1 = -1$:
 	\[
 		\begin{bmatrix}
 		-9 & 4 & 4 \\
@@ -913,9 +913,9 @@ where $\Lambda$ is constructed by the eigenvalues of $A$, and $P$ is constructed
 	Since we obtained three linearly independent eigenvectors, we have that $T$ is a diagonalizable linear operator. Moreover, we obtained the following basis for $\mathbb{R}^3$:
 	\[
 		\begin{bmatrix}
-		1 & 2 & 0 \\
-		1 & 0 & 2 \\
-		1 & 1 & 2
+			1 & 1 & 1 \\
+			2 & 0 & 1 \\
+			0 & 2 & 2
 		\end{bmatrix}
 	\]
 \end{example}
@@ -968,17 +968,3 @@ It follows immediately from the definiton that
 \]
 
 Identifying $V_i$ with $f_i(V_i)$, we obtain a vector space which contains $V_i$ and decomposes into the direct sum of $V_i$.
-
-\subsection{Invariant Subspaces}
-
-Suppose $T \in \text{End}(V)$. If we decompose $V$ in direct sums
-	\[
-		V = U_1 \oplus \ldots \oplus U_m
-	\]
-where each $U_j$ is a proper subspace of $V$, then to understand the behavior of $T$ it is sufficient to study the behavior of $T$ in each $U_j$. To do that, we consider $T|_{U_j}$, i.e., $T$ restricted to $U_j$.
-
-However, it is not always the case that $T|_{U_j}$ has its image in the same subspace ${U_j}$. That's why we need the following.
-
-\begin{definition}[Invariant Subspace]
-	A subspace $U$ of $V$ is said an $\textbf{invariant subspace}$ under $T$ if for each $u \in U$ we have that $T(u) \in U$. I.e., $U$ is invariant under $T$ if $T|_U$ is a linear operator in $U$.
-\end{definition}

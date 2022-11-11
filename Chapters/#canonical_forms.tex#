@@ -248,7 +248,7 @@ To continue our studies, we'll think less in terms of matrices and more in terms
 
 Remark that if the conditions of the lemma above hold, then $W = W_1 \oplus \cdots \oplus W_k$. For example, if $W_i$ is the eigenspace associated with the eigenvalue $\lambda_i$ of $T$ and $T$ is diagonalizable, then $V$ can be decomposed as $V = W_1 \oplus \cdots \oplus W_k$.
 
-\begin{theorem}\label{thm:202211101445}
+\begin{theorem}
 	If $V = W_1 \oplus \cdots \oplus W_k$, then there exist $k$ endomorphisms $P_1, \ldots, P_k$ on $V$ such that
 	\begin{enumerate}
 		\item Each $P_i$ is a projection (i.e. $P_i^2 = P_i$);
@@ -269,82 +269,6 @@ Remark that if the conditions of the lemma above hold, then $W = W_1 \oplus \cdo
 \end{proof}
 
 \section{Invariant Direct Sums}
-
-The most interesting decomposition $V = W_1 \oplus \cdots \oplus W_k$ is when each subspace $W_i$ is invariant under a given endomorphism $T$. In this case, $T$ induces another endomorphism $T_i$ on each $W_i$, which is simply the restriction of $T$ on $W_i$.
-
-If $v \in V$, then
-\[
-	v = v_1 + \cdots + c_k, \quad v_i \in W_i
-\]
-and 
-\[
-	T(v) = T_1(v_1) + \cdots + T_k(v_k)
-\]
-
-\begin{theorem}
-	Let $T, V, W_1, \ldots, W_k, P_1, \ldots, P_k$ be as in Theorem \ref{thm:202211101445}. Then each subspace $W_i$ is invariant under $T$ iff. $T$ commutes with each of the projection $P_i$, i.e., $T \circ P_i = P_i \circ T$, $i = 1, \ldots, k$.
-\end{theorem}
-
-\begin{proof}
-	$(\Leftarrow)$ Suppose that $T$ commutes with each $P_i$ and let $w_j \in W_j$. Then
-	\[
-		T(w_j) = T(P_j(w_j)) = P_j(T(w_j)) \implies T(w_j) \in \text{range}(P_j)
-	\]
-	i.e., $W_j$ is invariant under $T$.
-
-	$(\Rightarrow)$ Suppose that each $W_i$ is invariant under $T$. Let $v \in V$. Then 
-	\[
-		v = P_1(v) + \cdots + P_k(v) \implies T(v) = T(P_1(v)) + \cdots + T(P_k(v))
-	\]
-
-	Since $P_i(v) \in W_i$, which is invariant under $T$, we have $T(P_i(v)) = P_i(u_i)$ for some $u_i$. Thus
-	\[
-		P_j(T(v)) = P_j(T(P_1(v))) + \cdots + P_j(T(P_k(v))) = P_j(u_j) = T(P_j(v))
-	\]
-
-	Hence, $P_j(T) = T(P_j)$.
-\end{proof}
-
-With this result that invariant direct sum decompositions can be described as projections which commute with $T$, we can start studying deeper decomposition theorems.
-
-\begin{theorem}
-	Let $T \in \text{End}(V)$, $\dim(V) < \infty$. If $T$ is diagonalizable and $\lambda_1, \ldots, \lambda_k$ are the distinct eigenvalues of $T$, then there exist endomophisms $P_1, \ldots, P_k$ on $V$ such that
-	\begin{enumerate}
-		\item $T = \lambda_1 P_1 + \cdots + \lambda_k P_k$;
-		\item $I = P_1 + \cdots + P_k$;
-		\item $P_i P_j = 0$, $i \neq j$;
-		\item $P_i^2 = P_i$ ($P_i$ is a projection);
-		\item The range of $P_i$ is the eigenspace for $T$ associated with $\lambda_i$.
-	\end{enumerate}
-
-	Conversely, if there exist $\lambda_1, \ldots, \lambda_k \in \mathbb{F}$ and non-zero endomorphisms $P_1, \ldots, P_k$ satisfying conditions $(1)$, $(2)$, and $(3)$, then $T$ is diagonalizable, $\lambda_1, \cdots, \lambda_k$ are the distinct eigenvalues of $T$, and conditions $(4)$ and $(5)$ also hold.
-\end{theorem}
-
-\begin{proof}
-	$(\Rightarrow)$ Let $W_i$ be the space of eigenvectors associated with the eigenvalue $\lambda_i$. Then $V = W_1 \oplus \cdots \oplus W_k$ and let $P_i$ be the projections associated with this decomposition. By Theorem \ref{thm:202211101445} the conditions $(2)$, $(3)$, $(4)$, and $(5)$ are satisfied. To verify $(1)$, notice that for each $v \in V$,
-	\[
-		T(v) = T(P_1(v)) + \cdots + T(P_k(v)) = \lambda_1 P_1(v) + \cdots + \lambda_k P_k(v)
-	\]
-
-	$(\Leftarrow)$ Since $P_i P_j = 0$ for $i \neq j$, multiplying both sides of $I = P_1 + \cdots + P_k$ by $E_i$, we have that $P_i^2 = P_i$. 
-
-	Multiplying $T = \lambda_1 P_1 + \cdots + \lambda_k P_k$ by $E_i$ implies that $T(P_i) = \lambda_i P_i$ and therefore any vector in the range of $P_i$ is in $\ker (T - \lambda_i I)$. Since $P_i \neq 0$, there exists a non-zero vector in $\ker (T - \lambda_i I)$, i.e., $\lambda_i$ is an eigenvalue of $T$.
-	
-	More than that, $\lambda_i$ are all the eigenvalues of $T$. If $x$ is any scalar then $(T - xI)v = 0$ implies that $(\lambda_i - x)P_i(v) = 0$. If $v \neq 0$, then $P_i(v) \neq 0$ for some $i$. 
-	
-	Since every non-zero vector is in the range of $P_i$ is an eigenvector of $T$ and $I = P_1 + \cdots + P_k$, we have that these eigenvectors span $V$. 
-
-	Now notice that if $T(v) = \lambda_i v$ then 
-	\[
-		\sum_{j=1}^k (\lambda_j - \lambda_i) P_j(v) = 0 \iff (\lambda_j - \lambda_i) P_j(v) = 0, \quad \forall~j
-	\]
-	Thus
-	\[
-		P_j(v) = 0, \quad j \neq i
-	\]
-
-	Since $v = P_1(v) + \cdots + P_k(v)$ and $P_j(v) = 0$ for $j \neq i$, then $v = P_i(v)$, which shows that $v \in \text{range}(P_i)$.
-\end{proof}
 
 \section{Primary Decomposition Theorem}
 
@@ -711,7 +635,7 @@ This gives us a new method to obtain a the minimal polynomial $m_T$.
 	\item Let $A = [T]_\alpha^\alpha$ and, given $k = (k_1, \ldots, k_m) \in (\mathbb{Z}_{>0})^m$ with $k_j \leq n_j$, let $p_k = \sum_{j=1}^m p_j^{k_j}$. From all polynomials of the form $p_k$ such that $p_k(A) = 0$, the one with the minimal $k_j$ for all $j$ is $m_T$. To find each minimum $k_j$, we can compute the sequence of kernels $V_{p_j} \subseteq \ldots \subseteq V_{p_j^{n_j}} = V_{p_j^{n_j + 1}}$.
 \end{enumerate}
 
-\begin{example}\label{ex:canonical_forms_1}
+\begin{example}
 	Suppose that $\text{char}(\mathbb{F})$, $V = \mathbb{F}^4$ and $T \in \text{End}(V)$ given by 
 	\[
 		T(x_1, x_2, x_3, x_4) = (3x_3 + x_4, 2x_1+2x_2 - 4x_3 + 2 x_4, x_3 + x_4, 3x_4 - x_3)
@@ -780,8 +704,6 @@ This gives us a new method to obtain a the minimal polynomial $m_T$.
 		\end{bmatrix}
 	\]
 	with solution $V_{(t-2)^3} = \{ (z, y, x, 5x-2z) : x, y, z \in \mathbb{F} \}$.
-	
-	Hence, $m_T = t(t-2)^3$.
 \end{example}
 
 \section{Jordan and Frobenius Bases}
@@ -797,11 +719,11 @@ Define $w_j = (T - \lambda I)^j (v)$, $\beta = w_0, \ldots, w_{k-1}$, and notice
 Notice that $T(w_j) = \lambda w_j + w_{j+1}$, and therefore,
 \[
 	[S]_\beta^\beta = J_k(\lambda) := \begin{bmatrix}
-		\lambda	& 0 		& \cdots 	& \cdots 	& 0 \\
-		1		& \lambda 	& 0 		& \cdots 	& 0 \\
-		0		& \ddots 	& \ddots 	& \ddots 	& \vdots \\
-		\vdots	& \ddots	& \ddots 	& \ddots 	& 0 \\
-		0		& \cdots	& 0 		& 1 		& \lambda
+		\lambda && 0 && \cdots && \cdots && 0 \\
+		1 && \lambda && 0 && \cdots && 0 \\
+		0 && \ddots && \ddots && \ddots && \vdots \\
+		\vdots && \ddots && \ddots && \ddots && 0 \\
+		0 && \cdots && 0 && 1 && \lambda
 	\end{bmatrix}
 \]
 in which $S \in \text{End}(C_T(v))$ is given by $S(w) = T(w)$ for all $w \in C_T(v)$. The matrix $J_k(\lambda)$ is said to be a \textbf{Jordan block} of size $k$ and eigenvalue $\lambda$.
@@ -813,10 +735,10 @@ The sequence $\beta$ is a \textbf{Jordan $T$-cycle} of size $k$ and eigenvalue $
 If $\beta$ is a Jordan basis of $V$ with respect to $T$ with $l$ $T$-cycles, we have
 \[
 	[T]_\beta^\beta = \begin{bmatrix}
-	J_{k_1}(\lambda_1)	& 0 	 & \cdots	& 0 \\
-	0					& \ddots & \ddots	& \vdots \\
-	\vdots				& \ddots & \ddots 	& 0 \\
-	0					& \cdots & 0 		& J_{k_l}(\lambda_l)
+	J_{k_1}(\lambda_1) && 0 && \cdots && 0 \\
+	0 && \ddots && \ddots && \vdots \\
+	\vdots && \ddots && \ddots && 0 \\
+	0 && \cdots && 0 && J_{k_l}(\lambda_l)
 	\end{bmatrix}
 \]
 This matrix is called the \textbf{Jordan Canonical Form} of $T$.
@@ -827,9 +749,9 @@ This matrix is called the \textbf{Jordan Canonical Form} of $T$.
 
 How do we find a Jordan basis? If the $T$-primary subspaces of $V$ are $T$-cyclic and we chose a generator for each $T$-cycle, the PDT and the previous discussion show how to find it.
 
-What to do if any $T$-primary subspace is not $T$-cyclic? Or if some prime factor of $m_T$ has a degree greater than one? We use the Cyclic Decomposition Theorem since a cyclic decomposition always exists.
+What to do if any $T$-primary subspace is not $T$-cyclic? Or if some prime factor of $m_T$ has a degree greater than one? We use the Cyclic Decomposition Theorem, which always exists.
 
-\begin{theorem}[Cyclic Decomposition Theorem (CDT)]\label{thm:CDT}
+\begin{theorem}[Cyclic Decomposition Theorem (CDT)]
 	There exist $m \in \mathbb{Z}, m \geq 1$, and $v_1, \ldots, v_m \in V \setminus \{ 0 \}$ such that
 	\[
 		V = \bigoplus_{j=1}^m C_T(v_j)
@@ -912,76 +834,6 @@ Remark that similarity is an equivalence relation.
 \begin{theorem}
 	$S$ and $T$ are similar iff. they have the same Rational Form. If $T$ has a Jordan Form, then $S \sim T$ iff. they have the same Jordan Form.
 \end{theorem}
-
-\begin{example}
-	Let us continue the example \ref{ex:canonical_forms_1}. To generate the Jordan cycle associated with the eigenvalue $\lambda = 2$, we choose $v \in V_{(t-2)^3} \setminus V_{(t-2)^2}$, say $v = (1, 0, 0, -2)$. In this case, the Jordan cycle is
-	\[
-		v_1 = v, \quad v_2 = T(v_1) - 2v_1 = -2(2,1,1,1), \quad v_3 = T(v_2) - 2v_2 = -4 e_2
-	\]
-	
-	To complete the basis, notice that $V_t = [v_4]$, in which $v_4 = (1, -1, 0, 0)$. Hence, $\beta = \{ v_1, v_2, v_3, v_4 \}$ is a Jordan basis and 
-	\[
-		[T]_\beta^\beta = \begin{bmatrix}
-			2 && 0 && 0 && 0 \\
-			1 && 2 && 0 && 0 \\
-			0 && 1 && 2 && 0 \\
-			0 && 0 && 0 && 0
-		\end{bmatrix}
-	\]
-	
-	Since $c_T = m_T$, it follows that $V$ is $T$-cyclic and $C_T(w) = V$, in which $w = v_1 - v_4 = (0, 1, 0, -2)$. Hence, the vectors $w_1 = w$,
-	\[
-		w_2 = T(w_1) = -2(1,1,1,3), \quad w_3 = T(w_2) = -4(3,3,2,4), \quad w_4 = T(w_3) = -8(5,6,3,5)
-	\]
-	form a rational basis for $V$ w.r.t. $T$.
-	
-	Given that $m_w(t) = c_T(t) = t^4 - 6t^3 + 12t^2 -8t$, it follows that
-	\[
-		T(w_4) = 6w_4 - 12 w_3 + 8 w_2
-	\]
-	
-	Thus, taking the basis $\gamma = \{ w_1, w_2, w_3, w_4 \}$
-	\[
-		[T]_\gamma^\gamma = \begin{bmatrix}
-			0 && 0 && 0 && 0 \\
-			1 && 0 && 0 && 8 \\
-			0 && 1 && 0 && -12 \\
-			0 && 0 && 1 && 6
-		\end{bmatrix}
-	\]
-\end{example}
-
-How do we choose the initial vectors of each cycle? Jordan and Frobenius bases are formed by a union of cycles. Each cycle has an initial vector. How do we find it? This choice cannot be random.
-
-\begin{example}
-	Consider $T \in \text{End}(\mathbb{R}^3)$ given by $T(x,y,z) = (0,x,y)$. If $\alpha$ is the standard basis, we have 
-	\[
-		[T]_\alpha^\alpha = \begin{bmatrix}
-			0 && 0 && 0 \\
-			1 && 0 && 0 \\
-			0 && 1 && 0
-		\end{bmatrix}
-	\]
-	which is a Jordan block. Thus we can take $e_1$ as the initial vector of the (unique) cycle.
-
-	Notice that $v = e_1 + e_2$ can also be used as an initial vector and we have the cycle $\beta = \{ v, e_2 + e_3, e_3 \}$. However, if the $x$-coordinate of the initial vector $w$ is zero, then this vector cannot be chosen, since $\mathfrak{C}_T(w)$ has at most two vectors and the final one is a multiple of $e_3$. 
-
-	Finding bases for $V_t$ and $V_{t^2}$ we can see that there doesn't exist $T$-invariant subspace $W$ satisfying $\mathbb{R}^3 = C_T(w) \oplus W$. I.e., $C_T(w)$ doesn't admit a complementary $T$-invariant subspace.
-\end{example}
-
-Our task, then, is to pick $v_1$ such that $C_T(v_1)$ has a complementary subspace that can be written as a direct sum of cycles, hence $T$-invariant.
-
-After that, we find $v_2$ such that $C_T(v_1) \cap C_T(v_2) = \{ 0 \}$ and $C_t(v_1) \oplus C_T(v_2)$ has a complementary subspace such that it can be written as a direct sum of cycles, hence $T$-invariant. 
-
-Repeating this procedure, we find a rational basis.
-
-\begin{definition}[$T$-admissible subspace]
-	A $T$-invariant subspace $W$ of $V$ is said to be \textbf{$T$-admissible} if there exists a $T$-invariant subspace $W'$ such that $V = W \oplus W'$.
-\end{definition}
-
-\begin{example}
-	$V$ and $\{ 0 \}$ are $T$-admissible. If $V$ is $T$-cyclic and $v$ satisfies $m_v = m_T$, then $V = C_T(v)$ and we can find a decomposition as in the \hyperref[thm:CDT]{CDT}.
-\end{example}
 
 %\begin{equation*}
 %	\begin{aligned}
