@@ -15,32 +15,36 @@
 \contentsline {subsection}{\numberline {1.3.2}Characteristic Values}{16}{subsection.1.3.2}%
 \contentsline {subsection}{\numberline {1.3.3}Diagonalization}{17}{subsection.1.3.3}%
 \contentsline {subsection}{\numberline {1.3.4}Direct Sums}{19}{subsection.1.3.4}%
-\contentsline {chapter}{\numberline {2}Dual Spaces}{21}{chapter.2}%
-\contentsline {section}{\numberline {2.1}Category Theory}{21}{section.2.1}%
-\contentsline {section}{\numberline {2.2}Quotient Spaces}{23}{section.2.2}%
-\contentsline {section}{\numberline {2.3}Dual Space}{25}{section.2.3}%
-\contentsline {section}{\numberline {2.4}The Double Dual}{29}{section.2.4}%
-\contentsline {section}{\numberline {2.5}The Transpose of a Linear Transformation}{32}{section.2.5}%
-\contentsline {chapter}{\numberline {3}Polynomials}{35}{chapter.3}%
-\contentsline {section}{\numberline {3.1}Algebras}{35}{section.3.1}%
-\contentsline {section}{\numberline {3.2}The Algebra of Polynomials}{35}{section.3.2}%
-\contentsline {section}{\numberline {3.3}Polynomial Ideals}{36}{section.3.3}%
-\contentsline {section}{\numberline {3.4}Prime Factorization}{37}{section.3.4}%
-\contentsline {chapter}{\numberline {4}Canonical Forms}{39}{chapter.4}%
-\contentsline {section}{\numberline {4.1}Annihilating Polynomials}{39}{section.4.1}%
-\contentsline {section}{\numberline {4.2}Invariant Subspaces}{41}{section.4.2}%
-\contentsline {section}{\numberline {4.3}Simultaneous Triangulation / Diagonalization}{43}{section.4.3}%
-\contentsline {section}{\numberline {4.4}Direct-Sum Decompositions}{43}{section.4.4}%
-\contentsline {section}{\numberline {4.5}Invariant Direct Sums}{44}{section.4.5}%
-\contentsline {section}{\numberline {4.6}Primary Decomposition Theorem}{46}{section.4.6}%
-\contentsline {section}{\numberline {4.7}Cyclic subspaces}{48}{section.4.7}%
-\contentsline {section}{\numberline {4.8}Jordan and Frobenius Bases}{53}{section.4.8}%
-\contentsline {chapter}{\numberline {5}Determinants}{58}{chapter.5}%
-\contentsline {section}{\numberline {5.1}Commutative Rings}{58}{section.5.1}%
-\contentsline {section}{\numberline {5.2}Determinant Functions}{58}{section.5.2}%
-\contentsline {section}{\numberline {5.3}Permutations and the Uniqueness of Determinants}{63}{section.5.3}%
-\contentsline {section}{\numberline {5.4}Properties of Determinants}{65}{section.5.4}%
-\contentsline {section}{\numberline {5.5}Modules}{68}{section.5.5}%
-\contentsline {section}{\numberline {5.6}Multilinear Functions}{70}{section.5.6}%
-\contentsline {section}{\numberline {5.7}The Grassman Ring}{73}{section.5.7}%
-\contentsline {chapter}{References}{74}{chapter*.2}%
+\contentsline {chapter}{\numberline {2}Canonical Forms}{21}{chapter.2}%
+\contentsline {section}{\numberline {2.1}Annihilating Polynomials}{21}{section.2.1}%
+\contentsline {section}{\numberline {2.2}Invariant Subspaces}{23}{section.2.2}%
+\contentsline {section}{\numberline {2.3}Simultaneous Triangulation / Diagonalization}{24}{section.2.3}%
+\contentsline {section}{\numberline {2.4}Direct-Sum Decompositions}{25}{section.2.4}%
+\contentsline {section}{\numberline {2.5}Invariant Direct Sums}{26}{section.2.5}%
+\contentsline {section}{\numberline {2.6}Primary Decomposition Theorem}{28}{section.2.6}%
+\contentsline {section}{\numberline {2.7}Alternative proofs for minimal polynomials}{29}{section.2.7}%
+\contentsline {section}{\numberline {2.8}Cyclic subspaces}{31}{section.2.8}%
+\contentsline {section}{\numberline {2.9}Jordan and Frobenius Bases}{36}{section.2.9}%
+\contentsline {chapter}{\numberline {3}Bilinear Forms and Geometry}{46}{chapter.3}%
+\contentsline {section}{\numberline {3.1}Multilinear Functions}{46}{section.3.1}%
+\contentsline {section}{\numberline {3.2}Duality}{48}{section.3.2}%
+\contentsline {section}{\numberline {3.3}Bilinear Pairings and Orthogonality}{57}{section.3.3}%
+\contentsline {section}{\numberline {3.4}Hyperbolic and Orthogonal Bases}{60}{section.3.4}%
+\contentsline {section}{\numberline {3.5}Orthogonal and Sympletic Transformations}{68}{section.3.5}%
+\contentsline {section}{\numberline {3.6}Self-Adjoint Operators}{73}{section.3.6}%
+\contentsline {chapter}{\numberline {A}Category Theory}{79}{appendix.A}%
+\contentsline {chapter}{\numberline {B}Quotient Spaces}{81}{appendix.B}%
+\contentsline {chapter}{\numberline {C}Determinants}{84}{appendix.C}%
+\contentsline {section}{\numberline {C.1}Commutative Rings}{84}{section.C.1}%
+\contentsline {section}{\numberline {C.2}Determinant Functions}{84}{section.C.2}%
+\contentsline {section}{\numberline {C.3}Permutations and the Uniqueness of Determinants}{89}{section.C.3}%
+\contentsline {section}{\numberline {C.4}Properties of Determinants}{91}{section.C.4}%
+\contentsline {section}{\numberline {C.5}Modules}{94}{section.C.5}%
+\contentsline {section}{\numberline {C.6}Multilinear Functions}{96}{section.C.6}%
+\contentsline {section}{\numberline {C.7}The Grassman Ring}{99}{section.C.7}%
+\contentsline {chapter}{\numberline {D}Polynomials}{100}{appendix.D}%
+\contentsline {section}{\numberline {D.1}Algebras}{100}{section.D.1}%
+\contentsline {section}{\numberline {D.2}The Algebra of Polynomials}{100}{section.D.2}%
+\contentsline {section}{\numberline {D.3}Polynomial Ideals}{101}{section.D.3}%
+\contentsline {section}{\numberline {D.4}Prime Factorization}{102}{section.D.4}%
+\contentsline {chapter}{References}{104}{appendix*.2}%

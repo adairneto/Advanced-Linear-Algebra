@@ -1,0 +1,1871 @@
+\chapter{Bilinear Forms and Geometry}
+
+In this chapter, we study geometries that emerge from a generalization of the inner product. 
+
+\section{Multilinear Functions}
+
+\begin{definition}[Multilinear Function]
+Given vector spaces $V_1, \ldots, V_k$ and $W$, consider the vector space 
+\[
+  \mathfrak{F}(V_1 \times \cdots \times V_k, W)
+\]
+
+A function $\varphi \in \mathfrak{F}$ is said to be \textbf{$k$-linear} if it is linear in each entry. More precisely,
+\begin{equation*}
+  \begin{aligned}
+    \varphi(v_1, \ldots, v_{i-1}, v + \lambda v', v_{i+1}, \ldots, v_k) &= \varphi(v_1, \ldots, v_{i-1}, v, v_{i+1}, \ldots, v_k) \\
+    &+ \lambda \varphi(v_1, \ldots, v_{i-1}, v', v_{i+1}, \ldots, v_k)
+  \end{aligned}
+\end{equation*}
+for all $1 \leq i \leq k$.
+
+We denote by $\hom_{\mathbb{F}}^k (V_1, \ldots, V_k, W)$ the subset of $\mathfrak{F}$ formed by $k$-linear functions. It can be easily verified that $\hom_{\mathbb{F}}^k$ is a subspace of $\mathfrak{F}$.
+
+If $W = \mathbb{F}$, then an element of $\hom_{\mathbb{F}}^k$ is called a \textbf{$k$-linear form}. 
+\end{definition}
+
+\begin{example}[Inner Product]
+If $\mathbb{F} = \mathbb{R}$, an inner product on $V$ is a bilinear form on $V$, i.e., an element of $\hom^2(V, \mathbb{R})$. 
+\end{example}
+
+\begin{example}[Determinant]
+  A determinant function is a multilinear form.
+\end{example}
+
+The next example shows that, in general, the range is not closed under vector sum. 
+
+\begin{example}
+  Consider $V = \mathbb{F}^2$, $W = \mathbb{F}^4$, and $\varphi \in \hom_{\mathbb{F}}^2(V,W)$ given by
+  \[
+    \varphi(v_1, v_2) = (x_1 x_2, x_1 y_2, y_1 x_2, y_1 y_2), \quad v_1 = (x_1, y_1), ~v_2 = (x_2, y_2)
+  \]
+
+  Notice that $\varphi$ is a bilinear function. An also
+  \[
+    (a_1, a_2, a_3, a_4) \in \text{range}(\varphi) \iff a_1 a_4 = a_2 a_3
+  \]
+
+  Now consider $w = (2,2,1,1)$ and $w' = (1,0,1,0)$. Then $w, w' \in \text{range}(\varphi)$, but $w + w' = (3,2,2,1) \notin \text{range}(\varphi)$.
+\end{example}
+
+We know that every vector space has a basis. Can we find a basis for $V_1 \times \cdots \times V_k$ using the bases for each $V_i$? The next result shows that every $k$ linear function is completely determined by a cartesian product of bases.
+
+\begin{theorem}
+  If $\alpha_j = (v_{i,j})_{i \in I_j}$ is a basis for $V_j$, $1 \leq j \leq k$, $I = I_1 \times \cdots \times I_k$, and $(w_i)_{i \in I}$ is a family on the vector space $W$, then there exists an unique function $\varphi \in \hom_{\mathbb{F}}^k (V_1, \ldots, V_k, W)$ such that $\varphi(v_{i_1,1}, \ldots, v_{i_k, k}) = w_i$ for all $i = (i_1, \ldots, i_k) \in I$.
+\end{theorem}
+
+\begin{proof}
+  The proof is the same as for linear transformations, just adding the indices. 
+\end{proof}
+
+The next theorem gives a procedure to find a basis. 
+
+\begin{theorem}
+  Let $V_j, \alpha_j, 1 \leq j \leq k, I$ and $W$ be as in the previous theorem, and let $\beta = (w_s)_{s \in S}$ a basis for $W$. Given $i = (i_1, \ldots, i_k) \in I$, define $v_i = (v_{i_1, 1}, \ldots, v_{i_k, k})$, and given $(i,s) \in I \times S$, let $\varphi_{i,s} \in \hom_{\mathbb{F}}^k(V_1, \ldots, V_k, W)$ be the element satisfying 
+  \[
+    \varphi_{i,s}(v_{i'}) = \delta_{i,i'} w_s, \quad \forall~i' \in I
+  \]
+
+  Then $(\varphi_{i,s})_{(i,s) \in I \times S}$ is a linearly independent family on $\hom_{\mathbb{F}}^k(V_1, \ldots, V_k, W)$ and is a basis if $\dim(V_j) < \infty$ for all $1 \leq j \leq k$. In this case, 
+  \[
+    \dim(\hom_{\mathbb{F}}^k(V_1, \ldots, V_k, W)) = \dim(W) \prod_{j=1}^k \dim(V_j)
+  \]
+\end{theorem}
+
+\begin{proof}
+  For each finite subset $\Gamma = \{\gamma_1, \ldots, \gamma_m \} \subseteq I \times S$, we need to show that 
+  \[
+    a_1 \varphi_{\gamma_1} + \cdots + a_m \varphi_{\gamma_m} = 0 \iff a_1 = \cdots = a_m = 0
+  \]
+
+  Write $\gamma_j = (i_j, s_j)$ and define 
+  \[
+    \Omega_j = \{ l \in \mathbb{Z} : 1 \leq l \leq m, i_l = i_j \}, \quad 1 \leq j \leq m
+  \]
+
+  Given $ a_1, \ldots, a_m \in \mathbb{F}$, then 
+  \[
+    \varphi = a_1 \varphi_{\gamma_1} + \cdots + a_m \varphi_{\gamma_m} \implies \varphi(v_{i_j}) = \sum_{l \in \Omega_j} a_l w_{s_l}, \quad \forall~1 \leq j \leq m
+  \]
+
+  Since $l \neq l'$ implies $\gamma_l \neq \gamma_{l'}$, and $l, l' \in \Omega_j$ implies $i_l = i_{l'}$, we must have $s_l \neq s_l'$ under these conditions. 
+
+  Hence, the family $(w_{s_l})_{l \in \Omega_j}$ is a subfamily of $\beta$ and, therefore, linearly independent. Thus, $\varphi(v_{i_j}) = 0$ only if $a_l = 0$ for all $l \in \Omega_j$.
+
+  Now suppose that $\dim(V_j) < \infty$ for all suitable $j$ and, therefore, $I$ is finite. Given $\varphi \in \hom^k(V_1, \ldots, V_k, W)$, we need to find a family of scalars $(a_\gamma)_{\gamma \in I \times S}$ such that $a_\gamma \neq 0$ for finite values of $\gamma$ And
+  \[
+    \varphi = \sum_{\gamma \in I \times S} a_\gamma \varphi_\gamma
+  \]
+
+  To define such a family, notice that for each $i \in I$, there exists a family of scalars $(a_{i,s})_{s \in S}$ with $a_{i, s} \neq 0$ for finite values of $s$ and 
+  \[
+    \varphi(v_i) = \sum_{s \in S} a_{i,s} w_s
+  \]
+
+  Thus we have defined the desired family of scalars. Since $I$ is finite, $a_\gamma \neq 0$ for finite values of $\gamma$. Moreover, for each $i \in I$, we have that 
+  \[
+    \left( \sum_{\gamma \in I \times S} a_\gamma \varphi_\gamma \right) (v_i) = \sum_{\substack{\gamma=(i,s) : \\ s \in S}} a_\gamma \varphi_\gamma(v_i) = \sum_{s \in S} a_{i,s} w_s = \varphi(v_i)
+  \]
+\end{proof}
+
+\section{Duality}
+
+A concept that will help us in the study of subspaces, linear equations, and coordinates is the following.
+
+\begin{definition}[Linear Functional and Dual Space]
+	A linear transformation from the vector space $V$ to its scalar field $\mathbb{F}$ is called a \textbf{linear functional}.
+	
+	The set of linear functionals is denoted by $V^\ast$ and is called \textbf{dual space} of $V$. In other words, $V^\ast = \mathcal{L}(V, \mathbb{F})$.
+\end{definition}
+
+Linear functionals are also called a \textbf{form} or a \textbf{1-form}.
+
+\begin{example}
+	Let $(c_1, \ldots, c_n) \in \mathbb{F}^n$ and define $f : \mathbb{F}^n \longrightarrow \mathbb{F}$ by 
+	\[
+		f(x_1, \ldots, x_n) = c_1 x_1 + \ldots + c_n x_n
+	\]
+	Then $f$ is a linear functional on $\mathbb{F}^n$.
+\end{example}
+
+\begin{example}[Evaluation Function]
+Notice that the function 
+\begin{equation*}
+  \begin{aligned}
+    V^\ast \times V &\longrightarrow \mathbb{F} \\
+    (f,v) &\longmapsto f(v)
+  \end{aligned}
+\end{equation*}
+is a $2$-linear function called \textbf{evaluation function}. In general, an element $\hom(W,V, \mathbb{F})$ is called a \textbf{bilinear pairing} between $W$ and $V$.
+\end{example}
+
+\begin{example}[Trace]
+	If $A$ is an $n \times n$ matrix, the \textbf{trace} of $A$ is the scalar
+	\[
+		\text{tr } A = A_{11} + A_{22} + \ldots + A_{nn}
+	\]
+	
+	Remark that the trace function is a linear functional on the matrix space $\textbf{M}_n$.
+\end{example}
+
+\begin{remark}
+	Suppose $V$ is finite-dimensional. Then the dimension of the dual space is equal to the dimension of the space.
+	\[
+		\dim V^\ast = \dim V
+	\]
+
+	If $V$ is infinite-dimensional, then $\dim (V^\ast) > \dim (V)$.
+\end{remark}
+
+\begin{definition}[Dual basis]
+	If $\beta = \{ v_1, \ldots, v_n \}$ is a basis of $V$ then the \textbf{dual basis} of $\beta$ is the set $\beta^\ast = \{ f_1, \ldots, f_n \}$, where each $f_i$ is the linear functional on $V$ such that 
+	\[
+		f_i(v_j) = \delta_{ij}
+	\]
+	where $\delta$ is the Kronecker's delta.
+\end{definition}
+
+\begin{theorem}
+	Let $V$ be a finite-dimensional vector space. Then the dual basis of a basis of $V$ is a basis of $V^\ast$.
+\end{theorem}
+
+\begin{proof}
+	Let $\beta = \{ v_1, \ldots, v_n \}$ be a basis for $V$. Then there exists a unique linear functional $f_i$ on $V$ such that
+	\[
+		f_i(v_j) = \delta_{ij}
+	\]
+	for each $i$.
+
+	With this process, we obtain $n$ distinct linear functionals $f_1, \ldots, f_n$ on $V$.
+
+	To show that $f_1, \ldots, f_n$ are linearly independent, suppose that $c_1, \ldots, c_n \in \mathbb{F}$ are such that
+	\[
+		c_1 f_1 + \ldots + c_n f_n = 0
+	\]
+	Since $(c_1 f_1 + \ldots + c_n f_n)(v_j) = c_j$ for each $j = 1, \ldots, n$, we know that $c_1 = \ldots = c_n = 0$. Hence, $f_1, \ldots, f_n$ is linearly independent.
+	
+	And given that $\dim V^\ast = n$, the set $\beta^\ast = \{ f_1, \ldots, f_n \}$ is a basis for $V^\ast$.
+\end{proof}
+
+\begin{theorem}
+	Let $\beta = \{ v_1, \ldots, v_n \}$ be a basis for a vector space $V$. Then there is a unique dual basis $\beta^\ast = \{ f_1, \ldots, f_n \}$ for $V^\ast$ such that $f_i (v_j) = \delta_{ij}$.
+	
+	For each linear functional $f$ on $V$ we have
+	\[
+		f = \sum_{i=1}^n f(v_i) f_i
+	\]
+	and for each vector $v \in V$ we have
+	\[
+		v = \sum_{i=1}^n f_i(v) v_i
+	\]
+\end{theorem}
+
+\begin{proof}
+	The last proof established that there is a unique basis which is `dual' to $\beta$. Let $f$ be a linear functional on $V$. Then $f$ is a linear combination of the $f_i$, so the scalars $c_j = f(v_j)$. Now, if
+	\[
+		v = \sum_{i=1}^n x_i v_i
+	\]
+	is a vector in $V$, then
+	\[
+		f_j(v) = \sum_{i=1}^n x_i f_j(v_i) = \sum_{i=1}^n x_i \delta_{ij} = x_j
+	\]
+	so $v$ has a unique expression as a linear combination of $v_i$ given by
+	\[
+		v = \sum_{i=1}^n f_i(v) v_i
+	\]
+\end{proof}
+
+Note that $f_i$ are coordinate functions for $\beta$, given that $f_i$ assigns to each vector $v \in V$ the $i$th coordinate of $v$ relative to the ordered basis $\beta$.
+
+How are linear functionals and subspaces related? If $f$ is a non-zero linear functional, then the rank of $f$ is one. And if $V$ is finite-dimensional, then by the \hyperref[thm:rank-null]{Rank–Nullity theorem}, the null space $N_f$ has dimension
+\[
+	\dim N_f = \dim V - 1
+\]
+
+In a vector space of dimension $n$, a subspace of of dimension $n-1$ is called a \textbf{hyperspace}, which is sometimes called \textbf{hyperplanes} or \textbf{subspaces of codimension one}. The hyperspace is always the null space of a linear functional.
+
+\begin{definition}[Annihilator]
+	Let $V$ be a vector space over $\mathbb{F}$ and $S$ a subset of $V$. Then the \textbf{annihilator} of S is the set $S^0$ of linear functionals $f$ on $V$ such that $f(v) = 0$ for every $v \in S$.
+	\[
+		S^0 = \{ f \in V^\ast : f(v) = 0, \, \forall v \in S \}
+	\]
+\end{definition}
+
+$S^0$ is a subspace of $V^\ast$. If $S = \{ 0 \}$, then $S^0 = V^\ast$. If $S = V$, then $S^0$ is the zero subspace of $V^\ast$.
+
+The next example shows an important procedure in the following proofs.
+
+\begin{example}
+	Let $\{ e_1, e_2, e_3, e_4, e_5 \}$ be the standard basis of $\mathbb{R}^5$ and $\{ f_1, f_2, f_3, f_4, f_5 \}$ be the dual basis of $\mathbb{R}^5$. Suppose
+	\[
+		W = \text{span}(e_1, e_2) = \{ (x_1, x_2, 0, 0, 0)  \in \mathbb{R}^5 : x_1, x_2 \in \mathbb{R} \}
+	\]
+	We show that $W^0 = \text{span}(f_3, f_4, f_5)$.
+
+	Recall that $f_j$ is the linear functional that selects the $j$th coordinate, i.e. $f_j(x_1, x_2, x_3, x_4, x_5) = x_j$.
+
+	First suppose $f \in \text{span}(f_3, f_4, f_5)$. Then there exist $c_3, c_4, c_5 \in \mathbb{R}$ such that $f = c_3 f_3 + c_4 f_4 + c_5 f_5$. If $(x_1, x_2, 0, 0, 0) \in W$, then 
+	\[
+		f(x_1, x_2, 0, 0, 0) = (c_3 f_3 + c_4 f_4 + c_5 f_5)(x_1, x_2, 0, 0, 0) = 0
+	\]
+	Hence $f \in W^0$. I.e., $\text{span}(f_3, f_4, f_5) \subset W^0$.
+
+	Now suppose $f \in W^0$. Since the dual basis is a basis of $(\mathbb{R}^5)^\ast$, there exist $c_1, \ldots, c_5 \in \mathbb{R}$ such that $f = c_1 f_1 + c_2 f_2 + c_3 f_3 + c_4 f_4 + c_5 f_5$. Because $e_1 \in W$ and $f \in W^0$, we have
+	\[
+		0 = f(e_1) = (c_1 f_1 + c_2 f_2 + c_3 f_3 + c_4 f_4 + c_5 f_5)(e_1) = c_1
+	\]
+
+	Similarly, $e_2 \in W$ and thus $c_2 = 0$. Since $e_3, e_4, e_5 \notin W$, $f = c_3 f_3 + c_4 f_4 + c_5 f_5$. Thus $f \in \text{span}(f_3, f_4, f_5)$, i.e., $W^0 \subset \text{span}(f_3, f_4, f_5)$.
+\end{example}
+
+The next theorem states that each $d$-dimensional subspace of an $n$-dimensional space is the intersection of the null spaces of $(n-d)$ linear functionals.
+
+\begin{theorem}\label{thm:dim-annihilator}
+	Let $V$ be a finite-dimensional vector space and let $W$ be a subspace of $V$. Then
+	\[
+		\dim W + \dim W^0 = \dim V
+	\]
+\end{theorem}
+
+\begin{proof}
+	Let $\{ v_1, \ldots, v_k \}$ be a basis for $W$ and choose vectors $\{ v_{k+1}, \ldots, v_n \in V$ to extend to a basis $\{ v_1, \ldots, v_n \}$ of $V$. And let $ \{ f_1, \ldots, f_n \}$ be the basis for $V^\ast$ which is dual to this basis for $V$. We show that $\{ f_{k+1}, \ldots, f_n \}$ is a basis for $W^0$.
+
+	For $i \geq k+1$, since $f_i(v_j) = \delta_{ij}$ and $\delta_{ij} = 0$ if $i \geq k+1$ and $j \leq k$, we know that $f_i$ belongs to $W^0$. Hence, for $i \geq k+1$,  $f_i(v) = 0$ whenever $v$ is a linear combination of $v_1, \ldots, v_k$.
+
+	Given that the functionals $f_{k+1}, \ldots, f_n$ are linearly independent, all we need to show is that they span $W^\ast$. Suppose $f \in V^\ast$. Now 
+	\[
+		f = \sum_{i=1}^n f(v_i)f_i
+	\]
+	implies that if $f \in W^0$, we have $f(v_i) = 0$ for $i \leq k$ and
+	\[
+		f = \sum_{i = k+1}^n f(v_i) f_i
+	\]
+
+	Therefore, $W^0$ has dimension $n-k$, as desired.
+\end{proof}
+
+The next corollary shows that if we select some select ordered basis for the space, each $k$-dimensional subspace can be described by specifying $(n-k)$ homogeneous linear conditions on the coordinates relative to that basis.
+
+\begin{corollary}
+	If $W$ is a $k$-dimensional subspace of an $n$-dimensional vector space $V$, then $W$ is the intersection of $(n-k)$ hyperspaces in $V$.
+\end{corollary}
+
+\begin{corollary}\label{cor:determined-annihilator}
+	If $W_1$ and $W_2$ are subspaces of a finite-dimensional vector space, then $W_1 = W_2$ iff. $W_1^0 = W_2^0$.
+\end{corollary}
+
+This theory provides a `dual' point of view on the system of equations, showing how annihilators are related to systems of homogeneous linear equations.
+
+\begin{example}
+	Let $W$ be the subspace of $\mathbb{R}^5$ spanned by the vectors $v_1 = (2, -2, 3, 4, -1)$, $v_2 = (-1, 1, 2, 5, 2)$, $v_3 = (0, 0, -1, -2, 3)$, and $v_4 = (1, -1, 2, 3, 0)$.
+
+	To find the annihilator $W^0$ of $W$, we first form a matrix $A$ with row vectors $v_1, v_2, v_3, v_4$ and find the row-reduced echelon matrix $R$ which is row-equivalent to $A$.
+	\[
+		A = \begin{bmatrix}
+			2 && -2 && 3 && 4 && -1 \\
+			-1 && 1 && 2 && 5 && 2 \\
+			0 && 0 && -1 && -2 && 3 \\
+			1 && -1 && 2 && 3 && 0
+		\end{bmatrix}
+		\longrightarrow
+		R = \begin{bmatrix}
+			1 && -1 && 0 && -1 && 0 \\
+			0 && 0 && 1 && 2 && 0 \\
+			0 && 0 && 0 && 0 && 1 \\
+			0 && 0 && 0 && 0 && 0
+		\end{bmatrix}
+	\]
+
+	Now, if $f$ is a linear functional on $\mathbb{R}^5$, 
+	\[
+		f(x_1, \ldots, x_5) = \sum_{j=1}^5 c_j x_j
+	\]
+	and $f$ is in $W^0$ iff. $f(v_i) = 0$, for $i = 1,2,3,4$.
+	
+	This is equivalent to $Ac = 0$, where $c = (c_1, c_2, c_3, c_4, c_5)^t$. Which is, in turn, equivalent to $Rc = 0$. Or simply
+	\begin{equation*}
+		\begin{aligned}
+			c_1 - c_2 - c_4 = 0 \\
+			c_3 + 2 c_4 = 0 \\
+			c_5 = 0
+		\end{aligned}
+	\end{equation*}
+
+	By setting $c_2 = a$ and $c_4 = b$, we have $c_1 = a+b$, $c_3 = -2b$, $c_5 = 0$. So $W^0$ consists of all linear functionals of the form
+	\[
+		f(x_1, x_2, x_3, x_4, x_5) = (a+b)x_1 + ax_2 - 2bx_3 + bx_4
+	\]
+
+	The dimension of $W^0$ is two and a basis $\{ f_1, f_2 \}$ for it can be found by setting $a = 1, b = 0$, and then $a = 0, b = 1$:
+	\begin{equation*}
+		\begin{aligned}
+			f_1(x_1, \ldots, x_5) &= x_1 + x_2 \\
+			f_2(x_1, \ldots, x_5) &= x_1 - 2x_3 + x_4
+	\end{aligned}
+\end{equation*}
+	And the general form of $f \in W^0$ is $f = a f_1 + bf_2$.
+\end{example}
+
+Is every basis for $V^\ast$ the dual of some basis for $V$? To answer that question we consider $V^{\ast \ast}$, the dual space of $V^\ast$.
+	
+Let $v \in V$. Then $v$ \textbf{induces} a linear functional $\varphi_v$ on $V^\ast$ defined by
+\[
+	\varphi_v (f) = f(v), \, \text{ where } f \in V^\ast
+\]
+It is easy to check that $\varphi_v$ is linear simply using the definition of linear operations in $V^\ast$.
+\begin{equation*}
+	\begin{aligned}
+		\varphi_v (cf + g) &= (cf+g)(v) = (cf)(v) + g(v) \\
+					&= cf(v) + g(v) = c\varphi_v (f) + \varphi_v (g)
+	\end{aligned}
+\end{equation*}
+
+\begin{theorem}
+	Let $V$ be a finite-dimensional vector space. For each vector $v \in V$ define
+	\[
+		\varphi_v (f) = f(v), \, \text{ where } f \in V^\ast
+	\]
+	The mapping $v \longrightarrow \varphi_v$ is an isomorphism of $V$ onto $V^{\ast \ast}$.
+\end{theorem}
+
+\begin{proof}
+	Suppose that $v, u \in V$ and $c \in \mathbb{F}$ and let $w = cv + u$. Then for each $f \in V^\ast$,
+	\begin{equation*}
+		\begin{aligned}
+			\varphi_w (f) &= f(w) = f(cv + u) = cf(v) + f(u) \\
+				   &= c\varphi_v (f) + \varphi_u (f)
+		\end{aligned}
+	\end{equation*}
+	Hence, $v \longrightarrow \varphi_v$ is a linear mapping from $V$ to $V^{\ast \ast}$.
+
+	Notice that $\varphi_v = 0$ iff. $v = 0$ by linearity, i.e., $\varphi_v$ is a non-singular linear transformation.
+
+	And given that 
+	\[
+		\dim V^{\ast \ast} = \dim V^\ast = \dim V
+	\]
+	we know that $\varphi_v$ is bijective. Hence, this linear mapping is an isomorphism of $V$ onto $V^{\ast \ast}$.
+\end{proof}
+
+\begin{corollary}
+	Let $V$ be a finite-dimensional vector space. If $L$ is a linear functional on the dual space $V^\ast$, then there is a unique vector $v \in V$ such that $L(f) = f(v)$, for every $f \in V^\ast$.
+\end{corollary}
+
+\begin{corollary}
+	Let $V$ be a finite-dimensional vector space. Each basis for $V^\ast$ is the dual of some basis for $V$.
+\end{corollary}
+
+\begin{proof}
+	Let $\beta^\ast = \{ f_1, \ldots, f_n \}$ be a basis for $V^\ast$. Then there exists a basis $\{ L_1, \ldots, L_n \}$ for $V^{\ast \ast}$ such that $L_i(f_j) = \delta_{ij}$.
+
+	By the previous corollary, for each index $i$ there exists a vector $v_i \in V$ such that $L_i(f) = f(v_i)$, for every $f \in V^\ast$. Then $\{ v_1, \ldots, v_n \}$ is a basis for $V$ and $\beta^\ast$ is the dual of this basis.
+\end{proof}
+
+In this corollary we see that $V$ and $V^\ast$ are naturally in duality with one another. Each is the dual space of the other.
+
+If $E$ is a subset of $V^\ast$, then the annihilator $E^0$ is a subset of $V^{\ast \ast}$. We know that each subspace $W$ is \hyperref[cor:determined-annihilator]{determined} by its annihilator $W^0$. This is the case because $W$ is the subspace annihilated by all $f \in W^0$, i.e., the intersection of the null spaces of all $f \in W^0$. We state this fact in the following identity
+\[
+	W = (W^0)^0
+\]
+
+\begin{theorem}
+	If $S$ is any subset of a finite-dimensional vector space $V$, then $(S^0)^0$ is the subspace spanned by $S$.
+\end{theorem}
+
+\begin{proof}
+	Let $W$ be the subspace generated by $S$. Clearly $W^0 = S^0$. We prove that $W = W^{00}$. By a \hyperref[thm:dim-annihilator]{previous theorem},
+	\begin{equation*}
+		\begin{aligned}
+			\dim W + \dim W^0 &= \dim V \\
+			\dim W^0 + \dim W^{00} &= \dim V^\ast
+		\end{aligned}
+	\end{equation*}
+	
+	Therefore, 
+	\[
+		\dim W = \dim W^{00}
+	\]
+
+	And since $W$ is a subspace of $W^{00}$, we have that $W = W^{00}$.
+\end{proof}
+
+The results of this section hold for arbitrary vector spaces using Axiom of Choice. In particular, we redefine \textbf{hyperspaces} in order to include the infinite dimensional case.
+
+The idea is that a space $N$ falls just one dimension short of filling out $V$, using the concept of \hyperref[def:maximal]{maximal}.
+
+\begin{definition}[Hyperspace]
+	If $V$ is a vector space, a \textbf{hyperspace} in $V$ is a maximal proper subspace of $V$.
+\end{definition}
+
+Put another way, let $W$ be a proper subspace of $V$. If there isn't a subspace $U$ such that $W \subsetneq U \subsetneq V$, then $W$ is a hyperplane.
+
+\begin{theorem}
+	If $f$ is a non-zero linear functional on the vector space $V$, then the null space of $f$ is a hyperspace in $V$. Every hyperspace in $V$ is the null space of a linear functional on $V$.
+\end{theorem}
+
+\begin{proof}
+	Let $f$ be a non-zero linear functional on $V$ and $N_f$ its null space. Let $v \in V$ such that $v \notin N_f$, i.e., $f(v) \neq 0$.
+
+	Note that the subspace spanned by $N_f$ and $v$ consists of all vectors of the form $w + cv$, where $w \in N_f$, $c \in \mathbb{F}$.
+
+	Let $u \in V$. Define 
+	\[
+		c = \frac{f(u)}{f(v)}
+	\]
+
+	Then the vector $w = u - cv \in N_f$, since
+	\[
+		f(w) = f(u - cv) = f(u) - cf(v) = 0
+	\]
+	
+	Hence, every vector $u \in V$ is in the subspace spanned by $N_f$ and $v$, showing that the null space of $f$ is a hyperspace in $V$.
+
+	Let $N$ be a hyperspace in $V$ and fix $v \notin N$. Since $N$ is a maximal proper subspace, the subspace spanned by $N$ and $v$ is the entire space $V$. Therefore, each vector $u \in V$ has the form $u = w + cv$, where $w \in N, c \in \mathbb{F}$.
+
+	Notice that
+	\[
+		u = w' + c'v \implies (c'-c)v = w - w'
+	\]
+	and
+	\[
+		c' - c \neq 0 \implies v \in N
+	\]	
+	
+	Thus, $c' = c$ and $w' = w$. In other words, if $u$ is in $V$, there is a unique scalar $c$ such that $u - cv \in N$. Call that scalar $c = g(u)$. Then $g$ is a linear functional on $V$ and $N$ is the null space of $g$.
+\end{proof}
+
+\begin{lemma}
+	If $f$ and $g$ are linear functionals on a vector space $V$, then $g$ is a scalar multiple of $f$ iff. the null space of $g$ contains the null space of $f$.
+\end{lemma}
+
+\begin{proof}
+	$(\Rightarrow)$ Is immediate.
+
+	$(\Leftarrow)$ If $f = 0$, then $g = 0$ and $g$ is a scalar multiple of $f$. Suppose that $f \neq 0$ so that its null space $N_f$ is a hyperspace in $V$. Choose $v \in V$ with $f(v) \neq 0$ and define
+	\[
+		c = \frac{g(v)}{f(v)}
+	\]
+
+	The linear functional $h = g - cf$ is zero on $N_f$ (since both $f$ and $g$ are zero there) and $h(v) = g(v) - cf(v) = 0$.
+
+	Thus, $h$ is zero on the subspace spanned by $n_f$ and $v$, which is exactly $V$. Therefore, $h = 0$ and $g = cf$.
+\end{proof}
+
+\begin{theorem}
+	Let $g, f_1, \ldots, f_r$ be linear functionals on a vector space $V$ with respective null spaces $N, N_1, \ldots, N_r$. Then $g$ is a linear combination of $f_1, \ldots, f_r$ iff. the null space of $g$ contains the intersection of the null spaces of $f_1, \ldots, f_r$, i.e.,
+	\[
+		N_1 \cap \ldots \cap N_r \subset N
+	\]
+\end{theorem}
+
+\begin{proof}
+	$(\Rightarrow)$ If $g = c_1 f_1 + \ldots + c_r f_r$ and $f_i(v) = 0$ for each $i$, then clearly $g(v) = 0$. Hence, $N$ contains $N_1 \cap \ldots \cap N_r$.
+
+	$(\Leftarrow)$ This proof is by induction on the index $r$. The preceeding lemma handles the case $r = 1$. Suppose that the claim is true for $r = k-1$, i.e., $N_1 \cap \ldots \cap N_k \subset N$. 
+
+	Let $g', f_1', \ldots, f_{k-1}'$ be the restriction of $g, f_1, \ldots, f_{k-1}$ to the subspace $N_k$. If $v \in N_k$ and $f_i'(v) = 0$ for $i$ ranging from one to $k-1$, then $v \in N_1 \cap \ldots \cap N_r$ and so $g'(v) = 0$. By the induction hypothesis, there are scalars $c_i$ such that
+	\[
+		g' = c_1 f_1' + \ldots + c_{k-1} f_{k-1}'
+	\]
+
+	And let 
+	\[
+		h = g - \sum_{i=1}^{k-1} c_i f_i
+	\]
+	Then $h$ is a linear functional on $V$ and $h(v) = 0$ for every $v \in N_k$. By the previous lemma, $h$ is a scalar multiple of $f_k$. If $h = c_k f_k$, then 
+	\[
+		g = \sum_{i=1}^k c_i f_i
+	\]
+\end{proof}
+
+\begin{definition}[Transpose]
+	The \textbf{transpose} of a linear transformation $T : V \longrightarrow W$ is the mapping 	$T^t : W^\ast \longrightarrow V^\ast$ such that
+	\[
+		(T^tg)(v) = g(T(v)) = g \circ T
+	\]
+	for every $g \in W^\ast$ and $v \in V$.
+\end{definition}
+
+\begin{theorem}
+	The transpose $T^t : W^\ast \longrightarrow V^\ast$ of a linear transformation $T : V \longrightarrow W$ is a linear transformation.
+\end{theorem}
+
+\begin{proof}
+	First we show that $T^t f \in V^\ast$. In fact, for all $f \in W^\ast$,
+	\begin{equation*}
+		\begin{aligned}
+			T^t f(au+bv) &= f(T(au+bv)) = f(aT(u) + bT(v)) \\
+			&= af(T(u)) + bf(T(v)) = aT^t f(u) + bT^t f(v)
+		\end{aligned}
+	\end{equation*}
+	Hence, $T^t f \in V^\ast$, as desired.
+	
+	Now we show that $T^t$ is linear.
+	\begin{equation*}
+		\begin{aligned}
+			T^t (af+bg)(v) &= (af+bg)T(v) = afT(v) + bgT(v) \\
+			&= a(T^tf)(v) + b(T^t g)(v)
+		\end{aligned}
+	\end{equation*}
+	I.e., that $T^t(af+bg) = aT^tf + bT^t g$.
+\end{proof}
+
+
+\begin{theorem}
+	Let $T : V \longrightarrow W$ be a linear transformation. The null space of $T^t$ is the anihhilator of the range of $T$.
+	
+	Moreover, if $V$ and $W$ are finite-dimensional, then
+	\begin{enumerate}
+		\item $\text{rank}(T^t) = \text{rank}(T)$;
+		\item The range of $T^t$ is the annihilator of the null space of $T$, i.e., $\text{Im}~T^t = (\ker T)^0$.
+		\item The null space of $T^t$ is the annihilator of the of the range of $T$, i.e., $\ker T^t = (\text{Im}~T)^0$.
+	\end{enumerate}
+\end{theorem}
+
+\begin{proof}
+	$3.$ Notice that 
+	\[
+		\ker T^t = \{ f \in W^\ast : T^t f = 0 \} = \{ f \in W^\ast : fT = 0 \}
+	\]
+	and
+	\[
+		(\text{Im}~T)^0 = \{ f \in W^\ast : f(\text{Im}~T) = 0 \} = \{ f \in W^\ast : fT = 0 \}
+	\]
+	
+	Thus, $\ker T^t = (\text{Im}~T)^0$.
+	
+	$1.$ We know that
+	\[
+		\dim (\text{Im}~T) + \dim (\text{Im}~T)^0 = \dim W
+	\]
+	and
+	\[
+		\dim (\ker T^t) + \dim (\text{Im}~T^t) = \dim W^\ast
+	\]
+	
+	However, $\dim W = \dim W^\ast$ and $\dim (\text{Im}~T)^0 = \dim (\ker T^t)$. Hence, $\dim (\text{Im}~T) = \dim(\text{Im}~T^t)$.
+	
+	$2.$ First, we'll prove that $\text{Im}~T^t \subseteq (\ker T)^0$.
+	
+	Consider $f \in \text{Im}~T^t \subseteq V^\ast$, i.e., $f = T^t h$, $h \in W^\ast$. For all $v \in \ker T$,
+	\[
+		f(v) = (T^t h)(v) = h(T(v)) = h(0) = 0
+	\]
+	
+	I.e., $f \in (\ker T)^0$.
+	
+	Now, it is sufficient to show that $\dim (\ker T)^0 = \dim (\text{Im}~T^t)$. Since
+	\[
+		\dim (\ker T)^0 + \dim (\ker T) = \dim V
+	\]
+	and
+	\[
+		\dim (\text{Im}~T) + \dim (\ker T) = \dim V
+	\]
+	we have that $\dim (\ker T)^0 = \dim (\text{Im}~T)$.
+	
+	Therefore, $\text{Im}~T^t = (\ker T)^0$.
+\end{proof}
+
+\begin{theorem}
+	Let $V$ and $W$ be finite-dimensional vector spaces. Let $\alpha$ be an ordered basis for $V$ with dual basis $\alpha^\ast$ and $\beta$ be an ordered basis for $W$ with dual basis $\beta^\ast$. And let $T : V \longrightarrow W$.
+
+	If $A$ is the matrix of $T$ relative to $\alpha, \beta$, and $B$ is the matrix of $T^t$ relative to $\beta^\ast, \alpha^\ast$, then 
+	\[ 
+		B_{ij} = A_{ji}
+	\]
+
+	Put another way,
+	\[
+		[T^t]_{\beta^\ast, \alpha^\ast} = ([T]_{\alpha, \beta})^t
+	\]
+\end{theorem}
+
+\begin{proof}
+	% See \cite{mouraGAAL}'s Proposition 9.2.3.
+  Write $\alpha = v_1, \ldots, v_n$, $\beta = w_1, \ldots, w_m$, $\alpha^\ast = f_1, \ldots, f_n$, and $\beta^\ast = g_1, \ldots, g_m$. 
+
+  If $[T]_{\alpha, \beta} = (a_{i,j})$, then 
+  \[
+    T(v_j) = \sum_{i=1}^m a_{i,j}w_i
+  \]
+
+  On the other hand, the entry $(j,i)$ of $[T^t]_{\beta^\ast, \alpha^\ast}$ is the $j$th coordinate of $T^t(g_i)$ with respect to $\alpha^\ast$. 
+
+  Notice that if $f = a_1 f_1 + \cdots + a_n f_n \in V^\ast$, we have that $f(v_j) = a_j$ for all $1 \leq j \leq n$. Hence, 
+  \[
+    T^t(g_i)(v_j) = g_i(T(v_j)) = g_i \left( \sum_{k=1}^m a_{k,j} w_k \right) = \sum_{k=1}^m a_{k,j} g_i(w_k) = a_{i,j}
+  \]
+\end{proof}
+
+\begin{definition}[Transpose]
+	If $A \in \textbf{M}_{m \times n}(\mathbb{F})$, the \textbf{transpose} of $A$ is the $n \times m$ matrix $A^t$ defined by $A_{ij}^t = A_{ji}$.
+\end{definition}
+
+\begin{theorem}
+	Let $A \in \textbf{M}_{m \times n}(\mathbb{F})$. Then the row rank of $A$ is equal to the column rank of $A$.
+\end{theorem}
+
+\section{Bilinear Pairings and Orthogonality}
+
+Recall that given two vector spaces $V$ and $W$, and 
+\[
+  B(V,W) = \hom_{\mathbb{F}}^2 (V,W, \mathbb{F}) \quad \text{ and } \quad B(V) = B(V,V)
+\]
+an element of $B(V,W)$ is said to be a \textbf{bilinear pairing} between $V$ and $W$. In the case $V = W$, the bilinear pairing is said to be a \textbf{bilinear form} on $V$. 
+
+If $\mathbb{F} = \mathbb{R}$, an inner product on $V$ is an example of a bilinear form. However, if $\mathbb{F} = \mathbb{C}$, an inner product is not a bilinear form since it is not linear on the second entry.
+
+\begin{example}
+  Suppose that $\dim(V) = m$ and $\dim(W) = n$ are finite, and let $\alpha$ and $\beta$ be bases for $V$ and $W$ respectively. Then for any matrix $A \in M_{m,n}(\mathbb{F})$, 
+  \[
+    \varphi(v,w) = [v^t]_\alpha ~A ~[w]_\beta 
+  \]
+  defines an element $\varphi \in B(V,W)$.
+\end{example}
+
+Given that, we can construct a matrix representation of a bilinear pairing analogous to the Gram matrix.
+
+\begin{definition}
+Let $\varphi \in B(V,W)$ and families $\alpha = v_1, \ldots, v_m \in V$ and $\beta = w_1, \ldots, w_n \in W$. 
+
+The matrix of $\varphi$ with respect to $\alpha$ and $\beta$, denoted by ${}_\alpha [\varphi]_\beta$, is defined as the matrix whose entry in the $(i,j)$ position is $\varphi(v_i, w_j)$, i.e.,
+\[
+  {}_\alpha [\varphi]_\beta = \begin{bmatrix}
+    \varphi(v_1, w_1) & \varphi(v_1, w_2) & \cdots & \varphi(v_1, w_n) \\
+    \varphi(v_2, w_1) & \varphi(v_2, w_2) & \cdots & \varphi(v_2, w_n) \\
+    \vdots & \vdots & \cdots & \vdots \\
+    \varphi(v_m, w_1) & \varphi(v_m, w_2) & \cdots & \varphi(v_m, w_n) \\
+  \end{bmatrix}
+\]
+\end{definition}
+
+Remark that if $\alpha$ and $\beta$ are bases,
+\[
+  \varphi(v,w) = [v^t]_\alpha ~{}_\alpha [\varphi]_\beta ~[w]_\beta, \quad \forall v \in V, ~w \in W
+\]
+
+From these facts, the next result follows.
+
+\begin{theorem}
+  If $\dim(V) = m$ and $\dim(W) = n$, and $\alpha$ and $\beta$ are bases for $V$ and $W$ respectively, then the following function is an isomorphism: 
+  \begin{equation*}
+    \begin{aligned}
+      B(V,W) &\longrightarrow M_{m,n}(\mathbb{F})\\
+      \varphi &\longmapsto {}_\alpha [\varphi]_\beta
+    \end{aligned}
+  \end{equation*}
+
+  In particular,
+  \[
+    \dim(B(V,W)) = \dim(V) \dim(W)
+  \]
+\end{theorem}
+
+The same question from canonical forms now appears. Given a bilinear pairing, how can we find bases in which its matrix representation is as simple as possible?
+
+\begin{definition}[Radical]
+Let $\varphi \in B(V,W)$ and consider the functions 
+\[
+  {}_\varphi D: V \longrightarrow W^\ast \quad \text{ and } \quad D_\varphi : W \longrightarrow V^\ast
+\]
+defined as 
+\[
+  {}_\varphi D(v)(w) = \varphi(v,w) = D_\varphi(w)(v) \quad \forall~ v \in V, ~w \in W
+\]
+
+Notice that both ${}_\varphi D$ and $D_\varphi$ are linear mappings. 
+
+The kernel of ${}_\varphi D$ is called the \textbf{left radical} of $\varphi$, while $\ker(D_\varphi)$ is the \textbf{right radical} of $\varphi$.
+\end{definition}
+
+\begin{definition}[Degenerate and Singular]
+We say that $\varphi$ is \textbf{left nondegenerate} if ${}_\varphi D$ is injective. Otherwise, it is said to be \textbf{left singular}. Analogously, we define \textbf{right nondegenerate} and \textbf{right singular} for $D_\varphi$.
+
+The vectors on $\ker(D_\varphi)$ are said to be \textbf{right degenerate}, while the vectors on $\ker({}_\varphi D)$ are called \textbf{left degenerate} w.r.t. $\varphi$. 
+\end{definition}
+
+If $\alpha = v_1, \ldots, v_m$ and $\beta = w_1, \ldots, w_n$ are bases for $V$ and $W$ respectively, then 
+\[
+  [D_\varphi]_{\beta, \alpha^\ast} = {}_\alpha [\varphi]_\beta \quad \text{ and } [{}_\varphi D]_{\alpha, \beta^\ast} = ([D_\varphi]_{\beta, \alpha^\ast})^t
+\]
+
+Hence,
+\begin{theorem}
+  If $\dim(V)$ and $\dim(W)$ are finite, then the rank of $D_\varphi$ and ${}_\varphi D$ are the same.
+\end{theorem}
+
+\begin{corollary}
+  Suppose that $\varphi$ is left (right) nondegenerate and that $\dim(V)$ or $\dim(W)$ is finite. Then the following are equivalent: 
+  \begin{enumerate}
+    \item $\varphi$ is right (left) nondegenerate; 
+    \item $\dim(V) = \dim(W)$;
+    \item ${}_\varphi D$ is an isomorphism; 
+    \item $D_\varphi$ is an isomorphism.
+  \end{enumerate}
+\end{corollary}
+
+From now on, let $\varphi \in B(V)$. If $\dim(V) < \infty$, then $\varphi$ is left degenerate iff. it is right degenerate. Thus, we only say that $\varphi$ is (not) degenerate.
+
+\begin{definition}[Symmetric, Antisymmetric and Alternating]
+  The bilinear form $\varphi$ is said to be 
+  \begin{itemize}
+    \item \textbf{Symmetric} if $\varphi(v,w) = \varphi(w,v)$;
+    \item \textbf{Antisymmetric} (or \textbf{skew-symmetric}) if $\varphi(v,w) = -\varphi(w,v)$;
+    \item \textbf{Alternating} if $\varphi(v,v) = 0$ 
+  \end{itemize}
+  for all $v, w \in V$. 
+\end{definition}
+
+The geometry of spaces with a symmetric bilinear form is called an \textbf{orthogonal geometry}. If the bilinear form is alternating, it is called a \textbf{sympletic geometry}. 
+
+If $\text{char}(\mathbb{F}) = 2$, then $\varphi$ is symmetric iff. it is antisymmetric. 
+
+How to find if a bilinear form is symmetric, antisymmetric, or alternating? 
+
+\begin{theorem}
+  Let $\alpha = (v_i)_{i \in I}$ a basis for $V$. 
+  \begin{enumerate}
+    \item $\varphi$ is symmetric iff. ${}_\alpha [\varphi]_\alpha$ is symmetric. 
+    \item $\varphi$ is antisymmetric iff. ${}_\alpha [\varphi]_\alpha$ is antisymmetric. 
+    \item $\varphi$ is alternating iff. ${}_\alpha [\varphi]_\alpha$ is antisymmetric and $\varphi(v_i, v_i) = 0$ for all $i \in I$.
+  \end{enumerate}
+\end{theorem}
+
+\begin{definition}[Orthogonality]
+  Let $v, w \in V$, we say that $v$ is \textbf{orthogonal} to $w$ if $\varphi(v,w) = 0$. I.e.,
+\[
+  v \perp_\varphi w \iff \varphi(v,w) = 0
+\]
+\end{definition}
+
+Thus, $\perp_\varphi$ defines a binary relation on $V$. In general, $\perp_\varphi$ is not symmetric. 
+
+\begin{theorem}\label{thm:202212291346}
+  The orthogonality relation $\perp_\varphi$ is symmetric iff. $\varphi$ is symmetric or alternating. 
+\end{theorem}
+
+\begin{definition}[Isotropic]  
+  A vector $v$ is \textbf{isotropic} w.r.t. $\varphi$ if $v \perp_\varphi v$, i.e., its length is zero. 
+\end{definition}
+
+With this terminology we see that $\varphi$ is alternating iff. every vector is isotropic.
+
+\begin{definition}[Orthogonal Complement]
+Given a family $\alpha$ of vectors in $V$, we define 
+\[
+  \alpha^{\perp_\varphi} = \{ w \in V : v \perp_\varphi w, ~v \in \alpha \} \quad \text{ and } \quad {}^{\perp_\varphi} \alpha = \{ v \in V : v \perp_\varphi w, ~w \in \alpha \}
+\]
+\end{definition}
+
+These sets are subspaces, however $\alpha^{\perp_\varphi} \neq {}^{\perp_\varphi} \alpha$ in general. The equality holds only if $\varphi$ is symmetric or antisymmetric. Moreover, 
+\[
+  \ker(D_\varphi) = V^{\perp_\varphi} \quad \text{ and } \quad \ker({}_\varphi D) = {}^{\perp_\varphi} V
+\]
+
+\begin{theorem}
+  If $\dim(V) < \infty$ then the following are equivalent. 
+  \begin{enumerate}
+    \item $\varphi$ is degenerate; 
+    \item $V^{\perp_\varphi} \neq \{ 0 \}$;
+    \item ${}^{\perp_\varphi} V \neq \{ 0 \}$.
+  \end{enumerate}
+
+  Also 
+  \[
+    \text{rank}(\varphi) = \dim(V) - \dim(V^{\perp_\varphi}) = \dim(V) - \dim({}^{\perp_\varphi} V)
+  \]
+\end{theorem}
+
+\section{Hyperbolic and Orthogonal Bases}
+
+Denote by $B_s(V)$ and $B_a(V)$ the subspaces of $B(V)$ formed by all symmetric and alternating bilinear forms on $V$, respectively. Also define $B_{as}(V) = B_s(V) \cup B_a(V)$. 
+
+In this section, suppose that $\dim (V)$ is finite and $\varphi \in B_{as}(V)$. By the Theorem \ref{thm:202212291346}, $\perp_\varphi$ is symmetric and then ${}^{\perp_\varphi} \alpha = \alpha^{\perp_\varphi}$. For simplicity, we will write $\perp$ instead $\perp_\varphi$. 
+
+Our goal in this section is to find a basis $\alpha$ of $V$ such that ${}_\alpha [\varphi]_\alpha$ be the `simplest' as possible. We also will write $[\varphi]_\alpha$ instead of ${}_\alpha [\varphi]_\alpha$.
+
+\begin{definition}[Degenerate, Radical for Subspaces]
+  A subspace $W$ of $V$ is said to be \textbf{degenerate} (or \textbf{singular}) w.r.t. $\varphi$ if $\varphi|_W$ is degenerate. And we define the \textbf{radical} of $W$ as
+  \[
+    \text{rad}(W) := W \cap W^\perp
+  \]
+\end{definition}
+
+Notice that the rank of $\varphi|_W$ is 
+\[
+  \text{rank}(\varphi|_W) = \dim(W) - \dim(\text{rad}(W))
+\]
+
+Therefore,
+\begin{theorem}
+$W$ is degenerate iff. $\text{rad}(W) \neq \{ 0 \}$. 
+\end{theorem}
+
+More than that, 
+\begin{theorem}\label{thm:202212301111}
+\[
+  V = V^\perp \oplus W \implies \text{rad}(W) = \{ 0 \}
+\]
+\end{theorem}
+
+\begin{proof}
+In fact, if $w \in \text{rad}(W)$, then $v \perp w$ for all $v \in V^\perp$ and $w' \perp w$ for all $w' \in W$. Hence, $w \in V^\perp \cap W = \{ 0 \}$. 
+\end{proof} 
+
+The next result shows some properties of the orthogonal complement.
+
+\begin{theorem}\label{thm:202212301122}
+  Suppose that $\varphi$ is nondegenerate and let $W$ be a subspace of $V$. The following are true. 
+  \begin{enumerate}
+    \item $\dim(V) = \dim(W) + \dim(W^\perp)$;
+    \item $V = W + W^\perp$ iff. $W \cap W^\perp = \{ 0 \}$;
+    \item $(W^\perp)^\perp = W$;
+    \item $\text{rad}(W) = \text{rad}(W^\perp)$. In particular, $W$ is nondegenerate iff. $W^\perp$ is nondegenerate. 
+  \end{enumerate}
+\end{theorem}
+
+\begin{proof}
+  Let $T : V \longrightarrow W^\ast$ defined by $v \longmapsto {}_\varphi D(v)|_W$. 
+
+  Since every element of $W^\ast$ is the restriction on $W$ of an element of $V^\ast$, and ${}_\varphi D$ is surjective (since the domain and codomain have the same finite dimension and $\varphi$ is injective), $T$ is also surjective and we have that 
+  \[
+    \dim(V) = \dim(W^\ast) + \dim(\ker(T))
+  \]
+
+  On the other hand, $v \in \ker(T)$ iff. $\varphi(v,w) = 0$ for all $w \in W$. I.e., $\ker(T) = W^\perp$. This proves the first item of the theorem. The second item follows immediately from the first. 
+
+  Notice that $W \subseteq (W^\perp)^\perp$ is always true, even when $\varphi$ is degenerate. The first item gives that $\dim((W^\perp)^\perp) = \dim(W)$. Since the dimension is finite, the third item follows. 
+
+  Finally,
+  \[
+    \text{rad}(W^\perp) = W^\perp \cap (W^\perp)^\perp = W^\perp \cap W = \text{rad}(W)
+  \]
+\end{proof}
+
+The next example shows that if we remove the hypothesis that $\varphi$ is nondegenerate, then the previous result may not be the case. 
+
+\begin{example}
+  Suppose that $V = \mathbb{F}^2$ and $[\varphi]_\alpha = \begin{bmatrix}
+    1 & 0 \\
+    0 & 0
+  \end{bmatrix}$ where $\alpha$ is the standard basis. Notice that this bilinear form is symmetric and degenerate. 
+
+  Let $W = [e_2]$ and note that $V^\perp = W$ and $W^\perp = V$. This shows that the first item of the preceding theorem does not hold.  
+
+  Since $V = V + V^\perp$ and $V \cap V^\perp = [e_2]$, the second item is also not true. 
+
+  Also, 
+  \[
+    ([e_1]^\perp)^\perp = [e_2]^perp = V
+  \]
+  and then the third item is not true. 
+
+  And since $\text{rad}([e_1]) = \{ 0 \}$ and $\text{rad}([e_1]^\perp) = \text{rad}([e_2]) = [e_2]$, the last item also does not hold. 
+\end{example}
+
+What happens if we change the hypothesis to the subspace?  I.e., in which cases the orthogonal complement is, in fact, a complement? 
+
+\begin{theorem}\label{thm:202212301117}
+  Let $W$ be a subspace of $V$. Then $V = W \oplus W^\perp$ iff. $W$ is nondegenerate.
+\end{theorem}
+
+\begin{proof}
+  Suppose that $V = W \oplus W^\perp$. Then since $\text{rad}(W) = W \cap W^\perp$, it follows that $\text{rad}(W) = 0$. 
+
+  Reciprocally, suppose that $W$ is nondegenerate and define $\psi := \varphi|_W$. Then the linear mapping $T : V \longrightarrow W^\ast$, where $v \longmapsto {}_\varphi D(v)|_W$ is surjective, since 
+  \[
+    {}_\varphi D|W = {}_\psi D : W \longrightarrow W^\ast 
+  \]
+  is an isomorphism (it is injective since $W$ is nondegenerate and surjective since the dimension is equal and finite).
+
+  The conclusion follows the first and second items of the previous theorem. 
+\end{proof}
+
+Hyperbolic bases generalize orthogonal bases for the inner product in the case that $\varphi$ is an alternating bilinear form. To do that, suppose that $\varphi$ is alternating. 
+
+\begin{definition}[Hyperbolic]
+  An ordered pair $(v,w)$ of vectors in $V$ is said to be a \textbf{hyperbolic pair} if $\varphi(v,w) = -1$. In this case, the subspace spanned by these vectors is called an \textbf{hyperbolic plane}. 
+
+  We say that the space $V$ is \textbf{hyperbolic} if it is a direct sum of hyperbolic planes mutually orthogonal. 
+\end{definition}
+
+Suppose that $V$ is hyperbolic, say $V = V_1 \oplus \cdots \oplus V_m$, in which $V_j$ is a hyperbolic plane spanned by $v_j, w_j$ with $(v_j, w_j)$ a hyperbolic pair for all $1 \leq j \leq m$. 
+
+Then, if $\alpha = v_1, w_1, \ldots, v_m, w_m$ is a basis for $V$, we have that 
+\[
+  [\varphi]_\alpha = H_m := \begin{bmatrix} 
+    H & 0 & 0 & \cdots & 0 \\
+    0 & H & 0 & \cdots & 0 \\
+    \vdots & \ddots & \ddots & \ddots & \vdots \\
+    0 & \cdots & \ddots & \ddots & H 
+  \end{bmatrix},
+  \quad 
+  H = \begin{bmatrix}
+    0 & -1 \\
+    1 & 0 
+  \end{bmatrix}
+\]
+
+Remark that $\varphi$ is nondegenerate. 
+
+\begin{theorem}
+  If $\varphi \in B_a(V)$, then every subspace $W$ of $V$ complementary to $V^\perp$ is hyperbolic. In particular, there exists a basis $\alpha$ of $V$ such that 
+  \[
+    [\varphi]_\alpha = \begin{bmatrix}
+      0 & 0 \\
+      0 & H_m
+    \end{bmatrix}, \quad m = \text{rank}(\varphi)/2 
+  \]
+\end{theorem}
+
+\begin{proof}
+  By Theorem \ref{thm:202212301111}, $W$ is nondegenerate. Suppose, w.l.o.g., that $\varphi$ is nondegenerate. We proceed by induction on $\dim(V)$. 
+
+  If $V = \{ 0 \}$, there is nothing to do. Otherwise, there exists $v,u \in V$ such that $\varphi(v,u) = a$, $a \in \mathbb{F} \setminus \{ 0 \}$. 
+
+  Defining $w = -a^{-1} u$, then $(v,w)$ is a hyperbolic pair. 
+
+  Let $V_1 = [v,w]$ and $V' = V_1^\perp$. Since $V_1$ is nondegenerate (it is a hyperbolic plane), it follows from the Theorem \ref{thm:202212301117} that $V = V_1 \oplus V_1^\perp$. And since $\varphi$ is nondegenerate, from the Theorem \ref{thm:202212301122} we have that $V_1^\perp$ is nondegenerate.
+
+  Using the induction hypothesis, $V_1^\perp$ is hyperbolic and thus $V$ is also hyperbolic. 
+\end{proof}
+
+\begin{example}
+  Suppose that $\text{char}(\mathbb{F}) = 0$, $V = \mathbb{F}^4$, $v = (x_1, x_2, x_3, x_4)$ and $w = (y_1, y_2, y_3, y_4)$. Then 
+  \[
+    \varphi(v,w) = x_2 y_1 - x_1 y_2 - 2 x_1 y_4 + 2 x_4 y_1 + 3 x_3 y_4 - 3 x_4 y_3 
+  \]
+
+  If $\alpha$ is the standard basis, 
+  \[
+    [\varphi]_\alpha = \begin{bmatrix}
+      0 & -1 & 0 & -2 \\
+      1 & 0 & 0 & 0 \\
+      0 & 0 & 0 & 3 \\
+      2 & 0 & -3 & 0
+    \end{bmatrix}
+  \]
+
+  Notice that $\varphi$ is antisymmetric and alternating. Our task now is to find a hyperbolic basis. 
+   
+  Take $(e_1, e_2)$, which is a hyperbolic pair and let $V_1 = [e_1, e_2]$. 
+
+  To find $V_1^\perp$, we have that $v \in V_1^\perp$ iff. $v \perp e_1$ and $v \perp e_2$. Computing $[\varphi]_\alpha \cdot e_1 = 0$ we find that $x_2 + 2x_4 = 0$. Computing $[\varphi]_\alpha \cdot e_2 = 0$, we have that $x_1 = 0$. Thus, 
+  \[
+    V_1^\perp = \{ (0, -2x_4, x_3, x_4) : x_3, x_4 \in \mathbb{F} \}
+  \]
+  and $e_3, u = (0, -2, 0, 1)$ form a basis for $V_1^\perp$. 
+
+  Since $\varphi(e_3, u) = 3$, we have that $(e_3, -u/3)$ is a hyperbolic pair.
+
+  Hence, $e_1, e_2, e_3, -u/3$ is a hyperbolic basis for $V$ w.r.t. $\varphi$.
+\end{example}
+
+Remark that if we use an orthogonal basis for an alternating form, then the matrix is zero and the bilinear form is also zero.
+
+In the symmetric case we have orthogonal bases, which is the direct generalization of the inner product. 
+
+\begin{definition}[Orthogonal Family/Basis]
+  A family $\alpha$ is said to be \textbf{orthogonal} (w.r.t. $\varphi$) if, for all distinct $v, v' \in \alpha$, we have that $v \perp v'$.
+\end{definition}
+
+If $\alpha = v_1, \ldots, v_n$ is an orthogonal basis for $\varphi \in B(V)$, then 
+\[
+  \# \{ i : \varphi(v_i, v_i) \neq 0 \} = \text{rank}(\varphi)
+\]
+and the vectors $v_i$ such that $\varphi(v_i, v_i) = 0$ form a basis for $V^\perp$, i.e.,
+\[
+  [\{ v_i : 1 \leq i \leq n, ~\varphi(v_i, v_i) = 0 \} ] = V^\perp
+\]
+
+\begin{theorem}[Existence of orthogonal basis for symmetric forms]
+  If $\text{char}(\mathbb{F}) \neq 2$ and $\varphi \in B_s(V)$, there exists an orthogonal basis for $V$.
+\end{theorem}
+
+\begin{proof}
+  If $\varphi = 0$ or $V = \{ 0 \}$, there is nothing to do. Otherwise, since $\text{char}(\mathbb{F}) \neq 2$, we know that $B_s(V) \cap B_a(V) = \{ 0 \}$. Therefore, $\varphi$ is not alternating and there exists $v_1 \in V$ such that $\varphi(v_1, v_1) \neq 0$.  
+
+  Define $V_1 = [v_1]$. It follows from Theorem \ref{thm:202212301117} that $V = V_1 \oplus V_1^\perp$. 
+
+  Since the restriction of $\varphi$ to $V_1^\perp$ is symmetric, by induction hypothesis on the dimension of the space, there exists an orthogonal basis for $V_1^\perp$ w.r.t. $\varphi$. Complementing $v_1$ with this basis, we form a basis for $V$ which is orthogonal w.r.t. $\varphi$. 
+\end{proof}
+  
+Note that if $\text{char}(\mathbb{F}) = 2$, this is not always possible, since $B_a(V) \subseteq B_s(V)$. 
+
+The question now is: is there an orthonormal basis? This is important because the inner product with any orthonormal basis is the usual inner product of $\mathbb{R}^n$. 
+
+Let $W$ be a complementary subspace to $V^\perp$ and let $\beta = w_1, \ldots, w_p$ an orthogonal basis for $W$ w.r.t. a symmetric bilinear form $\varphi$. 
+
+Suppose that, for all $1 \leq i \leq p$, there exists $a_i \in \mathbb{F}$ such that 
+\[
+  a_i^2 = \frac{1}{\varphi(w_i, w_i)}
+\] 
+
+Then, given $v_i = a_i w_i$, 
+\[
+  \varphi(v_i, v_i) = 1 \quad \forall~1 \leq i \leq p 
+\]
+
+In this case, if $\gamma$ is a basis for $V^\perp$, we define $\alpha = \gamma \cup \{ v_1, \ldots, v_p \}$ and have that 
+\[
+  [\varphi]_\alpha = \begin{bmatrix}
+    0 & 0 \\
+    0 & I_p 
+  \end{bmatrix}
+\]
+
+\begin{definition}[Orthonomal basis]
+If $\varphi$ is nondegenerate, then $\alpha$ is an \textbf{orthonormal basis} w.r.t. $\varphi$. 
+\end{definition}
+
+Such normalization is only possible if $\mathbb{F}$ has the square roots of the elements $\varphi(w_i, w_i)$. If $\mathbb{F} \subseteq \mathbb{R}$, this may not be the case, since it is possible to have $w \in V$ such that $\varphi(w,w) < 0$. In this case, we may choose $a \in \mathbb{R}$ such that \[ a^2 = \frac{-1}{\varphi(w,w)} \]  
+
+Taking $v = aw$, then $\varphi(v,v) = -1$. This shows that if $\mathbb{F} = \mathbb{R}$ and $\text{rank}(\varphi) = p$, there exists $0 \leq i \leq p$ and a basis $\alpha = v_1, \ldots, v_n$ of $V$ such that 
+\begin{equation*} 
+  [\varphi]_\alpha = \begin{bmatrix}
+    -I_i & 0 & 0 \\
+    0 & I_{p-i} & 0 \\
+    0 & 0 & 0 
+  \end{bmatrix}
+  \label{eq:202301020915}
+\end{equation*}
+
+\begin{definition}[Sylvester Basis]
+When $\mathbb{F} \subseteq \mathbb{R}$, this basis is called a \textbf{Sylvester basis} for $V$ w.r.t. $\varphi$. However, this is not an usual terminology. 
+\end{definition}
+
+\begin{definition}[Positive definite] 
+Let $\mathbb{F} \subseteq \mathbb{R}$. We say that $\varphi \in B_s(V)$ is \textbf{positive semidefinite} if $\varphi(v,v) \geq 0$ for all $v \in V$. 
+
+We say that $\varphi$ is \textbf{positive definite} if $\varphi(v,v) > 0$ for all $v \in V \setminus \{ 0 \}$.
+\end{definition}
+
+The concepts of negative (semi)definite are analogous. 
+
+In this language, an inner product over $\mathbb{F} \subseteq \mathbb{R}$ is a symmetric bilinear form which is positive definite.
+
+Recall that $A \in M_n(\mathbb{C})$ is positive definite if $X^\ast A X \in \mathbb{R}_{> 0}$, for all $X \in M_{n,1}(\mathbb{C}) \setminus \{ 0 \}$.
+
+Given a basis $\alpha$ for $V$, $\varphi$ is symmetric iff. $[\varphi]_\alpha$ is symmetric (and hence diagonalizable over $\mathbb{R}$). It follows that $\varphi$ is an inner product iff. $\varphi$ is positive definite or, equivalently, $[\varphi]_\alpha$ is positive definite (and hence all its eigenvalues are positive, by the Spectral Theorem). This allows us to use results from eigenvalue theory to discover whether a bilinear form is an inner product. 
+
+\begin{definition}[Negativity Index]
+  The \textbf{negativity index} of $\varphi$ is defined as 
+  \[
+    i(\varphi) = \max \{ \dim(W) : W \text{ is a subspace such that } \varphi|_W < 0 \}
+  \]
+\end{definition}
+
+Clearly, $i(\varphi) \leq \text{rank}(\varphi)$, $\varphi \geq 0$ (is positive semidefinite) iff. $i(\varphi) = 0$, and $\varphi < 0$ iff $i(\varphi) = \dim(V)$. 
+
+\begin{definition}[Signature]
+  The \textbf{signature} of $\varphi$ is 
+  \[
+    \text{sign}(\varphi) = \text{rank}(\varphi) - 2 i(\varphi)
+  \]
+\end{definition}
+
+Remark that in the Equation \ref{eq:202301020915}, the signature is the trace of the matrix. 
+
+\begin{theorem}[Sylvester's Inertial Law]
+  Suppose that $\mathbb{F} \subseteq \mathbb{R}$ and let $\varphi \in B_s(V)$ and $\alpha = v_1, \ldots v_n$ is an orthogonal basis for $V$ w.r.t. $\varphi$. Then 
+  \[
+    i(\varphi) = \# \{ j : \varphi(v_j, v_j) < 0 \}
+  \]
+\end{theorem}
+
+\begin{proof}
+  Let $i = \# \{ j : \varphi(v_j, v_j) < 0 \}$. Clearly, $i \leq p = \text{rank}(\varphi)$. 
+
+  Suppose w.l.o.g. that $\varphi(v_j, v_j) = 0$ if $j > p$ and that $\varphi(v_j, v_j) < 0$ for $j \leq i$ (just ordering the vectors). Let $W^- = [v_1, \ldots, v_i]$ and $W^+ = [v_{i+1}, \ldots, v_p]$. 
+
+  Since $\varphi|_{W^-} < 0$, we have that $i \leq i(\varphi)$. We need to show that 
+  \[
+    \varphi|_W < 0 \implies \dim(W) \leq i 
+  \]
+  which is equivalent to
+  \begin{equation}\label{eq:202301020927}
+    \varphi|_W < 0 \implies W \cap (V^\perp \oplus W^+) = \{ 0 \}
+  \end{equation}
+
+  Since $V^\perp = [v_{p+1}, \ldots, v_n]$, we have that $V = W^- \oplus W^+ \oplus V^\perp$. Supposing that \ref{eq:202301020927} holds, 
+  \begin{equation*}
+    \begin{aligned}
+      n &\geq \dim(W) + \dim(V^\perp) + \dim(W^+) = \dim(W) + (n-p) + (p-i) \\
+        &= \dim(W) + n - i
+    \end{aligned}
+    \label{eq:202301020928}
+  \end{equation*}
+  Showing that $\dim(W) \leq i$. 
+
+  To show that \ref{eq:202301020927} is true, let $w \in W \cap (V^\perp \oplus W^+)$, say, $w = u+v$, $u \in W^+$ and $v \in V^\perp$. Note that 
+  \[
+    \varphi(w,w) = \varphi(u,u) + 2 \varphi(u, v) + \varphi(v,v) = \varphi(u,u) \geq 0
+  \]
+  Since $\varphi|_W < 0$, it follows that $w = 0$. 
+\end{proof}
+
+\begin{example}\label{ex:202301030826}
+  Let $V = \mathbb{F}^3$ and \[ [\varphi]_\alpha = \begin{bmatrix}
+    2  & -2 & 1 \\
+    -2 & 0  & 0 \\
+    1  & 0  & 1 
+  \end{bmatrix} \] 
+  where $\alpha$ is the standard basis. 
+
+  \textbf{First step:} Take a vector $v_i$ such that $\varphi(v_i, v_i) \neq 0$. Notice that $\varphi(e_3, e_3) = 1$. 
+
+  \textbf{Second step:} Find the orthogonal complement of the chosen vector. Computing $[\varphi]_\alpha \cdot [x,y,z]^t = 0$,
+  \[
+    W := [e_3]^\perp = \{ (x,y,z) \in V : x+z = 0 \} = [w, e_2] \quad w = (1, 0, -1)
+  \]
+
+  \textbf{Third step:} Find a vector in the orthogonal complement which is non-zero. Note that $\varphi(w,w) = 1$, $\varphi(e_2, e_2) = 0$, and $\varphi(w, e_2) = -2$. Thus, defining $\psi = \varphi|_W$ and $\beta = \{ w, e_2 \}$, 
+  \[
+    [\psi]_\beta = \begin{bmatrix}
+      1  & -2 \\
+      -2 & 0
+    \end{bmatrix}
+  \]
+
+  \textbf{Fourth step:} Find the orthogonal complement of the chosen vector inside the previous orthogonal complement, i.e., find $[w]^\perp \cap W = [w]^{\perp_\psi}$. 
+
+  Given $u = aw + be_2$, 
+  \[
+    \psi(w,u) = a - 2b = 0 \iff u = 2w + e_2 = (2, 1, -2)
+  \]
+  
+  Hence, $[w]^{\perp_\psi} = [u] = [(2, 1, -2)]$.
+
+  Notice that $\varphi(u,u) = -4$ and that $\gamma = \{ e_3, w, u \}$ is an orthogonal basis for $V$. It follows that 
+  \[
+    [\varphi]_\gamma = \begin{bmatrix}
+      1 & 0 & 0 \\
+      0 & 1 & 0 \\
+      0 & 0 & -4
+    \end{bmatrix}
+  \]
+
+  Moreover, $\text{rank}(\varphi) = 3$, $i(\varphi) = 1$ and $\text{sign}(\varphi) = 1$. 
+
+  Replacing $u$ by $(1, 1/2, -1)$ we obtain a Sylvester basis for $V$.
+
+  Notice that to describe the isotropic vectors w.r.t. $\varphi$ is easier using an orthogonal basis like $\gamma$: 
+  \[
+    [v]_\gamma = \begin{bmatrix}
+      y_1 \\
+      y_2 \\
+      y_3 
+    \end{bmatrix}
+    \implies \varphi(v,v) = [v]_\gamma^t [\varphi]_\gamma [v]_\gamma = y_1^2 + y_2^2 - 4y_3^2
+  \]
+
+  Therefore, $v$ is isotropic iff. 
+  \[
+    v = y_1 e_3 + y_2 w + y_3 u, \quad |y_3| = \frac{1}{2} \sqrt{y_1^2 + y_2^2}
+  \]
+\end{example}
+
+A model of space with negative length vectors, such as in the previous example (but with one more dimension), is the \textbf{Minkowski space}, which has a bilinear form that, restricted to the physical space, is an inner product, but in the time axis, the vectors have negative length.  The \textbf{light cone} in the preceding example is the collection of isotropic vectors.
+
+To end this section, we turn our attention into quadratic forms. 
+
+\begin{definition}
+  A \textbf{quadratic form} on $n$ variables with values in $\mathbb{F}$ is a polynomial function derived from a homogeneous polynomial with degree two and coefficients in $\mathbb{F}$. 
+\end{definition}
+
+One way of producing such polynomial is from a bilinear form $\varphi \in B(V)$ and a basis $\alpha$ of a vector space $V$: 
+\[
+  q_\varphi (x_1, \ldots, x_n) = \begin{bmatrix}
+    x_1 & \cdots & x_n 
+  \end{bmatrix}
+  [\varphi]_\alpha 
+  \begin{bmatrix}
+    x_1 \\
+    \vdots \\
+    x_n 
+  \end{bmatrix}
+\]
+
+Reciprocally, every quadratic form can be derived from a bilinear form. Given a homogeneous polynomial of degree two, say 
+\[
+  q(x_1, \ldots, x_n) = \sum_{1 \leq i \leq j \leq n} c_{i,j} x_i x_j
+\]
+
+Choose the matrix $A = (a_{i,j})_{1 \leq i \leq j \leq n}$ such that $a_{i,j} + a_{j,i} = c_{i,j}$ for all $1 \leq i < j \leq n$ and $a_{i,i} = c_{i,i}$. And let $\varphi \in B(V)$ such that $[\varphi]_\alpha = (a_{i,j})_{1 \leq i \leq j \leq n}$. 
+
+If $\text{char}(\mathbb{F}) \neq 2$, we can choose $A$ symmetric: $a_{i,j} = a_{j,i} = c_{i,j}/2$. Thus, the study of quadratic forms is related to the study of symmetric bilinear forms. 
+
+Let us find a linear change of variables $(x_1, \ldots, x_n) \leftrightarrow (y_1, \ldots, y_n)$ such that 
+\[
+  q(y_1, \ldots, y_n) = \sum_{i=1}^n b_i y_i^2
+\]
+
+The axis of this next coordinate system is often called a \textbf{principal axis system} for $q$. 
+
+To find such coordinate system is equivalent to find a basis of $\mathbb{F}^n$ which is orthogonal w.r.t. symmetric bilinear form. 
+
+In the case $\mathbb{F} = \mathbb{R}$, it is interesting that this new basis be orthonormal w.r.t. the usual inner product. This is always possible thanks to the Spectral Theorem. Recall that 
+
+\begin{theorem}[Spectral Theorem for Matrices]
+A matrix $A \in M_n(\mathbb{R})$ is orthogonally diagonalizable iff. $A$ is symmetric. 
+\end{theorem}
+
+\begin{definition}[Orthogonally Diagonalizable]
+A matrix $P \in M_n(\mathbb{R})$ is \textbf{orthogonal} if $P^t P = I$. 
+
+A matrix $A \in M_n(\mathbb{R})$ is \textbf{orthogonally diagonalizable} if there exists $P \in M_n(\mathbb{R})$ orthogonal such that $P^t A P$ is diagonal. 
+\end{definition} 
+
+\begin{theorem}
+If $\alpha$ and $\beta$ are basis for $V$, 
+\[
+  [\varphi]_\beta = ([I]_{\beta, \alpha})^t [\varphi]_\alpha [I]_{\beta, \alpha}
+\]
+\end{theorem}
+
+\begin{example}
+  Suppose that $\text{char}(\mathbb{F}) = 0$ and consider the quadratic form 
+  \[
+    q(x_1, x_2, x_3) = 2x_1^2 - 4x_1 x_2 + 2x_1 x_3 + x_3^2
+  \]
+
+  The symmetric bilinear form on $V = \mathbb{F}^3$ associated with $q$ is the bilinear form $\varphi$ from the example \ref{ex:202301030826}.
+  
+  Using the basis $\gamma$ found there, we have a principal axis system for $q$. In this coordinate system, $q(y_1, y_2, y_3) = y_1^2 + y_2^2 - 4 y_3^2$.
+\end{example}
+
+The concept of orthogonal matrix is related to the concept of orthogonal linear operator. In the next section, we study the generalization of this concept to the context of alternating and symmetric bilinear forms. After that section, we study the theory of self-adjoint operators in the same context. 
+
+\section{Orthogonal and Sympletic Transformations}
+
+\begin{definition}[Compatibility]
+  Let $V$ and $W$ be vector spaces, $\varphi \in B(V)$ and $\psi \in B(W)$. Then $T \in \hom(V,W)$ is said to be \textbf{compatible} with the pair $(\varphi, \psi)$ if 
+  \[
+    \psi(T(u), T(v)) = \varphi(u, v), \quad \forall ~u,v \in V
+  \]
+\end{definition}
+
+If $\varphi$ and $\psi$ are inner products, this definition coincides with the definition of orthogonal transformation. Motivated by this, if $\varphi$ and $\psi$ are symmetric and nondegenerate, we say that $T$ is an \textbf{orthogonal linear transformation}. If both are alternating, we say that $T$ is \textbf{sympletic}. 
+
+\begin{theorem}\label{thm:202301030953}
+  The following are equivalent.
+  \begin{enumerate}
+    \item $T$ is compatible with $(\varphi, \psi)$.
+    \item For every basis $\alpha$ of $V$, $[\varphi]_\alpha = [\psi]_{T(\alpha)}$.
+    \item There exists a basis $\alpha$ of $V$ such that $[\varphi]_\alpha = [\psi]_{T(\alpha)}$.
+  \end{enumerate}
+\end{theorem}
+
+\begin{proof}
+  Similar to the analogous result in elementary linear algebra.
+\end{proof}
+
+How can we describe all compatible transformations? Is there any compatible transformation? 
+
+Note that this result does not impose any condition on $\psi(w_1, w_2)$ if $w_1$ or $w_2$ are not in the range of $T$. Thus, we can suppose that $T$ is surjective.
+
+In this case, the radical of $\varphi$ is entirely taken into the radical of $\psi$:
+\[
+  v \in V^{\perp_\varphi} \implies T(v) \in W^{\perp_\psi}
+\]
+
+To see this, let $w \in W$, say $w = T(u)$. Then
+\[
+  \psi(T(v),w) = \varphi(v,u) = 0
+\]
+
+Therefore, it is sufficient to study the case in which $\varphi$ is nondegenerate. In this case, $\det([\varphi]_\alpha) \neq 0$ for every finite and linearly independent subset $\alpha$ of $V$. 
+
+Since $[\psi]_{T(\alpha)} = [\varphi]_\alpha$, we have that $T(\alpha)$ is linearly independent and hence $T$ is injective. 
+
+With these facts, the following result holds.
+
+\begin{theorem}
+  If $\varphi \in B(V)$ and $\psi \in B(W)$ with $\varphi$ nondegenerate, there exists $T \in \hom(V,W)$ surjective and compatible with $(\varphi, \psi)$ iff. $\dim(V) = \dim(W)$ and there exist bases $\alpha$ of $V$ and $\beta$ of $W$ such that $[\varphi]_\alpha = [\psi]_\beta$. In this case, $T$ is an isomorphism. 
+\end{theorem}
+
+Let us move to the context of linear operators. I.e., here $V = W$ and $\varphi = \psi$ is nondegenerate. Our goal is to describe the set of linear operators on $V$ compatible with $(\varphi, \varphi)$ in the case $\varphi \in B_{as}(V)$ is nondegenerate and $\dim(V)$ is finite. 
+
+Consider the subset of compatible operators
+\[
+  \text{End}^\varphi(V) := \{ T \in \text{End}(V) : \varphi(T(u), T(v)) = \varphi(u, v), ~u,v \in V \}
+\]
+
+It follows from the previous result that every element of $\text{End}^\varphi(V)$ is bijective.
+
+We can easily verify that $\text{End}^\varphi(V)$ is closed under composition, i.e., 
+\[
+  T, S \in \text{End}^\varphi(V) \implies T \circ S \in \text{End}^\varphi(V) 
+\]
+and 
+\[
+  T^{-1} \in \text{End}^\varphi(V)
+\]
+
+Thus, the pair $(\text{End}^\varphi(V), \circ)$ is a group. If $\varphi$ is symmetric, this is called an \textbf{orthogonal group}. If $\varphi$ is alternating, this is called an \textbf{sympletic group}.
+
+Given a basis $\alpha$ of $V$, $\beta = T(\alpha)$ is also a basis for $V$. We have that $[\varphi]_\alpha = [\varphi]_\beta$ and it follows that 
+\[
+  [\varphi]_\alpha = ([I]_{\beta, \alpha})^t [\varphi]_\alpha [I]_{\beta, \alpha}
+\]
+
+By definition of $\beta$, $[I]_{\beta, \alpha} = [T]_{\alpha, \alpha}$. Hence, 
+\[
+  \det([\varphi]_\alpha) = \det(([T]_{\alpha, \alpha})^t) \det([\varphi]_\alpha) \det([T]_{\alpha, \alpha}) 
+\]
+
+Since, $\det([\varphi]_\alpha) \neq 0$, it follows that $\det(T) = \pm 1$. 
+
+\begin{definition}[Rotation and Reflection]
+  Suppose that $\varphi \in B_s(V)$ and $T \in \text{End}^\varphi(V)$. $T$ is said to be a \textbf{rotation} if $\det(T) = 1$, and is said to be a \textbf{reflection} if $\det(T) = -1$.
+\end{definition}
+
+The subset of rotations forms a subgroup of $\text{End}^\varphi(V)$. The composition of two reflections is a rotation. 
+
+\begin{definition}[Simple Reflection]
+  Let $w \in V$ be a non-isotropic vector and $W = [w]$. The function 
+  \begin{equation*}
+    \begin{aligned}
+      R_W^\varphi : V &\longrightarrow V \\
+      v &\longmapsto v - 2 \frac{\varphi(v,w)}{\varphi(w,w)} w
+    \end{aligned}
+  \end{equation*}
+  is called a \textbf{simple reflection}.
+\end{definition}
+
+It can be easily verified that $R_W^\varphi$ is linear and depends only on $W$. 
+
+To show that $R_W^\varphi$ is a reflection, notice that 
+\[
+  R_W^\varphi(v) = \begin{cases}
+    -v, & \text{ if } v \in W, \\
+    ~v, & \text{ if } v \in W^{\perp_\varphi}
+  \end{cases}
+\]
+
+Since $w$ is non-isotropic, we have $V = W \oplus W^{\perp_\varphi}$ and we can choose a basis $\alpha = v_1, \ldots, v_n$ of $V$ such that $v_1 \in W$ and $v_j \in W^{\perp_\varphi}$ for $j > 1$. With this choice, we have the following matrix 
+\[
+  [R_W^\varphi]_{\alpha, \alpha} = \begin{bmatrix}
+    -1 & 0 & 0 & \cdots & 0 \\
+    0  & 1 & 0 & \cdots & 0 \\
+    \vdots & \ddots & \ddots & \ddots & \vdots \\ 
+    \vdots & & \ddots & \ddots & 0 \\
+    0 & \cdots & \cdots & 0 & 1
+  \end{bmatrix}
+\]
+
+Thus, $\det(R_W^\varphi) = -1$ and 
+\[
+  \varphi(R_W^\varphi(v_i), R_W^\varphi(v_j)) = (-1)^{\delta_{i, 1} + \delta_{j,1}} \varphi(v_i, v_j) = \varphi(v_i, v_j), \quad \forall~1 \leq i \leq j \leq n
+\]
+
+Hence, $[\varphi]_{T(\alpha)} = [\varphi]_\alpha$ and it follows from the theorem \ref{thm:202301030953} that $R_W^\varphi$ is compatible with $\varphi$. Also
+\[
+  R_W^\varphi \circ R_W^\varphi = \text{Id}_V
+\]
+
+If $\varphi$ is an inner product, the set of simple reflections coincides with the set of orthogonal reflections w.r.t. hyperplanes.
+
+\begin{lemma}\label{lm:202301040856}
+  If $\varphi \in B_{as}(V)$, $T \in \text{End}^\varphi(V)$ and $W$ is a nondegenerate subspace w.r.t. $\varphi$ and $T$-invariant, then $W^{\perp_\varphi}$ is also $T$-invariant. 
+\end{lemma}
+
+\begin{lemma}\label{lm:202301040857}
+  Suppose that $\text{char}(\mathbb{F}) \neq 2$, $\varphi \in B_s(V)$ is nondegenerate, and that $u, v \in V$ satisfy $\varphi(u,u) = \varphi(v,v) \neq 0$. Then there exists a simple reflection $T$ such that $R(v) \in \{ u, -u \}$.
+\end{lemma}
+
+\begin{proof}
+  Consider $w_\pm = v \pm u$ and $W_\pm = [w_\pm]$. We show that at least one of the vectors $w_+$ and $w_-$ is not isotropic. In fact,
+  \[
+    \varphi(w_\pm, w_\pm) = 2(\varphi(u,u) \pm \varphi(u,v))
+  \]
+
+  Thus
+  \[
+    \varphi(w_+, w_+) = \varphi(w_-, w_-) = 0 \implies \varphi(u,u) = \pm \varphi(u,v)
+  \]
+  contradicting the hypothesis that $\varphi(u,u) = 0$. 
+
+  Notice that $\varphi(w_+, w_-) = 0$. If $w_+$ is non-isotropic, then
+  \[
+    R_{W_+}^\varphi(w_\pm) = \mp w_\pm
+  \]
+  and, therefore, 
+  \[
+    R_{W_+}^\varphi(v) = \frac{1}{2} R_{W_+}^\varphi(w_+ + w_-) = \frac{1}{2} (w_- - w_+) = - u
+  \]
+
+  Analogously, if $w_-$ is non-isotropic, it follows that $R_{W_-}^\varphi(v) = u$.
+\end{proof}
+
+With the language of reflections and these lemmas, it is possible to characterize orthogonal operators.
+
+\begin{theorem}\label{thm:202301041019}
+  Suppose that $\text{char}(\mathbb{F}) \neq 2$ and $0 \neq \dim(V) < \infty$. Let $\varphi \in B_s(V)$ nondegenerate and $T \in \text{End}(V)$. $T$ is orthogonal iff. $T$ is a composition of simple reflections.
+\end{theorem}
+
+\begin{proof}
+  If $\text{End}^\varphi(V)$ is a group, then the composition of simple reflection are orthogonal operators. We'll prove the reciprocal by induction on $n = \dim(V) \geq 1$.
+
+  If $n = 1$, then $V = [v]$ for all $v \in V \setminus \{ 0 \}$ and $T(v) = \lambda v$. Since $\det(T) = \pm 1$, it follows that $T = \pm \text{Id}_V$. And since $- \text{Id}_V = R_V^\varphi$ and $\text{Id}_V = (R_V^\varphi)^2$, the case $n = 1$ is proved. 
+
+  Suppose that $n > 1$ and choose a non-isotropic vector $u$ (which exists since $\text{char}(\mathbb{F}) \neq 2$ and $\varphi$ is nondegenerate). Take $v = T(u)$ and let $R$ be a simple reflection such that $R(v) = \pm u$, which exists by the lemma \ref{lm:202301040857}.
+  
+  In particular, $U = [u]$ is $(R \circ T)$-invariant. And since $U$ is nondegenerate, it follows from the lemma \ref{lm:202301040856} that $U^{\perp_\varphi}$ is also $(R \circ T)$-invariant.
+
+  Let $S$ be the linear operator on $U^{\perp_\varphi}$ induced by $R \circ T$. By induction hypothesis, $S$ is a composition of simple reflections, say $S = S_1 \circ \cdots \circ S_m$.
+
+  For each $1 \leq j \leq m$, let $R_j$ be the unique linear operator on $V$ satisfying 
+  \[
+    R_j(u) = u \text{ and } R_j(w) = S_j(w), \quad \forall ~w \in U^{\perp_\varphi}
+  \]
+
+  Also consider 
+  \begin{equation}\label{eq:202301040911}
+    R_0 = \begin{cases}
+      \text{Id}_V, & \text{ if } R(v) = u \\
+      R_U^\varphi, & \text{ if } R(v) = -u
+    \end{cases}
+  \end{equation}
+
+  To finish the proof, we will verify that 
+  \begin{equation}\label{eq:202301040913}
+    T = R \circ R_0 \circ R_1 \circ \cdots \circ R_m
+  \end{equation}
+  and that $R_j$ is a simple reflection on $V$ for all $1 \leq j \leq m$.
+
+  Start by noticing that $R_0(w) = w$ for all $w \in U^{\perp_\varphi}$ and, therefore, $R \circ T$ coincides with $R_0 \circ \cdots \circ R_m$ on $U^{\perp_\varphi}$. 
+
+  On the other hand, since $R_j(u) = u$ for all $1 \leq j \leq m$, 
+  \[
+    (R_0 \circ \cdots \circ R_m)(u) = R_0(u) \overset{\ref{eq:202301040911}}{=} R(T(u))
+  \]
+
+  Since $V = U \oplus U^{\perp_\varphi}$, it follows that $R \circ T = R_0 \circ \cdots \circ R_m$. With the fact that $R^{-1} = R$, the equation \ref{eq:202301040913} is proved.
+
+  The last step is to show that each $R_j$ is a simple reflection. Let $\psi$ be the restriction of $\varphi$ to $U^{\perp_\varphi}$ and, given $1 \leq j \leq m$, let $w_j \in U^{\perp_\varphi}$ such that 
+  \[
+    S_j = R_{W_j}^\psi, \quad W_j = [w_j]
+  \]
+
+  Let us show that $R_j = R_{W_j}^\varphi$. Since $\varphi(u, w_j) = 0$, we have 
+  \[
+    R_{W_j}^\varphi(u) = u = R_j(u)
+  \]
+
+  On the other hand, if $w \in U^{\perp_\varphi}$, we have 
+  \[
+    R_{W_j}^\varphi(w) = w - 2 \frac{\varphi(w,w_j)}{\varphi(w_j, w_j)} w_j = w - 2 \frac{\psi(w,w_j)}{\psi(w_j, w_j)} w_j = S_j(w) = R_j(w)
+  \]
+
+  Since $R_{W_j}^\varphi$ coincides with $R_j$ on $U$ and $U^{\perp_\varphi}$, it follows that $R_{W_j}^\varphi = R_j$.
+\end{proof}
+
+\begin{example}
+  Let $V = \mathbb{R}^3$ and $\varphi$ be the usual inner product. Take $T = \text{Rot}_\theta^w$ with $\| w \| = 1$ and $\theta \in [0, 2 \pi]$. 
+
+  Choose $w_1 \in [w]^\perp$ with $\| w_1 \| = 1$ and define $w_2 = w \times w_1$ such that $\beta = \{ w_1, w_2, w \}$ be an orthonormal basis. Thus 
+  \[
+    [T]_{\beta, \beta} = \begin{bmatrix}
+      a & -b & 0 \\
+      b &  a & 0 \\
+      0 &  0 & 1
+    \end{bmatrix},
+    \quad \text{ with } a = \cos(\theta) \text{ and } ~b = \sin(\theta)
+  \]
+
+  If $b = 0$ and $a = 1$, then $T = \text{Id}_V = (R_W^\varphi)^2$ for any line $W$. 
+
+  Otherwise, choose $u = w_1$ and $v = T(u)$ as in the proof. It follows that 
+  \[
+    w_- = v-u = (a-1)w_1 + bw_2 \neq 0 
+  \]
+  and thus $w_-$ is non-isotropic. 
+
+  Taking $R = R_{W_-}^\varphi$ with $W_- = [w_-]$ and $W = [u]^\perp = [w_2, w]$, it follows from the proof that $R(T(u)) = u$ and that $W$ is $(R \circ T)$-invariant. 
+
+  Let $S_1$ be the linear operator induced by $R \circ T$ on $W$  and $\psi = \varphi|_W$. Since $T$ and $R$ fix $w$, we have $S_1(w) = w$. Since $[w]$ is nondegenerate w.r.t. $\psi$, $[w]^{\perp_\psi} = [w_2]$ is also $S_1$-invariant. 
+
+  Thus, $S_1(w_2) = \lambda w_2$ for some scalar $\lambda$. It follows that $\det(S_1) = \lambda$ and, therefore, $\lambda = \pm 1$. 
+
+  Let $R_1 \in \text{End}(V)$ such that $R_1|_W = S_1$ and $R_1(u) = u$, as in the proof. It follows from the previous argument that $R \circ T = R_1$, i.e., $T = R \circ R_1$. 
+
+  In fact, $R_1(u) = R(T(u))$ and $(R \circ T)|_W = S_1 = R_1|_W$. 
+
+  Since $\det(T) = 1$, $\det(R) = -1$ and $\det(R_1) = \lambda$, it follows that $\lambda = -1$ and, therefore, $R_1 = R_{[w_2]}^\varphi$. 
+
+  Notice that these conclusions follow from the fact verified above:
+  \[
+    R(T(w_1)) = w_1, \quad R(T(w)) = w, \quad \text{ and } R(T(w_2)) = -w_2
+  \]
+
+  Hence, $\text{Rot}_\theta^w = R_{W_-}^\varphi \circ R_{[w_2]}^\varphi$. 
+\end{example}
+
+For alternating forms, instead of simple reflections, we'll have sympletic transvections. 
+
+\begin{definition}[Sympletic Transvection]
+  Suppose that $\varphi \in B_a(V)$ is nondegenerate. Given $w \in V, ~a \in \mathbb{F}$, consider the function 
+  \begin{equation*}
+    \begin{aligned}
+      T_{w,a} : V &\longrightarrow V \\
+      v &\longmapsto v + a \varphi(v,w) w
+    \end{aligned}
+  \end{equation*}
+  
+  The function $T_{w,a}$ is called a \textbf{sympletic transvection}.
+\end{definition}
+
+Clearly, $T_{w,a}$ is linear. Let us verify that it is sympletic. 
+\begin{equation*}
+  \begin{aligned}
+    \varphi(T_{w,a}(v_1), T_{w,a}(v_2)) &= \varphi(v_1 + a \varphi(v_1, w) w, v_2 + a \varphi(v_2, w) w) \\
+    &= \varphi(v_1, v_2) + a \varphi(v_1, w) \varphi(v_2, w) + a \varphi(v_1, w) \varphi(w, v_2) \\
+    &= \varphi(v_1, v_2)
+  \end{aligned}
+\end{equation*}
+
+Analogously to the theorem \ref{thm:202301041019}, we have the following result.
+
+\begin{theorem}
+  Suppose that $0 \neq \dim(V) < \infty$ and let $\varphi \in B_a(V)$ nondegenerate and $T \in \text{End}(V)$. Then $T$ is sympletic iff. $T$ is a composition of sympletic transvections.
+\end{theorem}
+
+\section{Self-Adjoint Operators}
+
+\begin{definition}[Adjoint]
+  Let $\varphi \in B(V)$, $\psi \in B(W)$ and $T \in \hom(V,W)$. A function $S : W \longrightarrow V$ is said to be a \textbf{right adjoint} of $T$ w.r.t. $(\varphi, \psi)$ if 
+  \[
+    \varphi(v, S(w)) = \psi(T(v), w), \quad \forall~ v\in W, ~w \in W
+  \]
+
+  And $S$ is called a \textbf{left adjoint} of $T$ w.r.t. $(\varphi, \psi)$ if 
+  \[
+    \varphi(S(w), v) = \psi(w, T(v)), \quad \forall~ v\in W, ~w \in W
+  \]
+\end{definition}
+
+Notice that if $\varphi$ and $\psi$ are symmetric and alternating, both conditions are equivalent. 
+
+We'll denote by $T_\psi^\varphi$ the right adjoint of $T$ w.r.t. $(\varphi, \psi)$ when it exists and $\varphi$ is right nondegenerate. 
+
+The following lemma states that the adjoint is linear and unique if it exists. 
+
+\begin{lemma}\label{lm:202301041030}
+  Suppose that $\varphi$ is right nondegenerate. 
+  \begin{enumerate}
+    \item If $S$ is right adjoint of $T$, then $S$ is linear. 
+    \item If $S_1$ and $S_2$ are right adjoint of $T$, then $S_1 = S_2$.
+  \end{enumerate}
+\end{lemma}
+
+\begin{proof}
+  Since $\varphi$ is right nondegenerate, the first item follows if we prove that 
+  \[
+    S(w_1 + \lambda w_2) - S(w_1) - \lambda S(w_2) \in \ker(D_\varphi), \quad \forall~ w_1, w_2 \in W, \lambda \in \mathbb{F}
+  \]
+  i.e. for any $v \in V$
+  \[
+    \varphi(v, ~S(w_1 + \lambda w_2) - S(w_1) - \lambda S(w_2)) = 0
+  \]
+
+  In fact, 
+  \begin{equation*}
+    \begin{aligned}
+      \varphi(v, ~S(w_1 + \lambda w_2)) &= \psi(T(v), w_1 + \lambda w_2) \\
+      &= \psi(T(v), w_1) + \lambda \psi(T(v), w_2) \\
+      &= \varphi(v, S(w_1)) + \lambda \varphi(v, S(w_2)) \\
+      &= \varphi(v, S(w_1) + \lambda S(w_2))
+    \end{aligned}
+  \end{equation*}
+
+  To show the second item, we'll prove that $S_1(w) - S_2(w) \in \ker(D_\varphi)$ for all $w \in W$: 
+  \begin{equation*}
+    \begin{aligned}
+      \varphi(v, ~S_1(w) - S_2(w)) &= \varphi(v, S_1(w)) - \varphi(v, S_2(w)) \\
+      &= \psi(T(v), w) - \psi(T(v), w) = 0 
+    \end{aligned}
+  \end{equation*}
+\end{proof}
+
+The concept of adjoint gives a new interpretation to transposition.
+
+\begin{lemma}\label{lm:202301041041}
+  If $\alpha$ is a basis for $V$ and $\beta$ is a basis for $W$, then 
+  \[
+    [T_\psi^\varphi]_{\beta, \alpha} = [\varphi]_\alpha^{-1} ([T]_{\alpha, \beta})^t [\psi]_\beta
+  \]
+\end{lemma}
+
+When the adjoint exists? 
+
+\begin{theorem}\label{thm:202301041102}
+  If $\dim(V) < \infty$ and $\varphi$ is nondegenerate, then there exists a right adjoint of $T$.
+\end{theorem}
+
+\begin{proof}
+  The hypothesis guarantee that $D_\varphi$ is bijective. Thus, we can consider 
+  \[
+    S = D_\varphi^{-1} \circ T^t \circ D_\psi 
+  \]
+  which gives us the following diagram 
+  % https://q.uiver.app/?q=WzAsNCxbMCwwLCJXIl0sWzIsMCwiViJdLFswLDIsIldeXFxhc3QiXSxbMiwyLCJWXlxcYXN0Il0sWzAsMSwiUyIsMCx7InN0eWxlIjp7ImJvZHkiOnsibmFtZSI6ImRhc2hlZCJ9fX1dLFswLDIsIkRfXFxwc2kiLDJdLFsyLDMsIlRedCIsMl0sWzMsMSwiRF9cXHZhcnBoaV57LTF9IiwyXV0=
+  \[\begin{tikzcd}
+    W && V \\
+    \\
+    {W^\ast} && {V^\ast}
+    \arrow["S", dashed, from=1-1, to=1-3]
+    \arrow["{D_\psi}"', from=1-1, to=3-1]
+    \arrow["{T^t}"', from=3-1, to=3-3]
+    \arrow["{D_\varphi^{-1}}"', from=3-3, to=1-3]
+  \end{tikzcd}\]
+
+  Let us verify that $S$ is adjoint of $T$. By definition of $D_\varphi$, given $f \in V^\ast$, 
+  \[
+    u = D_\varphi^{-1}(f) \iff f(v) = \varphi(v,u), \quad \forall~v \in V
+  \]
+
+  I.e., 
+  \[
+    f(v) = \varphi(v, D_\varphi^{-1}(f)), \quad \forall~v \in V, ~f\in V^\ast
+  \]
+
+  Thus, 
+  \begin{equation*}
+    \begin{aligned}
+      \varphi(v, S(w)) &= \varphi(v, ~D_\varphi^{-1}(T^t (D_\psi(w)))) = (T^t(D_\psi(w)))(v) \\
+      &= (D_\psi(w))(T(v)) = \psi(T(v), w)
+    \end{aligned}
+  \end{equation*}
+\end{proof}
+
+The next result shows some properties of adjoints.
+
+\begin{theorem}
+  Let $\varphi \in B(V)$, $\psi \in B(W)$, $\xi \in B(U)$ and suppose that $V$ and $W$ are finite-dimensional, and that $\varphi$ and $\psi$ are nondegenerate. The following are true. 
+  \begin{enumerate}
+    \item If $S, T \in \hom(W, U)$ and $\lambda \in \mathbb{F}$, then $(S + \lambda T)_\xi^\psi = S_\xi^\psi + \lambda T_\xi^\psi$. In words, adjunction is a linear operation.
+    \item If $T \in \hom(V, W)$ and $S \in \hom(W,U)$, then $(S \circ T)_\xi^\varphi = T_\psi^\varphi \circ S_\xi^\psi$. In words, adjunction is contravariant. 
+    \item If $T \in \hom(V, W)$ is invertible, then $(T^{-1})_\varphi^\psi = (T_\psi^\varphi)^{-1}$. In words, the adjoint of the inverse is the inverse of the adjoint. 
+    \item If $T \in \hom(V, W)$, then $(T_\psi^\varphi)_\varphi^\psi = T$.
+  \end{enumerate}
+\end{theorem}
+
+\begin{lemma}
+  Suppose that $\dim(V) < \infty$, $\varphi \in B_{as}(V)$ is nondegenerate and $\psi \in B_{as}(W)$. 
+
+  \begin{enumerate}
+    \item If $\psi$ is nondegenerate, then $\ker(T) = \text{range}(T_\psi^\varphi)^{\perp_\varphi}$. In particular, $T$ is injective iff. $T_\psi^\varphi$ is surjective. Moreover, if $\ker(T)$ is nondegenerate, then $V = \ker(T) \oplus \text{range}(T_\psi^\varphi)$. 
+    \item $\ker(T_\psi^\varphi) = \text{range}(T)^{\perp_\psi}$. If $\psi$ is nondegenerate, then $T_\psi^\varphi$ is injective iff. $T$ is surjective. More than that, if $\dim(W) < \infty$ and both $W$ and $\ker(T_\psi^\varphi)$ are nondegenerate, $W = \ker(T_\psi^\varphi) \oplus \text{range}(T)$.
+  \end{enumerate}
+\end{lemma}
+
+\begin{proof}
+  If $\psi$ is nondegenerate, $v \in \ker(T)$ iff. $\psi(T(v), w) = 0$ for all $w \in W$.
+  
+  Using the concept of adjoint, the first affirmation of $1.$ follows. The second one follows by noticing that, since $\varphi$ in nondegenerate, for a subspace $U \subseteq V$, then $U^{\perp_\varphi} = \{ 0 \}$ iff. $U = V$.
+
+  For the last affirmation, if $\ker(T)$ is nondegenerate, then $V = \ker(T) \oplus \ker(T)^{\perp_\varphi}$, by the theorem \ref{thm:202212301117}. Using the first affirmation and the theorem \ref{thm:202212301122}, the result follows. 
+
+  The item $2.$ is analogous. 
+\end{proof}
+
+Our goal now is to review the spectral theorem in the context of symmetric bilinear forms. Suppose that $\varphi \in B_s(V)$ and $T \in \text{End}(V)$. We denote the adjoint of $T$ w.r.t. $\varphi, \varphi$ simply as $T^\varphi$. 
+
+\begin{definition}[Self-Adjoint]
+  $T$ is said to be \textbf{self-adjoint} w.r.t. $\varphi$ if $T^\varphi = T$, i.e. 
+  \[
+    \varphi(T(v), w) = \varphi(v, T(w)), \quad \forall~v,w \in V
+  \]
+\end{definition}
+
+\begin{definition}[Anisotropic Space]
+  A vector space $V$ is called \textbf{anisotropic} if it does not have any isotropic vectors. 
+\end{definition}
+
+\begin{lemma}\label{lm:202301051141}
+  Suppose that $T$ is self-adjoint w.r.t. $\varphi$.
+  \begin{enumerate}
+    \item The eigenspaces of $T$ are mutually orthogonal. 
+    \item If $v$ is an eigenvector of $T$, then $\{ v \}^{\perp_\varphi}$ is $T$-invariant. 
+  \end{enumerate}
+\end{lemma}
+
+\begin{proof}
+  Follows, without any circularity, from the lemma \ref{lm:202301051341}.
+\end{proof}
+
+\begin{theorem}[Spectral Theorem (First Version)]\label{thm:spectral_theorem_1}
+  Suppose that $\mathbb{F}$ is algebrically closed, $\text{char}(\mathbb{F}) \neq 2$ and that $V$ is anisotropic w.r.t. $\varphi$. There exists an orthogonal basis for $V$ w.r.t. $\varphi$ formed by eigenvectors of $T$ iff. $T$ is self-adjoint. 
+\end{theorem}
+
+\begin{proof}
+  $(\Rightarrow)$ Suppose that $\alpha$ is an orthogonal basis of $V$ w.r.t. $\varphi$ formed by eigenvectors of $T$ such that 
+  \[
+    [T]_{\alpha, \alpha} = \text{diag}(\lambda_1, \ldots, \lambda_n) \quad \text{ and } \quad [\varphi]_\alpha = \text{diag}(\mu_1, \ldots, \mu_n)
+  \]
+
+  Since $[T^\varphi]_{\alpha, \alpha} = [\varphi]_\alpha^{-1} ([T]_{\alpha, \alpha})^t [\varphi]_\alpha$, it follows that $[T^\varphi]_{\alpha, \alpha} = [T]_{\alpha, \alpha}$, i.e., $T^\varphi = T$.
+
+  $(\Leftarrow)$ Suppose that $T$ is self-adjoint. Since $\mathbb{F}$ is algebraically closed, there exists an eigenvector $w$ for $T$. Let $W := [w]$. 
+
+  Since $V$ is anisotropic, $W$ is nondegenerate, and thus $V = W \oplus W^{\perp_\varphi}$. 
+
+  Using that $\varphi$ is nondegenerate, $W^{\perp_\varphi}$ is nondegenerate and, by the second item of the lemma \ref{lm:202301051141}, $W^{\perp_\varphi}$ is $T$-invariant. 
+
+  By induction on the dimension of $V$ (which starts trivially for dimension one), there exists a basis $\alpha$ of $W^{\perp_\varphi}$ which is orthogonal w.r.t. $\varphi$ and formed by eigenvectors of $T$. 
+
+  Hence, $\beta = \alpha \cup \{ w \}$ is an orthogonal basis for $V$ w.r.t. $\varphi$ and formed by eigenvectors of $T$.
+\end{proof}
+
+Notice that if $\mathbb{F} = \mathbb{R}$ and $\varphi$ is an inner product, the spectral theorem remains valid. 
+
+\begin{definition}[Complex Inner Product]
+	If $V$ is a vector space over $\mathbb{C}$, then the function $\varphi : V \times V \longrightarrow \mathbb{C}$ is an \textbf{inner product} on $V$ if
+	\begin{enumerate}
+		\item It is linear on the first entry; 
+		\item $\varphi(u,v) = \overline{\varphi(v,u)}$, for all $u, v \in V$; 
+		\item $\varphi(v,v) \in \mathbb{R}_{> 0}$, if $v \neq 0$. 
+	\end{enumerate}
+\end{definition}
+
+The complex inner product is a \textbf{sesquilinear form} w.r.t. the second entry. 
+
+Notice that if $\alpha = v_1, \ldots, v_n$ is a basis for $V$ and $[\varphi]_\alpha = (\varphi(v_j, v_i))_{(i,j)}$, we have 
+\[
+	\varphi(u,v) = [v]_\alpha^\ast [\varphi]_\alpha [u]_\alpha 
+\]
+
+Also $[\varphi]_\alpha = ([\varphi]_\alpha)^\ast$ and $[\varphi]_\beta = ([I]_{\beta, \alpha})^\ast [\varphi]_\alpha [I]_{\beta, \alpha}$.
+
+Analogously,
+\[ [T^\varphi]_{\alpha, \alpha} = [\varphi]_\alpha^{-1} ([T]_{\alpha, \alpha})^\ast [\varphi]_\alpha \]
+
+If $\alpha$ is an orthonormal basis for $V$ w.r.t. $\varphi$ formed by eigenvectors of $T$, we have $[T]_{\alpha, \alpha} = \text{diag}(\lambda_1, \ldots, \lambda_n) \quad \text{ and } \quad [\varphi]_\alpha = I$. Hence, 
+\[
+  [T]_{\alpha, \alpha} [T^\varphi]_{\alpha, \alpha} = [T^\varphi]_{\alpha, \alpha} [T]_{\alpha, \alpha}
+\]
+
+\begin{definition}[Normal Operator]
+  $T$ is said to be \textbf{normal} if $T \circ T^\varphi = T^\varphi \circ T$.
+\end{definition}
+
+Every self-adjoint operator is a normal operator. 
+
+\begin{lemma}\label{lm:202301051341}
+  Suppose that $T$ is normal.
+  \begin{enumerate}
+    \item If $T(v) = \lambda v$, then $T^\varphi(v) = \overline{\lambda} v$. 
+    \item The eigenspaces of $T$ are mutually orthogonal. 
+    \item If $v$ is an eigenvector of $T$, then $\{ v \}^{\perp_\varphi}$ is $T$-invariant. 
+  \end{enumerate}
+\end{lemma}
+
+\begin{proof}
+  Denote $\varphi(v, w) = \langle v, w \rangle$ and $\| v \|^2 = \varphi(v,v)$. We have that 
+  \begin{equation*}
+    \begin{aligned}
+      \| T^\varphi(v) - \overline{\lambda} v \|^2 & = \langle T^\varphi(v), T^\varphi(v) \rangle - \lambda \langle T^\varphi(v), v \rangle - \overline{\lambda} \langle v, T^\varphi(v) \rangle + |\lambda|^2 \| v \|^2 \\
+      &= \langle v, (T \circ T^\varphi)(v) \rangle - \lambda \langle v, T(v) \rangle - \overline{\lambda} \langle T(v), v \rangle + |\lambda|^2 \| v \|^2 \\
+      &= \langle v, (T^\varphi \circ T)(v) \rangle - \lambda \langle v, \lambda v \rangle - \overline{\lambda} \langle \lambda v, v \rangle + |\lambda|^2 \| v \|^2 \\
+      &= \langle T(v), T(v) \rangle - |\lambda|^2 \langle v, v \rangle \\ 
+      &= |\lambda|^2 \langle v, v \rangle - |\lambda|^2 \langle v, v \rangle = 0
+    \end{aligned}
+  \end{equation*}
+
+  Suppose that $v \in V_{t-\lambda}, w \in V_{t - \mu}$ and $\lambda \neq \mu$. We show that $v \perp w$.
+  \begin{equation*}
+    \begin{aligned}
+      \lambda \langle v, w \rangle = \langle T(v), w \rangle = \langle v, T^\varphi(w) \rangle = \langle v, \overline{\mu}w \rangle = \mu \langle v, w \rangle \iff \langle v, w \rangle = 0
+    \end{aligned}
+  \end{equation*}
+
+  Finally, if $w \perp v$, 
+  \[
+    \langle T(w), v \rangle = \langle w, T^\varphi(v) \rangle = \lambda \langle w,v \rangle = 0
+  \]
+  which proves the last item. 
+\end{proof}
+
+\begin{lemma}\label{lm:202301051407}
+  If $T$ is self-adjoint, then every root of the characteristic polynomial, as an element of $\mathbb{C}[x]$, is real. 
+\end{lemma}
+
+\begin{proof}
+  The strategy is to study the operator over $\mathbb{C}$ and conclude that all eigenvalues are real.
+
+  We have that 
+  \[
+    c_T(t) = \prod_{j=1}^n (t - \lambda_j), \quad \lambda_j \in \mathbb{C}
+  \]
+
+  However, $\lambda_j$ is an eigenvalue of $T$ iff. $\lambda_j \in \mathbb{F}$. 
+
+  Let $\alpha$ be an orthonormal basis of $V$. Consider $W = \mathbb{C}^n$ and let $\psi = \langle \cdot, \cdot \rangle$ be usual inner product on $W$. And also consider the unique linear operator $S$ on $W$ satisfying $[S]_\beta^\beta = [T]_\alpha^\alpha$, where $\beta$ is the standard basis. 
+
+  Since $T$ is self-adjoint and $\alpha$ is orthonormal, we know that $([T]_\alpha^\alpha)^\ast = [T]_\alpha^\alpha$. Then, by definition of $S$ and $\psi$, it follows that $([S]_\beta^\beta)^\ast = [S]_\beta^\beta$. Thus, $S$ is self-adjoint. 
+
+  Using that $c_T = c_S$, it follows that $\lambda_j$ is an eigenvalue of $S$ for all $1 \leq j \leq n$. 
+
+  Let $\lambda$ be an eigenvalue of $S$ and $w \in W_{(S - \lambda I_W)} \setminus \{ 0 \}$. Given that $S$ is self-adjoint, 
+  \[
+    \lambda \langle w, w \rangle = \langle S(w), w \rangle = \langle w, S(w) \rangle = \overline{\lambda} \langle w, w \rangle 
+  \]
+
+  Thus, $\lambda = \overline{\lambda}$, showing that $\lambda \in \mathbb{R}$.
+\end{proof}
+
+\begin{theorem}[Spectral Theorem (Second Version)]\label{thm:spectral_theorem_2}
+  If $V$ is a vector space over $\mathbb{C}$ and $\varphi$ is an inner product on $V$, then there exists an orthogonal basis for $V$ w.r.t. $\varphi$ formed by eigenvectors of $T$ iff. $T$ is normal. 
+\end{theorem}
+
+\begin{proof}
+  Analogous to the proof of the theorem \ref{thm:spectral_theorem_1} using lemmas \ref{lm:202301051341} and \ref{lm:202301051407}.
+\end{proof}
+
+\begin{corollary}
+  If $\mathbb{F} = \mathbb{R}$, $T$ is normal, and $c_T$ factors in a product of terms with degree one, then there exists an orthogonal basis for $V$ formed by eigenvectors of $T$.
+\end{corollary}
+
+Notice that if we change the hypothesis of $T$ being normal for $T$ being self-adjoint, then by the lemma \ref{lm:202301051407} it follows that $c_T$ factors in a product of terms with degree one. Thus the theorem \ref{thm:spectral_theorem_1} holds in the case $\mathbb{F} = \mathbb{R}$. 

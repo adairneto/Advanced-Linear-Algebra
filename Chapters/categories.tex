@@ -1,0 +1,65 @@
+\chapter{Category Theory}
+
+In this first section, we introduce a useful tool to generalize and see our results in another perspective.
+
+\begin{definition}[Category]
+	A category $\mathfrak{C}$ consists of the following:
+	\begin{enumerate}
+		\item A collection $\text{Ob}(\mathfrak{C})$ of elements which are called \textbf{objects}.
+		\item For each pair of objects $A, B \in \text{Ob}(\mathfrak{C})$, a set $\hom_{\mathfrak{C}}(A,B)$ whose elements are called \textbf{morphisms}, \textbf{maps} or \textbf{arrows} from $A$ to $B$. They are denoted by \[ f : A \longrightarrow B \text{ or } A \overset{f}{\longrightarrow} B \] The object $A = \text{dom}~(f)$ is called the \textbf{domain} of $f$ and $B = \text{codom}~(f)$ is called the \textbf{codomain} of $f$.
+		\item The set of all morphisms of $\mathfrak{C}$ is denoted by $\text{Mor}~(\mathfrak{C})$ and must satisfy the following property. For every morphism $f$ there exist uniquely defined objects $A, B$ such that $f \in \hom_\mathfrak{C} (A,B)$. I.e., $\text{Mor}~(\mathfrak{C})$ is a disjoint union $\bigcup \hom_\mathfrak{C} (A,B)$ for all ordered pairs $A, B \in \text{Ob} (\mathfrak{C})$.
+		\item For $f \in \hom_\mathfrak{C} (A,B)$ and $g \in \hom_\mathfrak{C} (B,C)$ there is a morphism $g \circ f \in \hom_\mathfrak{C} (A,C)$ called the \textbf{composition} or \textbf{product} of $g$ with $f$. Moreover, composition is associative: \[ f \circ (g \circ h) = (f \circ g) \circ h \]
+		\item For each object $A \in \mathfrak{C}$ there exists a morphism $1_A \in \hom_\mathfrak{C} (A,A)$ called the \textbf{identity morphism} for $A$ with the property that if $f \in \hom_\mathfrak{C} (A,B)$ then \[ 1_B \circ f = f \text{ and } f \circ 1_A = f \]
+	\end{enumerate}
+\end{definition}
+
+\begin{definition}[Isomorphism for Categories]
+	The morphism $f : A \longrightarrow B$ is said to be an \textbf{isomorphism} if there exists a morphism $g : B \longrightarrow A$ such that
+	\[
+		g \circ f = 1_A \text{ and } f \circ g = 1_B
+	\] 
+\end{definition}
+
+But how are categories related? Can we define mappings between them? The following definition, of a `functor', is precisely that, to perform an operation on two categories. The idea is to take objects into objects and arrows into arrows.
+
+\begin{definition}[Functor]
+	Let $\mathfrak{C}$ and $\mathfrak{D}$ be categories. A \textbf{functor} $F : \mathfrak{C} \longrightarrow \mathfrak{D}$ consists of:
+	\begin{enumerate}
+		\item A mapping from objects in $\mathfrak{C}$ to objects in $\mathfrak{D}$: $\text{Ob} (\mathfrak{C}) \longrightarrow \text{Ob} (\mathfrak{D})$;
+		\item A mapping from morphisms in $\mathfrak{C}$ to morphisms in $\mathfrak{D}$ such that if $f \in \hom_\mathfrak{C}(A,B)$, then $F(f) \in \hom_\mathfrak{D}(F(A), F(B))$.
+		% \[ \text{Mor}~(\mathfrak{C}) \longrightarrow \text{Mor}~(\mathfrak{D}) \]
+	\end{enumerate}
+	Satisfying:
+	\begin{enumerate}
+		\item Identity is preserved: $F(1_A) = 1_{F(A)}$;
+		\item Composition is preserved: $F(g \circ f) = F(g) \circ F(f)$.
+	\end{enumerate}
+\end{definition}
+
+The functors defined above are often called \textbf{covariant functors}. If we `invert the arrows', we obtain \textbf{contravariant functors}. This notion of inverting arrows leads us to the following definition.
+
+\begin{definition}[Dual Category]
+	For every category $\mathfrak{C}$, we may form a new category $\mathfrak{C}^{\text{op}}$ called the \textbf{dual category}. Its objects are the same as those of $\mathfrak{C}$, but its morphisms are `reversed', i.e.
+	\[
+		\hom_{\mathfrak{C}^{\text{op}}}(A,B) = \hom_\mathfrak{C}(B,A)
+	\]
+
+	And the composition $g \circ f$ of morphisms in $\mathfrak{C}$ corresponds to the composition $f \circ g$ of the same morphisms in $\mathfrak{C}^{\text{op}}$.
+\end{definition}
+
+We generalize it further and define a map between functors.
+
+\begin{definition}[Natural Transformation]
+	Let $\mathfrak{C}$ and $\mathfrak{D}$ be categories and $\mathfrak{C} \overset{F}{\underset{G}{\rightrightarrows}} \mathfrak{D}$ be functors. A \textbf{natural transformation} $\lambda : F \longrightarrow G$ is a family \[ \left( F(A) \overset{\lambda_A}{\longrightarrow} G(A) \right)_{A \in \mathfrak{C}} \] of morphisms in $\mathfrak{D}$ such that for every map $f : A \longrightarrow A'$ in $\mathfrak{C}$, the square 
+	% https://q.uiver.app/?q=WzAsNCxbMCwwLCJGKEEpIl0sWzIsMCwiRihBJykiXSxbMCwyLCJHKEEpIl0sWzIsMiwiRyhBJykiXSxbMCwyLCJcXGxhbWJkYV9BIiwyXSxbMiwzLCJHKGYpIiwyXSxbMSwzLCJcXGxhbWJkYV97QSd9Il0sWzAsMSwiRihmKSJdXQ==
+	\[\begin{tikzcd}
+		{F(A)} && {F(A')} \\
+		\\
+		{G(A)} && {G(A')}
+		\arrow["{\lambda_A}"', from=1-1, to=3-1]
+		\arrow["{G(f)}"', from=3-1, to=3-3]
+		\arrow["{\lambda_{A'}}", from=1-3, to=3-3]
+		\arrow["{F(f)}", from=1-1, to=1-3]
+	\end{tikzcd}\]
+	commutes. The morphisms $\lambda_A$ are called the \textbf{components} of $\lambda$.
+\end{definition}

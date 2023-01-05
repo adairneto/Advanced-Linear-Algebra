@@ -2,7 +2,7 @@
 
 Our goal in this chapter is to break a vector space into `important' subspaces with respect to a polynomial associated with a given linear operator.
 
-Here we'll use $V$ to denote a vector space over $\mathbb{F}$, $T \in \text{End}(V)$, and $V_p := \{ v \in V : p(T)(v) = 0 \}$, i.e., the nullspace of the operator, where $p \in \mathbb{F}[x]$.
+Here we'll use $V$ to denote a vector space over $\mathbb{F}$, $T \in \text{End}(V)$, and $V_p := \{ v \in V : p(T)(v) = 0 \}$, where $p \in \mathbb{F}[x]$.
 
 \section{Annihilating Polynomials}
 
@@ -28,6 +28,12 @@ We'll state the following theorem and proceed with a discussion before proving e
 \end{definition}
 
 Since every polynomial ideal consists of all multiples of some fixed monic polynomial (the generator of the ideal), we may define the minimal polynomial for $T$ as the unique monic generator of the ideal of polynomials over $\mathbb{F}$ which annihilate $T$.
+
+The next example shows that it is possible to have $\mathfrak{A}_T = \{ 0 \}$ when the dimension is infinite.
+
+\begin{example}
+	If $V = \mathbb{F}[x]$ and $T$ is the operator $f(t) \mapsto tf(t)$, then $\mathfrak{A}_T = \{ 0 \}$.
+\end{example}
 
 Summarizing, the minimal polynomial $p$ for the linear operator $T$ is uniquely determined by these three properties:
 \begin{enumerate}
@@ -56,18 +62,7 @@ These definitions can be easily extended to a matrix $A$ instead of an operator 
 	Suppose that $\lambda$ is an eigenvalue. Then we can write $m_T(T)v = m_T(\lambda)v$, which implies that $m_T(\lambda) = 0$.
 \end{proof}
 
-The \hyperref[thm:cayley-hamilton]{Cayley-Hamilton Theorem} will narrow the search for the minimal polynomial of various operators. Before proving it, we need the next lemma.
-
-\begin{lemma}
-	If $T$ is a diagonalizable linear operator, then the minimal polynomial for $T$ is a product of distinct linear factors.
-\end{lemma}
-
-\begin{proof}
-	Follows from 
-	\[
-		m_T = (\lambda - \lambda_1) \cdots (\lambda - \lambda_k)
-	\]
-\end{proof}
+The \hyperref[thm:cayley-hamilton]{Cayley-Hamilton Theorem} will narrow the search for the minimal polynomial of various operators.
 
 \begin{theorem}[Cayley-Hamilton]\label{thm:cayley-hamilton}
 	Let $T \in \text{End}(V)$, where $V$ is finite-dimensional. If $c_T$ is a characteristic polynomial for $T$, then
@@ -83,10 +78,10 @@ The \hyperref[thm:cayley-hamilton]{Cayley-Hamilton Theorem} will narrow the sear
 		\item Take a basis $\beta$ of $V$ and write $A = [T]_\beta$.
 		\item Consider $A' = xI - A$ and notice that $c_T(x) = \det A'$.
 		\item Let $B$ be the adjoint matrix of $A'$. Note that its elements are polynomials of $x$ of degree at most $n-1$.
-		\item Write $b_{ij} = b_{ij}^{(0)} + b_{ij}^{(1)}x + \ldots + b_{ij}^{(n-1)}x^{n-1}$.
+		\item Write $b_{ij} = b_{ij}^{(0)} + b_{ij}^{(1)}x + \cdots + b_{ij}^{(n-1)}x^{n-1}$.
 		\item Let $B^{(k)}$ be the matrix whose entries are given by $b_{ij}^{(k)}$.
-		\item Write $c_T(x) = a_0 + a_1 x + \ldots + x^n$ and use that \[ B A' = \text{adj}(A') A' = (\det A') I = c_T(x) I \]
-		\item It follows that $(B^{(0)} + B^{(1)} x + \ldots + B^{(n-1)} x^{n-1})(xI - A) = (a_0 + a_1 x + \ldots + x^n) I$.
+		\item Write $c_T(x) = a_0 + a_1 x + \cdots + x^n$ and use that \[ B A' = \text{adj}(A') A' = (\det A') I = c_T(x) I \]
+		\item It follows that $(B^{(0)} + B^{(1)} x + \cdots + B^{(n-1)} x^{n-1})(xI - A) = (a_0 + a_1 x + \cdots + x^n) I$.
 		\item Comparing each coeficient, we have that
 		\[
 			\begin{cases}
@@ -97,15 +92,15 @@ The \hyperref[thm:cayley-hamilton]{Cayley-Hamilton Theorem} will narrow the sear
 				I &= B^{(n-1)}
 			\end{cases}
 		\]
-		\item Multiplying these equations by $I, A, A^2, \ldots, A^n$ respectively, and adding all of them, we have \[ c_T(T) = a_0 I + a_1 A + \ldots + A^n = 0 \]
+		\item Multiplying these equations by $I, A, A^2, \ldots, A^n$ respectively, and adding all of them, we have \[ c_T(T) = a_0 I + a_1 A + \cdots + A^n = 0 \]
 	\end{enumerate}
 \end{proof}
 
-\section{Invariant Subspaces}
+\section{Invariant Subspaces}\label{sec:inv_sub}
 
 Suppose $T \in \text{End}(V)$. If we decompose $V$ in direct sums
 	\[
-		V = U_1 \oplus \ldots \oplus U_m
+		V = U_1 \oplus \cdots \oplus U_m
 	\]
 where each $U_j$ is a proper subspace of $V$, then to understand the behavior of $T$ it is sufficient to study the behavior of $T$ in each $U_j$. To do that, we consider $T|_{U_j}$, i.e., $T$ restricted to $U_j$.
 
@@ -134,15 +129,6 @@ With the idea of invariant subspaces, the minimal polynomial gives us characteri
 	\]
 \end{lemma}
 
-\begin{definition}[Conductor]
-	Let $W$ be an invariant subspace of $T$ and $v \in V$. The set
-	\[
-		S_T(v, W) = \{ g \in \mathbb{F}[x] : g(T)v \in W \}
-	\]
-	is called the \textbf{$T$-conductor of $v$ into $W$}.
-
-	If $W = \{ 0 \}$, the conductor is called the \textbf{$T$-annihilator of $v$}.
-\end{definition}
 
 \begin{lemma}
 	Let $W$ be an invariant subspace of $T$. Then, $W$ is invariant under every polynomial in $T$. And, for every $v \in V$, $S(v, W)$ is an ideal in $\mathbb{F}[x]$.
@@ -191,7 +177,7 @@ With the idea of invariant subspaces, the minimal polynomial gives us characteri
 \end{corollary}
 
 \begin{theorem}
-	Let $V$ be finite-dimensional. Then $T$ is diagonalizable iff. the minimal polynomial is of the form
+	Let $V$ be finite-dimensional. Then $T$ is diagonalizable iff. the minimal polynomial for $T$ is a product of distinct linear factors.
 	\[
 		m_T = (\lambda - \lambda_1) \cdots (\lambda - \lambda_k) \quad ~\lambda_i \neq \lambda_j, ~\forall~i \neq j
 	\]
@@ -232,16 +218,16 @@ To continue our studies, we'll think less in terms of matrices and more in terms
 \begin{definition}[Independent Subspaces]
 	Let $W_1, \ldots, W_k$ be subspaces of $V$. Then $W_1, \ldots, W_k$ are \textbf{independent} if 
 	\[
-		v_1 + \ldots + v_k = 0, \quad v_i \in W_i
+		v_1 + \cdots + v_k = 0, \quad v_i \in W_i
 	\]
 	implies that each $v_i = 0$.
 \end{definition}
 
 \begin{lemma}
-	Let $V$ be finite-dimensional, $W_1, \ldots, W_k$ subspaces of $V$ and $W = W_1 + \ldots + W_k$. The following are equivalent.
+	Let $V$ be finite-dimensional, $W_1, \ldots, W_k$ subspaces of $V$ and $W = W_1 + \cdots + W_k$. The following are equivalent.
 	\begin{enumerate}
 		\item $W_1, \ldots, W_k$ are independent.
-		\item For all $2 \leq j \leq k$, we have \[ W_j \cap (W_1 + \ldots + W_{j-1}) = \{ 0 \} \]
+		\item For all $2 \leq j \leq k$, we have \[ W_j \cap (W_1 + \cdots + W_{j-1}) = \{ 0 \} \]
 		\item If $\beta_i$ is an ordered basis for $W_i$, $1 \leq i \leq k$, then the sequence $\beta = (\beta_1, \ldots, \beta_k)$ is an ordered basis for $W$.
 	\end{enumerate}
 \end{lemma}
@@ -253,7 +239,7 @@ Remark that if the conditions of the lemma above hold, then $W = W_1 \oplus \cdo
 	\begin{enumerate}
 		\item Each $P_i$ is a projection (i.e. $P_i^2 = P_i$);
 		\item If $i \neq j$, then $P_i P_j = 0$;
-		\item $I = P_1 + \ldots + P_k$;
+		\item $I = P_1 + \cdots + P_k$;
 		\item The range of $P_i$ is $W_i$.
 	\end{enumerate}
 
@@ -346,26 +332,57 @@ With this result that invariant direct sum decompositions can be described as pr
 	Since $v = P_1(v) + \cdots + P_k(v)$ and $P_j(v) = 0$ for $j \neq i$, then $v = P_i(v)$, which shows that $v \in \text{range}(P_i)$.
 \end{proof}
 
-\section{Primary Decomposition Theorem}
+\section{Primary Decomposition Theorem}\label{sec:pdt}
 
-The next example shows that it is possible to have $\mathfrak{A}_T = \{ 0 \}$ when the dimension is infinite.
-
-\begin{example}
-	If $V = \mathbb{F}[x]$ and $T$ is the operator $f(t) \mapsto tf(t)$, then $\mathfrak{A}_T = \{ 0 \}$.
-\end{example}
+Suppose that the minimal polynomial for $T$ is of the form
+\[
+  m_T = (x - \lambda_1)^{r_1} \cdots (x - \lambda_k)^{r_k}
+\]
+where $\lambda_1, \ldots, \lambda_k$ are distinct scalars. The next theorem shows that the whole space $V$ is the direct sum of the null spaces of $(T - \lambda_i I)^{r_i}$, for $i = 1, \ldots, k$. In fact, the theorem is more general, as we'll see.
 
 \begin{theorem}[Primary Decomposition Theorem (PDT)]\label{thm:pdt}
-	Suppose that $\mathfrak{A}_T \neq \{ 0 \}$ and let $p_1, \ldots, p_m$ be the distinct irreducible factors of $m_T$ in $\mathbb{F}[x]$. If $k_j$ is the multiplicity of $p_j$ in $m_T$, then
-	\[
-		V = V_{p_1^{k_1}} \oplus \ldots \oplus V_{p_m^{k_m}}
-	\]
-	
-	The polynomials $p_j^{k_j}$ are called the \textbf{primary factors (pf)} of $T$ and $V_{p_j^{k_j}}$ is said to be a \textbf{$T$-primary subspace} of $V$.
+  Let $T \in \text{End}(V)$, $\dim(V) < \infty$, and $p_1, \ldots, p_m$ be the distinct irreducible factors of $m_T$ in $\mathbb{F}[x]$. If $r_i$ is the multiplicity of $p_i$ in $m_T$, then
+  \begin{enumerate}
+    \item $V = V_{p_1^{k_1}} \oplus \cdots \oplus V_{p_m^{k_m}}$;
+    \item Each $V_{p_i^{k_i}}$ is invariant under $T$;
+    \item If $T_i = T|_{W_i}$, i.e., $T_i$ is the operator induced on $W_i$ by $T$, then the minimal polynomial for $T_i$ is $p_i^{r_i}$.
+  \end{enumerate}
+	The polynomials $p_i^{k_i}$ are called the \textbf{primary factors (pf)} of $T$ and $V_{p_i^{k_i}}$ is said to be a \textbf{$T$-primary subspace} of $V$.
 \end{theorem}
 
 In words, if there is non-zero polynomial in the annihilator, then there exists a minimal polynomial. Considering the prime factors of the minimal polynomial and its multiplicities, we can `break' the vector space as direct sum of certain subspaces, where each subspace is related to one of the factors of the minimal polynomial to its multiplicity.
 
 It follows immediately from the PDT that a linear operator is diagonalizable iff. its primary factors have degree one.
+
+\begin{corollary}
+  If $P_1, \ldots, P_k$ are projections associated with the primary decomposition of $T$, then each $P_i$ is a polynomial in $T$, and if an endomorphism $U$ commutes with $T$, then $U$ commutes with each $P_i$, i.e., each subspace $W_i$ is invariant under $U$.
+\end{corollary}
+
+Recall that
+
+\begin{definition}[Nilpotent Operator]
+  Let $N \in \text{End}(V)$. Then $N$ is \textbf{nilpotent} if there exists some positive integer $r$ such that $N^r = 0$.
+\end{definition}
+
+Under an algebraically closed field, the PDT allows us to `decompose' an endomophism into a \textbf{diagonalizable part} $D$ and a nilpotent operator $N$, i.e., $T = D + N$. Moreover, $D$ and $N$ commute.
+
+\begin{theorem}
+  Let $T \in \text{End}(V)$, $\dim(V) < \infty$. Suppose that the minimal polynomial for $T$ decomposes into a product of linear polynomials. Then there exists a diagonalizable operator $D$ and a nilpotent operator $N$ such that 
+  \begin{enumerate}
+    \item $T = D + N$;
+    \item $DN = ND$.
+  \end{enumerate}
+
+  $D$ and $N$ are uniquely determined by $(1)$ and $(2)$ and each of them is a polynomial in $T$.
+\end{theorem}
+
+\begin{corollary}
+  Let $V$ be a finite-dimensional vector space over an algebraically closed field. Then every endomorphism $T$ on $V$ can be written as the sum of a diagonalizable operator $D$ and a nilpotent operator $N$ which commute. These operators $D$ and $N$ are unique and each is a polynomial in $T$.
+\end{corollary}
+
+This fact is important because it reduces our work to the study of nilpotent operators. 
+
+\section{Alternative proofs for minimal polynomials}
 
 Recall that a subspace $W$ of $V$ is said to be $T$-invariant if $T(W) \subseteq W$. In particular, the restriction of $T$ to $W$ induces a linear operator in $W$ given by $w \mapsto T(w)$ for all $w \in W$.
 
@@ -377,14 +394,12 @@ Recall that a subspace $W$ of $V$ is said to be $T$-invariant if $T(W) \subseteq
 	Let $v \in V_S$ and notice that $S(T(v)) = T(S(v)) = 0$, which shows that $T(v) \in V_S$.
 \end{proof}
 
-Generalizing the notion of eigenspace. To do that, we want to describe the following set
+Now, let us try to describe the following set
 \begin{equation}\label{eq:set-goal-describe}
 	\{ p \in \mathbb{F}[x] : V_p \neq \{ 0 \} \}
 \end{equation}
 
-We already know that the minimal polynomial is inside this set.
-
-For any two polynomials $f, p$, then $V_p \subseteq V_{fp}$. In particular, $V_p^k \subseteq V_p^{k+1}$ for all $k \geq 0$. Therefore, the set
+We already know that the minimal polynomial is inside this set. Besides, for any two polynomials $f, p$, then $V_p \subseteq V_{fp}$. In particular, $V_p^k \subseteq V_p^{k+1}$ for all $k \geq 0$. Therefore, the set
 \[
 	V_p^\infty := \bigcup_{k > 0} V_p^k
 \]
@@ -473,15 +488,13 @@ In a finite dimensional vector space, how can we compute the minimal polynomial?
 	
 	Let $a_0, \ldots, a_{m-1} \in \mathbb{F}$ such that
 	\[
-		T^m = a_0 I_V + \ldots + a_{m-1} T^{m-1} \text{ and } f(t) = t^m - \sum_{k=0}^{m-1} a_k t^k
+		T^m = a_0 I_V + \cdots + a_{m-1} T^{m-1} \text{ and } f(t) = t^m - \sum_{k=0}^{m-1} a_k t^k
 	\]
 	
 	It follows that $f(T) = 0$ and, therefore, $f \in \mathfrak{A}_T \setminus \{ 0 \}$.
 \end{proof}
 
-\textbf{Exercise.} Prove that $f = m_T$, where $f$ is as in the preceeding proof.
-
-How can we use this fact and matricial representations of $T$ to compute $m_T$?
+\textbf{Exercise.} Prove that $f = m_T$, where $f$ is as in the preceeding proof. How can we use this fact and matricial representations of $T$ to compute $m_T$?
 
 \section{Cyclic subspaces}
 
@@ -490,7 +503,7 @@ How can we use this fact and matricial representations of $T$ to compute $m_T$?
 	\[
 		v_0 = v, v_1 = T(v), \ldots, v_k = T^k(v), \ldots
 	\]
-	is called a \textbf{$T$-cycle} generated by $v$. We denote it by $\mathfrak{C}_T^\infty (v) = (v_k)_{k \geq 0}$ and $\mathfrak{C}_T^m (v) = v_0, v_1, \ldots, v_{m-1}$.
+  is called a \textbf{$T$-cycle} generated by $v$. We denote it by \[ \mathfrak{C}_T^\infty (v) = (v_k)_{k \geq 0} \quad \textbf{ and } \quad \mathfrak{C}_T^m (v) = v_0, v_1, \ldots, v_{m-1} \]
 
 	We define the \textbf{$T$-cyclic subspace generated by $v$} as
 	\[
@@ -500,7 +513,7 @@ How can we use this fact and matricial representations of $T$ to compute $m_T$?
 
 If $\dim(V)$ is finite, there exists $m \geq 0$ minimal such that $\mathfrak{C}_T^{m+1}(v)$ is linearly dependent. Notice that $m \geq 1$ if $v \neq 0$. In particular, if $\mathfrak{C}_T(v) := \mathfrak{C}_T^{m}(v)$ is a basis for $C_T(v)$ and $v_m$ is a linear combination of the linearly independent vectors $v_0, \ldots, v_{m-1}$. And
 \[
-	v_m = a_0 v_0 + \ldots + a_{m-1} v_{m-1} = \sum_{k=0}^{m-1} a_k T^k(v)
+	v_m = a_0 v_0 + \cdots + a_{m-1} v_{m-1} = \sum_{k=0}^{m-1} a_k T^k(v)
 \]
 
 Defining $m_{T,v}(t) = t^m - a_{m-1}t^{m-1} - \ldots - a_1t - a_0$, called the \textbf{minimal polynomial of $v$ with respect to $T$}, 
@@ -532,13 +545,13 @@ The next result shows that it is possible to approximate the minimal polynomial 
 We proceed to show that coprimality implies direct sum.
 
 \begin{theorem}[Coprimality implies direct sum]
-	If each pair $p_1, \ldots, p_m \in \mathbb{F}[x]$ is relatively prime, then the sum $V_{p_1}^\infty + \ldots + V_{p_m}^\infty$ is direct.
+	If each pair $p_1, \ldots, p_m \in \mathbb{F}[x]$ is relatively prime, then the sum $V_{p_1}^\infty + \cdots + V_{p_m}^\infty$ is direct.
 \end{theorem}
 
 \begin{proof}
 	Let $v_j \in V_{p_j}^\infty \setminus \{ 0 \}$, for $1 \leq j \leq m$. Our goal is to show that $v_1, \ldots, v_m$ is linearly independent (which is equivalent to show that the sum in the theorem is direct). We proceed by induction on $m$, which is immediate when $m = 1$. 
 
-	Suppose that $a_1, \ldots, a_m \in \mathbb{F}$ satisfies $a_1 v_1 + \ldots + a_m v_m = 0$. By the induction hypothesis, $v_1, \ldots, v_{m-1}$ is linearly independent. 
+	Suppose that $a_1, \ldots, a_m \in \mathbb{F}$ satisfies $a_1 v_1 + \cdots + a_m v_m = 0$. By the induction hypothesis, $v_1, \ldots, v_{m-1}$ is linearly independent. 
 
 	For each $1 \leq j \leq m$, choose $k_j$ such that $p_j^{k_j}(T)(v_j) = 0$ and consider 
 	\[
@@ -547,7 +560,7 @@ We proceed to show that coprimality implies direct sum.
 
 	Notice that 
 	\[
-		0 = p(T)(a_1 v_1 + \ldots + a_m v_m) = a_m p(T)(v_m)
+		0 = p(T)(a_1 v_1 + \cdots + a_m v_m) = a_m p(T)(v_m)
 	\]
 
 	By the Lemma \ref{lemma:gcd-restriction}, the restriction $p_j^{k_j}(T)$ to $V_{p_m^{k_m}}$ is injective for $j \neq m$, it follows that $p(T)(v_m) \neq 0$ and, therefore, $a_m = 0$. The induction hypothesis implies that $a_j = 0$ for all $j$.
@@ -556,7 +569,7 @@ We proceed to show that coprimality implies direct sum.
 Finally, we can decompose $V$ into direct sums.
 
 \begin{theorem}
-	Let $f_1, \ldots, f_m \in \mathbb{F}[x]$, where each pair is relatively prime and $f = f_1 \ldots f_m$. Then, $V_f = V_{f_1} \oplus \ldots \oplus V_{f_m}$.
+	Let $f_1, \ldots, f_m \in \mathbb{F}[x]$, where each pair is relatively prime and $f = f_1 \ldots f_m$. Then, $V_f = V_{f_1} \oplus \cdots \oplus V_{f_m}$.
 \end{theorem}
 
 \begin{proof}
@@ -607,23 +620,23 @@ Recall that if $v$ is an eigenvector, then $T(v) = \lambda v$. Hence, a basis fo
 A subspace $W$ is said to be \textbf{$T$-cyclic} if $W = C_T(v)$ for some $v \in V$.
 
 \begin{theorem}
-	If $p \in \mathbb{F}[x]$ is irreducible and $\dim (V_p)$ is finite, there exist $l \geq 0$ and $v_1, \ldots, v_l \in V_p$ such that $V_p = C_T(v_1) \oplus \ldots \oplus C_T(v_l)$.
+	If $p \in \mathbb{F}[x]$ is irreducible and $\dim (V_p)$ is finite, there exist $l \geq 0$ and $v_1, \ldots, v_l \in V_p$ such that $V_p = C_T(v_1) \oplus \cdots \oplus C_T(v_l)$.
 \end{theorem}
 
 \begin{proof}
-	Suppose that we found vectors $v_1, \ldots, v_k \in V_p$ such that $C_T(v_1) + \ldots + C_T(v_k)$ is a direct sum. We will show that 
+	Suppose that we found vectors $v_1, \ldots, v_k \in V_p$ such that $C_T(v_1) + \cdots + C_T(v_k)$ is a direct sum. We will show that 
 	\begin{equation}\label{eq:202210200905}
-		C_T(v) \cap (C_T(v_1) + \ldots + C_T(v_k)) = \{ 0 \}
+		C_T(v) \cap (C_T(v_1) + \cdots + C_T(v_k)) = \{ 0 \}
 	\end{equation}
-	for all $v \in V_P \setminus C_T(v_1) + \ldots + C_T(v_k)$. 
+	for all $v \in V_P \setminus C_T(v_1) + \cdots + C_T(v_k)$. 
 
 	If this is true, since $\dim (V_p) < \infty$, it is immediate how to choose a sequence of vectors starting with $v_1 \in V_p$ arbitrary. 
 
-	To show \eqref{eq:202210200905}, suppose that $w \in C_T(v) \cap (C_T(v_1) + \ldots + C_T(v_k))$ is non-zero. Therefore, there exists $w_j \in C_T(v_j)$ such that $w = w_1 + \ldots + w_k$.
+	To show \eqref{eq:202210200905}, suppose that $w \in C_T(v) \cap (C_T(v_1) + \cdots + C_T(v_k))$ is non-zero. Therefore, there exists $w_j \in C_T(v_j)$ such that $w = w_1 + \cdots + w_k$.
 
 	By the lemma \ref{lemma:202210200909}, $C_T(w) = C_T(v)$ and, by the lemma \ref{lemma:202210200910}, there exists $f \in \mathbb{F}[x]$ such that $v = f(T)(w)$. Hence,
 	\[
-		v = f(T)(w_1) + \ldots + f(T)(w_k) \in C_T(v_1) + \ldots + C_T(v_k)
+		v = f(T)(w_1) + \cdots + f(T)(w_k) \in C_T(v_1) + \cdots + C_T(v_k)
 	\]
 	contradicting our hypothesis about $v$.
 \end{proof}
@@ -983,8 +996,289 @@ Repeating this procedure, we find a rational basis.
 	$V$ and $\{ 0 \}$ are $T$-admissible. If $V$ is $T$-cyclic and $v$ satisfies $m_v = m_T$, then $V = C_T(v)$ and we can find a decomposition as in the \hyperref[thm:CDT]{CDT}.
 \end{example}
 
-%\begin{equation*}
-%	\begin{aligned}
-%	
-%	\end{aligned}
-%\end{equation*}
+To prove the Cyclic Decomposition Theorem, we need the following concept.
+
+\begin{definition}[Conductor]
+	Let $W$ be an invariant subspace of $T$ and $v \in V$. The set
+	\[
+    \mathfrak{C}_{T,v}(W) = \{ p \in \mathbb{F}[x] : p(T)(v) \in W \}
+	\]
+	is called the \textbf{$T$-conductor of $v$ into $W$}.
+
+	If $W = \{ 0 \}$, the conductor is called the \textbf{$T$-annihilator of $v$}.
+\end{definition}
+
+Notice that $m_v$ divides every element of $\mathfrak{A}_{T,v}$ and there exists an unique monic polynomial $c_{v,W}$ that divides every element of $\mathfrak{C}_{T,v}(W)$.
+
+It follows that $c_{v,W} | c_{v,W'}$ if $W' \subseteq W$. Therefore, $c_{v,W} | m_v$. If $v \in W$, then $c_{v,W} = 1$.
+
+\begin{definition}
+  A $T$-invariant subspace $W$ of $V$ is said to be \textbf{$T$-admissible} iff. for all $v \in V$ and $f \in \mathfrak{C}_{T,v}(W)$, there exists $w \in W$ such that $f(T)(w) = f(T)(v)$.
+\end{definition}
+
+\begin{lemma}\label{lm:202211141448}
+  Let $v$ be as in the second item of the Theorem \ref{thm:202211141330}. Then, for all $u \in V$ satisfying $C_T(u) \cap (W \oplus C_T(v)) = \{0 \}$, $m_u | m_v$.
+\end{lemma}
+
+\begin{lemma}\label{lm:202211141449}
+  If $v \in V$, then $C_T(v) \cap W = \{ 0 \}$ (i.e. is a direct sum) iff. $m_v = c_{v,W}$.
+\end{lemma}
+
+\begin{lemma}\label{lm:202211141450}
+  Let $W$ be a $T$-invariant subspace of $V$ and suppose that $u, v \in V$ such that $v-u \in W$. Then $\mathfrak{C}_{T,v}(W) = \mathfrak{C}_{T,u}(W)$.
+\end{lemma}
+
+\begin{proof}
+  Let $w = v-u$ and notice that 
+  \[
+    f(T)(v) - f(T)(u) = f(T)(w) \in W \quad \forall~f \in \mathbb{F}[x]
+  \]
+  Hence, $f \in \mathfrak{C}_{T,u}(W)$ iff. $f \in \mathfrak{C}_{T,v}(W)$.
+\end{proof}
+
+\begin{theorem}\label{thm:202211141330}
+  Let $W$ be a proper subspace and $T$-admissible of $V$. Then the following are true:
+  \begin{enumerate}
+    \item For all $v \in V \setminus W$, there exists $v' \in V$ such that $m_{v'} = c_{v,W}$ and \[ W + C_T(v) = W \oplus C_T(v') \] 
+    \item $W + C_T(v)$ is $T$-admissible if $v \in V$ satisfies $C_T(v) \cap W = \{ 0 \}$ and \[ \deg(m_v) = \max \{ \deg(m_u) : u \in V, C_T(u) \cap W = \{ 0 \} \} \]
+  \end{enumerate}
+\end{theorem}
+
+\begin{proof}
+  $(1)$ Using the definition of $T$-admissible, let $w \in W$ such that $c_{v,W}(T)(v) = c_{v,W}(T)(w)$ and consider $v' = v-w$. 
+
+  Since $W, C_T(v)$, and $C_T(v')$ are $T$-invariant,
+  \[
+    W + C_T(v) = W + C_T(v')
+  \]
+  and we need to show that $W \cap C_T(v') = \{ 0 \}$.
+
+  By the Lemma \ref{lm:202211141450}, $c_{v,W} = c_{v',W}$ and 
+  \[
+    c_{v',W}(T)(v') = c_{v,W}(T)(v-w) = 0
+  \]
+  
+  Hence, $c_{v',W} \in \mathfrak{A}_{T,v'}$ and thus $c_{v', W} = m_{v'}$. By the Lemma \ref{lm:202211141449}, $C_T(v') \cap W = \{ 0 \}$. Remark that $c_{v,W}$ is the minimal polynomial in the space $V/W$.
+
+  $(2)$ Let $W' = W + C_T(v)$. If $W' = V$, there is nothing to do. Suppose that $W \subsetneq V$ and take $u \in V \setminus W'$. Let $w \in W$ and $p \in \mathbb{F}[x]$ such that 
+  \[
+    c_{u, W'}(T)(u) = w + p(T)(v)
+  \]
+  
+  We're going to show that 
+  \begin{equation}\label{eq:202211170928}
+    c_{u, W'} | p \quad \text{ and } \quad w = c_{u,W'}(T)(w') \text{ for some } w' \in W
+  \end{equation}
+
+  Writing the division of $p$ by $c_{u, W'}$, we have that $p = qc_{u,W'} + r$. Define $u' := u - q(T)(v) \in V \setminus W'$. By the Lemma \ref{lm:202211141450}, $c_{u, W'} = c_{u',W'}$.   
+
+  By the part $(1)$ and choice of $v$, $\deg(m_v) \geq \deg(c_{u',W})$, and
+  \begin{equation*}
+  \begin{aligned}
+  	c_{u, W'}(T)(u') &= c_{u, W'}(T)(u - q(T)(v)) = c_{u, W'}(T)(u) - (p(T) - r(T))(v) \\
+	&= w + p(T)(v) - (p(T) - r(T))(v) = w + r(T)(v)
+  \end{aligned}
+  \end{equation*}
+  
+  On the other hand, there exists $h \in \mathbb{F}[x]$ such that $c_{u', W} = h c_{u', W'}$. Hence,
+  \begin{equation*}
+  \begin{aligned}
+	  c_{u',W}(T)(u') = h(T)(c_{u,W'} (T(u'))) = h(T)(w + r(T)(v))
+  \end{aligned}
+  \end{equation*}
+  and thus $hr \in \mathfrak{C}_{T,v}(W)$.
+  
+  If $r \neq 0$, then $\deg(h) + \deg(r) \geq \deg(c_{v,W}) = \deg(m_v) \geq \deg(c_{u',W}) = \deg(h) + \deg(c_{u,W'})$ and, therefore, $\deg(r) \geq \deg(c_{u,W'})$, which is impossible. Hence, $r = 0$ and the first part of \eqref{eq:202211170928} follows.
+  
+  Now notice that
+  \[
+  	c_{u,W'}(T)(u') = w + r(T)(v) = w \in W
+  \]
+  shows that $c_{u,W'} \in \mathfrak{C}_{T, u'}(W)$. Given that $W$ is $T$-admissible, there exists $w' \in W$ such that $c_{u,W'}(T)(w') = c_{u,W'}(T)(u') = w$, proving the second part \eqref{eq:202211170928}.
+
+  Take $q \in \mathbb{F}[x]$ such that $p = q c_{u,W'}$ and $w'' := w' + q(T)(v) \in W'$. Then
+  \[
+    c_{u,W'}(T)(u) = c_{u, W'}(T)(w') + c_{u, W'}(T)(q(T)(v)) = c_{u,W'}(T)(w'')
+  \]
+  and hence $W'$ is $T$-admissible.
+\end{proof}
+
+\begin{theorem}[Cyclic Decomposition Theorem (Existence Part)]
+	If $W$ is the proper subspace and $T$-admissible of $V$, there exist $m \in \mathbb{Z}_{\geq 1}$ and $v_1, \ldots, v_m \in V \setminus \{ 0 \}$ satisfying
+	\begin{enumerate}
+		\item The sum $W' = \sum_{j=1}^m C_T(v_j)$ is direct and $V = W \oplus W'$;
+		\item $m_{v_{j+1}} | m_{v_j}, \quad \forall ~1 \leq j < m$.
+	\end{enumerate}
+\end{theorem}
+
+\begin{proof}
+	We proceed by induction on $k := \dim(V) - \dim(W) \geq 1$. If $k = 1$, it is immediate by the previous result. In this case, $m = 1$ and $v_1 = v'$ given by the Theorem \ref{thm:202211141330} is an eigenvector.
+	
+	Suppose that $k > 1$ and, by induction hypothesis, the theorem is true for any subspace $T$-admissible $U$ of $V$ satisfying $\dim(V) - \dim(U) < k$. Choose $v_1$ as in the second item of the Theorem \ref{thm:202211141330} and let $U = W \oplus C_T(v_1)$, which satisfies our conditions.
+	
+	Thus, there exist $v_2, \ldots, v_m$ such that $V = U \oplus C_T(v_2) \oplus \cdots \oplus C_T(v_m)$ and $m_{v_{j+1}} | m_{v_j}$ for all $2 \leq j < m$. The Lemma \ref{lm:202211141448} gives that $m_{v_2} | m_{v_1}$.
+\end{proof}
+
+\begin{lemma}\label{lm:202211170945}
+	Let $S, T \in \text{End}(V)$ and suppose that $S$ is invertible and $S \circ T = T \circ S$. Then, $m_{T,S(v)} = m_{T,v}$ for all $v \in V$.
+\end{lemma}
+
+\begin{proof}
+	Notice that 
+	\[
+		m_v(T)(S(v)) = S(m_v(T)(v)) = 0
+	\]
+	shows that $m_{S(v)} | m_v$. 
+	
+	On the other hand, let $u = S(v)$ and recall that $S^{-1} \circ T = T \circ S^{-1}$. Then
+	\[
+		m_{S(v)}(T)(v) = m_u(T)(S^{-1}(u)) = S^{-1}(m_u(T)(u)) = 0
+	\]
+\end{proof}
+
+\begin{lemma}\label{lm:202211170946}
+	If $f \in \mathbb{F}[x], v \in V, u = f(T)(v)$, and $p = \gcd(f, m_v)$, then $m_v = p m_u$.
+\end{lemma}
+
+\begin{proof}
+	Suppose wlog that $V = C_T(v)$. Otherwise, apply the following argument to the induced operator $T$ on $C_T(v)$.
+	
+	If $f$ and $m_v$ are coprime, then we shows that $m_u = m_v$. If $S = f(T)$, then $S \circ T = T \circ S$ and $S$ is bijective (since $\dim(V) < \infty$). The conclusion follows from the Lemma \ref{lm:202211170945}.
+	
+	Now suppose that $f$ is prime. if $f$ does not divide $m_v$, then $\gcd(f, m_v) = 1$ and we're back to the previous case. If $f = \gcd(f, m_v)$, we show that $m_u = g$, where $g = m_v / f$.
+	\[
+		g(T)(u) = g(T)(f(T)(v)) = (gf)(T)(v) = m_v(T)(v) = 0
+	\]
+	showing that $m_u | g$. If $m_u \neq g$, then 
+	\[
+		\deg(m_u) < \deg(g) = \deg(m_v) - \deg(f)
+	\]
+	
+	However,
+	\[
+		(m_u f)(T)(v) = m_u(T)(f(T)(v)) = m_u(T)(u) = 0
+	\]
+	shows that $m_v | m_u f$. Thus
+	\[
+		\deg(m_v) \leq \deg(m_u) + \deg(f)
+	\]
+	gives a contradiction. Hence, $m_u = g$.
+	
+	In the general case, we proceed by induction on $\deg(f) \geq 1$, which starts in the preceeding case. Suppose that $\deg(f) > 1$ and let $h$ be an irreducible factor of $f$, and $g$ be such that $hg = f$, $u' = g(T)(v)$, $q = \gcd(g, m_v)$, and $r = \gcd(h, m_{u'})$.
+	
+	Notice that $u = h(T)(u')$. By induction hypothesis,
+	\[
+		m_v = q m_{u'} \quad \text{ and } \quad m_{u'} = r m_u
+	\]
+	
+	By the properties of greatest common divisor, it follows that $q r = p$.
+\end{proof}
+
+\begin{theorem}[Cyclic Decomposition Theorem (Uniqueness Part)]
+  If $W$ is a proper and $T$-admissible subspace of $V$, and suppose that $v_1, \ldots, v_m \in V \setminus \{ 0 \}$ and $u_1, \ldots, u_l \in V \setminus \{ 0 \}$ satisfy
+	\begin{enumerate}
+    \item The sums $W' := \sum_{j=1}^m C_T(v_j)$ and $W'' := \sum_{j=1}^l C_T(u_j)$ are direct;
+    \item $V = W \oplus W' = W \oplus W''$;
+    \item $m_{v_{j+1}} | m_{v_j}, \quad \forall ~1 \leq j < m$, and $m_{u_{j+1}} | m_{u_j}, \quad \forall ~1 \leq j < l$.
+	\end{enumerate}
+  Then $l = m$ and $m_{v_j} = m_{u_j}$ for all $1 \leq j \leq m$.
+\end{theorem}
+
+\begin{proof}
+	Suppose $m \leq l$ and notice that $l = m$ will follow if we show that 
+	\begin{equation}
+		m_{u_j} = m_{v_j} \quad \forall~1 \leq j \leq m
+	 \label{eq:202211212038}
+	\end{equation}
+	
+	In fact, these identities imply that
+	\[
+		\dim(V) = \dim(W) + \sum_{j=1}^m \dim(C_T(v_j)) = \dim(W) + \sum_{j=1}^m \dim(C_T(u_j))
+	\]
+  and therefore there can't be more elements at the decomposition. 
+
+  Now consider $S_j := m_{v_j}(T)$, for $1 \leq j \leq m$. Applying $S_1$ to both decompositions, 
+  \[
+    S_1(W) \oplus S_1(C_T(u_1)) \oplus \cdots \oplus S_1(C_T(u_l)) = S_1(W)
+  \]
+  by definition of $S_1$ and the fact that $m_{v_{j+1}} | m_{v_j}$.
+
+  Hence, $m_{v_1}(T)(u_1) = 0$, showing that $m_{u_1} | m_{v_1}$. In a similar way, we show that $m_{v_1} | m_{u_1}$ and, therefore, $m_{u_1} = m_{v_1}$.
+
+  If $m = 1$, then \eqref{eq:202211212038} is proved. Otherwise, apply $S_1 = m_{v_2}(T)$ to obtain 
+  \[
+    S_2(W) \oplus S_2(C_T(u_1)) \oplus \cdots \oplus S_2(C_T(u_l)) = S_2(W) \oplus S_2(C_T(v_1)) 
+  \]
+
+  Since $f(T)(C_T(v)) = C_T(f(T)(v))$, for all $f \in \mathbb{F}[x]$ and $v \in V$,
+  \[
+    S_2(W) \oplus C_T(S_2(u_1)) \oplus \cdots \oplus C_T(S_2(u_l)) = S_2(W) \oplus C_T(S_2(v_1))
+  \]
+
+  By the Lemma \ref{lm:202211170946}, $m_{S_2(v_1)} = \frac{m_{v_1}}{m_{v_2}} = \frac{m_{u_1}}{m_{v_2}} = m_{S_2(u_1)}$. Hence, 
+  \[
+    \dim(C_T(S_2(v_1))) = \dim(C_T(S_2(u_1)))
+  \]
+  and $C_T(S_2(u_j)) = \{ 0 \}$, for all $j \geq 2$. Thus, $m_{v_2}(T)(u_2) = S_2(u_2) = 0$, showing that $m_{u_2} | m_{v_2}$. Analogously, $m_{v_2} | m_{u_2}$ and, therefore, $m_{u_2} = m_{v_2}$. 
+
+  Proceding recursively using $S_j$, the \eqref{eq:202211212038} is proved.
+\end{proof}
+
+Using the Primary Decomposition Theorem and the Cyclic Decomposition Theorem, how can we obtain the Jordan Decomposition Theorem? 
+
+Consider the $T$-primary decomposition of $V$, $V = V_1 \oplus \cdots \oplus V_m$, and obtain a decomposition of each $V_i$ as in the CDT: 
+\[
+  V_i = C_T(v_{i,1}) \oplus \cdots \oplus C_T(v_{i,l_i})
+\]
+
+Then $m_{v_{i,j}} = p_i^{k_{i,j}}$, where $k_{i,1} \geq \ldots \geq k_{i,l_i}$, in which $p_i$ is the corresponding prime factor of $m_T$. It follows that
+\[
+  V = \bigoplus_{i=1}^m \bigoplus_{j=1}^{l_i} C_T(v_{i,j})
+\]  
+
+If $p_i = t - \lambda_i$ for all $i$, and for each $v_{i,j}$, construct the corresponding Jordan $T$-cycle, which we'll call $\mathfrak{J}_{i,j}$. Thus, \[ \mathfrak{J} := \bigcup_{i,j} \mathfrak{J}_{i,j} \] is a Jordan basis of $V$ w.r.t. $T$.
+
+Reciprocally, supposing that there exists a Jordan basis w.r.t. $T$ for $V$, and using such a basis to compute $c_T$, we conclude that $\deg(p_i) = 1$, for all $i$.
+
+\begin{theorem}
+  $S$ and $T$ are similar if, and only if, they have the same rational canonical form. If $T$ has a Jordan canonical form, then $S \sim T$ if, and only if, they have the same Jordan canonical form. 
+\end{theorem}
+
+\begin{proof}
+  Consequence of the \hyperref[thm:CDT]{Cyclic Decomposition Theorem}.
+\end{proof}
+
+If $\mathbb{K}$ is a subfield $\mathbb{F}$, it may happen that $A$ and $B$ are similar over $\mathbb{F}$ but not over $\mathbb{K}$.
+
+\begin{example}
+  Let 
+  \[
+    A = \begin{bmatrix}
+      0 & -1 \\
+      1 & 0 
+      \end{bmatrix}, \quad \begin{bmatrix}
+      i & 0 \\
+      0 & -i 
+    \end{bmatrix}
+  \]
+  
+  Then over $\mathbb{C}$, $c_A(t) = t^2 + 1 = (t-i)(t+i)$, and $A$ has the Jordan form 
+  \[
+    J_A = \begin{bmatrix} 
+      i & 0 \\
+      0 & -i 
+    \end{bmatrix} = B
+  \]
+
+  Thus, $A$ and $B$ are similar over $\mathbb{C}$.
+
+  Notice that the rational form of $A$ is $R_A = A$. Since the characteristic polynomial for $B$ is $c_B(t) = (t-i)(t+i) = c_A(t)$, the rational form of $B$ is 
+  \[
+    R_B = \begin{bmatrix}
+      0 & -1 \\
+      1 & 0 
+    \end{bmatrix} = A
+  \]
+
+  Notice, however, that over $\mathbb{R}$ the matrices $A$ and $B$ are not similar
+\end{example}

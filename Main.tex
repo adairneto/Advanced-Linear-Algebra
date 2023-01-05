@@ -8,9 +8,7 @@
 
 % Setup
 \hypersetup{
-    colorlinks=false,
     pdftitle={Advanced Linear Algebra},
-    pdfpagemode=FitV,
 }
 
 \begin{document}
@@ -23,10 +21,19 @@
 
 % Chapters
 \include{Chapters/review}
-\include{Chapters/dual}
-\include{Chapters/polynomials}
 \include{Chapters/canonical_forms}
+\include{Chapters/multilinear}
+
+% Structure of Linear Operator
+% Canonical Forms 
+% Multilinearity and Duality
+% Tensorial Algebra
+
+\appendix
+\include{Chapters/categories}
+\include{Chapters/quotient_spaces}
 \include{Chapters/determinants}
+\include{Chapters/polynomials}
 
 % Bibliography
 \nocite{*}

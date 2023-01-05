@@ -2,16 +2,18 @@ This is BibTeX, Version 0.99d (TeX Live 2022/Arch Linux)
 Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
 The top-level auxiliary file: Main.aux
 A level-1 auxiliary file: Chapters/review.aux
-A level-1 auxiliary file: Chapters/dual.aux
-A level-1 auxiliary file: Chapters/polynomials.aux
 A level-1 auxiliary file: Chapters/canonical_forms.aux
+A level-1 auxiliary file: Chapters/multilinear.aux
+A level-1 auxiliary file: Chapters/categories.aux
+A level-1 auxiliary file: Chapters/quotient_spaces.aux
 A level-1 auxiliary file: Chapters/determinants.aux
+A level-1 auxiliary file: Chapters/polynomials.aux
 The style file: alpha.bst
 Database file #1: Main.bib
 Warning--empty publisher in hoffman1971linear
 You've used 6 entries,
             2543 wiz_defined-function locations,
-            592 strings with 5019 characters,
+            594 strings with 5077 characters,
 and the built_in function-call counts, 1753 in all, are:
 = -- 149
 > -- 70
