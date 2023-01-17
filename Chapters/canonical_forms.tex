@@ -2,7 +2,7 @@
 
 Our goal in this chapter is to break a vector space into `important' subspaces with respect to a polynomial associated with a given linear operator.
 
-Here we'll use $V$ to denote a vector space over $\mathbb{F}$, $T \in \text{End}(V)$, and $V_p := \{ v \in V : p(T)(v) = 0 \}$, where $p \in \mathbb{F}[x]$.
+Here we'll use $V$ to denote a vector space over $\mathbb{F}$, $T \in \End(V)$, and $V_p := \{ v \in V : p(T)(v) = 0 \}$, where $p \in \mathbb{F}[x]$.
 
 \section{Annihilating Polynomials}
 
@@ -49,7 +49,7 @@ These definitions can be easily extended to a matrix $A$ instead of an operator 
 \end{theorem}
 
 \begin{proof}
-	Let $T \in \text{End}(V)$, where $\dim V = n$, $m_T$ the minimal polynomial for $T$ and $\lambda$ a scalar. We'll show that $m_T(\lambda) = 0$ iff. $\lambda$ is a characteristic value of $T$.
+	Let $T \in \End(V)$, where $\dim V = n$, $m_T$ the minimal polynomial for $T$ and $\lambda$ a scalar. We'll show that $m_T(\lambda) = 0$ iff. $\lambda$ is a characteristic value of $T$.
 
 	Suppose that $m_T(\lambda) = 0$. Then write $m_T = (x-\lambda)q(x)$. By the minimality of $m_T$, it follows that $q(T) \neq 0$ and, therefore, there exists $u \in V$ such that $q(T)(u) \neq 0$.
 	
@@ -65,7 +65,7 @@ These definitions can be easily extended to a matrix $A$ instead of an operator 
 The \hyperref[thm:cayley-hamilton]{Cayley-Hamilton Theorem} will narrow the search for the minimal polynomial of various operators.
 
 \begin{theorem}[Cayley-Hamilton]\label{thm:cayley-hamilton}
-	Let $T \in \text{End}(V)$, where $V$ is finite-dimensional. If $c_T$ is a characteristic polynomial for $T$, then
+	Let $T \in \End(V)$, where $V$ is finite-dimensional. If $c_T$ is a characteristic polynomial for $T$, then
 	\[
 		c_T(T) = 0
 	\]
@@ -98,7 +98,7 @@ The \hyperref[thm:cayley-hamilton]{Cayley-Hamilton Theorem} will narrow the sear
 
 \section{Invariant Subspaces}\label{sec:inv_sub}
 
-Suppose $T \in \text{End}(V)$. If we decompose $V$ in direct sums
+Suppose $T \in \End(V)$. If we decompose $V$ in direct sums
 	\[
 		V = U_1 \oplus \cdots \oplus U_m
 	\]
@@ -139,7 +139,7 @@ With the idea of invariant subspaces, the minimal polynomial gives us characteri
 \end{definition}
 
 \begin{lemma}
-	Let $V$ be finite-dimensional and that the minimal polynomial $m_T$ for $T \in \text{End}(V)$ is a product of linear factors 
+	Let $V$ be finite-dimensional and that the minimal polynomial $m_T$ for $T \in \End(V)$ is a product of linear factors 
 	\[
 		m_T = (\lambda - \lambda_1)^{r_1} \cdots (\lambda - \lambda_k)^{r_k}
 	\]
@@ -152,7 +152,7 @@ With the idea of invariant subspaces, the minimal polynomial gives us characteri
 \end{lemma}
 
 \begin{theorem}
-	Let $V$ be finite-dimensional. Then $T \in \text{End}(V)$ is triangulable iff. the minimal polynomial $m_T$ is a product of linear polynomials.
+	Let $V$ be finite-dimensional. Then $T \in \End(V)$ is triangulable iff. the minimal polynomial $m_T$ is a product of linear polynomials.
 \end{theorem}
 
 \begin{proof}
@@ -294,7 +294,7 @@ and
 With this result that invariant direct sum decompositions can be described as projections which commute with $T$, we can start studying deeper decomposition theorems.
 
 \begin{theorem}
-	Let $T \in \text{End}(V)$, $\dim(V) < \infty$. If $T$ is diagonalizable and $\lambda_1, \ldots, \lambda_k$ are the distinct eigenvalues of $T$, then there exist endomophisms $P_1, \ldots, P_k$ on $V$ such that
+	Let $T \in \End(V)$, $\dim(V) < \infty$. If $T$ is diagonalizable and $\lambda_1, \ldots, \lambda_k$ are the distinct eigenvalues of $T$, then there exist endomophisms $P_1, \ldots, P_k$ on $V$ such that
 	\begin{enumerate}
 		\item $T = \lambda_1 P_1 + \cdots + \lambda_k P_k$;
 		\item $I = P_1 + \cdots + P_k$;
@@ -341,7 +341,7 @@ Suppose that the minimal polynomial for $T$ is of the form
 where $\lambda_1, \ldots, \lambda_k$ are distinct scalars. The next theorem shows that the whole space $V$ is the direct sum of the null spaces of $(T - \lambda_i I)^{r_i}$, for $i = 1, \ldots, k$. In fact, the theorem is more general, as we'll see.
 
 \begin{theorem}[Primary Decomposition Theorem (PDT)]\label{thm:pdt}
-  Let $T \in \text{End}(V)$, $\dim(V) < \infty$, and $p_1, \ldots, p_m$ be the distinct irreducible factors of $m_T$ in $\mathbb{F}[x]$. If $r_i$ is the multiplicity of $p_i$ in $m_T$, then
+  Let $T \in \End(V)$, $\dim(V) < \infty$, and $p_1, \ldots, p_m$ be the distinct irreducible factors of $m_T$ in $\mathbb{F}[x]$. If $r_i$ is the multiplicity of $p_i$ in $m_T$, then
   \begin{enumerate}
     \item $V = V_{p_1^{k_1}} \oplus \cdots \oplus V_{p_m^{k_m}}$;
     \item Each $V_{p_i^{k_i}}$ is invariant under $T$;
@@ -361,13 +361,13 @@ It follows immediately from the PDT that a linear operator is diagonalizable iff
 Recall that
 
 \begin{definition}[Nilpotent Operator]
-  Let $N \in \text{End}(V)$. Then $N$ is \textbf{nilpotent} if there exists some positive integer $r$ such that $N^r = 0$.
+  Let $N \in \End(V)$. Then $N$ is \textbf{nilpotent} if there exists some positive integer $r$ such that $N^r = 0$.
 \end{definition}
 
 Under an algebraically closed field, the PDT allows us to `decompose' an endomophism into a \textbf{diagonalizable part} $D$ and a nilpotent operator $N$, i.e., $T = D + N$. Moreover, $D$ and $N$ commute.
 
 \begin{theorem}
-  Let $T \in \text{End}(V)$, $\dim(V) < \infty$. Suppose that the minimal polynomial for $T$ decomposes into a product of linear polynomials. Then there exists a diagonalizable operator $D$ and a nilpotent operator $N$ such that 
+  Let $T \in \End(V)$, $\dim(V) < \infty$. Suppose that the minimal polynomial for $T$ decomposes into a product of linear polynomials. Then there exists a diagonalizable operator $D$ and a nilpotent operator $N$ such that 
   \begin{enumerate}
     \item $T = D + N$;
     \item $DN = ND$.
@@ -387,7 +387,7 @@ This fact is important because it reduces our work to the study of nilpotent ope
 Recall that a subspace $W$ of $V$ is said to be $T$-invariant if $T(W) \subseteq W$. In particular, the restriction of $T$ to $W$ induces a linear operator in $W$ given by $w \mapsto T(w)$ for all $w \in W$.
 
 \begin{lemma}
-	If $S \in \text{End}(V)$ satisfies $S \circ T = T \circ S$, then the nullspace of $S$, $V_S$, is $T$-invariant. In particular, $V_p$ is $T$-invariant for all $p \in \mathbb{F}[x]$.
+	If $S \in \End(V)$ satisfies $S \circ T = T \circ S$, then the nullspace of $S$, $V_S$, is $T$-invariant. In particular, $V_p$ is $T$-invariant for all $p \in \mathbb{F}[x]$.
 \end{lemma}
 
 \begin{proof}
@@ -410,7 +410,7 @@ is a $T$-invariant subspace of $V$.
 \end{definition}
 
 \begin{example}
-	If $T \in \text{End}(\mathbb{F}^2)$ is given by $T(x,y) = (y,0)$ and $p(t) = t$, then
+	If $T \in \End(\mathbb{F}^2)$ is given by $T(x,y) = (y,0)$ and $p(t) = t$, then
 	\[
 		V_p = V_T = [e_1] \quad \text{ and } \quad V_p^2 = \mathbb{F}^2 ~\text{ (since $T^2 = 0$)}
 	\]
@@ -482,7 +482,7 @@ In a finite dimensional vector space, how can we compute the minimal polynomial?
 \begin{proof}
 	If $T = 0$, then $\mathfrak{A}_T = \{ p \in \mathbb{F}[x] : p(0) = 0 \} \neq \{ 0 \}$. In this case, the minimal polynomial is $p(t) = t$.
 	
-	Suppose that $T \neq 0$ and remember that $\dim(\text{End}(V)) = n^2$. Then we can construct the family $(T^k)_k$, where $k = 0, 1, \ldots, n^2$, which is linearly dependent (since it contains $n^2 + 1$ elements).
+	Suppose that $T \neq 0$ and remember that $\dim(\End(V)) = n^2$. Then we can construct the family $(T^k)_k$, where $k = 0, 1, \ldots, n^2$, which is linearly dependent (since it contains $n^2 + 1$ elements).
 	
 	Since the subfamily given by $\mathfrak{A}_T = I_V$ is linearly independent, there exists $1 \leq m \leq n^2$ minimal such that the subfamily $(T^k)_{k=0, \ldots, m}$ is linearly dependent.
 	
@@ -706,7 +706,7 @@ If $T_j$ is the restriction of $T$ on $V_{{p_j}^{k_j}}$,
 	c_T = \prod_{j=1}^m c_{T_j}
 \]
 
-With these tools at hand, we can define determinants and the trace. Let $c_k \in \mathbb{F}$, $1 \leq k \leq n$, such that
+With these tools at hand, we can define the \textbf{determinant}\label{def:determinant_1} and the \textbf{trace}. Let $c_k \in \mathbb{F}$, $1 \leq k \leq n$, such that
 \[
 	c_T(t) = t^n + \sum_{k=1}^n (-1)^k c_k t^{n-k}
 \]
@@ -725,7 +725,7 @@ This gives us a new method to obtain a the minimal polynomial $m_T$.
 \end{enumerate}
 
 \begin{example}\label{ex:canonical_forms_1}
-	Suppose that $\text{char}(\mathbb{F})$, $V = \mathbb{F}^4$ and $T \in \text{End}(V)$ given by 
+	Suppose that $\text{char}(\mathbb{F})$, $V = \mathbb{F}^4$ and $T \in \End(V)$ given by 
 	\[
 		T(x_1, x_2, x_3, x_4) = (3x_3 + x_4, 2x_1+2x_2 - 4x_3 + 2 x_4, x_3 + x_4, 3x_4 - x_3)
 	\]
@@ -817,7 +817,7 @@ Notice that $T(w_j) = \lambda w_j + w_{j+1}$, and therefore,
 		0		& \cdots	& 0 		& 1 		& \lambda
 	\end{bmatrix}
 \]
-in which $S \in \text{End}(C_T(v))$ is given by $S(w) = T(w)$ for all $w \in C_T(v)$. The matrix $J_k(\lambda)$ is said to be a \textbf{Jordan block} of size $k$ and eigenvalue $\lambda$.
+in which $S \in \End(C_T(v))$ is given by $S(w) = T(w)$ for all $w \in C_T(v)$. The matrix $J_k(\lambda)$ is said to be a \textbf{Jordan block} of size $k$ and eigenvalue $\lambda$.
 
 It is sufficient to reorder the basis $\beta$ to change to an upper triangular matrix.
 
@@ -917,7 +917,7 @@ If $m_j < i \leq m$, define $v_{j,i} = 0$. Also
 \textbf{Exercise.} How can we reverse the result? I.e., given a Rational Form, how can we find a Jordan Canonical Form?
 
 \begin{definition}[Similar Operators]
-	Given two operators $S, T \in \text{End}(V)$. We say that $S$ and $T$ are \textbf{similar} if there exist $\alpha$ and $\beta$ bases of $V$ such that $[S]_\alpha^\alpha = [T]_\beta^\beta$.
+	Given two operators $S, T \in \End(V)$. We say that $S$ and $T$ are \textbf{similar} if there exist $\alpha$ and $\beta$ bases of $V$ such that $[S]_\alpha^\alpha = [T]_\beta^\beta$.
 \end{definition}
 
 Remark that similarity is an equivalence relation.
@@ -967,7 +967,7 @@ Remark that similarity is an equivalence relation.
 How do we choose the initial vectors of each cycle? Jordan and Frobenius bases are formed by a union of cycles. Each cycle has an initial vector. How do we find it? This choice cannot be random.
 
 \begin{example}
-	Consider $T \in \text{End}(\mathbb{R}^3)$ given by $T(x,y,z) = (0,x,y)$. If $\alpha$ is the standard basis, we have 
+	Consider $T \in \End(\mathbb{R}^3)$ given by $T(x,y,z) = (0,x,y)$. If $\alpha$ is the standard basis, we have 
 	\[
 		[T]_\alpha^\alpha = \begin{bmatrix}
 			0 && 0 && 0 \\
@@ -1120,7 +1120,7 @@ It follows that $c_{v,W} | c_{v,W'}$ if $W' \subseteq W$. Therefore, $c_{v,W} | 
 \end{proof}
 
 \begin{lemma}\label{lm:202211170945}
-	Let $S, T \in \text{End}(V)$ and suppose that $S$ is invertible and $S \circ T = T \circ S$. Then, $m_{T,S(v)} = m_{T,v}$ for all $v \in V$.
+	Let $S, T \in \End(V)$ and suppose that $S$ is invertible and $S \circ T = T \circ S$. Then, $m_{T,S(v)} = m_{T,v}$ for all $v \in V$.
 \end{lemma}
 
 \begin{proof}

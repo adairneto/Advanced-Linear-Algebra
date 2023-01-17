@@ -25,7 +25,7 @@ If $W = \mathbb{F}$, then an element of $\hom_{\mathbb{F}}^k$ is called a \textb
 \end{definition}
 
 \begin{example}[Inner Product]
-If $\mathbb{F} = \mathbb{R}$, an inner product on $V$ is a bilinear form on $V$, i.e., an element of $\hom^2(V, \mathbb{R})$. 
+If $\mathbb{F} = \mathbb{R}$, an inner product on $V$ is a bilinear form on $V$, i.e., an element of $\Hom^2(V, \mathbb{R})$. 
 \end{example}
 
 \begin{example}[Determinant]
@@ -92,7 +92,7 @@ The next theorem gives a procedure to find a basis.
 
   Hence, the family $(w_{s_l})_{l \in \Omega_j}$ is a subfamily of $\beta$ and, therefore, linearly independent. Thus, $\varphi(v_{i_j}) = 0$ only if $a_l = 0$ for all $l \in \Omega_j$.
 
-  Now suppose that $\dim(V_j) < \infty$ for all suitable $j$ and, therefore, $I$ is finite. Given $\varphi \in \hom^k(V_1, \ldots, V_k, W)$, we need to find a family of scalars $(a_\gamma)_{\gamma \in I \times S}$ such that $a_\gamma \neq 0$ for finite values of $\gamma$ And
+  Now suppose that $\dim(V_j) < \infty$ for all suitable $j$ and, therefore, $I$ is finite. Given $\varphi \in \Hom^k(V_1, \ldots, V_k, W)$, we need to find a family of scalars $(a_\gamma)_{\gamma \in I \times S}$ such that $a_\gamma \neq 0$ for finite values of $\gamma$ And
   \[
     \varphi = \sum_{\gamma \in I \times S} a_\gamma \varphi_\gamma
   \]
@@ -136,7 +136,7 @@ Notice that the function
     (f,v) &\longmapsto f(v)
   \end{aligned}
 \end{equation*}
-is a $2$-linear function called \textbf{evaluation function}. In general, an element $\hom(W,V, \mathbb{F})$ is called a \textbf{bilinear pairing} between $W$ and $V$.
+is a $2$-linear function called \textbf{evaluation function}. In general, an element $\Hom(W,V, \mathbb{F})$ is called a \textbf{bilinear pairing} between $W$ and $V$.
 \end{example}
 
 \begin{example}[Trace]
@@ -1280,7 +1280,7 @@ The concept of orthogonal matrix is related to the concept of orthogonal linear 
 \section{Orthogonal and Sympletic Transformations}
 
 \begin{definition}[Compatibility]
-  Let $V$ and $W$ be vector spaces, $\varphi \in B(V)$ and $\psi \in B(W)$. Then $T \in \hom(V,W)$ is said to be \textbf{compatible} with the pair $(\varphi, \psi)$ if 
+  Let $V$ and $W$ be vector spaces, $\varphi \in B(V)$ and $\psi \in B(W)$. Then $T \in \Hom(V,W)$ is said to be \textbf{compatible} with the pair $(\varphi, \psi)$ if 
   \[
     \psi(T(u), T(v)) = \varphi(u, v), \quad \forall ~u,v \in V
   \]
@@ -1322,28 +1322,28 @@ Since $[\psi]_{T(\alpha)} = [\varphi]_\alpha$, we have that $T(\alpha)$ is linea
 With these facts, the following result holds.
 
 \begin{theorem}
-  If $\varphi \in B(V)$ and $\psi \in B(W)$ with $\varphi$ nondegenerate, there exists $T \in \hom(V,W)$ surjective and compatible with $(\varphi, \psi)$ iff. $\dim(V) = \dim(W)$ and there exist bases $\alpha$ of $V$ and $\beta$ of $W$ such that $[\varphi]_\alpha = [\psi]_\beta$. In this case, $T$ is an isomorphism. 
+  If $\varphi \in B(V)$ and $\psi \in B(W)$ with $\varphi$ nondegenerate, there exists $T \in \Hom(V,W)$ surjective and compatible with $(\varphi, \psi)$ iff. $\dim(V) = \dim(W)$ and there exist bases $\alpha$ of $V$ and $\beta$ of $W$ such that $[\varphi]_\alpha = [\psi]_\beta$. In this case, $T$ is an isomorphism. 
 \end{theorem}
 
 Let us move to the context of linear operators. I.e., here $V = W$ and $\varphi = \psi$ is nondegenerate. Our goal is to describe the set of linear operators on $V$ compatible with $(\varphi, \varphi)$ in the case $\varphi \in B_{as}(V)$ is nondegenerate and $\dim(V)$ is finite. 
 
 Consider the subset of compatible operators
 \[
-  \text{End}^\varphi(V) := \{ T \in \text{End}(V) : \varphi(T(u), T(v)) = \varphi(u, v), ~u,v \in V \}
+  \End^\varphi(V) := \{ T \in \End(V) : \varphi(T(u), T(v)) = \varphi(u, v), ~u,v \in V \}
 \]
 
-It follows from the previous result that every element of $\text{End}^\varphi(V)$ is bijective.
+It follows from the previous result that every element of $\End^\varphi(V)$ is bijective.
 
-We can easily verify that $\text{End}^\varphi(V)$ is closed under composition, i.e., 
+We can easily verify that $\End^\varphi(V)$ is closed under composition, i.e., 
 \[
-  T, S \in \text{End}^\varphi(V) \implies T \circ S \in \text{End}^\varphi(V) 
+  T, S \in \End^\varphi(V) \implies T \circ S \in \End^\varphi(V) 
 \]
 and 
 \[
-  T^{-1} \in \text{End}^\varphi(V)
+  T^{-1} \in \End^\varphi(V)
 \]
 
-Thus, the pair $(\text{End}^\varphi(V), \circ)$ is a group. If $\varphi$ is symmetric, this is called an \textbf{orthogonal group}. If $\varphi$ is alternating, this is called an \textbf{sympletic group}.
+Thus, the pair $(\End^\varphi(V), \circ)$ is a group. If $\varphi$ is symmetric, this is called an \textbf{orthogonal group}. If $\varphi$ is alternating, this is called an \textbf{sympletic group}.
 
 Given a basis $\alpha$ of $V$, $\beta = T(\alpha)$ is also a basis for $V$. We have that $[\varphi]_\alpha = [\varphi]_\beta$ and it follows that 
 \[
@@ -1358,10 +1358,10 @@ By definition of $\beta$, $[I]_{\beta, \alpha} = [T]_{\alpha, \alpha}$. Hence,
 Since, $\det([\varphi]_\alpha) \neq 0$, it follows that $\det(T) = \pm 1$. 
 
 \begin{definition}[Rotation and Reflection]
-  Suppose that $\varphi \in B_s(V)$ and $T \in \text{End}^\varphi(V)$. $T$ is said to be a \textbf{rotation} if $\det(T) = 1$, and is said to be a \textbf{reflection} if $\det(T) = -1$.
+  Suppose that $\varphi \in B_s(V)$ and $T \in \End^\varphi(V)$. $T$ is said to be a \textbf{rotation} if $\det(T) = 1$, and is said to be a \textbf{reflection} if $\det(T) = -1$.
 \end{definition}
 
-The subset of rotations forms a subgroup of $\text{End}^\varphi(V)$. The composition of two reflections is a rotation. 
+The subset of rotations forms a subgroup of $\End^\varphi(V)$. The composition of two reflections is a rotation. 
 
 \begin{definition}[Simple Reflection]
   Let $w \in V$ be a non-isotropic vector and $W = [w]$. The function 
@@ -1408,7 +1408,7 @@ Hence, $[\varphi]_{T(\alpha)} = [\varphi]_\alpha$ and it follows from the theore
 If $\varphi$ is an inner product, the set of simple reflections coincides with the set of orthogonal reflections w.r.t. hyperplanes.
 
 \begin{lemma}\label{lm:202301040856}
-  If $\varphi \in B_{as}(V)$, $T \in \text{End}^\varphi(V)$ and $W$ is a nondegenerate subspace w.r.t. $\varphi$ and $T$-invariant, then $W^{\perp_\varphi}$ is also $T$-invariant. 
+  If $\varphi \in B_{as}(V)$, $T \in \End^\varphi(V)$ and $W$ is a nondegenerate subspace w.r.t. $\varphi$ and $T$-invariant, then $W^{\perp_\varphi}$ is also $T$-invariant. 
 \end{lemma}
 
 \begin{lemma}\label{lm:202301040857}
@@ -1442,11 +1442,11 @@ If $\varphi$ is an inner product, the set of simple reflections coincides with t
 With the language of reflections and these lemmas, it is possible to characterize orthogonal operators.
 
 \begin{theorem}\label{thm:202301041019}
-  Suppose that $\text{char}(\mathbb{F}) \neq 2$ and $0 \neq \dim(V) < \infty$. Let $\varphi \in B_s(V)$ nondegenerate and $T \in \text{End}(V)$. $T$ is orthogonal iff. $T$ is a composition of simple reflections.
+  Suppose that $\text{char}(\mathbb{F}) \neq 2$ and $0 \neq \dim(V) < \infty$. Let $\varphi \in B_s(V)$ nondegenerate and $T \in \End(V)$. $T$ is orthogonal iff. $T$ is a composition of simple reflections.
 \end{theorem}
 
 \begin{proof}
-  If $\text{End}^\varphi(V)$ is a group, then the composition of simple reflection are orthogonal operators. We'll prove the reciprocal by induction on $n = \dim(V) \geq 1$.
+  If $\End^\varphi(V)$ is a group, then the composition of simple reflection are orthogonal operators. We'll prove the reciprocal by induction on $n = \dim(V) \geq 1$.
 
   If $n = 1$, then $V = [v]$ for all $v \in V \setminus \{ 0 \}$ and $T(v) = \lambda v$. Since $\det(T) = \pm 1$, it follows that $T = \pm \text{Id}_V$. And since $- \text{Id}_V = R_V^\varphi$ and $\text{Id}_V = (R_V^\varphi)^2$, the case $n = 1$ is proved. 
 
@@ -1529,7 +1529,7 @@ With the language of reflections and these lemmas, it is possible to characteriz
 
   Thus, $S_1(w_2) = \lambda w_2$ for some scalar $\lambda$. It follows that $\det(S_1) = \lambda$ and, therefore, $\lambda = \pm 1$. 
 
-  Let $R_1 \in \text{End}(V)$ such that $R_1|_W = S_1$ and $R_1(u) = u$, as in the proof. It follows from the previous argument that $R \circ T = R_1$, i.e., $T = R \circ R_1$. 
+  Let $R_1 \in \End(V)$ such that $R_1|_W = S_1$ and $R_1(u) = u$, as in the proof. It follows from the previous argument that $R \circ T = R_1$, i.e., $T = R \circ R_1$. 
 
   In fact, $R_1(u) = R(T(u))$ and $(R \circ T)|_W = S_1 = R_1|_W$. 
 
@@ -1569,13 +1569,13 @@ Clearly, $T_{w,a}$ is linear. Let us verify that it is sympletic.
 Analogously to the theorem \ref{thm:202301041019}, we have the following result.
 
 \begin{theorem}
-  Suppose that $0 \neq \dim(V) < \infty$ and let $\varphi \in B_a(V)$ nondegenerate and $T \in \text{End}(V)$. Then $T$ is sympletic iff. $T$ is a composition of sympletic transvections.
+  Suppose that $0 \neq \dim(V) < \infty$ and let $\varphi \in B_a(V)$ nondegenerate and $T \in \End(V)$. Then $T$ is sympletic iff. $T$ is a composition of sympletic transvections.
 \end{theorem}
 
 \section{Self-Adjoint Operators}
 
 \begin{definition}[Adjoint]
-  Let $\varphi \in B(V)$, $\psi \in B(W)$ and $T \in \hom(V,W)$. A function $S : W \longrightarrow V$ is said to be a \textbf{right adjoint} of $T$ w.r.t. $(\varphi, \psi)$ if 
+  Let $\varphi \in B(V)$, $\psi \in B(W)$ and $T \in \Hom(V,W)$. A function $S : W \longrightarrow V$ is said to be a \textbf{right adjoint} of $T$ w.r.t. $(\varphi, \psi)$ if 
   \[
     \varphi(v, S(w)) = \psi(T(v), w), \quad \forall~ v\in W, ~w \in W
   \]
@@ -1685,10 +1685,10 @@ The next result shows some properties of adjoints.
 \begin{theorem}
   Let $\varphi \in B(V)$, $\psi \in B(W)$, $\xi \in B(U)$ and suppose that $V$ and $W$ are finite-dimensional, and that $\varphi$ and $\psi$ are nondegenerate. The following are true. 
   \begin{enumerate}
-    \item If $S, T \in \hom(W, U)$ and $\lambda \in \mathbb{F}$, then $(S + \lambda T)_\xi^\psi = S_\xi^\psi + \lambda T_\xi^\psi$. In words, adjunction is a linear operation.
-    \item If $T \in \hom(V, W)$ and $S \in \hom(W,U)$, then $(S \circ T)_\xi^\varphi = T_\psi^\varphi \circ S_\xi^\psi$. In words, adjunction is contravariant. 
-    \item If $T \in \hom(V, W)$ is invertible, then $(T^{-1})_\varphi^\psi = (T_\psi^\varphi)^{-1}$. In words, the adjoint of the inverse is the inverse of the adjoint. 
-    \item If $T \in \hom(V, W)$, then $(T_\psi^\varphi)_\varphi^\psi = T$.
+    \item If $S, T \in \Hom(W, U)$ and $\lambda \in \mathbb{F}$, then $(S + \lambda T)_\xi^\psi = S_\xi^\psi + \lambda T_\xi^\psi$. In words, adjunction is a linear operation.
+    \item If $T \in \Hom(V, W)$ and $S \in \Hom(W,U)$, then $(S \circ T)_\xi^\varphi = T_\psi^\varphi \circ S_\xi^\psi$. In words, adjunction is contravariant. 
+    \item If $T \in \Hom(V, W)$ is invertible, then $(T^{-1})_\varphi^\psi = (T_\psi^\varphi)^{-1}$. In words, the adjoint of the inverse is the inverse of the adjoint. 
+    \item If $T \in \Hom(V, W)$, then $(T_\psi^\varphi)_\varphi^\psi = T$.
   \end{enumerate}
 \end{theorem}
 
@@ -1711,7 +1711,7 @@ The next result shows some properties of adjoints.
   The item $2.$ is analogous. 
 \end{proof}
 
-Our goal now is to review the spectral theorem in the context of symmetric bilinear forms. Suppose that $\varphi \in B_s(V)$ and $T \in \text{End}(V)$. We denote the adjoint of $T$ w.r.t. $\varphi, \varphi$ simply as $T^\varphi$. 
+Our goal now is to review the spectral theorem in the context of symmetric bilinear forms. Suppose that $\varphi \in B_s(V)$ and $T \in \End(V)$. We denote the adjoint of $T$ w.r.t. $\varphi, \varphi$ simply as $T^\varphi$. 
 
 \begin{definition}[Self-Adjoint]
   $T$ is said to be \textbf{self-adjoint} w.r.t. $\varphi$ if $T^\varphi = T$, i.e. 
@@ -1765,12 +1765,10 @@ Notice that if $\mathbb{F} = \mathbb{R}$ and $\varphi$ is an inner product, the 
 	If $V$ is a vector space over $\mathbb{C}$, then the function $\varphi : V \times V \longrightarrow \mathbb{C}$ is an \textbf{inner product} on $V$ if
 	\begin{enumerate}
 		\item It is linear on the first entry; 
-		\item $\varphi(u,v) = \overline{\varphi(v,u)}$, for all $u, v \in V$; 
+		\item It is \textbf{sesquilinear} on the second entry, i.e., $\varphi(u,v) = \overline{\varphi(v,u)}$, for all $u, v \in V$; 
 		\item $\varphi(v,v) \in \mathbb{R}_{> 0}$, if $v \neq 0$. 
 	\end{enumerate}
 \end{definition}
-
-The complex inner product is a \textbf{sesquilinear form} w.r.t. the second entry. 
 
 Notice that if $\alpha = v_1, \ldots, v_n$ is a basis for $V$ and $[\varphi]_\alpha = (\varphi(v_j, v_i))_{(i,j)}$, we have 
 \[

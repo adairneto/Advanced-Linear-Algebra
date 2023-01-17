@@ -60,7 +60,7 @@ The basic motivation of Linear Algebra is to solve systems of linear equations. 
 	for some vectors $u_1, \ldots, u_n \in S$ and scalars $a_1, \ldots, a_n \in \mathbb{F}$.
 \end{definition}
 
-\subsection{Subspaces}
+\subsection*{Subspaces}
 
 \begin{definition}[Subspace]
 	Let $V$ be a vector space over a field $\mathbb{F}$. A subset $W \subseteq V$ is a \textbf{subspace} of $V$ if $W$ is itself a vector space with respect to the addition and scalar multiplication on $V$.	
@@ -114,7 +114,7 @@ The following theorem gives an equivalent definition.
 	Let $S \subseteq V$. We say that $S$ \textbf{generates} (or \textbf{spans}) $V$ if $\text{Span}(S) = V$.
 \end{definition}
 
-\subsection{Bases and Dimension}
+\subsection*{Bases and Dimension}
 
 \begin{definition}[Linear Dependence]
 	A subset $S$ of $V$ is \textbf{linearly dependent} if there exists a finite number of distinct vectors $u_1, \ldots, u_n \in S$ and scalars $a_1, \ldots, a_n \in \mathbb{F}$, with at least one $a_i \neq 0$, such that 
@@ -245,7 +245,7 @@ The next theorem is an example of application of Zorn's lemma.
 	Every vector space has a basis.
 \end{theorem}
 
-\subsection{Coordinates}
+\subsection*{Coordinates}
 
 The coordinates of a vector relative to a basis will be the coefficients that are used to represent the vector as a linear combination of the vectors in the basis. For example, if $(v_1, \ldots v_n)$ is an arbitrary vector in $\mathbb{R}^n$ and $e_1, \ldots, e_n$ is the standard basis for $\mathbb{R}^n$, then we express
 \[
@@ -365,7 +365,7 @@ P_{\gamma \to \beta} =
 
 Another way of solving the above example is using the previous theorem. First, form a matrix $P$ whose $i$th column is the $i$th element of the basis $\gamma$. Second, find the inverse $P^{-1}$. Finally, the $i$th column of $P^{-1}$ gives the coordinate of the $i$th vector of the standard basis in the basis $\gamma$.
 
-\subsection{The Row and Column Spaces of a Matrix}
+\subsection*{The Row and Column Spaces of a Matrix}
 
 Before heading to next section, we introduce some useful nomenclature and results.
 
@@ -387,7 +387,7 @@ Before heading to next section, we introduce some useful nomenclature and result
 
 In plain words, a linear transformation (or linear mapping) is a function from a vector space to another which preserves the structure of a vector space. More precisely,
 
-\subsection{Basic Definitions}
+\subsection*{Basic Definitions}
 
 \begin{definition}[Linear Transformation]
 	Let $V$ and $W$ be two vector spaces over the same field $\mathbb{F}$. A \textbf{linear transformation} $T : V \longrightarrow W$ is a function satisfying:
@@ -483,7 +483,7 @@ How can we define linear transformations? The easiest way is to define its value
 	\end{enumerate}
 \end{theorem}
 
-\subsection{The Algebra of Linear Transformations}
+\subsection*{The Algebra of Linear Transformations}
 
 \begin{theorem}
 	Let $T, U : V \longrightarrow W$ be linear transformations. We define, for all $x \in V$ and $a \in \mathbb{F}$,
@@ -604,7 +604,7 @@ The set of invertible linear operators on a given space, with the operation of c
 	\end{itemize}
 \end{example}
 
-\subsection{Isomorphisms}
+\subsection*{Isomorphisms}
 
 \begin{definition}[Isomorsphism]
 	Bijective linear mappings $T \in \mathcal{L}(V,W)$ are said to be \textbf{isomorphisms}, and the spaces $V$ and $W$ are called \textbf{isomorphic} if there exists an isomorphism between them.
@@ -630,7 +630,7 @@ If the isomorphism does not depend on arbitrary choices, such as the basis, then
 
 Finally, note that the isomorphisms from a space to itself form a group with respect to the operation of function composition, which is exactly the general linear group we saw earlier.
 
-\subsection{Matrix Representation}
+\subsection*{Matrix Representation}
 
 \begin{definition}[Matrix Representation]
 	Let $V, W$ be vector spaces with ordered basis $\beta = \{ v_1, \ldots, v_n \}$ and $\gamma = \{ w_1, \ldots, w_m \}$, respectively.
@@ -711,7 +711,7 @@ Finally, note that the isomorphisms from a space to itself form a group with res
 
 \section{Diagonalization}
 
-\subsection{Motivation}
+\subsection*{Motivation}
 
 The question that motivates this section is `when the matrix of a linear operator assumes a simple form?'
 
@@ -736,7 +736,7 @@ the range of $T$ is simply the subspace spanned by the vectors $v_k$ in which $c
 
 Is it always possible to represent a linear operator $T$ as a diagonal matrix? If not, what is the simplest type of matrix by which we can represent $T$?
 
-\subsection{Characteristic Values}
+\subsection*{Characteristic Values}
 
 We saw that if $T$ can be represented as a diagonal matrix, then
 \[
@@ -784,7 +784,7 @@ Hence, $\lambda$ is an eigenvalue of $A$ iff. $\text{det}(A-\lambda I) = 0$.
 
 An important result is that similar matrices have the same characteristic polynomial. Thus, they have the same eigenvalues.
 
-\subsection{Diagonalization}
+\subsection*{Diagonalization}
 
 \begin{definition}[Diagonalization]
 	Let $T \in \text{End}(V)$. We say that $T$ is \textbf{diagonalizable} if there exists a basis $\beta = \{ v_1, v_2, \ldots, v_n \}$ for $V$ formed by eigenvectors of $T$.
@@ -931,7 +931,7 @@ where $\Lambda$ is constructed by the eigenvalues of $A$, and $P$ is constructed
 	\end{enumerate}
 \end{theorem}
 
-\subsection{Direct Sums}
+\subsection*{Direct Sums}
 
 \begin{definition}[Direct Sum]
 	A space $V$ is a \textbf{direct sum} of its subspaces $V_1, \ldots, V_n$ if every vetor $v \in V$ can be uniquely represented in the form $\sum_{i=1}^n v_i$, where $v_i \in V_i$.
@@ -960,7 +960,7 @@ What happens when $V_1, \ldots V_n$ are not imbedded in a general space?
 	\end{enumerate}
 \end{definition}
 
-Notice that the mapping $f_i : V_i \longrightarrow V$, where $f_i(v) = (0, \ldots, 0, v, 0, \ldots, 0)$ ($v$ is in the $i$th location) is a linear imbedding of $V_i$ into $V$.
+Notice that the mapping $f_i : V_i \longrightarrow V$, where $f_i(v) = (0, \ldots, 0, v, 0, \ldots, 0)$ ($v$ is in the $i$th location) is a linear embedding of $V_i$ into $V$.
 
 It follows immediately from the definiton that
 \[

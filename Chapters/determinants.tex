@@ -1,4 +1,4 @@
-\chapter{Determinants}
+\chapter{Determinants}\label{chapter:determinants}
 
 \section{Commutative Rings}
 
@@ -784,26 +784,6 @@ The next definition provides a canonical mapping of the spaces $V_1 \times \ldot
 	Clearly, $L \otimes M$ is multilinear on $V^{r+s}$. And the function $L \otimes M$ is called the \textbf{tensor product} of $L$ and $M$.
 \end{definition}
 
-The idea here is to `linearize' the tensor product. Given any bilinear map $\varphi \in \hom(U \times V, T)$, there exists a unique linear mapping $f : U \otimes V \longrightarrow T$ such that the following diagram commutes.
-% https://q.uiver.app/?q=WzAsMyxbMCwwLCJVIFxcdGltZXMgViJdLFsyLDAsIlQiXSxbMCwyLCJVIFxcb3RpbWVzIFYiXSxbMCwxLCJcXHZhcnBoaSJdLFswLDIsIlxcb3RpbWVzIiwyXSxbMiwxLCJcXGV4aXN0cyEgZiIsMix7InN0eWxlIjp7ImJvZHkiOnsibmFtZSI6ImRhc2hlZCJ9fX1dXQ==
-\[\begin{tikzcd}
-	{U \times V} && T \\
-	\\
-	{U \otimes V}
-	\arrow["\varphi", from=1-1, to=1-3]
-	\arrow["\otimes"', from=1-1, to=3-1]
-	\arrow["{\exists! ~f}"', dashed, from=3-1, to=1-3]
-\end{tikzcd}\]
-
-Put another way, we have the isomorphism
-\begin{equation*}
-	\begin{aligned}
-		\hom(U \otimes V, T) &\longrightarrow \hom(U \times V, T) \\
-		f &\longmapsto f \circ \otimes
-	\end{aligned}
-\end{equation*}
-In the language of categories, this isomorphism is a universal property.
-
 \begin{lemma}[Properties of Tensoring]
 	Let $L, L_1$ be $r$-linear forms on $V$, $M$, $M_1$ be $s$-linear forms on $V$, $N$ a $t$-linear form on $V$, and let $c \in K$.
 	
@@ -921,7 +901,7 @@ How can we define a `natural' multiplication of alternating forms? In order to o
 However, a few observations will lead us to a better definition.
 
 \begin{definition}[Exterior Product (Again)]
-	Let $L$ be an $r$-liner form and $M$ an $s$-linear form. We define the \textbf{exterior product} (or \textbf{wedge prdocut}) by
+	Let $L$ be an $r$-liner form and $M$ an $s$-linear form. We define the \textbf{exterior product} (or \textbf{wedge product}) by
 	\[
 		L \wedge M = \sum_\sigma (\text{sign}~\sigma) (L \otimes M)_\sigma
 	\]
